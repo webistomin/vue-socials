@@ -1,0 +1,6 @@
+ls:
+  src:
+    .dir: kebab-case
+    .js: kebab-case
+    .vue: PascalCase
+    .spec.js: PascalCase | kebab-case

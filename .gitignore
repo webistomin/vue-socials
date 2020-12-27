@@ -1,0 +1,19 @@
+# OS Files
+.DS_Store
+Thumbs.db
+
+# Dependencies
+node_modules
+
+# Unconfigured Editors
+.vscode
+.idea
+
+# Coverage directory used by tools like istanbul
+coverage
+
+# Dotenv environment variables file
+.env
+
+# Builded library
+dist

@@ -1,0 +1,11 @@
+{
+  "git": {
+    "commitMessage": "build(vue-socials): release v${version}"
+  },
+  "github": {
+    "release": true
+  },
+  "hooks": {
+    "after:bump": "npm run build"
+  }
+}

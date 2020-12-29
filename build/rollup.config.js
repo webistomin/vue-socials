@@ -8,12 +8,18 @@ import resolve from '@rollup/plugin-node-resolve';
 import replace from '@rollup/plugin-replace';
 import babel from '@rollup/plugin-babel';
 import { terser } from 'rollup-plugin-terser';
+import copy from 'rollup-plugin-copy';
 import minimist from 'minimist';
 import findIndex from 'lodash.findindex';
 
 const esbrowserslist = fs.readFileSync('./.browserslistrc')
   .toString()
   .split('\n');
+
+const esbrowserslistmodern = fs.readFileSync('./.browserslistrc')
+  .toString()
+  .split('\n')
+  .filter((entry) => entry && entry.substring(0, 2) !== 'ie');
 
 const argv = minimist(process.argv.slice(2));
 
@@ -119,6 +125,11 @@ if (!argv.format || argv.format === 'esm') {
         ],
       }),
       commonjs(),
+      copy({
+        targets: [
+          { src: 'src/vue-socials.d.ts', dest: 'dist/types' },
+        ],
+      }),
     ],
   };
   buildFormats.push(esConfig);
@@ -181,6 +192,117 @@ if (!argv.format || argv.format === 'iife') {
     ],
   };
   buildFormats.push(unpkgConfig);
+}
+
+if (!argv.format || argv.format === 'modern-esm') {
+  const esConfig = {
+    ...baseConfig,
+    input: 'src/entry.esm.ts',
+    external,
+    output: {
+      file: 'dist/vue-socials.modern.esm.js',
+      format: 'esm',
+      exports: 'named',
+    },
+    plugins: [
+      replace(baseConfig.plugins.replace),
+      ...baseConfig.plugins.preVue,
+      vue({
+        css: true,
+        template: {
+          isProduction: true,
+          compilerOptions: {
+            modules: [
+              {
+                preTransformNode(astEl) {
+                  if (process.env.NODE_ENV === 'production') {
+                    const { attrsMap, attrsList } = astEl;
+                    if (attrsMap['data-test']) {
+                      delete attrsMap['data-test'];
+                      const index = findIndex(attrsList, (x) => x.name === 'data-test');
+                      attrsList.splice(index, 1);
+                    }
+                  }
+                  return astEl;
+                },
+              },
+            ],
+          },
+        },
+      }),
+      ...baseConfig.plugins.postVue,
+      babel({
+        ...baseConfig.plugins.babel,
+        presets: [
+          [
+            '@babel/preset-env',
+            {
+              targets: esbrowserslistmodern,
+            },
+          ],
+        ],
+      }),
+      commonjs(),
+    ],
+  };
+  buildFormats.push(esConfig);
+}
+
+if (!argv.format || argv.format === 'modern-cjs') {
+  const umdConfig = {
+    ...baseConfig,
+    external,
+    output: {
+      compact: true,
+      file: 'dist/vue-socials.modern.cjs.js',
+      format: 'cjs',
+      name: 'VueSocials',
+      exports: 'auto',
+      globals,
+    },
+    plugins: [
+      replace(baseConfig.plugins.replace),
+      ...baseConfig.plugins.preVue,
+      vue({
+        css: true,
+        template: {
+          optimizeSSR: true,
+          isProduction: true,
+          compilerOptions: {
+            modules: [
+              {
+                preTransformNode(astEl) {
+                  if (process.env.NODE_ENV === 'production') {
+                    const { attrsMap, attrsList } = astEl;
+                    if (attrsMap['data-test']) {
+                      delete attrsMap['data-test'];
+                      const index = findIndex(attrsList, (x) => x.name === 'data-test');
+                      attrsList.splice(index, 1);
+                    }
+                  }
+                  return astEl;
+                },
+              },
+            ],
+          },
+        },
+      }),
+      ...baseConfig.plugins.postVue,
+      babel({
+        ...baseConfig.plugins.babel,
+        presets: [
+          [
+            '@babel/preset-env',
+            {
+              targets: esbrowserslistmodern,
+            },
+          ],
+        ],
+      }),
+      commonjs(),
+    ],
+  };
+  buildFormats.push(umdConfig);
 }
 
 // Export config

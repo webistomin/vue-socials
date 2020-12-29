@@ -21,4 +21,43 @@
   <a href="https://npmjs.org/package/reakit">
 <img alt="NPM downloads" src="https://img.shields.io/npm/dm/vue-socials.svg">
 </a>
+ <a href="https://github.com/webistomin/vue-socials">
+<img alt="GitHub issues" src="https://img.shields.io/github/issues/webistomin/vue-socials.js">
+</a>
+ <a href="https://github.com/webistomin/vue-socials">
+  <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/webistomin/vue-socials.js">
+</a>
+ <a href="https://github.com/webistomin/vue-socials">
+    <img alt="npm type definitions" src="https://img.shields.io/npm/types/vue-socials.js">
+</a>
+<a href="https://bundlephobia.com/result?p=vue-socials">
+  <img alt="npm bundle size" src="https://img.shields.io/bundlephobia/minzip/vue-socials.js">
+  </a>
 </p>
+
+<p align="center">
+  <a href="#key-features-">Key Features</a> •
+  <a href="#documentation-">Documentation</a> •
+  <a href="#browsers-support-">Browsers support</a> •
+  <a href="#license-">License</a>  •
+  <a href="#contributing-">Contributing</a>
+</p>
+
+## Key Features ✨
+
+* **No dependencies**
+* **Easy to use**
+* **Typescript** support
+* **Tree shakeable**
+
+## Documentation 🤗
+
+## Browsers support 🌎
+
+## License 📄
+
+### [MIT](https://github.com/webistomin/vue-socials.js/blob/master/LICENSE)
+
+## Contributing 🎉
+
+## Contributors ❤️

@@ -1,4 +1,3 @@
-// rollup.config.js
 import fs from 'fs';
 import path from 'path';
 import vue from 'rollup-plugin-vue';
@@ -16,11 +15,6 @@ const esbrowserslist = fs.readFileSync('./.browserslistrc')
   .toString()
   .split('\n');
 
-const esbrowserslistmodern = fs.readFileSync('./.browserslistrc')
-  .toString()
-  .split('\n')
-  .filter((entry) => entry && entry.substring(0, 2) !== 'ie');
-
 const argv = minimist(process.argv.slice(2));
 
 const projectRoot = path.resolve(__dirname, '..');
@@ -28,6 +22,9 @@ const projectRoot = path.resolve(__dirname, '..');
 const baseConfig = {
   input: 'src/entry.ts',
   plugins: {
+    resolve: {
+      extensions: ['.js', '.ts', '.vue'],
+    },
     preVue: [
       alias({
         entries: [
@@ -37,7 +34,7 @@ const baseConfig = {
           },
         ],
         customResolver: resolve({
-          extensions: ['.js', '.jsx', '.ts', '.tsx', '.vue'],
+          extensions: ['.js', '.ts', '.vue'],
         }),
       }),
     ],
@@ -74,8 +71,16 @@ const baseConfig = {
     ],
     babel: {
       exclude: 'node_modules/**',
-      extensions: ['.js', '.jsx', '.ts', '.tsx', '.vue'],
+      extensions: ['.js', '.ts', '.vue'],
       babelHelpers: 'bundled',
+      presets: [
+        [
+          '@babel/preset-env',
+          {
+            targets: esbrowserslist,
+          },
+        ],
+      ],
     },
   },
 };
@@ -109,21 +114,12 @@ if (!argv.format || argv.format === 'esm') {
       exports: 'named',
     },
     plugins: [
+      resolve(baseConfig.plugins.resolve),
       replace(baseConfig.plugins.replace),
       ...baseConfig.plugins.preVue,
       vue(baseConfig.plugins.vue),
       ...baseConfig.plugins.postVue,
-      babel({
-        ...baseConfig.plugins.babel,
-        presets: [
-          [
-            '@babel/preset-env',
-            {
-              targets: esbrowserslist,
-            },
-          ],
-        ],
-      }),
+      babel(baseConfig.plugins.babel),
       commonjs(),
       copy({
         targets: [
@@ -148,6 +144,7 @@ if (!argv.format || argv.format === 'cjs') {
       globals,
     },
     plugins: [
+      resolve(baseConfig.plugins.resolve),
       replace(baseConfig.plugins.replace),
       ...baseConfig.plugins.preVue,
       vue({
@@ -178,6 +175,7 @@ if (!argv.format || argv.format === 'iife') {
       globals,
     },
     plugins: [
+      resolve(baseConfig.plugins.resolve),
       replace(baseConfig.plugins.replace),
       ...baseConfig.plugins.preVue,
       vue(baseConfig.plugins.vue),
@@ -192,117 +190,6 @@ if (!argv.format || argv.format === 'iife') {
     ],
   };
   buildFormats.push(unpkgConfig);
-}
-
-if (!argv.format || argv.format === 'modern-esm') {
-  const esConfig = {
-    ...baseConfig,
-    input: 'src/entry.esm.ts',
-    external,
-    output: {
-      file: 'dist/vue-socials.modern.esm.js',
-      format: 'esm',
-      exports: 'named',
-    },
-    plugins: [
-      replace(baseConfig.plugins.replace),
-      ...baseConfig.plugins.preVue,
-      vue({
-        css: true,
-        template: {
-          isProduction: true,
-          compilerOptions: {
-            modules: [
-              {
-                preTransformNode(astEl) {
-                  if (process.env.NODE_ENV === 'production') {
-                    const { attrsMap, attrsList } = astEl;
-                    if (attrsMap['data-test']) {
-                      delete attrsMap['data-test'];
-                      const index = findIndex(attrsList, (x) => x.name === 'data-test');
-                      attrsList.splice(index, 1);
-                    }
-                  }
-                  return astEl;
-                },
-              },
-            ],
-          },
-        },
-      }),
-      ...baseConfig.plugins.postVue,
-      babel({
-        ...baseConfig.plugins.babel,
-        presets: [
-          [
-            '@babel/preset-env',
-            {
-              targets: esbrowserslistmodern,
-            },
-          ],
-        ],
-      }),
-      commonjs(),
-    ],
-  };
-  buildFormats.push(esConfig);
-}
-
-if (!argv.format || argv.format === 'modern-cjs') {
-  const umdConfig = {
-    ...baseConfig,
-    external,
-    output: {
-      compact: true,
-      file: 'dist/vue-socials.modern.cjs.js',
-      format: 'cjs',
-      name: 'VueSocials',
-      exports: 'auto',
-      globals,
-    },
-    plugins: [
-      replace(baseConfig.plugins.replace),
-      ...baseConfig.plugins.preVue,
-      vue({
-        css: true,
-        template: {
-          optimizeSSR: true,
-          isProduction: true,
-          compilerOptions: {
-            modules: [
-              {
-                preTransformNode(astEl) {
-                  if (process.env.NODE_ENV === 'production') {
-                    const { attrsMap, attrsList } = astEl;
-                    if (attrsMap['data-test']) {
-                      delete attrsMap['data-test'];
-                      const index = findIndex(attrsList, (x) => x.name === 'data-test');
-                      attrsList.splice(index, 1);
-                    }
-                  }
-                  return astEl;
-                },
-              },
-            ],
-          },
-        },
-      }),
-      ...baseConfig.plugins.postVue,
-      babel({
-        ...baseConfig.plugins.babel,
-        presets: [
-          [
-            '@babel/preset-env',
-            {
-              targets: esbrowserslistmodern,
-            },
-          ],
-        ],
-      }),
-      commonjs(),
-    ],
-  };
-  buildFormats.push(umdConfig);
 }
 
 // Export config

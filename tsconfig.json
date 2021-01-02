@@ -34,13 +34,4 @@
     "node_modules",
     "dist"
   ],
-  "include": [
-    "src",
-    "docs",
-    "build",
-    "types",
-    ".storybook",
-    "*.js",
-    "*.ts",
-  ]
 }

@@ -1,5 +1,10 @@
-current node
-last 2 versions and > 2%
+last 2 major version and >= 1%
 not dead
 not op_mini all
-ie > 10
+Chrome >= 60
+Firefox >= 60
+not Edge < 79
+iOS >= 10
+Safari >= 10
+Android >= 6
+Explorer >= 11

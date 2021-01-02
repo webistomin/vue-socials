@@ -3,7 +3,6 @@ module.exports = {
   env: {
     node: true,
   },
-  ignorePatterns: ['.eslintrc.js'],
   extends: [
     'airbnb-typescript/base',
     'plugin:vue/strongly-recommended',
@@ -11,12 +10,17 @@ module.exports = {
   ],
   parserOptions: {
     ecmaVersion: 2020,
-    project: './tsconfig.json',
+    project: './tsconfig.eslint.json',
   },
   rules: {
     quotes: ['error', 'single', {
       allowTemplateLiterals: true,
     }],
     'comma-dangle': ['error', 'always-multiline'],
+    'max-len': 'off',
+    'import/no-unresolved': 'off',
+    'import/prefer-default-export': 'off',
+    'import/extensions': 'off',
+    'prefer-object-spread': 'off',
   },
 };

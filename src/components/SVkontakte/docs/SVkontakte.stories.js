@@ -1,30 +1,18 @@
-import MyButton from '../SVkontakte';
+import SVkontakte from '../SVkontakte';
 
 export default {
-  title: 'Example/Button',
-  component: MyButton,
-  argTypes: {
-    backgroundColor: { control: 'color' },
-    size: { control: { type: 'select', options: ['small', 'medium', 'large'] } },
-  },
+  title: 'Share/SVkontakte',
+  component: SVkontakte,
 };
 
 const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
-  components: { MyButton },
-  methods: {
-    onClose() {
-      console.log('close');
-    },
-    onOpen() {
-      console.log('open');
-    },
-  },
-  template: '<my-button v-bind="$props" @close="onClose" @open="onOpen">Share</my-button>',
+  components: { SVkontakte },
+  template: '<s-vkontakte v-bind="$props">Share</s-vkontakte>',
 });
 
-export const Primary = Template.bind({});
-Primary.args = {
+export const Default = Template.bind({});
+Default.args = {
   windowFeatures: {},
   shareOptions: {
     url: 'https://github.com/',

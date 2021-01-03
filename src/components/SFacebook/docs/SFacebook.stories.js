@@ -1,30 +1,18 @@
-import MyButton from '../SFacebook';
+import SFacebook from '../SFacebook';
 
 export default {
-  title: 'Example/SFacebook',
-  component: MyButton,
-  argTypes: {
-    backgroundColor: { control: 'color' },
-    size: { control: { type: 'select', options: ['small', 'medium', 'large'] } },
-  },
+  title: 'Share/SFacebook',
+  component: SFacebook,
 };
 
 const Template = (args, { argTypes }) => ({
   props: Object.keys(argTypes),
-  components: { MyButton },
-  methods: {
-    onClose() {
-      console.log('close');
-    },
-    onOpen() {
-      console.log('open');
-    },
-  },
-  template: '<my-button v-bind="$props" @close="onClose" @open="onOpen">Share</my-button>',
+  components: { SFacebook },
+  template: '<s-facebook v-bind="$props">Share</s-facebook>',
 });
 
-export const Primary = Template.bind({});
-Primary.args = {
+export const Default = Template.bind({});
+Default.args = {
   windowFeatures: {},
   shareOptions: {
     url: 'https://github.com/',

@@ -20,7 +20,7 @@ const argv = minimist(process.argv.slice(2));
 const projectRoot = path.resolve(__dirname, '..');
 
 const baseConfig = {
-  input: 'src/entry.ts',
+  input: 'src/index.ts',
   plugins: {
     resolve: {
       extensions: ['.js', '.ts', '.vue'],
@@ -106,7 +106,7 @@ const buildFormats = [];
 if (!argv.format || argv.format === 'esm') {
   const esConfig = {
     ...baseConfig,
-    input: 'src/entry.esm.ts',
+    input: 'src/esm.ts',
     external,
     output: {
       file: 'dist/vue-socials.esm.js',
@@ -123,7 +123,7 @@ if (!argv.format || argv.format === 'esm') {
       commonjs(),
       copy({
         targets: [
-          { src: 'src/vue-socials.d.ts', dest: 'dist/types' },
+          { src: 'src/index.d.ts', dest: 'dist/types' },
         ],
       }),
     ],

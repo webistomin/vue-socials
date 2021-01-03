@@ -1,1 +1,1 @@
-export const parameters = {}
+export const parameters = {};

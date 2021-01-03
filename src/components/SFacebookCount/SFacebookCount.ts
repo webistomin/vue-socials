@@ -73,7 +73,7 @@ export default /* #__PURE__ */ Vue.extend({
 
     JSONP<ISFbCountResult | ISFbCountError>(finalURL, (_err, data) => {
       if (data && 'engagement' in data) {
-        this.saveCount(data.engagement!.share_count);
+        this.saveCount(data.engagement?.share_count);
       }
     });
   },

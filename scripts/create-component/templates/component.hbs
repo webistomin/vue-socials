@@ -1,9 +1,9 @@
 /**
- * Hey!
- *
- * SVkontakte component used for Vkontakte social network
- * @link https://vk.com
- */
+* Hey!
+*
+* {{pascalCase name}} component used for ... social network
+* @link ...
+*/
 
 import Vue, {
   CreateElement, VNode, VueConstructor, PropOptions,
@@ -12,19 +12,15 @@ import BaseSocial from '@/mixins/base-social/BaseSocial';
 import getSerialisedParams from '@/utils/getSerialisedParams';
 
 /**
- * Share parameters for link
- * @link https://vk.com/dev/widget_share
- */
-export interface ISVkontakteShareOptions {
-  url?: string;
-  title?: string;
-  image?: string;
-  noParse?: boolean;
-  noVkLinks?: boolean;
+* Share parameters for link
+* @link ...
+*/
+export interface I{{pascalCase name}}ShareOptions {
+
 }
 
 export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<typeof BaseSocial>>).extend({
-  name: 'SVkontakte',
+  name: '{{pascalCase name}}',
 
   mixins: [BaseSocial],
 
@@ -32,23 +28,15 @@ export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<typeof 
     shareOptions: {
       type: Object,
       default: () => ({}),
-    } as PropOptions<ISVkontakteShareOptions>,
+    } as PropOptions<I{{pascalCase name}}ShareOptions>,
   },
 
   computed: {
     networkURL(): string {
-      const BASE_URL = 'https://vk.com/share.php';
+      const BASE_URL = '';
       const { shareOptions } = this;
-      const {
-        url, title, image, noParse, noVkLinks,
-      } = shareOptions;
-      const serialisedParams = getSerialisedParams({
-        url,
-        title,
-        image,
-        noparse: noParse,
-        no_vk_links: Number(noVkLinks),
-      });
+      const { } = shareOptions;
+      const serialisedParams = getSerialisedParams({});
 
       return `${BASE_URL}${serialisedParams}`;
     },
@@ -64,7 +52,7 @@ export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<typeof 
           href: networkURL,
           target: '_blank',
           rel: 'nofollow noopener noreferrer',
-          'aria-label': 'Share this with Vkontakte',
+          'aria-label': 'Share this with ...',
         },
         on: {
           click: (event: Event) => {

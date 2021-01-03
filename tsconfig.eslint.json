@@ -13,6 +13,7 @@
     ".storybook/**/*.ts",
     ".storybook/**/*.js",
     ".storybook/**/*.vue",
+    "scripts/**/*.ts",
     ".eslintrc.js",
   ]
 }

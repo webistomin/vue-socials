@@ -62,6 +62,7 @@
   "dependencies": {},
   "devDependencies": {
     "@babel/core": "^7.12.10",
+    "@babel/plugin-proposal-optional-chaining": "^7.12.7",
     "@babel/preset-env": "^7.12.11",
     "@babel/preset-typescript": "^7.12.7",
     "@ls-lint/ls-lint": "^1.9.2",

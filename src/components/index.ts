@@ -5,4 +5,14 @@
  * Components listed in this file should be listed alphabetically. Thanks :)
  */
 
-export { default as SVk } from './SVk';
+/**
+ * F
+ */
+export { default as SFacebook } from './SFacebook';
+export { default as SFacebookCount } from './SFacebookCount';
+
+/**
+ * V
+ */
+export { default as SVkontakte } from './SVkontakte';
+export { default as SVkontakteCount } from './SVkontakteCount';

@@ -1,7 +1,7 @@
-import MyButton from '../SVk';
+import MyButton from '../SVkontakteCount';
 
 export default {
-  title: 'Example/Button',
+  title: 'Example/Vk',
   component: MyButton,
   argTypes: {
     backgroundColor: { control: 'color' },

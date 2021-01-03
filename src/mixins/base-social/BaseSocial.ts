@@ -1,8 +1,8 @@
 /**
  * Hey!
  *
- * Base socials mixin used for every social
- * which have share window. It provides a method for window.open
+ * Base socials mixin used for every social component
+ * which have share window. It provides a method for window.open()
  * and has props for window features.
  */
 

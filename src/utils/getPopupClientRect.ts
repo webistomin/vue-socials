@@ -6,7 +6,8 @@ export interface IPopupClientRect {
 }
 
 /**
- * Center a new popup window even on dualscreen
+ * A simple function to get window client rect.
+ * It works with minimized windows, user zoom, and dual-screen.
  * @link http://www.xtf.dk/2011/08/center-new-popup-window-even-on.html
  */
 export default function getPopupClientRect(width: number, height: number): IPopupClientRect {

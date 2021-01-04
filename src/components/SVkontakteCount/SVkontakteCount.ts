@@ -56,7 +56,7 @@ export default /* #__PURE__ */ Vue.extend({
 
     window.VK.callbacks = [];
     window.VK.Share = {
-      count: (index, count) => window.VK.callbacks![index](count),
+      count: (index, count) => window.VK.callbacks?.[index](count),
     };
 
     const index = window.VK.callbacks.length;

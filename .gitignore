@@ -17,3 +17,6 @@ coverage
 
 # Builded library
 dist
+
+# Service worker
+sw.*

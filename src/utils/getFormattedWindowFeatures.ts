@@ -1,4 +1,4 @@
-import { IWindowFeatures } from '@/types/windowFeatures';
+import { IWindowFeatures } from '@/types/common/windowFeatures';
 
 /**
  * A simple function to format object to window.open() string features.

@@ -20,7 +20,7 @@ const argv = minimist(process.argv.slice(2));
 const projectRoot = path.resolve(__dirname, '..');
 
 const baseConfig = {
-  input: 'src/index.ts',
+  input: 'src/vue-socials.ts',
   plugins: {
     resolve: {
       extensions: ['.js', '.ts', '.vue'],
@@ -123,7 +123,7 @@ if (!argv.format || argv.format === 'esm') {
       commonjs(),
       copy({
         targets: [
-          { src: 'src/index.d.ts', dest: 'dist/types' },
+          { src: 'src/vue-socials.d.ts', dest: 'dist/types' },
         ],
       }),
     ],

@@ -4,7 +4,7 @@ import _Vue, { PluginFunction } from 'vue';
 import * as components from '@/components';
 
 // install function executed by Vue.use()
-const install: PluginFunction<any> = function installVueSocials(Vue: typeof _Vue) {
+const install: PluginFunction<never> = function installVueSocials(Vue: typeof _Vue) {
   Object.entries(components).forEach(([componentName, component]) => {
     Vue.component(componentName, component);
   });

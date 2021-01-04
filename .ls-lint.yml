@@ -1,8 +1,8 @@
 ls:
   src:
     .dir: regex:[a-z0-9]*[A-Z][A-Z0-9]*[a-z][A-Za-z0-9]* | kebab-case
-    .js: regex:[a-z0-9]*[A-Z][A-Z0-9]*[a-z][A-Za-z0-9]* | camelCase
-    .ts: regex:[a-z0-9]*[A-Z][A-Z0-9]*[a-z][A-Za-z0-9]* | camelCase
-    .d.ts: regex:[a-z0-9]*[A-Z][A-Z0-9]*[a-z][A-Za-z0-9]* | camelCase
-    .spec.js: regex:[a-z0-9]*[A-Z][A-Z0-9]*[a-z][A-Za-z0-9]* | camelCase
-    .stories.js: regex:[a-z0-9]*[A-Z][A-Z0-9]*[a-z][A-Za-z0-9]* | camelCase
+    .js: regex:[a-z0-9]*[A-Z][A-Z0-9]*[a-z][A-Za-z0-9]* | camelCase | kebab-case
+    .ts: regex:[a-z0-9]*[A-Z][A-Z0-9]*[a-z][A-Za-z0-9]* | camelCase | kebab-case
+    .d.ts: regex:[a-z0-9]*[A-Z][A-Z0-9]*[a-z][A-Za-z0-9]* | camelCase | kebab-case
+    .spec.ts: regex:[a-z0-9]*[A-Z][A-Z0-9]*[a-z][A-Za-z0-9]* | camelCase | kebab-case
+    .stories.ts: regex:[a-z0-9]*[A-Z][A-Z0-9]*[a-z][A-Za-z0-9]* | camelCase | kebab-case

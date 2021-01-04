@@ -7,7 +7,7 @@
  */
 
 import Vue, { PropOptions } from 'vue';
-import { IWindowFeatures } from '@/types/windowFeatures';
+import { IWindowFeatures } from '@/types/common/windowFeatures';
 import getFormattedWindowFeatures from '@/utils/getFormattedWindowFeatures';
 import getPopupClientRect from '@/utils/getPopupClientRect';
 

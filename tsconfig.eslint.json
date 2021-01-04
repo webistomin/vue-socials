@@ -1,6 +1,7 @@
 {
   "extends": "./tsconfig.json",
   "include": [
+    "types/**/*.ts",
     "src/**/*.ts",
     "src/**/*.js",
     "src/**/*.vue",
@@ -15,5 +16,10 @@
     ".storybook/**/*.vue",
     "scripts/**/*.ts",
     ".eslintrc.js",
+    "lint-staged.config.js",
+    "husky.config.js",
+    "commitlint.config.js",
+    ".size-limit.js",
+    "babel.config.js"
   ]
 }

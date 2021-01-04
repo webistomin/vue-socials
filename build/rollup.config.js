@@ -106,7 +106,7 @@ const buildFormats = [];
 if (!argv.format || argv.format === 'esm') {
   const esConfig = {
     ...baseConfig,
-    input: 'src/esm.ts',
+    input: 'src/vue-socials-esm.ts',
     external,
     output: {
       file: 'dist/vue-socials.esm.js',

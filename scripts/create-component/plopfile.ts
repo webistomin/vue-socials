@@ -1,13 +1,13 @@
 import { NodePlopAPI } from 'node-plop';
 import { COMPONENTS_FOLDER } from './utils/constants';
 
-export const enum IPlopfileTypeAnswers {
+export const enum IPlopfileComponentTypes {
   SHARE = 'share',
   COUNT = 'count',
 }
 
 export interface IPlopfileAnswers {
-  type: IPlopfileTypeAnswers;
+  type: IPlopfileComponentTypes;
   name: string;
 }
 
@@ -20,7 +20,7 @@ module.exports = function createPlop(plop: NodePlopAPI): void {
         type: 'list',
         name: 'type',
         message: 'What type of component you want?',
-        choices: [IPlopfileTypeAnswers.SHARE, IPlopfileTypeAnswers.COUNT],
+        choices: [IPlopfileComponentTypes.SHARE, IPlopfileComponentTypes.COUNT],
       },
       {
         type: 'input',
@@ -36,29 +36,30 @@ module.exports = function createPlop(plop: NodePlopAPI): void {
       },
     ],
 
-    actions: () => {
+    actions: (answers) => {
       const DIST_PATH = `${COMPONENTS_FOLDER}/{{pascalCase name}}`;
+      const { type } = answers as IPlopfileAnswers;
 
       return [
         {
           type: 'add',
           path: `${DIST_PATH}/{{pascalCase name}}.ts`,
-          templateFile: './templates/component.hbs',
+          templateFile: `./templates/${type}/component.hbs`,
         },
         {
           type: 'add',
           path: `${DIST_PATH}/index.ts`,
-          templateFile: './templates/index.hbs',
+          templateFile: `./templates/${type}/index.hbs`,
         },
         {
           type: 'add',
-          path: `${DIST_PATH}/docs/{{pascalCase name}}.stories.js`,
-          templateFile: './templates/story.hbs',
+          path: `${DIST_PATH}/docs/{{pascalCase name}}.stories.ts`,
+          templateFile: `./templates/${type}/story.hbs`,
         },
         {
           type: 'add',
           path: `${DIST_PATH}/tests/{{pascalCase name}}.spec.ts`,
-          templateFile: './templates/test.hbs',
+          templateFile: `./templates/${type}/test.hbs`,
         },
       ];
     },

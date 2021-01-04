@@ -1,0 +1,21 @@
+import { Story } from '@storybook/vue';
+import {{pascalCase name}} from '../{{pascalCase name}}';
+
+export default {
+  title: '{{pascalCase type}}/{{pascalCase name}}',
+  component: {{pascalCase name}},
+};
+
+const Template: Story = (_args, { argTypes }) => ({
+  props: Object.keys(argTypes),
+  components: { {{pascalCase name}} },
+  template: '<{{kebabCase name}} v-bind="$props">Share</{{kebabCase name}}>',
+});
+
+export const Default = Template.bind({});
+Default.args = {
+  windowFeatures: {},
+  shareOptions: {
+    url: 'https://github.com/',
+  },
+};

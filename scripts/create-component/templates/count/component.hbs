@@ -1,0 +1,47 @@
+/**
+* Hey!
+*
+* {{pascalCase name}} component used for ... social network
+* @link ...
+*/
+
+import Vue, {
+  CreateElement, PropOptions, VNode,
+} from 'vue';
+
+/**
+* Share parameters for link
+* @link ...
+*/
+export interface I{{pascalCase name}}ShareOptions {
+
+}
+
+export default /* #__PURE__ */ Vue.extend({
+  name: '{{pascalCase name}}',
+
+  data(): {
+      count: number | undefined,
+    } {
+    return {
+      count: undefined,
+    };
+  },
+
+  props: {
+    shareOptions: {
+      type: Object,
+      default: () => ({}),
+    } as PropOptions<I{{pascalCase name}}ShareOptions>,
+  },
+
+  mounted() {},
+
+  render(h: CreateElement): VNode {
+    return h(
+      'span',
+      {},
+      String(Number(this.count)),
+    );
+  },
+});

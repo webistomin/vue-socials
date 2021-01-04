@@ -1,3 +1,4 @@
+import { Story } from '@storybook/vue';
 import SVkontakteCount from '../SVkontakteCount';
 
 export default {
@@ -5,7 +6,7 @@ export default {
   component: SVkontakteCount,
 };
 
-const Template = (args, { argTypes }) => ({
+const Template: Story = (_args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { SVkontakteCount },
   template: '<s-vkontakte-count v-bind="$props"></s-vkontakte-count>',

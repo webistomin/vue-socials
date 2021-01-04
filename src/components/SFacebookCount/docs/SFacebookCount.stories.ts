@@ -1,3 +1,4 @@
+import { Story } from '@storybook/vue';
 import SFacebookCount from '../SFacebookCount';
 
 export default {
@@ -5,7 +6,7 @@ export default {
   component: SFacebookCount,
 };
 
-const Template = (args, { argTypes }) => ({
+const Template: Story = (_args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { SFacebookCount },
   template: '<s-facebook-count v-bind="$props"></s-facebook-count>',

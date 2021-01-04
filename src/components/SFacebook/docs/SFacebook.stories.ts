@@ -1,3 +1,4 @@
+import { Story } from '@storybook/vue';
 import SFacebook from '../SFacebook';
 
 export default {
@@ -5,9 +6,11 @@ export default {
   component: SFacebook,
 };
 
-const Template = (args, { argTypes }) => ({
+const Template: Story = (_args, { argTypes }) => ({
   props: Object.keys(argTypes),
+
   components: { SFacebook },
+
   template: '<s-facebook v-bind="$props">Share</s-facebook>',
 });
 

@@ -1,3 +1,4 @@
+import { Story } from '@storybook/vue';
 import SVkontakte from '../SVkontakte';
 
 export default {
@@ -5,7 +6,7 @@ export default {
   component: SVkontakte,
 };
 
-const Template = (args, { argTypes }) => ({
+const Template: Story = (_args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { SVkontakte },
   template: '<s-vkontakte v-bind="$props">Share</s-vkontakte>',

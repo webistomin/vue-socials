@@ -21,5 +21,7 @@ export interface I{{pascalCase name}}ShareOptions {
 export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseCountMixin<I{{pascalCase name}}ShareOptions>>>).extend({
   name: '{{pascalCase name}}',
 
+  mixins: [BaseCount<I{{pascalCase name}}ShareOptions>()],
+
   mounted() {},
 });

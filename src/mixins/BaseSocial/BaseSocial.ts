@@ -3,7 +3,7 @@
  *
  * Base socials mixin used for every social component
  * which have share window. It provides a method for window.open()
- * and has props for window features.
+ * and has props for window features. Also has a method for component render.
  */
 
 import { ExtendedVue } from 'vue/types/vue';
@@ -15,8 +15,9 @@ import getPopupClientRect from '@/utils/getPopupClientRect';
 const DEFAULT_SHARE_POPUP_WIDTH = 650;
 const DEFAULT_SHARE_POPUP_HEIGHT = 570;
 
-export type IBaseSocialMixin<T> = ExtendedVue<Vue,
+export type TBaseSocialMixin<T> = ExtendedVue<Vue,
 {
+  shareDialog: Window | null;
   shareDialogCloseIntervalId: number | undefined
 },
 {
@@ -29,7 +30,7 @@ unknown,
   windowFeatures: IWindowFeatures
 }>;
 
-export default function BaseSocials<T>(): IBaseSocialMixin<T> {
+export default function BaseSocials<T>(): TBaseSocialMixin<T> {
   return /* #__PURE__ */Vue.extend({
     props: {
       /**
@@ -43,7 +44,9 @@ export default function BaseSocials<T>(): IBaseSocialMixin<T> {
           height: DEFAULT_SHARE_POPUP_HEIGHT,
         }),
       } as PropOptions<IWindowFeatures>,
-
+      /**
+       * Share parameters for social network
+       */
       shareOptions: {
         type: Object,
         required: true,
@@ -51,9 +54,11 @@ export default function BaseSocials<T>(): IBaseSocialMixin<T> {
     },
 
     data() : {
+      shareDialog: Window | null;
       shareDialogCloseIntervalId: number | undefined,
     } {
       return {
+        shareDialog: null,
         shareDialogCloseIntervalId: undefined,
       };
     },
@@ -81,39 +86,58 @@ export default function BaseSocials<T>(): IBaseSocialMixin<T> {
          */
         const formattedFeatures = getFormattedWindowFeatures(Object.assign({}, shareDialogClientRect, windowFeatures));
 
-        let shareDialog = window.open(
-          url,
-          '_blank',
-          formattedFeatures,
-        );
-
         /**
-         * If window.open has been blocked – emit event and do nothing
+         * If the pointer to the window object in memory does not exist
+         * or if such pointer exists but the window was closed
          */
-        if (!shareDialog) {
-          this.$emit('block');
-          return;
-        }
+        if (this.shareDialog === null || this.shareDialog?.closed) {
+          /**
+           * then create it. The new window will be created and
+           * will be brought on top of any other window.
+           */
+          this.shareDialog = window.open(
+            url,
+            '_blank',
+            formattedFeatures,
+          );
 
-        this.$emit('open');
-        shareDialog.focus();
-
-        /**
-         * window.onbeforeunload event didn't work because of Same Origin Policy
-         * So we check if it has been closed every 300 ms
-         * @link https://atashbahar.com/post/2010-04-27-detect-when-a-javascript-popup-window-gets-closed
-         */
-        this.shareDialogCloseIntervalId = window.setInterval(() => {
-          if (shareDialog === null || (shareDialog && shareDialog.closed)) {
-            window.clearInterval(this.shareDialogCloseIntervalId);
-            this.$emit('close');
-            /**
-             * Unset reference to the popup window
-             * @link https://web.dev/detached-window-memory-leaks/#solution-unset-references
-             */
-            shareDialog = null;
+          /**
+           * If window.open has been blocked – emit 'block' event and then do nothing
+           * If not – emit 'open' event
+           */
+          if (!this.shareDialog) {
+            this.$emit('popup-block');
+            return;
           }
-        }, 300);
+
+          this.$emit('popup-open');
+
+          /**
+           * window.onbeforeunload event didn't work because of Same Origin Policy
+           * So we check if it has been closed every 300 ms
+           * @link https://atashbahar.com/post/2010-04-27-detect-when-a-javascript-popup-window-gets-closed
+           */
+          this.shareDialogCloseIntervalId = window.setInterval(() => {
+            if (this.shareDialog === null || this.shareDialog?.closed) {
+              window.clearInterval(this.shareDialogCloseIntervalId);
+              this.$emit('popup-close');
+              /**
+               * Unset reference to the popup window
+               * @link https://web.dev/detached-window-memory-leaks/#solution-unset-references
+               */
+              this.shareDialog = null;
+            }
+          }, 300);
+        } else {
+          /**
+           * else the window reference must exist and the window
+           * is not closed; therefore, we can bring it back on top of any other
+           * window with the focus() method. There would be no need to re-create
+           * the window or to reload the referenced resource.
+           */
+          this.shareDialog.focus();
+          this.$emit('popup-focus');
+        }
       },
       /**
        * Create new share component

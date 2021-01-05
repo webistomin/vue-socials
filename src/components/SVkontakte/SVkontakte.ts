@@ -8,7 +8,7 @@
 import Vue, {
   CreateElement, VNode, VueConstructor,
 } from 'vue';
-import BaseSocial, { IBaseSocialMixin } from '@/mixins/BaseSocial/BaseSocial';
+import BaseSocial, { TBaseSocialMixin } from '@/mixins/BaseSocial/BaseSocial';
 import getSerialisedParams from '@/utils/getSerialisedParams';
 
 /**
@@ -23,7 +23,7 @@ export interface ISVkontakteShareOptions {
   noVkLinks?: boolean;
 }
 
-export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<IBaseSocialMixin<ISVkontakteShareOptions>>>).extend({
+export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseSocialMixin<ISVkontakteShareOptions>>>).extend({
   name: 'SVkontakte',
 
   mixins: [BaseSocial<ISVkontakteShareOptions>()],

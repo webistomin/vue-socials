@@ -1,8 +1,7 @@
-import Vue, {
-  CreateElement, PropOptions, VNode,
-} from 'vue';
+import Vue, { VueConstructor } from 'vue';
 import JSONP from '@/utils/jsonp';
 import getSerialisedParams from '@/utils/getSerialisedParams';
+import { TBaseCountMixin } from '@/mixins/BaseCount/BaseCount';
 
 export interface ISFbCountResult {
   engagement?: {
@@ -31,6 +30,9 @@ export interface ISFbCountError {
   }
 }
 
+/**
+ * @link https://developers.facebook.com/docs/graph-api/reference/v9.0/url
+ */
 export interface ISFbCountShareOptions {
   url: string;
   accessToken: string;
@@ -38,25 +40,7 @@ export interface ISFbCountShareOptions {
   scopes?: string[];
 }
 
-export default /* #__PURE__ */ Vue.extend({
-  data() : {
-    count: number | undefined,
-  } {
-    return {
-      count: undefined,
-    };
-  },
-
-  props: {
-    /**
-     * @link https://developers.facebook.com/docs/graph-api/reference/v9.0/url
-     */
-    shareOptions: {
-      type: Object,
-      required: true,
-    } as PropOptions<ISFbCountShareOptions>,
-  },
-
+export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseCountMixin<ISFbCountShareOptions>>>).extend({
   mounted() {
     const BASE_URL = 'https://graph.facebook.com/';
     const { shareOptions } = this;
@@ -76,19 +60,5 @@ export default /* #__PURE__ */ Vue.extend({
         this.saveCount(data.engagement?.share_count);
       }
     });
-  },
-
-  methods: {
-    saveCount(count: number | undefined) {
-      this.count = count;
-    },
-  },
-
-  render(h: CreateElement): VNode {
-    return h(
-      'span',
-      {},
-      String(Number(this.count)),
-    );
   },
 });

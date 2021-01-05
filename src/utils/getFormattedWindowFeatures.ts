@@ -3,7 +3,7 @@ import { IWindowFeatures } from '@/types/common/windowFeatures';
 /**
  * A simple function to format object to window.open() string features.
  * It formats all values to a number.
- * @example { menubar: true, toolbar: false, location: true, } => 'menubar=1,toolbar=0,location=1'
+ * @example { width: 500, menubar: true, toolbar: false } => 'width=500,menubar=1,toolbar=0'
  * @link https://developer.mozilla.org/en-US/docs/Web/API/Window/open#Window_features
  */
 export default function getFormattedWindowFeatures(object: IWindowFeatures): string {

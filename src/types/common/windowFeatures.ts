@@ -3,10 +3,22 @@ export interface IWindowFeatures {
   height?: number;
   top?: number;
   left?: number;
-  menubar?: boolean;
-  toolbar?: boolean;
+  screenX?: number;
+  screenY?: number;
+  innerWidth?: number;
+  innerHeight?: number;
+  outerWidth?: number;
+  outerHeight?: number;
+  channelmode?: boolean;
+  directories?: boolean;
+  fullscreen?: boolean;
   location?: boolean;
-  status?: boolean;
+  menubar?: boolean;
   resizable?: boolean;
   scrollbars?: boolean;
+  status?: boolean;
+  titlebar?: boolean;
+  toolbar?: boolean;
+  noopener?: boolean;
+  noreferrer?: boolean;
 }

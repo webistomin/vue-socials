@@ -8,7 +8,7 @@
 import Vue, {
   CreateElement, VNode, VueConstructor,
 } from 'vue';
-import BaseSocial, { IBaseSocialMixin } from '@/mixins/BaseSocial/BaseSocial';
+import BaseSocial, { TBaseSocialMixin } from '@/mixins/BaseSocial/BaseSocial';
 import getSerialisedParams from '@/utils/getSerialisedParams';
 
 /**
@@ -21,7 +21,7 @@ export interface ISFacebookShareOptions {
   hashtag?: string;
 }
 
-export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<IBaseSocialMixin<ISFacebookShareOptions>>>).extend({
+export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseSocialMixin<ISFacebookShareOptions>>>).extend({
   name: 'SFacebook',
 
   mixins: [BaseSocial<ISFacebookShareOptions>()],

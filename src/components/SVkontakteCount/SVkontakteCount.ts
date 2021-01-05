@@ -6,9 +6,12 @@
  * @example https://vk.com/share.php?act=count&index=1&url=http
  */
 
-import Vue, { CreateElement, PropOptions, VNode } from 'vue';
+import Vue, {
+  VueConstructor,
+} from 'vue';
 import JSONP from '@/utils/jsonp';
 import getSerialisedParams from '@/utils/getSerialisedParams';
+import BaseCount, { TBaseCountMixin } from '@/mixins/BaseCount/BaseCount';
 
 declare global {
   interface Window {
@@ -25,25 +28,8 @@ export interface ISVkontakteCountShareOptions {
   url?: string;
 }
 
-export default /* #__PURE__ */ Vue.extend({
-  props: {
-    /**
-     * Requested features of the new window
-     * @link https://developer.mozilla.org/en-US/docs/Web/API/Window/open#Window_features
-     */
-    shareOptions: {
-      type: Object,
-      default: () => ({}),
-    } as PropOptions<ISVkontakteCountShareOptions>,
-  },
-
-  data() : {
-    count: number | undefined,
-  } {
-    return {
-      count: undefined,
-    };
-  },
+export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseCountMixin<ISVkontakteCountShareOptions>>>).extend({
+  mixins: [BaseCount<ISVkontakteCountShareOptions>()],
 
   mounted() {
     const { shareOptions } = this;
@@ -69,19 +55,5 @@ export default /* #__PURE__ */ Vue.extend({
     })}`;
 
     JSONP(finalURL);
-  },
-
-  methods: {
-    saveCount(count: number | undefined) {
-      this.count = count;
-    },
-  },
-
-  render(h: CreateElement): VNode {
-    return h(
-      'span',
-      {},
-      String(Number(this.count)),
-    );
   },
 });

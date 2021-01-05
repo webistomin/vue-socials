@@ -5,9 +5,10 @@
 * @link ...
 */
 
-import Vue, {
-  CreateElement, PropOptions, VNode,
-} from 'vue';
+import Vue, { VueConstructor } from 'vue';
+import JSONP from '@/utils/jsonp';
+import getSerialisedParams from '@/utils/getSerialisedParams';
+import BaseCount, { TBaseCountMixin } from '@/mixins/BaseCount/BaseCount';
 
 /**
 * Share parameters for link
@@ -17,31 +18,8 @@ export interface I{{pascalCase name}}ShareOptions {
 
 }
 
-export default /* #__PURE__ */ Vue.extend({
+export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseCountMixin<I{{pascalCase name}}ShareOptions>>>).extend({
   name: '{{pascalCase name}}',
 
-  data(): {
-      count: number | undefined,
-    } {
-    return {
-      count: undefined,
-    };
-  },
-
-  props: {
-    shareOptions: {
-      type: Object,
-      default: () => ({}),
-    } as PropOptions<I{{pascalCase name}}ShareOptions>,
-  },
-
   mounted() {},
-
-  render(h: CreateElement): VNode {
-    return h(
-      'span',
-      {},
-      String(Number(this.count)),
-    );
-  },
 });

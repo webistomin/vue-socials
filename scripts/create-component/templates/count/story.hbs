@@ -1,4 +1,5 @@
 import { Story } from '@storybook/vue';
+import { action } from '@storybook/addon-actions';
 import {{pascalCase name}} from '../{{pascalCase name}}';
 
 export default {
@@ -9,7 +10,10 @@ export default {
 const Template: Story = (_args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { {{pascalCase name}} },
-  template: '<{{kebabCase name}} v-bind="$props"></{{kebabCase name}}>',
+  methods: {
+    onLoad: action('emit load'),
+  },
+  template: '<{{kebabCase name}} v-bind="$props" @load="onLoad"></{{kebabCase name}}>',
 });
 
 export const Default = Template.bind({});

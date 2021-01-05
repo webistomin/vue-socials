@@ -15,7 +15,6 @@ const Template: Story = (_args, { argTypes }) => ({
     onOpen: action('emit open'),
     onBlock: action('emit block'),
     onFocus: action('emit focus'),
-    onClick: action('emit click'),
   },
   template: `
     <s-vkontakte
@@ -31,7 +30,7 @@ const Template: Story = (_args, { argTypes }) => ({
 
 export const Default = Template.bind({});
 Default.args = {
-  // windowFeatures: {},
+  windowFeatures: {},
   shareOptions: {
     url: 'https://github.com/',
   },

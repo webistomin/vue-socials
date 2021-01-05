@@ -1,4 +1,5 @@
 import { Story } from '@storybook/vue';
+import { action } from '@storybook/addon-actions';
 import {{pascalCase name}} from '../{{pascalCase name}}';
 
 export default {
@@ -9,7 +10,23 @@ export default {
 const Template: Story = (_args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { {{pascalCase name}} },
-  template: '<{{kebabCase name}} v-bind="$props">Share</{{kebabCase name}}>',
+  methods: {
+    onClose: action('emit close'),
+    onOpen: action('emit open'),
+    onBlock: action('emit block'),
+    onFocus: action('emit focus'),
+  },
+  template: `
+    <{{kebabCase name}}
+      v-bind="$props"
+      @popup-close="onClose"
+      @popup-open="onOpen"
+      @popup-block="onBlock"
+      @popup-focus="onFocus"
+    >
+      Share
+    </{{kebabCase name}}>
+`,
 });
 
 export const Default = Template.bind({});

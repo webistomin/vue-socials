@@ -13,7 +13,14 @@ const Template: Story = (_args, { argTypes }) => ({
   methods: {
     onLoad: action('emit load'),
   },
-  template: '<{{kebabCase name}} v-bind="$props" @load="onLoad"></{{kebabCase name}}>',
+  template: `
+    <{{kebabCase name}}
+      class="base-social"
+      v-bind="$props"
+      @load="onLoad"
+    >
+    </{{kebabCase name}}>
+  `,
 });
 
 export const Default = Template.bind({});

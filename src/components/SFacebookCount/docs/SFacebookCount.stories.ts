@@ -13,7 +13,13 @@ const Template: Story = (_args, { argTypes }) => ({
   methods: {
     onLoad: action('emit load'),
   },
-  template: '<s-facebook-count v-bind="$props" @load="onLoad"></s-facebook-count>',
+  template: `
+    <s-facebook-count
+      class="base-social"
+      v-bind="$props"
+      @load="onLoad"
+    >
+    </s-facebook-count>`,
 });
 
 export const Default = Template.bind({});

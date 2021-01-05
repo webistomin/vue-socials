@@ -13,12 +13,18 @@ const Template: Story = (_args, { argTypes }) => ({
   methods: {
     onLoad: action('emit load'),
   },
-  template: '<s-vkontakte-count v-bind="$props" @load="onLoad"></s-vkontakte-count>',
+  template: `
+    <s-vkontakte-count
+      class="base-social"
+      v-bind="$props"
+      @load="onLoad"
+    >
+    </s-vkontakte-count>
+  `,
 });
 
 export const Default = Template.bind({});
 Default.args = {
-  windowFeatures: {},
   shareOptions: {
     url: 'https://github.com/',
   },

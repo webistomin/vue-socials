@@ -18,6 +18,7 @@ const Template: Story = (_args, { argTypes }) => ({
   },
   template: `
     <{{kebabCase name}}
+      class="base-social"
       v-bind="$props"
       @popup-close="onClose"
       @popup-open="onOpen"

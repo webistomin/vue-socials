@@ -1,7 +1,7 @@
 /**
  * Hey!
  *
- * SFacebook component used for Facebook social network
+ * SFacebook component used for Facebook social network.
  * @link https://www.facebook.com/
  */
 

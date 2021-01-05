@@ -6,6 +6,7 @@
 
 import { ExtendedVue } from 'vue/types/vue';
 import Vue, { CreateElement, PropOptions, VNode } from 'vue';
+import { isUndefined } from '@/utils/inspect';
 
 export type TBaseCountMixin<T> = ExtendedVue<Vue,
 {
@@ -13,7 +14,8 @@ export type TBaseCountMixin<T> = ExtendedVue<Vue,
 },
 {
   generateComponent(h: CreateElement): VNode;
-  saveCount(count: (number | undefined)): void
+  handleResult<V>(value: V): void;
+  saveCount(count: (number | undefined)): void;
 },
 unknown,
 {
@@ -42,6 +44,15 @@ export default function BaseCount<T>(): TBaseCountMixin<T> {
     },
 
     methods: {
+      /**
+       * Emit response from JSONP
+       */
+      handleResult<V>(value: V) {
+        this.$emit('load', value);
+      },
+      /**
+       * Save counter value and render inside element
+       */
       saveCount(count: number | undefined): void {
         this.count = count;
       },
@@ -52,7 +63,7 @@ export default function BaseCount<T>(): TBaseCountMixin<T> {
         return h(
           'span',
           {},
-          this.count === undefined ? undefined : String(this.count),
+          isUndefined(this.count) ? undefined : String(this.count),
         );
       },
     },

@@ -9,6 +9,7 @@
 import Vue, { VueConstructor } from 'vue';
 import JSONP from '@/utils/jsonp';
 import getSerialisedParams from '@/utils/getSerialisedParams';
+import { getCommaSeparatedList } from '@/utils/getCommaSeparatedList';
 import BaseCount, { TBaseCountMixin } from '@/mixins/BaseCount/BaseCount';
 
 export interface ISFbCountResult {
@@ -60,14 +61,18 @@ export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseCo
 
     const finalURL = `${BASE_URL}${getSerialisedParams({
       access_token: accessToken,
-      fields: Array.isArray(fields) ? fields.join(',') : undefined,
-      scopes: Array.isArray(scopes) ? scopes.join(',') : undefined,
+      fields: getCommaSeparatedList(fields),
+      scopes: getCommaSeparatedList(scopes),
       id,
     })}`;
 
     JSONP<ISFbCountResult | ISFbCountError>(finalURL, (_err, data) => {
-      if (data && 'engagement' in data) {
-        this.saveCount(data.engagement?.share_count);
+      if (data) {
+        this.handleResult<ISFbCountResult | ISFbCountError>(data);
+
+        if ('engagement' in data) {
+          this.saveCount(data.engagement?.share_count);
+        }
       }
     });
   },

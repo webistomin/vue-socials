@@ -17,9 +17,11 @@ declare global {
   interface Window {
     VK: {
       Share?: {
-        count: (index: number, count: number) => void;
+        count: TSVkontakteCallback;
       };
-      callbacks?: ((count?: number) => void)[];
+      callbacks?: {
+        [key: string]: TSVkontakteCallback
+      };
     };
   }
 }
@@ -28,8 +30,28 @@ export interface ISVkontakteCountShareOptions {
   url?: string;
 }
 
+export type TSVkontakteCallback = (index: number, count: number) => void;
+
+export interface ISVkontakteResult {
+  index: number;
+  count: number;
+}
+
 export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseCountMixin<ISVkontakteCountShareOptions>>>).extend({
   mixins: [BaseCount<ISVkontakteCountShareOptions>()],
+
+  methods: {
+    handleVKResponse(index: number, count: number): void {
+      this.handleResult<ISVkontakteResult>({
+        index,
+        count,
+      });
+
+      this.saveCount(count);
+
+      delete window.VK.callbacks?.[`cb${index}`];
+    },
+  },
 
   mounted() {
     const { shareOptions } = this;
@@ -40,13 +62,17 @@ export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseCo
       window.VK = {};
     }
 
-    window.VK.callbacks = [];
+    if (!window.VK.callbacks) {
+      window.VK.callbacks = {};
+    }
+
     window.VK.Share = {
-      count: (index, count) => window.VK.callbacks?.[index](count),
+      count: (index, count) => window.VK.callbacks?.[`cb${index}`]?.(index, count),
     };
 
-    const index = window.VK.callbacks.length;
-    window.VK.callbacks.push(this.saveCount);
+    const index = Object.keys(window.VK.callbacks).length;
+    const key = `cb${index}`;
+    window.VK.callbacks[key] = this.handleVKResponse;
 
     const finalURL = `${BASE_URL}${getSerialisedParams({
       act: 'count',

@@ -1,4 +1,5 @@
 import { Story } from '@storybook/vue';
+import { action } from '@storybook/addon-actions';
 import SVkontakteCount from '../SVkontakteCount';
 
 export default {
@@ -9,7 +10,10 @@ export default {
 const Template: Story = (_args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { SVkontakteCount },
-  template: '<s-vkontakte-count v-bind="$props"></s-vkontakte-count>',
+  methods: {
+    onLoad: action('emit load'),
+  },
+  template: '<s-vkontakte-count v-bind="$props" @load="onLoad"></s-vkontakte-count>',
 });
 
 export const Default = Template.bind({});

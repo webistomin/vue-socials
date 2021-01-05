@@ -6,9 +6,9 @@
  */
 
 import Vue, {
-  CreateElement, VNode, VueConstructor, PropOptions,
+  CreateElement, VNode, VueConstructor,
 } from 'vue';
-import BaseSocial from '@/mixins/base-social/BaseSocial';
+import BaseSocial, { IBaseSocialMixin } from '@/mixins/BaseSocial/BaseSocial';
 import getSerialisedParams from '@/utils/getSerialisedParams';
 
 /**
@@ -21,17 +21,10 @@ export interface ISFacebookShareOptions {
   hashtag?: string;
 }
 
-export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<typeof BaseSocial>>).extend({
+export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<IBaseSocialMixin<ISFacebookShareOptions>>>).extend({
   name: 'SFacebook',
 
-  mixins: [BaseSocial],
-
-  props: {
-    shareOptions: {
-      type: Object,
-      required: true,
-    } as PropOptions<ISFacebookShareOptions>,
-  },
+  mixins: [BaseSocial<ISFacebookShareOptions>()],
 
   computed: {
     networkURL(): string {
@@ -50,25 +43,6 @@ export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<typeof 
   },
 
   render(h: CreateElement): VNode {
-    const { networkURL } = this;
-
-    return h(
-      'a',
-      {
-        attrs: {
-          href: networkURL,
-          target: '_blank',
-          rel: 'nofollow noopener noreferrer',
-          'aria-label': 'Share this with Facebook',
-        },
-        on: {
-          click: (event: Event) => {
-            event.preventDefault();
-            this.openShareDialog(networkURL);
-          },
-        },
-      },
-      this.$slots.default,
-    );
+    return this.generateComponent(h, this.networkURL, 'facebook');
   },
 });

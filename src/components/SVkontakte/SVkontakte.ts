@@ -6,9 +6,9 @@
  */
 
 import Vue, {
-  CreateElement, VNode, VueConstructor, PropOptions,
+  CreateElement, VNode, VueConstructor,
 } from 'vue';
-import BaseSocial from '@/mixins/base-social/BaseSocial';
+import BaseSocial, { IBaseSocialMixin } from '@/mixins/BaseSocial/BaseSocial';
 import getSerialisedParams from '@/utils/getSerialisedParams';
 
 /**
@@ -23,17 +23,10 @@ export interface ISVkontakteShareOptions {
   noVkLinks?: boolean;
 }
 
-export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<typeof BaseSocial>>).extend({
+export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<IBaseSocialMixin<ISVkontakteShareOptions>>>).extend({
   name: 'SVkontakte',
 
-  mixins: [BaseSocial],
-
-  props: {
-    shareOptions: {
-      type: Object,
-      default: () => ({}),
-    } as PropOptions<ISVkontakteShareOptions>,
-  },
+  mixins: [BaseSocial<ISVkontakteShareOptions>()],
 
   computed: {
     networkURL(): string {
@@ -42,6 +35,7 @@ export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<typeof 
       const {
         url, title, image, noParse, noVkLinks,
       } = shareOptions;
+
       const serialisedParams = getSerialisedParams({
         url,
         title,
@@ -55,25 +49,6 @@ export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<typeof 
   },
 
   render(h: CreateElement): VNode {
-    const { networkURL } = this;
-
-    return h(
-      'a',
-      {
-        attrs: {
-          href: networkURL,
-          target: '_blank',
-          rel: 'nofollow noopener noreferrer',
-          'aria-label': 'Share this with Vkontakte',
-        },
-        on: {
-          click: (event: Event) => {
-            event.preventDefault();
-            this.openShareDialog(networkURL);
-          },
-        },
-      },
-      this.$slots.default,
-    );
+    return this.generateComponent(h, this.networkURL, 'vkontakte');
   },
 });

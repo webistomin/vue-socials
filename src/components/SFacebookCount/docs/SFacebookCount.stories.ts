@@ -15,6 +15,8 @@ const Template: Story = (_args, { argTypes }) => ({
 export const Default = Template.bind({});
 Default.args = {
   shareOptions: {
-    url: 'https://github.com/',
+    id: 'https://github.com/',
+    fields: ['id', 'og_object'],
+    accessToken: '1729830587180291|102e6d79cda2fa63b65c99c039eed12a',
   },
 };

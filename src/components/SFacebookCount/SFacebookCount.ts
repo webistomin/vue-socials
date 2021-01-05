@@ -1,7 +1,15 @@
+/**
+ * Hey!
+ *
+ * SFacebookCount component used for Facebook social network
+ * @link https://www.facebook.com/
+ * @example https://graph.facebook.com/?url=https://github.com/
+ */
+
 import Vue, { VueConstructor } from 'vue';
 import JSONP from '@/utils/jsonp';
 import getSerialisedParams from '@/utils/getSerialisedParams';
-import { TBaseCountMixin } from '@/mixins/BaseCount/BaseCount';
+import BaseCount, { TBaseCountMixin } from '@/mixins/BaseCount/BaseCount';
 
 export interface ISFbCountResult {
   engagement?: {
@@ -34,25 +42,27 @@ export interface ISFbCountError {
  * @link https://developers.facebook.com/docs/graph-api/reference/v9.0/url
  */
 export interface ISFbCountShareOptions {
-  url: string;
+  id: string;
   accessToken: string;
   fields?: string[];
   scopes?: string[];
 }
 
 export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseCountMixin<ISFbCountShareOptions>>>).extend({
+  mixins: [BaseCount<ISFbCountShareOptions>()],
+
   mounted() {
     const BASE_URL = 'https://graph.facebook.com/';
     const { shareOptions } = this;
     const {
-      url, accessToken, fields, scopes,
+      id, accessToken, fields, scopes,
     } = shareOptions;
 
     const finalURL = `${BASE_URL}${getSerialisedParams({
       access_token: accessToken,
       fields: Array.isArray(fields) ? fields.join(',') : undefined,
       scopes: Array.isArray(scopes) ? scopes.join(',') : undefined,
-      url,
+      id,
     })}`;
 
     JSONP<ISFbCountResult | ISFbCountError>(finalURL, (_err, data) => {

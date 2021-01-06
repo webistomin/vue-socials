@@ -66,6 +66,18 @@ module.exports = [
   },
   {
     path: 'dist/vue-socials.esm.js',
+    name: 'SLine',
+    import: '{ SLine }',
+    limit: '2 KB',
+  },
+  {
+    path: 'dist/vue-socials.esm.js',
+    name: 'SLineCount',
+    import: '{ SLineCount }',
+    limit: '2 KB',
+  },
+  {
+    path: 'dist/vue-socials.esm.js',
     name: 'SLinkedIn',
     import: '{ SLinkedIn }',
     limit: '2 KB',

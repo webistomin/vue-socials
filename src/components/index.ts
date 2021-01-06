@@ -46,6 +46,8 @@ export { default as SInstaPaper } from './SInstaPaper';
 /**
  * L
  */
+export { default as SLine } from './SLine';
+export { default as SLineCount } from './SLineCount';
 export { default as SLinkedIn } from './SLinkedIn';
 export { default as SLiveJournal } from './SLiveJournal';
 

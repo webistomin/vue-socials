@@ -34,6 +34,11 @@ export { default as SGmail } from './SGmail';
 export { default as SHackerNews } from './SHackerNews';
 
 /**
+ * I
+ */
+export { default as SInstaPaper } from './SInstaPaper';
+
+/**
  * L
  */
 export { default as SLinkedIn } from './SLinkedIn';

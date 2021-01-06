@@ -54,6 +54,12 @@ module.exports = [
   },
   {
     path: 'dist/vue-socials.esm.js',
+    name: 'SInstaPaper',
+    import: '{ SInstaPaper }',
+    limit: '2 KB',
+  },
+  {
+    path: 'dist/vue-socials.esm.js',
     name: 'SLinkedIn',
     import: '{ SLinkedIn }',
     limit: '2 KB',

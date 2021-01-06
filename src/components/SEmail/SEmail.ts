@@ -1,7 +1,7 @@
 /**
  * Hey!
  *
- * SSms component used for sending SMS via an HTML link
+ * SEmail component used for sending Email via an HTML link
  */
 
 import Vue, { CreateElement, PropOptions, VNode } from 'vue';
@@ -10,34 +10,42 @@ import getSerialisedParams from '@/utils/getSerialisedParams';
 /**
  * Share parameters for link
  */
-export interface ISSmsShareOptions {
-  number: string;
+export interface ISEmailShareOptions {
+  mail: string;
+  subject?: string;
   body?: string;
+  cc?: string;
+  bcc?: string;
 }
 
 export default /* #__PURE__ */Vue.extend({
-  name: 'SSms',
+  name: 'SEmail',
 
   props: {
     /**
-     * Share parameters for SMS
+     * Share parameters for Email
      */
     shareOptions: {
       type: Object,
       required: true,
-    } as PropOptions<ISSmsShareOptions>,
+    } as PropOptions<ISEmailShareOptions>,
   },
 
   computed: {
     networkURL(): string {
-      const BASE_URL = 'sms:';
+      const BASE_URL = 'mailto:';
       const { shareOptions } = this;
-      const { number, body } = shareOptions;
+      const {
+        mail, subject, body, cc, bcc,
+      } = shareOptions;
       const serialisedParams = getSerialisedParams({
+        subject,
         body,
+        cc,
+        bcc,
       });
 
-      return `${BASE_URL}${number}${serialisedParams}`;
+      return `${BASE_URL}${mail}${serialisedParams}`;
     },
   },
 

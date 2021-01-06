@@ -6,6 +6,12 @@ module.exports = [
   },
   {
     path: 'dist/vue-socials.esm.js',
+    name: 'SEmail',
+    import: '{ SEmail }',
+    limit: '2 KB',
+  },
+  {
+    path: 'dist/vue-socials.esm.js',
     name: 'SFacebook',
     import: '{ SFacebook }',
     limit: '2 KB',

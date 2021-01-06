@@ -6,6 +6,11 @@
  */
 
 /**
+ * E
+ */
+export { default as SEmail } from './SEmail';
+
+/**
  * F
  */
 export { default as SFacebook } from './SFacebook';

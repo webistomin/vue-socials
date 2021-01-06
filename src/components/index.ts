@@ -31,6 +31,7 @@ export { default as SGmail } from './SGmail';
  * L
  */
 export { default as SLinkedIn } from './SLinkedIn';
+export { default as SLiveJournal } from './SLiveJournal';
 
 /**
  * O

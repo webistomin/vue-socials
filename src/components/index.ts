@@ -54,3 +54,8 @@ export { default as STwitter } from './STwitter';
  */
 export { default as SVkontakte } from './SVkontakte';
 export { default as SVkontakteCount } from './SVkontakteCount';
+
+/**
+ * W
+ */
+export { default as SWhatsApp } from './SWhatsApp';

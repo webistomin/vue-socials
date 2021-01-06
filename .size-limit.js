@@ -82,4 +82,10 @@ module.exports = [
     import: '{ SVkontakteCount }',
     limit: '2 KB',
   },
+  {
+    path: 'dist/vue-socials.esm.js',
+    name: 'SWhatsApp',
+    import: '{ SWhatsApp }',
+    limit: '2 KB',
+  },
 ];

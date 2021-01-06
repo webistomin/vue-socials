@@ -42,6 +42,7 @@ export { default as SSms } from './SSms';
  * T
  */
 export { default as STelegram } from './STelegram';
+export { default as STwitter } from './STwitter';
 
 /**
  * V

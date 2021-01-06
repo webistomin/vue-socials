@@ -26,6 +26,6 @@ Default.args = {
     cc: 'google1@gmail.com',
     bcc: 'google2@gmail.com',
     subject: 'Subject',
-    body: 'Hello \n World',
+    body: 'Hello\nWorld',
   },
 };

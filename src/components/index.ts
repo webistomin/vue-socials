@@ -39,6 +39,11 @@ export { default as SRedditCount } from './SRedditCount';
 export { default as SSms } from './SSms';
 
 /**
+ * T
+ */
+export { default as STelegram } from './STelegram';
+
+/**
  * V
  */
 export { default as SVkontakte } from './SVkontakte';

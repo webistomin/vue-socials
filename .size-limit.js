@@ -60,6 +60,12 @@ module.exports = [
   },
   {
     path: 'dist/vue-socials.esm.js',
+    name: 'STelegram',
+    import: '{ STelegram }',
+    limit: '2 KB',
+  },
+  {
+    path: 'dist/vue-socials.esm.js',
     name: 'SVkontakte',
     import: '{ SVkontakte }',
     limit: '2 KB',

@@ -28,6 +28,11 @@ export { default as SFacebookCount } from './SFacebookCount';
 export { default as SGmail } from './SGmail';
 
 /**
+ * H
+ */
+export { default as SHackerNews } from './SHackerNews';
+
+/**
  * L
  */
 export { default as SLinkedIn } from './SLinkedIn';

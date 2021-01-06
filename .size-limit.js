@@ -48,6 +48,18 @@ module.exports = [
   },
   {
     path: 'dist/vue-socials.esm.js',
+    name: 'SPinterest',
+    import: '{ SPinterest }',
+    limit: '2 KB',
+  },
+  {
+    path: 'dist/vue-socials.esm.js',
+    name: 'SPinterestCount',
+    import: '{ SPinterestCount }',
+    limit: '2 KB',
+  },
+  {
+    path: 'dist/vue-socials.esm.js',
     name: 'SReddit',
     import: '{ SReddit }',
     limit: '2 KB',

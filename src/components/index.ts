@@ -33,6 +33,12 @@ export { default as SOdnoklassniki } from './SOdnoklassniki';
 export { default as SOdnoklassnikiCount } from './SOdnoklassnikiCount';
 
 /**
+ * P
+ */
+export { default as SPinterest } from './SPinterest';
+export { default as SPinterestCount } from './SPinterestCount';
+
+/**
  * R
  */
 export { default as SReddit } from './SReddit';

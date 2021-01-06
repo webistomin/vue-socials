@@ -11,6 +11,11 @@
 export { default as SBlogger } from './SBlogger';
 
 /**
+ * D
+ */
+export { default as SDiaspora } from './SDiaspora';
+
+/**
  * E
  */
 export { default as SEmail } from './SEmail';

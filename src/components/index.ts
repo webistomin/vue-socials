@@ -48,6 +48,7 @@ export { default as SSms } from './SSms';
  */
 export { default as STelegram } from './STelegram';
 export { default as STumblr } from './STumblr';
+export { default as STumblrCount } from './STumblrCount';
 export { default as STwitter } from './STwitter';
 
 /**

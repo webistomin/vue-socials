@@ -78,6 +78,12 @@ module.exports = [
   },
   {
     path: 'dist/vue-socials.esm.js',
+    name: 'STumblrCount',
+    import: '{ STumblrCount }',
+    limit: '2 KB',
+  },
+  {
+    path: 'dist/vue-socials.esm.js',
     name: 'STwitter',
     import: '{ STwitter }',
     limit: '2 KB',

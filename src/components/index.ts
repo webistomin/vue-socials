@@ -90,4 +90,5 @@ export { default as SVkontakteCount } from './SVkontakteCount';
 /**
  * W
  */
+export { default as SWeibo } from './SWeibo';
 export { default as SWhatsApp } from './SWhatsApp';

@@ -67,6 +67,7 @@ export { default as SPocket } from './SPocket';
  */
 export { default as SReddit } from './SReddit';
 export { default as SRedditCount } from './SRedditCount';
+export { default as SRenRen } from './SRenRen';
 
 /**
  * S

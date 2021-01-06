@@ -17,6 +17,11 @@ export { default as SFacebook } from './SFacebook';
 export { default as SFacebookCount } from './SFacebookCount';
 
 /**
+ * G
+ */
+export { default as SGmail } from './SGmail';
+
+/**
  * O
  */
 export { default as SOdnoklassniki } from './SOdnoklassniki';

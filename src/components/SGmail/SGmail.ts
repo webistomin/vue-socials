@@ -1,7 +1,7 @@
 /**
  * Hey!
  *
- * SEmail component used for sending Email via an HTML link
+ * SGmail component used for sending Email via GMail
  */
 
 import Vue, { CreateElement, PropOptions, VNode } from 'vue';
@@ -9,10 +9,10 @@ import getSerialisedParams from '@/utils/getSerialisedParams';
 
 /**
  * Share parameters for link
- * @link https://tools.ietf.org/html/rfc2368
  */
-export interface ISEmailShareOptions {
-  mail: string;
+export interface ISGmailShareOptions {
+  to: string;
+  su?: string;
   subject?: string;
   body?: string;
   cc?: string;
@@ -20,7 +20,7 @@ export interface ISEmailShareOptions {
 }
 
 export default /* #__PURE__ */Vue.extend({
-  name: 'SEmail',
+  name: 'SGmail',
 
   props: {
     /**
@@ -29,24 +29,27 @@ export default /* #__PURE__ */Vue.extend({
     shareOptions: {
       type: Object,
       required: true,
-    } as PropOptions<ISEmailShareOptions>,
+    } as PropOptions<ISGmailShareOptions>,
   },
 
   computed: {
     networkURL(): string {
-      const BASE_URL = 'mailto:';
+      const BASE_URL = 'https://mail.google.com/mail/';
       const { shareOptions } = this;
       const {
-        mail, subject, body, cc, bcc,
+        to, su, subject, body, cc, bcc,
       } = shareOptions;
       const serialisedParams = getSerialisedParams({
+        view: 'cm',
+        to,
+        su,
         subject,
         body,
         cc,
         bcc,
       });
 
-      return `${BASE_URL}${mail}${serialisedParams}`;
+      return `${BASE_URL}${serialisedParams}`;
     },
   },
 

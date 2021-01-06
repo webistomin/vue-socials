@@ -30,6 +30,12 @@ module.exports = [
   },
   {
     path: 'dist/vue-socials.esm.js',
+    name: 'SLinkedIn',
+    import: '{ SLinkedIn }',
+    limit: '2 KB',
+  },
+  {
+    path: 'dist/vue-socials.esm.js',
     name: 'SOdnoklassniki',
     import: '{ SOdnoklassniki }',
     limit: '2 KB',

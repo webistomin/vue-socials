@@ -14,6 +14,7 @@ export { default as SBlogger } from './SBlogger';
  * E
  */
 export { default as SEmail } from './SEmail';
+export { default as SEvernote } from './SEvernote';
 
 /**
  * F

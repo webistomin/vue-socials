@@ -45,7 +45,7 @@ export default function BaseCount<T>(): TBaseCountMixin<T> {
 
     methods: {
       /**
-       * Emit response from JSONP
+       * Emit response from JSONP or HTTP
        */
       handleResult<V>(value: V) {
         this.$emit('load', value);

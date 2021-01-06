@@ -72,6 +72,18 @@ module.exports = [
   },
   {
     path: 'dist/vue-socials.esm.js',
+    name: 'STumblr',
+    import: '{ STumblr }',
+    limit: '2 KB',
+  },
+  {
+    path: 'dist/vue-socials.esm.js',
+    name: 'STwitter',
+    import: '{ STwitter }',
+    limit: '2 KB',
+  },
+  {
+    path: 'dist/vue-socials.esm.js',
     name: 'SVkontakte',
     import: '{ SVkontakte }',
     limit: '2 KB',

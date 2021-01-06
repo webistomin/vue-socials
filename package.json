@@ -47,7 +47,7 @@
   "reveal": true,
   "sideEffects": false,
   "scripts": {
-    "dev": "start-storybook -p 6006",
+    "dev": "start-storybook -p 3000",
     "prebuild": "rimraf dist",
     "build": "cross-env NODE_ENV=production rollup --config build/rollup.config.js",
     "build:ssr": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format cjs",

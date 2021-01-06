@@ -18,6 +18,11 @@ export { default as SOdnoklassniki } from './SOdnoklassniki';
 export { default as SOdnoklassnikiCount } from './SOdnoklassnikiCount';
 
 /**
+ * S
+ */
+export { default as SSms } from './SSms';
+
+/**
  * V
  */
 export { default as SVkontakte } from './SVkontakte';

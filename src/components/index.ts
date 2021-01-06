@@ -63,6 +63,11 @@ export { default as SPinterestCount } from './SPinterestCount';
 export { default as SPocket } from './SPocket';
 
 /**
+ * Q
+ */
+export { default as SQZone } from './SQZone';
+
+/**
  * R
  */
 export { default as SReddit } from './SReddit';

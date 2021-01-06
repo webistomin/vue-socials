@@ -44,6 +44,7 @@ export { default as SOdnoklassnikiCount } from './SOdnoklassnikiCount';
  */
 export { default as SPinterest } from './SPinterest';
 export { default as SPinterestCount } from './SPinterestCount';
+export { default as SPocket } from './SPocket';
 
 /**
  * R

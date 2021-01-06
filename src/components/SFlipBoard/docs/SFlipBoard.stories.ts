@@ -1,0 +1,46 @@
+import { Story } from '@storybook/vue';
+import { action } from '@storybook/addon-actions';
+import SFlipBoard from '../SFlipBoard';
+
+export default {
+  title: 'Share/SFlipBoard',
+  component: SFlipBoard,
+};
+
+const Template: Story = (_args, { argTypes }) => ({
+  props: Object.keys(argTypes),
+  components: { SFlipBoard },
+  methods: {
+    onClose: action('emit close'),
+    onOpen: action('emit open'),
+    onBlock: action('emit block'),
+    onFocus: action('emit focus'),
+  },
+  template: `
+    <s-flip-board
+      class="base-social"
+      v-bind="$props"
+      @popup-close="onClose"
+      @popup-open="onOpen"
+      @popup-block="onBlock"
+      @popup-focus="onFocus"
+    >
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="10 10 44 44">
+      <g fill="#000000">
+        <path d="M24.667 54H10V10h14.814l-.147 44z"/>
+        <path d="M39.48 10H24.668v14.667H54V10H39.48z" opacity=".85"/>
+        <path d="M24.667 24.667h14.667v14.667H24.667V24.667z" opacity=".75"/>
+      </g>
+    </svg>
+    </s-flip-board>
+`,
+});
+
+export const Default = Template.bind({});
+Default.args = {
+  windowFeatures: {},
+  shareOptions: {
+    url: 'https://github.com/',
+    title: 'Title',
+  },
+};

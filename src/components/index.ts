@@ -21,6 +21,7 @@ export { default as SEvernote } from './SEvernote';
  */
 export { default as SFacebook } from './SFacebook';
 export { default as SFacebookCount } from './SFacebookCount';
+export { default as SFlipBoard } from './SFlipBoard';
 
 /**
  * G

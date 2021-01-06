@@ -42,6 +42,12 @@ module.exports = [
   },
   {
     path: 'dist/vue-socials.esm.js',
+    name: 'SReddit',
+    import: '{ SReddit }',
+    limit: '2 KB',
+  },
+  {
+    path: 'dist/vue-socials.esm.js',
     name: 'SSms',
     import: '{ SSms }',
     limit: '2 KB',

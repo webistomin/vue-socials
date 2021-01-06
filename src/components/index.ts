@@ -28,6 +28,11 @@ export { default as SOdnoklassniki } from './SOdnoklassniki';
 export { default as SOdnoklassnikiCount } from './SOdnoklassnikiCount';
 
 /**
+ * R
+ */
+export { default as SReddit } from './SReddit';
+
+/**
  * S
  */
 export { default as SSms } from './SSms';

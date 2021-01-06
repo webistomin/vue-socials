@@ -31,6 +31,7 @@ export { default as SOdnoklassnikiCount } from './SOdnoklassnikiCount';
  * R
  */
 export { default as SReddit } from './SReddit';
+export { default as SRedditCount } from './SRedditCount';
 
 /**
  * S

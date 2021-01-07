@@ -101,6 +101,7 @@ export { default as SVkontakteCount } from './SVkontakteCount';
  */
 export { default as SWeibo } from './SWeibo';
 export { default as SWhatsApp } from './SWhatsApp';
+export { default as SWordPress } from './SWordPress';
 
 /**
  * Y

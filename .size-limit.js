@@ -204,6 +204,12 @@ module.exports = [
   },
   {
     path: 'dist/vue-socials.esm.js',
+    name: 'SWordPress',
+    import: '{ SWordPress }',
+    limit: '2 KB',
+  },
+  {
+    path: 'dist/vue-socials.esm.js',
     name: 'SYahoo',
     import: '{ SYahoo }',
     limit: '2 KB',

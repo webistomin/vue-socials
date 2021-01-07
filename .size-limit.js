@@ -42,6 +42,12 @@ module.exports = [
   },
   {
     path: 'dist/vue-socials.esm.js',
+    name: 'SFacebookMessenger',
+    import: '{ SFacebookMessenger }',
+    limit: '2 KB',
+  },
+  {
+    path: 'dist/vue-socials.esm.js',
     name: 'SFlipBoard',
     import: '{ SFlipBoard }',
     limit: '2 KB',

@@ -102,6 +102,12 @@ module.exports = [
   },
   {
     path: 'dist/vue-socials.esm.js',
+    name: 'SHouzz',
+    import: '{ SHouzz }',
+    limit: '2 KB',
+  },
+  {
+    path: 'dist/vue-socials.esm.js',
     name: 'SInstaPaper',
     import: '{ SInstaPaper }',
     limit: '2 KB',

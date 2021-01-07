@@ -44,6 +44,7 @@ export { default as SGoogleBookmarks } from './SGoogleBookmarks';
 export { default as SHackerNews } from './SHackerNews';
 export { default as SHatena } from './SHatena';
 export { default as SHatenaCount } from './SHatenaCount';
+export { default as SHouzz } from './SHouzz';
 
 /**
  * I

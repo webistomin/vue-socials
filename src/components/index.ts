@@ -14,6 +14,7 @@ export { default as SBlogger } from './SBlogger';
  * D
  */
 export { default as SDiaspora } from './SDiaspora';
+export { default as SDouban } from './SDouban';
 
 /**
  * E

@@ -240,6 +240,12 @@ module.exports = [
   },
   {
     path: 'dist/vue-socials.esm.js',
+    name: 'SXing',
+    import: '{ SXing }',
+    limit: '2 KB',
+  },
+  {
+    path: 'dist/vue-socials.esm.js',
     name: 'SYahoo',
     import: '{ SYahoo }',
     limit: '2 KB',

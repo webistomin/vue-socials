@@ -113,6 +113,11 @@ export { default as SWhatsApp } from './SWhatsApp';
 export { default as SWordPress } from './SWordPress';
 
 /**
+ * X
+ */
+export { default as SXing } from './SXing';
+
+/**
  * Y
  */
 export { default as SYahoo } from './SYahoo';

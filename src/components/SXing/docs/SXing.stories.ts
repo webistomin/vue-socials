@@ -1,0 +1,42 @@
+import { Story } from '@storybook/vue';
+import { action } from '@storybook/addon-actions';
+import SXing from '../SXing';
+
+export default {
+  title: 'Share/SXing',
+  component: SXing,
+};
+
+const Template: Story = (_args, { argTypes }) => ({
+  props: Object.keys(argTypes),
+  components: { SXing },
+  methods: {
+    onClose: action('emit close'),
+    onOpen: action('emit open'),
+    onBlock: action('emit block'),
+    onFocus: action('emit focus'),
+  },
+  template: `
+    <s-xing
+      class="base-social"
+      v-bind="$props"
+      @popup-close="onClose"
+      @popup-open="onOpen"
+      @popup-block="onBlock"
+      @popup-focus="onFocus"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 455 455">
+        <path fill-rule="evenodd" d="M0 0v455h455V0H0zm78.75 289.756l54.653-89.993-40.981-72.205h69.366l41.002 72.205-54.657 89.993H78.75zM337.369 385h-73.605l-70.442-123.493L302.663 70h73.587L266.91 261.507 337.369 385z" clip-rule="evenodd"/>
+      </svg>
+    </s-xing>
+`,
+});
+
+export const Default = Template.bind({});
+Default.args = {
+  windowFeatures: {},
+  shareOptions: {
+    url: 'https://github.com/',
+    followUrl: '',
+  },
+};

@@ -56,6 +56,7 @@ export { default as SLiveJournal } from './SLiveJournal';
 /**
  * M
  */
+export { default as SMailRu } from './SMailRu';
 export { default as SMicrosoftTeams } from './SMicrosoftTeams';
 
 /**

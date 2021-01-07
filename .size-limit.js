@@ -102,6 +102,12 @@ module.exports = [
   },
   {
     path: 'dist/vue-socials.esm.js',
+    name: 'SMailRu',
+    import: '{ SMailRu }',
+    limit: '2 KB',
+  },
+  {
+    path: 'dist/vue-socials.esm.js',
     name: 'SMicrosoftTeams',
     import: '{ SMicrosoftTeams }',
     limit: '2 KB',

@@ -52,6 +52,11 @@ export { default as SHouzz } from './SHouzz';
 export { default as SInstaPaper } from './SInstaPaper';
 
 /**
+ * I
+ */
+export { default as SKakaoStory } from './SKakaoStory';
+
+/**
  * L
  */
 export { default as SLine } from './SLine';

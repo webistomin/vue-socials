@@ -114,6 +114,12 @@ module.exports = [
   },
   {
     path: 'dist/vue-socials.esm.js',
+    name: 'SKakaoStory',
+    import: '{ SKakaoStory }',
+    limit: '2 KB',
+  },
+  {
+    path: 'dist/vue-socials.esm.js',
     name: 'SLine',
     import: '{ SLine }',
     limit: '2 KB',

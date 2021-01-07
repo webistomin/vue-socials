@@ -168,6 +168,12 @@ module.exports = [
   },
   {
     path: 'dist/vue-socials.esm.js',
+    name: 'STrello',
+    import: '{ STrello }',
+    limit: '2 KB',
+  },
+  {
+    path: 'dist/vue-socials.esm.js',
     name: 'STumblr',
     import: '{ STumblr }',
     limit: '2 KB',

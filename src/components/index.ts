@@ -35,6 +35,7 @@ export { default as SFlipBoard } from './SFlipBoard';
 /**
  * G
  */
+export { default as SGithub } from './SGithub';
 export { default as SGmail } from './SGmail';
 export { default as SGoogleBookmarks } from './SGoogleBookmarks';
 

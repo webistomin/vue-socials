@@ -72,6 +72,12 @@ module.exports = [
   },
   {
     path: 'dist/vue-socials.esm.js',
+    name: 'SGithub',
+    import: '{ SGithub }',
+    limit: '2 KB',
+  },
+  {
+    path: 'dist/vue-socials.esm.js',
     name: 'SGmail',
     import: '{ SGmail }',
     limit: '2 KB',

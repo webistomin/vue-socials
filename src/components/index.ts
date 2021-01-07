@@ -13,6 +13,7 @@ export { default as SBlogger } from './SBlogger';
 /**
  * D
  */
+export { default as SDevTo } from './SDevTo';
 export { default as SDiaspora } from './SDiaspora';
 export { default as SDouban } from './SDouban';
 

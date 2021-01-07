@@ -53,6 +53,11 @@ export { default as SLinkedIn } from './SLinkedIn';
 export { default as SLiveJournal } from './SLiveJournal';
 
 /**
+ * M
+ */
+export { default as SMicrosoftTeams } from './SMicrosoftTeams';
+
+/**
  * O
  */
 export { default as SOdnoklassniki } from './SOdnoklassniki';

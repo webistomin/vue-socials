@@ -104,6 +104,7 @@ export { default as STwitter } from './STwitter';
 /**
  * V
  */
+export { default as SViber } from './SViber';
 export { default as SVkontakte } from './SVkontakte';
 export { default as SVkontakteCount } from './SVkontakteCount';
 

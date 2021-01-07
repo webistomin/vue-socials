@@ -222,6 +222,12 @@ module.exports = [
   },
   {
     path: 'dist/vue-socials.esm.js',
+    name: 'SViber',
+    import: '{ SViber }',
+    limit: '2 KB',
+  },
+  {
+    path: 'dist/vue-socials.esm.js',
     name: 'SVkontakte',
     import: '{ SVkontakte }',
     limit: '2 KB',

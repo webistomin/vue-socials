@@ -86,6 +86,7 @@ export { default as SRenRen } from './SRenRen';
 /**
  * S
  */
+export { default as SSkype } from './SSkype';
 export { default as SSms } from './SSms';
 
 /**

@@ -127,3 +127,4 @@ export { default as SXing } from './SXing';
  * Y
  */
 export { default as SYahoo } from './SYahoo';
+export { default as SYammer } from './SYammer';

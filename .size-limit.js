@@ -286,4 +286,10 @@ module.exports = [
     import: '{ SYahoo }',
     limit: '2 KB',
   },
+  {
+    path: 'dist/vue-socials.esm.js',
+    name: 'SYammer',
+    import: '{ SYammer }',
+    limit: '2 KB',
+  },
 ];

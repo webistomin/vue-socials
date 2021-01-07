@@ -186,6 +186,12 @@ module.exports = [
   },
   {
     path: 'dist/vue-socials.esm.js',
+    name: 'SThreema',
+    import: '{ SThreema }',
+    limit: '2 KB',
+  },
+  {
+    path: 'dist/vue-socials.esm.js',
     name: 'STrello',
     import: '{ STrello }',
     limit: '2 KB',

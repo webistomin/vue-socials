@@ -94,6 +94,7 @@ export { default as SSms } from './SSms';
  * T
  */
 export { default as STelegram } from './STelegram';
+export { default as SThreema } from './SThreema';
 export { default as STrello } from './STrello';
 export { default as STumblr } from './STumblr';
 export { default as STumblrCount } from './STumblrCount';

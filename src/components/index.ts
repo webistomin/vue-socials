@@ -41,6 +41,8 @@ export { default as SGoogleBookmarks } from './SGoogleBookmarks';
  * H
  */
 export { default as SHackerNews } from './SHackerNews';
+export { default as SHatena } from './SHatena';
+export { default as SHatenaCount } from './SHatenaCount';
 
 /**
  * I

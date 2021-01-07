@@ -84,6 +84,18 @@ module.exports = [
   },
   {
     path: 'dist/vue-socials.esm.js',
+    name: 'SHatena',
+    import: '{ SHatena }',
+    limit: '2 KB',
+  },
+  {
+    path: 'dist/vue-socials.esm.js',
+    name: 'SHatenaCount',
+    import: '{ SHatenaCount }',
+    limit: '2 KB',
+  },
+  {
+    path: 'dist/vue-socials.esm.js',
     name: 'SInstaPaper',
     import: '{ SInstaPaper }',
     limit: '2 KB',

@@ -54,6 +54,12 @@ module.exports = [
   },
   {
     path: 'dist/vue-socials.esm.js',
+    name: 'SGoogleBookmarks',
+    import: '{ SGoogleBookmarks }',
+    limit: '2 KB',
+  },
+  {
+    path: 'dist/vue-socials.esm.js',
     name: 'SHackerNews',
     import: '{ SHackerNews }',
     limit: '2 KB',
@@ -194,6 +200,12 @@ module.exports = [
     path: 'dist/vue-socials.esm.js',
     name: 'SWhatsApp',
     import: '{ SWhatsApp }',
+    limit: '2 KB',
+  },
+  {
+    path: 'dist/vue-socials.esm.js',
+    name: 'SYahoo',
+    import: '{ SYahoo }',
     limit: '2 KB',
   },
 ];

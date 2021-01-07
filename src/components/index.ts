@@ -32,6 +32,7 @@ export { default as SFlipBoard } from './SFlipBoard';
  * G
  */
 export { default as SGmail } from './SGmail';
+export { default as SGoogleBookmarks } from './SGoogleBookmarks';
 
 /**
  * H
@@ -100,3 +101,8 @@ export { default as SVkontakteCount } from './SVkontakteCount';
  */
 export { default as SWeibo } from './SWeibo';
 export { default as SWhatsApp } from './SWhatsApp';
+
+/**
+ * Y
+ */
+export { default as SYahoo } from './SYahoo';

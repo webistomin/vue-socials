@@ -2,7 +2,7 @@
 * Hey!
 *
 * SGithub component used for GitHub social network
-* @link ...
+* @link https://github.com/
 */
 
 import Vue, {
@@ -11,11 +11,9 @@ import Vue, {
 import BaseSocial, { TBaseSocialMixin } from '@/mixins/BaseSocial/BaseSocial';
 
 const GITHUB_LINK_TYPES = {
-  watch: 'watch',
-  fork: 'fork',
   sponsor: 'sponsor',
-  star: 'star',
   follow: 'follow',
+  profile: 'profile',
 };
 
 export type TSGithubLinkType = typeof GITHUB_LINK_TYPES[keyof typeof GITHUB_LINK_TYPES];
@@ -25,8 +23,7 @@ export type TSGithubLinkType = typeof GITHUB_LINK_TYPES[keyof typeof GITHUB_LINK
 */
 export interface ISGithubShareOptions {
   username: string;
-  repository?: string;
-  type?: TSGithubLinkType;
+  type: TSGithubLinkType;
 }
 
 export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseSocialMixin<ISGithubShareOptions>>>).extend({
@@ -36,24 +33,19 @@ export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseSo
 
   computed: {
     networkURL(): string {
-      const BASE_URL = 'https://github.com';
+      const BASE_URL = 'https://github.com/';
 
       const { shareOptions } = this;
       const {
-        username, repository, type,
+        username, type,
       } = shareOptions;
 
       switch (type) {
-        case GITHUB_LINK_TYPES.fork:
-          return `${BASE_URL}/${username}/${repository}/fork`;
-        case GITHUB_LINK_TYPES.star:
-          return `${BASE_URL}/${username}/${repository}/stargazers`;
-        case GITHUB_LINK_TYPES.watch:
-          return `${BASE_URL}/${username}/${repository}/watchers`;
         case GITHUB_LINK_TYPES.sponsor:
-          return `${BASE_URL}/sponsors/${username}`;
+          return `${BASE_URL}sponsors/${username}`;
         case GITHUB_LINK_TYPES.follow:
-          return `${BASE_URL}/${username}?tab=followers`;
+          return `${BASE_URL}${username}?tab=followers`;
+        case GITHUB_LINK_TYPES.profile:
         default:
           return `${BASE_URL}${username}`;
       }

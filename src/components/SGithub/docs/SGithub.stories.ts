@@ -37,7 +37,6 @@ Default.args = {
   windowFeatures: {},
   shareOptions: {
     username: 'webistomin',
-    repository: 'nanogram.js',
-    type: 'follow',
+    type: 'sponsor',
   },
 };

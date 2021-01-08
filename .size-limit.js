@@ -84,6 +84,18 @@ module.exports = [
   },
   {
     path: 'dist/vue-socials.esm.js',
+    name: 'SGithubGist',
+    import: '{ SGithubGist }',
+    limit: '2 KB',
+  },
+  {
+    path: 'dist/vue-socials.esm.js',
+    name: 'SGithubGistCount',
+    import: '{ SGithubGistCount }',
+    limit: '2 KB',
+  },
+  {
+    path: 'dist/vue-socials.esm.js',
     name: 'SGithubRepo',
     import: '{ SGithubRepo }',
     limit: '2 KB',

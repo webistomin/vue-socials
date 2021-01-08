@@ -37,6 +37,8 @@ export { default as SFlipBoard } from './SFlipBoard';
  */
 export { default as SGithub } from './SGithub';
 export { default as SGithubCount } from './SGithubCount';
+export { default as SGithubGist } from './SGithubGist';
+export { default as SGithubGistCount } from './SGithubGistCount';
 export { default as SGithubRepo } from './SGithubRepo';
 export { default as SGithubRepoCount } from './SGithubRepoCount';
 export { default as SGmail } from './SGmail';

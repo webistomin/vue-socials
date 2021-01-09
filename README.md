@@ -45,13 +45,11 @@
 
 ## Key Features ✨
 
-* **20+** reusable components
-* **Small** ~ 1KB component average size (minified and gzipped). <a href="https://github.com/ai/size-limit">Size Limit</a> controls the size
-* **Tree shakeable**
+* **50+** reusable components
+* **Small** `~7KB` (minified and gzipped). <a href="https://github.com/ai/size-limit">Size Limit</a> controls the size
+* Fully **tree-shakeable**
 * **No dependencies**
-* **Easy to use**
-* **Typescript** support
-* **Nuxt.js** support
+* Built with **a11y** in mind
 
 ## Documentation 🤗
 

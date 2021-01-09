@@ -1,12 +1,16 @@
 import { Story } from '@storybook/vue';
-import SEmail from '../SEmail';
+import SEmail, { ISEmailShareOptions } from '../SEmail';
+
+interface ISEmailStoryArgs {
+  shareOptions: ISEmailShareOptions;
+}
 
 export default {
   title: 'Share/SEmail',
   component: SEmail,
 };
 
-const Template: Story = (_args, { argTypes }) => ({
+const Template: Story<ISEmailStoryArgs> = (_args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { SEmail },
   template: `

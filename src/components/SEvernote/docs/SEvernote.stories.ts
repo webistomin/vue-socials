@@ -1,13 +1,19 @@
 import { Story } from '@storybook/vue';
 import { action } from '@storybook/addon-actions';
-import SEvernote from '../SEvernote';
+import { IWindowFeatures } from '@/types/common/windowFeatures';
+import SEvernote, { ISEvernoteShareOptions } from '../SEvernote';
+
+interface ISEvernoteStoryArgs {
+  windowFeatures: IWindowFeatures;
+  shareOptions: ISEvernoteShareOptions;
+}
 
 export default {
   title: 'Share/SEvernote',
   component: SEvernote,
 };
 
-const Template: Story = (_args, { argTypes }) => ({
+const Template: Story<ISEvernoteStoryArgs> = (_args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { SEvernote },
   methods: {
@@ -34,7 +40,10 @@ const Template: Story = (_args, { argTypes }) => ({
 
 export const Default = Template.bind({});
 Default.args = {
-  windowFeatures: {},
+  windowFeatures: {
+    width: 800,
+    height: 560,
+  },
   shareOptions: {
     url: 'https://github.com/',
     title: 'Title',

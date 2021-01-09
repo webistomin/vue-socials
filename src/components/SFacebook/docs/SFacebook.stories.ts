@@ -1,13 +1,19 @@
 import { Story } from '@storybook/vue';
 import { action } from '@storybook/addon-actions';
-import SFacebook from '../SFacebook';
+import { IWindowFeatures } from '@/types/common/windowFeatures';
+import SFacebook, { ISFacebookShareOptions } from '../SFacebook';
+
+interface ISFacebookStoryArgs {
+  windowFeatures: IWindowFeatures;
+  shareOptions: ISFacebookShareOptions;
+}
 
 export default {
   title: 'Share/SFacebook',
   component: SFacebook,
 };
 
-const Template: Story = (_args, { argTypes }) => ({
+const Template: Story<ISFacebookStoryArgs> = (_args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { SFacebook },
   methods: {
@@ -33,8 +39,13 @@ const Template: Story = (_args, { argTypes }) => ({
 
 export const Default = Template.bind({});
 Default.args = {
-  windowFeatures: {},
+  windowFeatures: {
+    width: 685,
+    height: 600,
+  },
   shareOptions: {
     url: 'https://github.com/',
+    quote: 'Quote',
+    hashtag: '#Github',
   },
 };

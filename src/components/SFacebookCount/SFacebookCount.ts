@@ -9,7 +9,7 @@
 import Vue, { VueConstructor } from 'vue';
 import JSONP from '@/utils/jsonp';
 import getSerialisedParams from '@/utils/getSerialisedParams';
-import { getCommaSeparatedList } from '@/utils/getSeparatedList';
+import getSeparatedList from '@/utils/getSeparatedList';
 import BaseCount, { TBaseCountMixin } from '@/mixins/BaseCount/BaseCount';
 
 export interface ISFbCountResult {
@@ -61,8 +61,8 @@ export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseCo
 
     const finalURL = `${BASE_URL}${getSerialisedParams({
       access_token: accessToken,
-      fields: getCommaSeparatedList(fields),
-      scopes: getCommaSeparatedList(scopes),
+      fields: getSeparatedList(fields),
+      scopes: getSeparatedList(scopes),
       id,
     })}`;
 

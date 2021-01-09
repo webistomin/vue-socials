@@ -3,6 +3,7 @@
  *
  * SFacebook component used for Facebook social network.
  * @link https://www.facebook.com/
+ * @example https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fgithub.com%2F&quote=Quote&hashtag=%23Github
  */
 
 import Vue, {
@@ -24,7 +25,16 @@ export interface ISFacebookShareOptions {
 export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseSocialMixin<ISFacebookShareOptions>>>).extend({
   name: 'SFacebook',
 
-  mixins: [BaseSocial<ISFacebookShareOptions>()],
+  mixins: [BaseSocial<ISFacebookShareOptions>(
+    'Facebook',
+    {
+      width: 685,
+      height: 750,
+    },
+    {} as ISFacebookShareOptions,
+    undefined,
+    true,
+  )],
 
   computed: {
     networkURL(): string {
@@ -43,6 +53,6 @@ export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseSo
   },
 
   render(h: CreateElement): VNode {
-    return this.generateComponent(h, this.networkURL, 'facebook');
+    return this.generateComponent(h, this.networkURL);
   },
 });

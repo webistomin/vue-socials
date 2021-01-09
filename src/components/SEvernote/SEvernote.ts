@@ -1,9 +1,10 @@
 /**
-* Hey!
-*
-* SEvernote component used for Evernote social network
-* @link https://www.evernote.com/
-*/
+ * Hey!
+ *
+ * SEvernote component used for Evernote social network
+ * @link https://www.evernote.com/
+ * @example https://www.evernote.com/clip.action?url=https%3A%2F%2Fgithub.com%2F&title=Title
+ */
 
 import Vue, {
   CreateElement, VNode, VueConstructor,
@@ -12,8 +13,8 @@ import BaseSocial, { TBaseSocialMixin } from '@/mixins/BaseSocial/BaseSocial';
 import getSerialisedParams from '@/utils/getSerialisedParams';
 
 /**
-* Share parameters for link
-*/
+ * Share parameters for link
+ */
 export interface ISEvernoteShareOptions {
   url: string;
   title?: string;
@@ -22,7 +23,16 @@ export interface ISEvernoteShareOptions {
 export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseSocialMixin<ISEvernoteShareOptions>>>).extend({
   name: 'SEvernote',
 
-  mixins: [BaseSocial<ISEvernoteShareOptions>()],
+  mixins: [BaseSocial<ISEvernoteShareOptions>(
+    'Evernote',
+    {
+      width: 800,
+      height: 560,
+    },
+    {} as ISEvernoteShareOptions,
+    undefined,
+    true,
+  )],
 
   computed: {
     networkURL(): string {
@@ -39,6 +49,6 @@ export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseSo
   },
 
   render(h: CreateElement): VNode {
-    return this.generateComponent(h, this.networkURL, 'Evernote');
+    return this.generateComponent(h, this.networkURL);
   },
 });

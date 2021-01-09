@@ -2,7 +2,7 @@ module.exports = [
   {
     path: 'dist/vue-socials.esm.js',
     name: 'Total',
-    limit: '20 KB',
+    limit: '10 KB',
   },
   {
     path: 'dist/vue-socials.esm.js',

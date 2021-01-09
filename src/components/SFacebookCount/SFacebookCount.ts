@@ -9,7 +9,7 @@
 import Vue, { VueConstructor } from 'vue';
 import JSONP from '@/utils/jsonp';
 import getSerialisedParams from '@/utils/getSerialisedParams';
-import { getCommaSeparatedList } from '@/utils/getCommaSeparatedList';
+import { getCommaSeparatedList } from '@/utils/getSeparatedList';
 import BaseCount, { TBaseCountMixin } from '@/mixins/BaseCount/BaseCount';
 
 export interface ISFbCountResult {

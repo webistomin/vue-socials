@@ -1,21 +1,22 @@
 /**
-* Hey!
-*
-* SDevTo component used for ... social network
-* @link ...
-*/
+ * Hey!
+ *
+ * SDevTo component used for DevTo social network
+ * @link https://dev.to/
+ * @example https://dev.to/new?prefill=%0A%20%20%20%20%20%20%20%20---%0A%20%20%20%20%20%20%20%20title%3ATitle%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20tags%3Atag%0A%20%20%20%20%20%20%20%20---%0A%20%20%20%20%20%20%20%20Text%201%0AText%202%0A%7B%25%20wikipedia%20https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FWikipedia%20%25%7D
+ */
 
 import Vue, {
   CreateElement, VNode, VueConstructor,
 } from 'vue';
 import BaseSocial, { TBaseSocialMixin } from '@/mixins/BaseSocial/BaseSocial';
 import getSerialisedParams from '@/utils/getSerialisedParams';
-import { getCommaSeparatedList } from '@/utils/getCommaSeparatedList';
+import getSeparatedList from '@/utils/getSeparatedList';
 
 /**
-* Share parameters for link
-* @link https://dev.to/devteam/announcing-off-platform-share-to-dev-functionality-57j9
-*/
+ * Share parameters for link
+ * @link https://dev.to/devteam/announcing-off-platform-share-to-dev-functionality-57j9
+ */
 export interface ISDevToShareOptions {
   title?: string;
   isPublished?: boolean;
@@ -26,7 +27,13 @@ export interface ISDevToShareOptions {
 export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseSocialMixin<ISDevToShareOptions>>>).extend({
   name: 'SDevTo',
 
-  mixins: [BaseSocial<ISDevToShareOptions>()],
+  mixins: [BaseSocial<ISDevToShareOptions>(
+    'DevTo',
+    {
+      width: 600,
+      height: 540,
+    },
+  )],
 
   computed: {
     networkURL(): string {
@@ -38,7 +45,7 @@ export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseSo
 
       const formattedTitle = title ? `title:${title}` : '';
       const formattedPublish = isPublished ? `published:${isPublished}` : '';
-      const formattedTags = tags ? `tags:${getCommaSeparatedList(tags)}` : '';
+      const formattedTags = tags ? `tags:${getSeparatedList(tags, ', ')}` : '';
       const formattedContent = content || '';
 
       const serialisedParams = getSerialisedParams({
@@ -56,6 +63,6 @@ export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseSo
   },
 
   render(h: CreateElement): VNode {
-    return this.generateComponent(h, this.networkURL, 'Dev.to');
+    return this.generateComponent(h, this.networkURL);
   },
 });

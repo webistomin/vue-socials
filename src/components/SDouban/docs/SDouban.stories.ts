@@ -1,13 +1,19 @@
 import { Story } from '@storybook/vue';
 import { action } from '@storybook/addon-actions';
-import SDouban from '../SDouban';
+import { IWindowFeatures } from '@/types/common/windowFeatures';
+import SDouban, { ISDoubanShareOptions } from '../SDouban';
+
+interface ISDoubanStoryArgs {
+  windowFeatures: IWindowFeatures;
+  shareOptions: ISDoubanShareOptions;
+}
 
 export default {
   title: 'Share/SDouban',
   component: SDouban,
 };
 
-const Template: Story = (_args, { argTypes }) => ({
+const Template: Story<ISDoubanStoryArgs> = (_args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { SDouban },
   methods: {
@@ -35,10 +41,12 @@ const Template: Story = (_args, { argTypes }) => ({
 
 export const Default = Template.bind({});
 Default.args = {
-  windowFeatures: {},
+  windowFeatures: {
+    width: 1100,
+    height: 450,
+  },
   shareOptions: {
     url: 'https://github.com/',
     title: 'Title',
-    text: 'Text',
   },
 };

@@ -23,8 +23,8 @@ export const Default = Template.bind({});
 Default.args = {
   shareOptions: {
     mail: 'google@gmail.com',
-    cc: 'google1@gmail.com',
-    bcc: 'google2@gmail.com',
+    cc: ['google1@gmail.com', 'google3@gmail.com'],
+    bcc: ['google2@gmail.com', 'google4@gmail.com'],
     subject: 'Subject',
     body: 'Hello\nWorld',
   },

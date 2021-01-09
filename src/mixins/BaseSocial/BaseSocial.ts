@@ -12,16 +12,15 @@ import { IWindowFeatures } from '@/types/common/windowFeatures';
 import getFormattedWindowFeatures from '@/utils/getFormattedWindowFeatures';
 import getPopupClientRect from '@/utils/getPopupClientRect';
 
-const DEFAULT_SHARE_POPUP_WIDTH = 650;
-const DEFAULT_SHARE_POPUP_HEIGHT = 570;
-
-export type TBaseSocialMixin<T> = ExtendedVue<Vue,
-{
+export interface IBaseSocialDataOptions {
   shareDialog: Window | null;
   shareDialogCloseIntervalId: number | undefined
-},
+}
+
+export type TBaseSocialMixin<T> = ExtendedVue<Vue,
+IBaseSocialDataOptions,
 {
-  generateComponent(h: CreateElement, url: string, name: string): VNode;
+  generateComponent(h: CreateElement, url: string): VNode;
   openShareDialog(url: string): void
 },
 unknown,
@@ -30,7 +29,20 @@ unknown,
   windowFeatures: IWindowFeatures
 }>;
 
-export default function BaseSocials<T>(): TBaseSocialMixin<T> {
+/**
+ * Wrapper around Vue mixin to pass parameters inside.
+ * We use multiple parameters instead of a single object because
+ * it causes problems with tree-shaking. I don't know why.
+ * A little bit inconvenient, but overall OK :)
+ */
+export default function BaseSocials<T>(
+  name: string,
+  customWindowFeatures: IWindowFeatures = {},
+  customShareOptions: T = {} as T,
+  ariaLabel = 'Share this with @s',
+  isShareOptionsRequired = false,
+  isWindowFeaturesRequired = false,
+): TBaseSocialMixin<T> {
   return /* #__PURE__ */Vue.extend({
     props: {
       /**
@@ -39,24 +51,20 @@ export default function BaseSocials<T>(): TBaseSocialMixin<T> {
        */
       windowFeatures: {
         type: Object,
-        default: () => ({
-          width: DEFAULT_SHARE_POPUP_WIDTH,
-          height: DEFAULT_SHARE_POPUP_HEIGHT,
-        }),
+        default: () => customWindowFeatures,
+        required: isWindowFeaturesRequired,
       } as PropOptions<IWindowFeatures>,
       /**
        * Share parameters for social network
        */
       shareOptions: {
         type: Object,
-        required: true,
+        default: () => customShareOptions,
+        required: isShareOptionsRequired,
       } as PropOptions<T>,
     },
 
-    data() : {
-      shareDialog: Window | null;
-      shareDialogCloseIntervalId: number | undefined,
-    } {
+    data(): IBaseSocialDataOptions {
       return {
         shareDialog: null,
         shareDialogCloseIntervalId: undefined,
@@ -70,22 +78,35 @@ export default function BaseSocials<T>(): TBaseSocialMixin<T> {
       window.clearInterval(this.shareDialogCloseIntervalId);
     },
 
+    computed: {
+      /**
+       * Merge default and user window features
+       */
+      mergedWindowFeatures() {
+        const { windowFeatures } = this;
+        const DEFAULT_WINDOW_FEATURES = {
+          width: 600,
+          height: 540,
+        };
+        /**
+         * We use `Object.assign` instead of the spread operator
+         * to prevent adding the polyfill (about 150 bytes gzipped)
+         */
+        return Object.assign({}, DEFAULT_WINDOW_FEATURES, windowFeatures);
+      },
+    },
+
     methods: {
       /**
        * Create new share popup from url
        * @link https://developer.mozilla.org/en-US/docs/Web/API/Window/open#Syntax
        */
       openShareDialog(url: string): void {
-        const { windowFeatures } = this;
-        const { width = DEFAULT_SHARE_POPUP_WIDTH, height = DEFAULT_SHARE_POPUP_HEIGHT } = windowFeatures;
+        const { mergedWindowFeatures } = this;
+        const { width, height } = mergedWindowFeatures;
 
         const shareDialogClientRect = getPopupClientRect(width, height);
-        /**
-         * We use `Object.assign` instead of the spread operator
-         * to prevent adding the polyfill (about 150 bytes gzipped)
-         */
-        const formattedFeatures = getFormattedWindowFeatures(Object.assign({}, shareDialogClientRect, windowFeatures));
-
+        const formattedFeatures = getFormattedWindowFeatures(Object.assign({}, mergedWindowFeatures, shareDialogClientRect));
         /**
          * If the pointer to the window object in memory does not exist
          * or if such pointer exists but the window was closed
@@ -100,7 +121,6 @@ export default function BaseSocials<T>(): TBaseSocialMixin<T> {
             '_blank',
             formattedFeatures,
           );
-
           /**
            * If window.open has been blocked – emit 'block' event and then do nothing
            * If not – emit 'open' event
@@ -111,7 +131,6 @@ export default function BaseSocials<T>(): TBaseSocialMixin<T> {
           }
 
           this.$emit('popup-open');
-
           /**
            * window.onbeforeunload event didn't work because of Same Origin Policy
            * So we check if it has been closed every 300 ms
@@ -142,7 +161,7 @@ export default function BaseSocials<T>(): TBaseSocialMixin<T> {
       /**
        * Create new share component
        */
-      generateComponent(h: CreateElement, url: string, name: string): VNode {
+      generateComponent(h: CreateElement, url: string): VNode {
         return h(
           'a',
           {
@@ -150,14 +169,15 @@ export default function BaseSocials<T>(): TBaseSocialMixin<T> {
               href: url,
               target: '_blank',
               rel: 'nofollow noopener noreferrer',
-              'aria-label': `Share this with ${name}`,
+              'aria-label': ariaLabel.replace(/@s/g, name),
             },
-            on: {
+            on: Object.assign({}, this.$listeners, {
               click: (event: Event) => {
                 event.preventDefault();
                 this.openShareDialog(url);
+                this.$emit('click');
               },
-            },
+            }),
           },
           this.$slots.default,
         );

@@ -1,9 +1,10 @@
 /**
-* Hey!
-*
-* SBlogger component used for Blogger social network
-* @link https://www.blogger.com/
-*/
+ * Hey!
+ *
+ * SBlogger component used for Blogger social network
+ * @link https://www.blogger.com/
+ * @example https://www.blogger.com/blog-this.g?u=https%3A%2F%2Fgithub.com%2F&t=Text&n=Title/
+ */
 
 import Vue, {
   CreateElement, VNode, VueConstructor,
@@ -12,10 +13,14 @@ import BaseSocial, { TBaseSocialMixin } from '@/mixins/BaseSocial/BaseSocial';
 import getSerialisedParams from '@/utils/getSerialisedParams';
 
 /**
-* Share parameters for link
-*/
+ * Share parameters for link
+ * @link https://stackoverflow.com/a/22583473/13374604
+ * u => url
+ * n => title
+ * t => text
+ */
 export interface ISBloggerShareOptions {
-  url: string;
+  url?: string;
   title?: string;
   text?: string;
 }
@@ -23,13 +28,20 @@ export interface ISBloggerShareOptions {
 export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseSocialMixin<ISBloggerShareOptions>>>).extend({
   name: 'SBlogger',
 
-  mixins: [BaseSocial<ISBloggerShareOptions>()],
+  mixins: [BaseSocial<ISBloggerShareOptions>(
+    'Blogger',
+    {
+      width: 600,
+      height: 540,
+    },
+  )],
 
   computed: {
     networkURL(): string {
       const BASE_URL = 'https://www.blogger.com/blog-this.g';
       const { shareOptions } = this;
       const { url, title, text } = shareOptions;
+
       const serialisedParams = getSerialisedParams({
         u: url,
         t: text,
@@ -41,6 +53,6 @@ export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseSo
   },
 
   render(h: CreateElement): VNode {
-    return this.generateComponent(h, this.networkURL, 'Blogger');
+    return this.generateComponent(h, this.networkURL);
   },
 });

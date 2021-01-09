@@ -1,9 +1,10 @@
 /**
-* Hey!
-*
-* SDouban component used for Douban social network
-* @link https://www.douban.com
-*/
+ * Hey!
+ *
+ * SDouban component used for Douban social network
+ * @link https://www.douban.com
+ * @example https://accounts.douban.com/passport/login?redir=https%3A//www.douban.com/share/service%3Fname%3D%26href%3D%26image%3D%26updated%3D%26bm%3D%26name%3DTitle%26text%3DText%26comment%3Dhttps%253A%252F%252Fgithub.com%252F%26href%3Dhttps%253A%252F%252Fgithub.com%252F
+ */
 
 import Vue, {
   CreateElement, VNode, VueConstructor,
@@ -12,29 +13,33 @@ import BaseSocial, { TBaseSocialMixin } from '@/mixins/BaseSocial/BaseSocial';
 import getSerialisedParams from '@/utils/getSerialisedParams';
 
 /**
-* Share parameters for link
-*/
+ * Share parameters for link
+ * @link https://blog.duncanworthy.me/misc/how-to-add-chinese-social-media-sharing-links-on-wordpress/comment-page-1/
+ */
 export interface ISDoubanShareOptions {
   title?: string;
-  text?: string;
-  url: string;
+  url?: string;
 }
 
 export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseSocialMixin<ISDoubanShareOptions>>>).extend({
   name: 'SDouban',
 
-  mixins: [BaseSocial<ISDoubanShareOptions>()],
+  mixins: [BaseSocial<ISDoubanShareOptions>(
+    'Douban',
+    {
+      width: 1100,
+      height: 450,
+    },
+  )],
 
   computed: {
     networkURL(): string {
       const BASE_URL = 'http://www.douban.com/recommend/';
       const { shareOptions } = this;
-      const { title, text, url } = shareOptions;
+      const { title, url } = shareOptions;
       const serialisedParams = getSerialisedParams({
-        name: title,
-        text,
-        comment: url,
-        href: url,
+        url,
+        title,
       });
 
       return `${BASE_URL}${serialisedParams}`;
@@ -42,6 +47,6 @@ export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseSo
   },
 
   render(h: CreateElement): VNode {
-    return this.generateComponent(h, this.networkURL, 'Douban');
+    return this.generateComponent(h, this.networkURL);
   },
 });

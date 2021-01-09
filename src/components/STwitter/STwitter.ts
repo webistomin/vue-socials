@@ -10,7 +10,7 @@ import Vue, {
 } from 'vue';
 import BaseSocial, { TBaseSocialMixin } from '@/mixins/BaseSocial/BaseSocial';
 import getSerialisedParams from '@/utils/getSerialisedParams';
-import { getCommaSeparatedList } from '@/utils/getCommaSeparatedList';
+import { getCommaSeparatedList } from '@/utils/getSeparatedList';
 
 /**
 * Share parameters for link

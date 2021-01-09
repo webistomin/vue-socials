@@ -1,13 +1,19 @@
 import { Story } from '@storybook/vue';
 import { action } from '@storybook/addon-actions';
-import SDevTo from '../SDevTo';
+import { IWindowFeatures } from '@/types/common/windowFeatures';
+import SDevTo, { ISDevToShareOptions } from '../SDevTo';
+
+interface ISDevToStoryArgs {
+  windowFeatures: IWindowFeatures;
+  shareOptions: ISDevToShareOptions;
+}
 
 export default {
   title: 'Share/SDevTo',
   component: SDevTo,
 };
 
-const Template: Story = (_args, { argTypes }) => ({
+const Template: Story<ISDevToStoryArgs> = (_args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { SDevTo },
   methods: {
@@ -35,11 +41,14 @@ const Template: Story = (_args, { argTypes }) => ({
 
 export const Default = Template.bind({});
 Default.args = {
-  windowFeatures: {},
+  windowFeatures: {
+    width: 600,
+    height: 540,
+  },
   shareOptions: {
     title: 'Title',
     isPublished: false,
-    tags: ['tag'],
+    tags: ['tag', 'tag2'],
     content: 'Text 1\nText 2\n{% wikipedia https://en.wikipedia.org/wiki/Wikipedia %}',
   },
 };

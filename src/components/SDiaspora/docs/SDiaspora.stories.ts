@@ -1,13 +1,19 @@
 import { Story } from '@storybook/vue';
 import { action } from '@storybook/addon-actions';
-import SDiaspora from '../SDiaspora';
+import { IWindowFeatures } from '@/types/common/windowFeatures';
+import SDiaspora, { TSDiasporaShareOptions } from '../SDiaspora';
+
+interface ISDiasporaStoryArgs {
+  windowFeatures: IWindowFeatures;
+  shareOptions: TSDiasporaShareOptions;
+}
 
 export default {
   title: 'Share/SDiaspora',
   component: SDiaspora,
 };
 
-const Template: Story = (_args, { argTypes }) => ({
+const Template: Story<ISDiasporaStoryArgs> = (_args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { SDiaspora },
   methods: {
@@ -34,7 +40,10 @@ const Template: Story = (_args, { argTypes }) => ({
 
 export const Default = Template.bind({});
 Default.args = {
-  windowFeatures: {},
+  windowFeatures: {
+    width: 600,
+    height: 540,
+  },
   shareOptions: {
     url: 'https://github.com/',
     title: 'Title',

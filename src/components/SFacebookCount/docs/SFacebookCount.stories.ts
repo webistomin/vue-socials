@@ -1,18 +1,14 @@
 import { Story } from '@storybook/vue';
 import { action } from '@storybook/addon-actions';
+import { TBaseCountPropsOptions } from '@/mixins/BaseCount/BaseCount';
 import SFacebookCount, { ISFacebookCountShareOptions } from '../SFacebookCount';
-
-interface ISFacebookCountStoryArgs {
-  tag: string;
-  shareOptions: ISFacebookCountShareOptions;
-}
 
 export default {
   title: 'Count/SFacebookCount',
   component: SFacebookCount,
 };
 
-const Template: Story<ISFacebookCountStoryArgs> = (_args, { argTypes }) => ({
+const Template: Story<TBaseCountPropsOptions<ISFacebookCountShareOptions>> = (_args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { SFacebookCount },
   methods: {

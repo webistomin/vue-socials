@@ -1,19 +1,14 @@
 import { Story } from '@storybook/vue';
 import { action } from '@storybook/addon-actions';
-import { IWindowFeatures } from '@/types/common/windowFeatures';
+import { TBaseSocialPropsOptions } from '@/mixins/BaseSocial/BaseSocial';
 import SFacebookWorkplace, { ISFacebookWorkplaceShareOptions } from '../SFacebookWorkplace';
-
-interface ISFacebookMessengerStoryArgs {
-  windowFeatures: IWindowFeatures;
-  shareOptions: ISFacebookWorkplaceShareOptions;
-}
 
 export default {
   title: 'Share/SFacebookWorkplace',
   component: SFacebookWorkplace,
 };
 
-const Template: Story<ISFacebookMessengerStoryArgs> = (_args, { argTypes }) => ({
+const Template: Story<TBaseSocialPropsOptions<ISFacebookWorkplaceShareOptions>> = (_args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { SFacebookWorkplace },
   methods: {
@@ -44,4 +39,5 @@ Default.args = {
   shareOptions: {
     url: 'https://github.com/',
   },
+  useNativeBehavior: false,
 };

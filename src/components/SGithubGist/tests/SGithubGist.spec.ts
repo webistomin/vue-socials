@@ -1,5 +1,5 @@
-import SGithubGist from '../SGithubGist';
-
-describe('SGithubGist.ts', () => {
-
-});
+// import SGithubGist from '../SGithubGist';
+//
+// describe('SGithubGist.ts', () => {
+//
+// });

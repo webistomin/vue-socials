@@ -1,19 +1,14 @@
 import { Story } from '@storybook/vue';
 import { action } from '@storybook/addon-actions';
-import { IWindowFeatures } from '@/types/common/windowFeatures';
+import { DEFAULT_WINDOW_FEATURES, TBaseSocialPropsOptions } from '@/mixins/BaseSocial/BaseSocial';
 import SFacebookMessenger, { ISFacebookMessengerShareOptions } from '../SFacebookMessenger';
-
-interface ISFacebookMessengerStoryArgs {
-  windowFeatures: IWindowFeatures;
-  shareOptions: ISFacebookMessengerShareOptions;
-}
 
 export default {
   title: 'Share/SFacebookMessenger',
   component: SFacebookMessenger,
 };
 
-const Template: Story<ISFacebookMessengerStoryArgs> = (_args, { argTypes }) => ({
+const Template: Story<TBaseSocialPropsOptions<ISFacebookMessengerShareOptions>> = (_args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { SFacebookMessenger },
   methods: {
@@ -40,13 +35,11 @@ const Template: Story<ISFacebookMessengerStoryArgs> = (_args, { argTypes }) => (
 
 export const Default = Template.bind({});
 Default.args = {
-  windowFeatures: {
-    width: 600,
-    height: 540,
-  },
+  windowFeatures: DEFAULT_WINDOW_FEATURES,
   shareOptions: {
     url: 'https://github.com/',
     redirectUri: 'https://www.domain.com/',
     appId: 123456789,
   },
+  useNativeBehavior: false,
 };

@@ -19,11 +19,11 @@ export interface ISGithubCountResult {
   meta: {
     'Content-Type': string;
     'Cache-Control': string;
-    'Vary': string;
-    'ETag': string;
+    Vary: string;
+    ETag: string;
     'Last-Modified': string;
     'X-GitHub-Media-Type': string;
-    'status': number;
+    status: number;
     'X-RateLimit-Limit': string;
     'X-RateLimit-Remaining': string;
     'X-RateLimit-Reset': string;
@@ -93,7 +93,10 @@ export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseCo
 
   mounted() {
     const { shareOptions } = this;
-    const { username, type } = shareOptions;
+    const {
+      username,
+      type,
+    } = shareOptions;
     const BASE_URL = 'https://api.github.com/';
     let finalURL;
 

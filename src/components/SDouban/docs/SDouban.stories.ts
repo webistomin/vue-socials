@@ -1,19 +1,14 @@
 import { Story } from '@storybook/vue';
 import { action } from '@storybook/addon-actions';
-import { IWindowFeatures } from '@/types/common/windowFeatures';
+import { TBaseSocialPropsOptions } from '@/mixins/BaseSocial/BaseSocial';
 import SDouban, { ISDoubanShareOptions } from '../SDouban';
-
-interface ISDoubanStoryArgs {
-  windowFeatures: IWindowFeatures;
-  shareOptions: ISDoubanShareOptions;
-}
 
 export default {
   title: 'Share/SDouban',
   component: SDouban,
 };
 
-const Template: Story<ISDoubanStoryArgs> = (_args, { argTypes }) => ({
+const Template: Story<TBaseSocialPropsOptions<ISDoubanShareOptions>> = (_args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { SDouban },
   methods: {
@@ -49,4 +44,5 @@ Default.args = {
     url: 'https://github.com/',
     title: 'Title',
   },
+  useNativeBehavior: false,
 };

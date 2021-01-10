@@ -29,10 +29,6 @@ export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseSo
 
   mixins: [BaseSocial<ISDevToShareOptions>(
     'DevTo',
-    {
-      width: 600,
-      height: 540,
-    },
   )],
 
   computed: {

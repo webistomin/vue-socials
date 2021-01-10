@@ -30,10 +30,10 @@ export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseSo
 
   mixins: [BaseSocial<ISBloggerShareOptions>(
     'Blogger',
-    {
-      width: 600,
-      height: 540,
-    },
+    undefined,
+    undefined,
+    undefined,
+    true,
   )],
 
   computed: {

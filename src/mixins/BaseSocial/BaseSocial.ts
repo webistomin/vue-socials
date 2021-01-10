@@ -17,6 +17,12 @@ export interface IBaseSocialDataOptions {
   shareDialogCloseIntervalId: number | undefined
 }
 
+export type TBaseSocialPropsOptions<T> = {
+  windowFeatures: IWindowFeatures
+  shareOptions: T;
+  useNativeBehavior: boolean;
+};
+
 export type TBaseSocialMixin<T> = ExtendedVue<Vue,
 IBaseSocialDataOptions,
 {
@@ -24,10 +30,12 @@ IBaseSocialDataOptions,
   openShareDialog(url: string): void
 },
 unknown,
-{
-  shareOptions: T;
-  windowFeatures: IWindowFeatures
-}>;
+TBaseSocialPropsOptions<T>>;
+
+export const DEFAULT_WINDOW_FEATURES = {
+  width: 600,
+  height: 540,
+};
 
 /**
  * Wrapper around Vue mixin to pass parameters inside.
@@ -51,7 +59,7 @@ export default function BaseSocials<T>(
        */
       windowFeatures: {
         type: Object,
-        default: () => customWindowFeatures || {},
+        default: () => customWindowFeatures || DEFAULT_WINDOW_FEATURES,
         required: isWindowFeaturesRequired,
       } as PropOptions<IWindowFeatures>,
       /**
@@ -60,8 +68,15 @@ export default function BaseSocials<T>(
       shareOptions: {
         type: Object,
         default: () => customShareOptions || {} as T,
-        required: isShareOptionsRequired,
+        required: isShareOptionsRequired || true,
       } as PropOptions<T>,
+      /**
+       * Use native link behavior instead of window.open()
+       */
+      useNativeBehavior: {
+        type: Boolean,
+        default: false,
+      },
     },
 
     data(): IBaseSocialDataOptions {
@@ -84,10 +99,6 @@ export default function BaseSocials<T>(
        */
       mergedWindowFeatures() {
         const { windowFeatures } = this;
-        const DEFAULT_WINDOW_FEATURES = {
-          width: 600,
-          height: 540,
-        };
         /**
          * We use `Object.assign` instead of the spread operator
          * to prevent adding the polyfill (about 150 bytes gzipped)
@@ -182,8 +193,11 @@ export default function BaseSocials<T>(
             },
             on: Object.assign({}, this.$listeners, {
               click: (event: Event) => {
-                event.preventDefault();
-                this.openShareDialog(url);
+                if (!this.useNativeBehavior) {
+                  event.preventDefault();
+                  this.openShareDialog(url);
+                }
+
                 this.$emit('click');
               },
             }),

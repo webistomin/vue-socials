@@ -29,11 +29,8 @@ export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseSo
     'Facebook',
     {
       width: 685,
-      height: 750,
+      height: 600,
     },
-    {} as ISFacebookShareOptions,
-    undefined,
-    true,
   )],
 
   computed: {

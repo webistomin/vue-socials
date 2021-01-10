@@ -5,18 +5,25 @@
  */
 
 import { ExtendedVue } from 'vue/types/vue';
-import Vue, { CreateElement, PropOptions, VNode } from 'vue';
+import Vue, {
+  Component, CreateElement, PropOptions, VNode,
+} from 'vue';
 import { isUndefined } from '@/utils/inspect';
 
-export type TBaseCountMixinData<R> = {
+export type TBaseCountDataOptions<R> = {
   count: number | undefined;
   response: R | null;
   error: Error | null;
   isLoading: boolean;
 };
 
+export type TBaseCountPropsOptions<T> = {
+  tag: Component | string;
+  shareOptions: T;
+};
+
 export type TBaseCountMixin<T, R> = ExtendedVue<Vue,
-TBaseCountMixinData<R>,
+TBaseCountDataOptions<R>,
 {
   generateComponent(h: CreateElement): VNode;
   handleResult(value: R): void;
@@ -25,9 +32,7 @@ TBaseCountMixinData<R>,
   handleCount(count: (number | undefined)): void;
 },
 unknown,
-{
-  shareOptions: T
-}
+TBaseCountPropsOptions<T>
 >;
 
 /**
@@ -61,7 +66,7 @@ export default function BaseCount<T, R>(
       } as PropOptions<T>,
     },
 
-    data(): TBaseCountMixinData<R> {
+    data(): TBaseCountDataOptions<R> {
       return {
         count: undefined,
         response: null,

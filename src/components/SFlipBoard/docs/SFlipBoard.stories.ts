@@ -1,19 +1,14 @@
 import { Story } from '@storybook/vue';
 import { action } from '@storybook/addon-actions';
-import { IWindowFeatures } from '@/types/common/windowFeatures';
+import { TBaseSocialPropsOptions } from '@/mixins/BaseSocial/BaseSocial';
 import SFlipBoard, { ISFlipBoardShareOptions } from '../SFlipBoard';
-
-interface ISFlipBoardStoryArgs {
-  windowFeatures: IWindowFeatures;
-  shareOptions: ISFlipBoardShareOptions;
-}
 
 export default {
   title: 'Share/SFlipBoard',
   component: SFlipBoard,
 };
 
-const Template: Story<ISFlipBoardStoryArgs> = (_args, { argTypes }) => ({
+const Template: Story<TBaseSocialPropsOptions<ISFlipBoardShareOptions>> = (_args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { SFlipBoard },
   methods: {
@@ -52,4 +47,5 @@ Default.args = {
     url: 'https://github.com/',
     title: 'Title',
   },
+  useNativeBehavior: false,
 };

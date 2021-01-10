@@ -1,19 +1,14 @@
 import { Story } from '@storybook/vue';
 import { action } from '@storybook/addon-actions';
-import { IWindowFeatures } from '@/types/common/windowFeatures';
+import { DEFAULT_WINDOW_FEATURES, TBaseSocialPropsOptions } from '@/mixins/BaseSocial/BaseSocial';
 import SDevTo, { ISDevToShareOptions } from '../SDevTo';
-
-interface ISDevToStoryArgs {
-  windowFeatures: IWindowFeatures;
-  shareOptions: ISDevToShareOptions;
-}
 
 export default {
   title: 'Share/SDevTo',
   component: SDevTo,
 };
 
-const Template: Story<ISDevToStoryArgs> = (_args, { argTypes }) => ({
+const Template: Story<TBaseSocialPropsOptions<ISDevToShareOptions>> = (_args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { SDevTo },
   methods: {
@@ -41,14 +36,12 @@ const Template: Story<ISDevToStoryArgs> = (_args, { argTypes }) => ({
 
 export const Default = Template.bind({});
 Default.args = {
-  windowFeatures: {
-    width: 600,
-    height: 540,
-  },
+  windowFeatures: DEFAULT_WINDOW_FEATURES,
   shareOptions: {
     title: 'Title',
     isPublished: false,
     tags: ['tag', 'tag2'],
     content: 'Text 1\nText 2\n{% wikipedia https://en.wikipedia.org/wiki/Wikipedia %}',
   },
+  useNativeBehavior: false,
 };

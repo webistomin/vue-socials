@@ -1,17 +1,14 @@
 import { Story } from '@storybook/vue';
 import { action } from '@storybook/addon-actions';
+import { TBaseCountPropsOptions } from '@/mixins/BaseCount/BaseCount';
 import SGithubCount, { ISGithubCountShareOptions } from '../SGithubCount';
-
-interface ISGithubCountStoryArgs {
-  shareOptions: ISGithubCountShareOptions;
-}
 
 export default {
   title: 'Count/SGithubCount',
   component: SGithubCount,
 };
 
-const Template: Story<ISGithubCountStoryArgs> = (_args, { argTypes }) => ({
+const Template: Story<TBaseCountPropsOptions<ISGithubCountShareOptions>> = (_args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { SGithubCount },
   methods: {
@@ -33,6 +30,7 @@ const Template: Story<ISGithubCountStoryArgs> = (_args, { argTypes }) => ({
 
 export const Default = Template.bind({});
 Default.args = {
+  tag: 'span',
   shareOptions: {
     username: 'webistomin',
     type: 'follow',

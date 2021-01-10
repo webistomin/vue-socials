@@ -1,19 +1,14 @@
 import { Story } from '@storybook/vue';
 import { action } from '@storybook/addon-actions';
-import { IWindowFeatures } from '@/types/common/windowFeatures';
+import { TBaseSocialPropsOptions } from '@/mixins/BaseSocial/BaseSocial';
 import SGithub, { ISGithubShareOptions } from '../SGithub';
-
-interface ISGithubStoryArgs {
-  windowFeatures: IWindowFeatures;
-  shareOptions: ISGithubShareOptions;
-}
 
 export default {
   title: 'Share/SGithub',
   component: SGithub,
 };
 
-const Template: Story<ISGithubStoryArgs> = (_args, { argTypes }) => ({
+const Template: Story<TBaseSocialPropsOptions<ISGithubShareOptions>> = (_args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { SGithub },
   methods: {

@@ -25,13 +25,6 @@ export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseSo
 
   mixins: [BaseSocial<ISFacebookWorkplaceShareOptions>(
     'Facebook Workplace',
-    {
-      width: 600,
-      height: 540,
-    },
-    {} as ISFacebookWorkplaceShareOptions,
-    undefined,
-    true,
   )],
 
   computed: {

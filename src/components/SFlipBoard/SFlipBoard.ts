@@ -30,9 +30,6 @@ export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseSo
       width: 834,
       height: 572,
     },
-    {} as ISFlipBoardShareOptions,
-    undefined,
-    true,
   )],
 
   computed: {

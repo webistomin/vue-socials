@@ -36,9 +36,6 @@ export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseSo
       width: 900,
       height: 600,
     },
-    {} as ISGithubShareOptions,
-    undefined,
-    true,
   )],
 
   computed: {

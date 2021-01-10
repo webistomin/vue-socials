@@ -29,9 +29,6 @@ export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseSo
       width: 800,
       height: 560,
     },
-    {} as ISEvernoteShareOptions,
-    undefined,
-    true,
   )],
 
   computed: {

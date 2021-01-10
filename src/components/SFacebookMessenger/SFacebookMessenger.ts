@@ -31,13 +31,6 @@ export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseSo
 
   mixins: [BaseSocial<ISFacebookMessengerShareOptions>(
     'Facebook Messenger',
-    {
-      width: 600,
-      height: 540,
-    },
-    {} as ISFacebookMessengerShareOptions,
-    undefined,
-    true,
   )],
 
   computed: {

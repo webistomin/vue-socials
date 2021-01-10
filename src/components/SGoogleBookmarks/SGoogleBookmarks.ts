@@ -10,7 +10,7 @@ import Vue, {
 } from 'vue';
 import BaseSocial, { TBaseSocialMixin } from '@/mixins/BaseSocial/BaseSocial';
 import getSerialisedParams from '@/utils/getSerialisedParams';
-import { getCommaSeparatedList } from '@/utils/getSeparatedList';
+import getSeparatedList from '@/utils/getSeparatedList';
 
 /**
 * Share parameters for link
@@ -40,7 +40,7 @@ export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseSo
         bkmk: url,
         title,
         annotation,
-        labels: getCommaSeparatedList(tags),
+        labels: getSeparatedList(tags),
       });
 
       return `${BASE_URL}${serialisedParams}`;

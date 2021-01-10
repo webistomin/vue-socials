@@ -1,13 +1,14 @@
 import { Story } from '@storybook/vue';
 import { action } from '@storybook/addon-actions';
-import SGithubGist from '../SGithubGist';
+import { TBaseSocialPropsOptions } from '@/mixins/BaseSocial/BaseSocial';
+import SGithubGist, { ISGithubGistShareOptions } from '../SGithubGist';
 
 export default {
   title: 'Share/SGithubGist',
   component: SGithubGist,
 };
 
-const Template: Story = (_args, { argTypes }) => ({
+const Template: Story<TBaseSocialPropsOptions<ISGithubGistShareOptions>> = (_args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { SGithubGist },
   methods: {
@@ -34,10 +35,14 @@ const Template: Story = (_args, { argTypes }) => ({
 
 export const Default = Template.bind({});
 Default.args = {
-  windowFeatures: {},
+  windowFeatures: {
+    width: 900,
+    height: 600,
+  },
   shareOptions: {
     username: 'ai',
     gistId: 'e3683b03ba936ade91d33dbc721cd6d8',
     type: 'star',
   },
+  useNativeBehavior: false,
 };

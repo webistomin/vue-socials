@@ -1,9 +1,10 @@
 /**
-* Hey!
-*
-* SGithubGist component used for Github Gists social network
-* @link https://gist.github.com/
-*/
+ * Hey!
+ *
+ * SGithubGist component used for Github Gists social network
+ * @link https://gist.github.com/
+ * @example https://gist.github.com/ai/e3683b03ba936ade91d33dbc721cd6d8/stargazers
+ */
 
 import Vue, {
   CreateElement, VNode, VueConstructor,
@@ -20,8 +21,8 @@ const GITHUB_LINK_TYPES = {
 export type TSGithubLinkType = typeof GITHUB_LINK_TYPES[keyof typeof GITHUB_LINK_TYPES];
 
 /**
-* Share parameters for link
-*/
+ * Share parameters for link
+ */
 export interface ISGithubGistShareOptions {
   username: string;
   gistId: string;
@@ -31,7 +32,13 @@ export interface ISGithubGistShareOptions {
 export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseSocialMixin<ISGithubGistShareOptions>>>).extend({
   name: 'SGithubGist',
 
-  mixins: [BaseSocial<ISGithubGistShareOptions>()],
+  mixins: [BaseSocial<ISGithubGistShareOptions>(
+    'GitHub Gists',
+    {
+      width: 900,
+      height: 600,
+    },
+  )],
 
   computed: {
     networkURL(): string {
@@ -51,9 +58,28 @@ export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseSo
           return `${BASE_URL}${username}/${gistId}`;
       }
     },
+
+    ariaLabel() {
+      const { shareOptions } = this;
+      const {
+        type,
+      } = shareOptions;
+
+      switch (type) {
+        case GITHUB_LINK_TYPES.fork:
+          return 'Fork this gist.';
+        case GITHUB_LINK_TYPES.star:
+          return 'Star this gist.';
+        case GITHUB_LINK_TYPES.download:
+          return 'Download this gist.';
+        case GITHUB_LINK_TYPES.gist:
+        default:
+          return 'Watch this gist.';
+      }
+    },
   },
 
   render(h: CreateElement): VNode {
-    return this.generateComponent(h, this.networkURL, 'Github Gists');
+    return this.generateComponent(h, this.networkURL);
   },
 });

@@ -35,7 +35,7 @@ export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseSo
       const BASE_URL = 'https://connect.mail.ru/share';
       const { shareOptions } = this;
       const {
-        url, title, description, image, swfUrl, width, height
+        url, title, description, image, swfUrl, width, height,
       } = shareOptions;
       const serialisedParams = getSerialisedParams({
         share_url: url,

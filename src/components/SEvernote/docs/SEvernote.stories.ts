@@ -1,19 +1,14 @@
 import { Story } from '@storybook/vue';
 import { action } from '@storybook/addon-actions';
-import { IWindowFeatures } from '@/types/common/windowFeatures';
+import { TBaseSocialPropsOptions } from '@/mixins/BaseSocial/BaseSocial';
 import SEvernote, { ISEvernoteShareOptions } from '../SEvernote';
-
-interface ISEvernoteStoryArgs {
-  windowFeatures: IWindowFeatures;
-  shareOptions: ISEvernoteShareOptions;
-}
 
 export default {
   title: 'Share/SEvernote',
   component: SEvernote,
 };
 
-const Template: Story<ISEvernoteStoryArgs> = (_args, { argTypes }) => ({
+const Template: Story<TBaseSocialPropsOptions<ISEvernoteShareOptions>> = (_args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { SEvernote },
   methods: {
@@ -48,4 +43,5 @@ Default.args = {
     url: 'https://github.com/',
     title: 'Title',
   },
+  useNativeBehavior: false,
 };

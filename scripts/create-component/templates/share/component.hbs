@@ -1,9 +1,9 @@
 /**
-* Hey!
-*
-* {{pascalCase name}} component used for ... social network
-* @link ...
-*/
+ * Hey!
+ *
+ * {{pascalCase name}} component used for ... social network
+ * @link ...
+ */
 
 import Vue, {
   CreateElement, VNode, VueConstructor,
@@ -12,9 +12,9 @@ import BaseSocial, { TBaseSocialMixin } from '@/mixins/BaseSocial/BaseSocial';
 import getSerialisedParams from '@/utils/getSerialisedParams';
 
 /**
-* Share parameters for link
-* @link ...
-*/
+ * Share parameters for link
+ * @link ...
+ */
 export interface I{{pascalCase name}}ShareOptions {
 
 }
@@ -22,7 +22,9 @@ export interface I{{pascalCase name}}ShareOptions {
 export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseSocialMixin<I{{pascalCase name}}ShareOptions>>>).extend({
   name: '{{pascalCase name}}',
 
-  mixins: [BaseSocial<I{{pascalCase name}}ShareOptions>()],
+  mixins: [BaseSocial<I{{pascalCase name}}ShareOptions>(
+    '',
+  )],
 
   computed: {
     networkURL(): string {
@@ -36,6 +38,6 @@ export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseSo
   },
 
   render(h: CreateElement): VNode {
-    return this.generateComponent(h, this.networkURL, 'facebook');
+    return this.generateComponent(h, this.networkURL);
   },
 });

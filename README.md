@@ -40,16 +40,22 @@
   <a href="#documentation-">Documentation</a> •
   <a href="#browsers-support-">Browsers support</a> •
   <a href="#license-">License</a>  •
+  <a href="#support-the-project-">Support the project</a>  •
   <a href="#contributing-">Contributing</a>
 </p>
 
 ## Key Features ✨
 
 * **50+** reusable components
-* **Small** `~7KB` (minified and gzipped). <a href="https://github.com/ai/size-limit">Size Limit</a> controls the size
+* **Small** `~7KB` (minified and gzipped)
 * Fully **tree-shakeable**
 * **No dependencies**
+* **No SDK**
+* **Don't track** the user
 * Built with **a11y** in mind
+* **One API** to rule them all
+* **i18n** support
+* **Built with TypeScript**, so you can enjoy completely typed components
 
 ## Documentation 🤗
 
@@ -64,6 +70,10 @@ Browse [online documentation here](https://github.com/webistomin/vue-socials.js/
 ## License 📄
 
 ### [MIT](https://github.com/webistomin/vue-socials.js/blob/master/LICENSE)
+
+## Support the project ⭐
+
+If you feel awesome and want to support us in a small way, please consider starring and sharing the repo!
 
 ## Contributing 🎉
 

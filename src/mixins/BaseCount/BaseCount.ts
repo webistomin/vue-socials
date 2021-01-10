@@ -8,14 +8,21 @@ import { ExtendedVue } from 'vue/types/vue';
 import Vue, { CreateElement, PropOptions, VNode } from 'vue';
 import { isUndefined } from '@/utils/inspect';
 
-export type TBaseCountMixin<T> = ExtendedVue<Vue,
-{
-  count: number | undefined
-},
+export type TBaseCountMixinData<R> = {
+  count: number | undefined;
+  response: R | null;
+  error: Error | null;
+  isLoading: boolean;
+};
+
+export type TBaseCountMixin<T, R> = ExtendedVue<Vue,
+TBaseCountMixinData<R>,
 {
   generateComponent(h: CreateElement): VNode;
-  handleResult<V>(value: V): void;
-  saveCount(count: (number | undefined)): void;
+  handleResult(value: R): void;
+  handleError(value: Error | null): void;
+  handleLoading(value: boolean): void;
+  handleCount(count: (number | undefined)): void;
 },
 unknown,
 {
@@ -23,47 +30,113 @@ unknown,
 }
 >;
 
-export default function BaseCount<T>(): TBaseCountMixin<T> {
+/**
+ * Wrapper around Vue mixin to pass parameters inside.
+ * We use multiple parameters instead of a single object because
+ * it causes problems with tree-shaking. I don't know why.
+ * A little bit inconvenient, but overall OK :)
+ */
+export default function BaseCount<T, R>(
+  name: string,
+  customShareOptions?: T,
+  isShareOptionsRequired?: boolean,
+  customAriaLabel?: string,
+): TBaseCountMixin<T, R> {
   return /* #__PURE__ */Vue.extend({
-    /**
-     * Share parameters for social network
-     */
     props: {
+      /**
+       * Component tag
+       */
+      tag: {
+        type: [String, Object],
+        default: 'span',
+      },
+      /**
+       * Share parameters for social network
+       */
       shareOptions: {
         type: Object,
-        required: true,
+        default: () => customShareOptions || {} as T,
+        required: isShareOptionsRequired || true,
       } as PropOptions<T>,
     },
 
-    data() : {
-      count: number | undefined,
-    } {
+    data(): TBaseCountMixinData<R> {
       return {
         count: undefined,
+        response: null,
+        error: null,
+        isLoading: false,
       };
+    },
+
+    computed: {
+      /**
+       * Calculate the aria-label for a counter.
+       * It replaces @s in a string with a social network name
+       * and @c with a count.
+       */
+      ariaLabel(): string {
+        const { count } = this;
+        const label = customAriaLabel || '@c people share this on @s.';
+
+        if (!isUndefined(count)) {
+          return label
+            .replace(/@c/g, String(count))
+            .replace(/@s/g, name);
+        }
+
+        return 'No one shares this content yet.';
+      },
     },
 
     methods: {
       /**
-       * Emit response from JSONP or HTTP
+       * Save response from JSONP or HTTP and emit event
        */
-      handleResult<V>(value: V) {
+      handleResult(value: R) {
+        this.response = value;
         this.$emit('load', value);
+      },
+      /**
+       * Save response from JSONP or HTTP and emit event
+       */
+      handleError(value: Error | null) {
+        this.error = value;
+        this.$emit('error', value);
+      },
+      /**
+       * Save loading state and emit event
+       */
+      handleLoading(value: boolean) {
+        this.isLoading = value;
+        this.$emit('loading', value);
       },
       /**
        * Save counter value and render inside element
        */
-      saveCount(count: number | undefined): void {
+      handleCount(count: number | undefined): void {
         this.count = count;
       },
       /**
        * Create new count component
        */
       generateComponent(h: CreateElement): VNode {
+        const children = this.$scopedSlots.default || ((props) => [props.count]);
+
         return h(
-          'span',
-          {},
-          isUndefined(this.count) ? undefined : String(this.count),
+          this.tag,
+          {
+            attrs: {
+              'aria-label': this.ariaLabel,
+            },
+            on: this.$listeners,
+          },
+          children({
+            isLoading: this.isLoading,
+            response: this.response,
+            count: this.count,
+          }),
         );
       },
     },

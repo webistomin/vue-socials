@@ -37,11 +37,11 @@ unknown,
  */
 export default function BaseSocials<T>(
   name: string,
-  customWindowFeatures: IWindowFeatures = {},
-  customShareOptions: T = {} as T,
-  ariaLabel = 'Share this with @s',
-  isShareOptionsRequired = false,
-  isWindowFeaturesRequired = false,
+  customWindowFeatures?: IWindowFeatures,
+  customShareOptions?: T,
+  customAriaLabel?: string,
+  isShareOptionsRequired?: boolean,
+  isWindowFeaturesRequired?: boolean,
 ): TBaseSocialMixin<T> {
   return /* #__PURE__ */Vue.extend({
     props: {
@@ -51,7 +51,7 @@ export default function BaseSocials<T>(
        */
       windowFeatures: {
         type: Object,
-        default: () => customWindowFeatures,
+        default: () => customWindowFeatures || {},
         required: isWindowFeaturesRequired,
       } as PropOptions<IWindowFeatures>,
       /**
@@ -59,7 +59,7 @@ export default function BaseSocials<T>(
        */
       shareOptions: {
         type: Object,
-        default: () => customShareOptions,
+        default: () => customShareOptions || {} as T,
         required: isShareOptionsRequired,
       } as PropOptions<T>,
     },
@@ -93,6 +93,15 @@ export default function BaseSocials<T>(
          * to prevent adding the polyfill (about 150 bytes gzipped)
          */
         return Object.assign({}, DEFAULT_WINDOW_FEATURES, windowFeatures);
+      },
+      /**
+       * Calculate the aria-label for a link.
+       * It replaces @s in a string with a social network name.
+       */
+      ariaLabel() {
+        const label = customAriaLabel || 'Share this with @s.';
+
+        return label.replace(/@s/g, name);
       },
     },
 
@@ -169,7 +178,7 @@ export default function BaseSocials<T>(
               href: url,
               target: '_blank',
               rel: 'nofollow noopener noreferrer',
-              'aria-label': ariaLabel.replace(/@s/g, name),
+              'aria-label': this.ariaLabel,
             },
             on: Object.assign({}, this.$listeners, {
               click: (event: Event) => {

@@ -12,7 +12,7 @@ import getSerialisedParams from '@/utils/getSerialisedParams';
 import getSeparatedList from '@/utils/getSeparatedList';
 import BaseCount, { TBaseCountMixin } from '@/mixins/BaseCount/BaseCount';
 
-export interface ISFbCountResult {
+export interface ISFacebookCountResult {
   engagement?: {
     reaction_count: number;
     comment_count: number;
@@ -29,7 +29,7 @@ export interface ISFbCountResult {
   app_links?: unknown;
 }
 
-export interface ISFbCountError {
+export interface ISFacebookCountError {
   error: {
     message: string;
     type: string;
@@ -39,18 +39,32 @@ export interface ISFbCountError {
   }
 }
 
+export type TSFacebookCountResponse = ISFacebookCountResult | ISFacebookCountError;
+
 /**
  * @link https://developers.facebook.com/docs/graph-api/reference/v9.0/url
  */
-export interface ISFbCountShareOptions {
+export interface ISFacebookCountShareOptions {
   id: string;
   accessToken: string;
   fields?: string[];
   scopes?: string[];
 }
 
-export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseCountMixin<ISFbCountShareOptions>>>).extend({
-  mixins: [BaseCount<ISFbCountShareOptions>()],
+export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseCountMixin<ISFacebookCountShareOptions, TSFacebookCountResponse>>>).extend({
+  mixins: [BaseCount<ISFacebookCountShareOptions, TSFacebookCountResponse>(
+    'Facebook',
+  )],
+
+  methods: {
+    handleFacebookResponse(data: TSFacebookCountResponse) {
+      this.handleResult(data);
+
+      if ('engagement' in data) {
+        this.handleCount(data.engagement?.share_count);
+      }
+    },
+  },
 
   mounted() {
     const BASE_URL = 'https://graph.facebook.com/';
@@ -60,19 +74,23 @@ export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseCo
     } = shareOptions;
 
     const finalURL = `${BASE_URL}${getSerialisedParams({
+      id,
       access_token: accessToken,
       fields: getSeparatedList(fields),
       scopes: getSeparatedList(scopes),
-      id,
     })}`;
 
-    JSONP<ISFbCountResult | ISFbCountError>(finalURL, (_err, data) => {
-      if (data) {
-        this.handleResult<ISFbCountResult | ISFbCountError>(data);
+    this.handleLoading(true);
 
-        if ('engagement' in data) {
-          this.saveCount(data.engagement?.share_count);
-        }
+    JSONP<TSFacebookCountResponse>(finalURL, (err, data) => {
+      this.handleLoading(false);
+
+      if (data) {
+        this.handleFacebookResponse(data);
+      }
+
+      if (err) {
+        this.handleError(err);
       }
     });
   },

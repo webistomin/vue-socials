@@ -1,9 +1,10 @@
 /**
-* Hey!
-*
-* SFacebookWorkplace component used for FacebookWorkplace social network
-* @link https://work.facebook.com/
-*/
+ * Hey!
+ *
+ * SFacebookWorkplace component used for FacebookWorkplace social network
+ * @link https://work.facebook.com/
+ * @example https://work.facebook.com/sharer.php?url=https%253A%252F%252Fgithub.com
+ */
 
 import Vue, {
   CreateElement, VNode, VueConstructor,
@@ -12,9 +13,9 @@ import BaseSocial, { TBaseSocialMixin } from '@/mixins/BaseSocial/BaseSocial';
 import getSerialisedParams from '@/utils/getSerialisedParams';
 
 /**
-* Share parameters for link
-* @link https://developers.facebook.com/docs/workplace/sharing/share-dialog/
-*/
+ * Share parameters for link
+ * @link https://developers.facebook.com/docs/workplace/sharing/share-dialog/
+ */
 export interface ISFacebookWorkplaceShareOptions {
   url: string;
 }
@@ -22,7 +23,16 @@ export interface ISFacebookWorkplaceShareOptions {
 export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseSocialMixin<ISFacebookWorkplaceShareOptions>>>).extend({
   name: 'SFacebookWorkplace',
 
-  mixins: [BaseSocial<ISFacebookWorkplaceShareOptions>()],
+  mixins: [BaseSocial<ISFacebookWorkplaceShareOptions>(
+    'Facebook Workplace',
+    {
+      width: 600,
+      height: 540,
+    },
+    {} as ISFacebookWorkplaceShareOptions,
+    undefined,
+    true,
+  )],
 
   computed: {
     networkURL(): string {
@@ -38,6 +48,6 @@ export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseSo
   },
 
   render(h: CreateElement): VNode {
-    return this.generateComponent(h, this.networkURL, 'Facebook Workplace');
+    return this.generateComponent(h, this.networkURL);
   },
 });

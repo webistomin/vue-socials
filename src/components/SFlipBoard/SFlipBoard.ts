@@ -1,9 +1,10 @@
 /**
-* Hey!
-*
-* SFlipBoard component used for FlipBoard social network
-* @link https://flipboard.com/
-*/
+ * Hey!
+ *
+ * SFlipBoard component used for FlipBoard social network
+ * @link https://flipboard.com/
+ * @example https://share.flipboard.com/bookmarklet/popout?url=https%3A%2F%2Fgithub.com%2F&title=Title
+ */
 
 import Vue, {
   CreateElement, VNode, VueConstructor,
@@ -12,9 +13,9 @@ import BaseSocial, { TBaseSocialMixin } from '@/mixins/BaseSocial/BaseSocial';
 import getSerialisedParams from '@/utils/getSerialisedParams';
 
 /**
-* Share parameters for link
-* @link https://about.flipboard.com/social-plugins/?tool=browser
-*/
+ * Share parameters for link
+ * @link https://about.flipboard.com/social-plugins/?tool=browser
+ */
 export interface ISFlipBoardShareOptions {
   url: string;
   title?: string;
@@ -23,7 +24,16 @@ export interface ISFlipBoardShareOptions {
 export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseSocialMixin<ISFlipBoardShareOptions>>>).extend({
   name: 'SFlipBoard',
 
-  mixins: [BaseSocial<ISFlipBoardShareOptions>()],
+  mixins: [BaseSocial<ISFlipBoardShareOptions>(
+    'Flipboard',
+    {
+      width: 834,
+      height: 572,
+    },
+    {} as ISFlipBoardShareOptions,
+    undefined,
+    true,
+  )],
 
   computed: {
     networkURL(): string {
@@ -31,6 +41,7 @@ export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseSo
       const { shareOptions } = this;
       const { url, title } = shareOptions;
       const serialisedParams = getSerialisedParams({
+        v: 2,
         url,
         title,
       });
@@ -40,6 +51,6 @@ export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseSo
   },
 
   render(h: CreateElement): VNode {
-    return this.generateComponent(h, this.networkURL, 'FlipBoard');
+    return this.generateComponent(h, this.networkURL);
   },
 });

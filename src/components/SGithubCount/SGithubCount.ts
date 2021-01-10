@@ -1,9 +1,9 @@
 /**
-* Hey!
-*
-* SGithubCount component used for GitHub social network
-* @link https://github.com/
-*/
+ * Hey!
+ *
+ * SGithubCount component used for GitHub social network
+ * @link https://github.com/
+ */
 
 import Vue, { VueConstructor } from 'vue';
 import JSONP from '@/utils/jsonp';
@@ -66,23 +66,28 @@ export interface ISGithubCountResult {
 }
 
 /**
-* Share parameters for link
-*/
+ * Share parameters for link
+ */
 export interface ISGithubCountShareOptions {
   username: string;
   type: TSGithubCountLinkType;
 }
 
-export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseCountMixin<ISGithubCountShareOptions>>>).extend({
+export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseCountMixin<ISGithubCountShareOptions, ISGithubCountResult>>>).extend({
   name: 'SGithubCount',
 
-  mixins: [BaseCount<ISGithubCountShareOptions>()],
+  mixins: [BaseCount<ISGithubCountShareOptions, ISGithubCountResult>(
+    'GitHub',
+    {} as ISGithubCountShareOptions,
+    true,
+    '@c followers on @s.',
+  )],
 
   methods: {
     handleGithubResponse(data: ISGithubCountResult): void {
-      this.handleResult<ISGithubCountResult>(data);
+      this.handleResult(data);
 
-      this.saveCount(data.data?.followers);
+      this.handleCount(data.data?.followers);
     },
   },
 
@@ -98,9 +103,17 @@ export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseCo
         finalURL = `${BASE_URL}users/${username}`;
     }
 
-    JSONP<ISGithubCountResult>(finalURL, (_err, data) => {
+    this.handleLoading(true);
+
+    JSONP<ISGithubCountResult>(finalURL, (err, data) => {
+      this.handleLoading(false);
+
       if (data) {
         this.handleGithubResponse(data);
+      }
+
+      if (err) {
+        this.handleError(err);
       }
     });
   },

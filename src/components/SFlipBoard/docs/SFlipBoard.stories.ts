@@ -1,13 +1,19 @@
 import { Story } from '@storybook/vue';
 import { action } from '@storybook/addon-actions';
-import SFlipBoard from '../SFlipBoard';
+import { IWindowFeatures } from '@/types/common/windowFeatures';
+import SFlipBoard, { ISFlipBoardShareOptions } from '../SFlipBoard';
+
+interface ISFlipBoardStoryArgs {
+  windowFeatures: IWindowFeatures;
+  shareOptions: ISFlipBoardShareOptions;
+}
 
 export default {
   title: 'Share/SFlipBoard',
   component: SFlipBoard,
 };
 
-const Template: Story = (_args, { argTypes }) => ({
+const Template: Story<ISFlipBoardStoryArgs> = (_args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { SFlipBoard },
   methods: {
@@ -38,7 +44,10 @@ const Template: Story = (_args, { argTypes }) => ({
 
 export const Default = Template.bind({});
 Default.args = {
-  windowFeatures: {},
+  windowFeatures: {
+    width: 834,
+    height: 572,
+  },
   shareOptions: {
     url: 'https://github.com/',
     title: 'Title',

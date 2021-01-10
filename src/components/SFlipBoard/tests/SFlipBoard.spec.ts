@@ -1,5 +1,5 @@
-import SFlipBoard from '../SFlipBoard';
-
-describe('SFlipBoard.ts', () => {
-
-});
+// import SFlipBoard from '../SFlipBoard';
+//
+// describe('SFlipBoard.ts', () => {
+//
+// });

@@ -1,5 +1,5 @@
-import SDevTo from '../SDevTo';
-
-describe('SDevTo.ts', () => {
-
-});
+// import SDevTo from '../SDevTo';
+//
+// describe('SDevTo.ts', () => {
+//
+// });

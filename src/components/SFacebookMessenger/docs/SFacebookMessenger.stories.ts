@@ -1,13 +1,19 @@
 import { Story } from '@storybook/vue';
 import { action } from '@storybook/addon-actions';
-import SFacebookMessenger from '../SFacebookMessenger';
+import { IWindowFeatures } from '@/types/common/windowFeatures';
+import SFacebookMessenger, { ISFacebookMessengerShareOptions } from '../SFacebookMessenger';
+
+interface ISFacebookMessengerStoryArgs {
+  windowFeatures: IWindowFeatures;
+  shareOptions: ISFacebookMessengerShareOptions;
+}
 
 export default {
   title: 'Share/SFacebookMessenger',
   component: SFacebookMessenger,
 };
 
-const Template: Story = (_args, { argTypes }) => ({
+const Template: Story<ISFacebookMessengerStoryArgs> = (_args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { SFacebookMessenger },
   methods: {
@@ -34,7 +40,10 @@ const Template: Story = (_args, { argTypes }) => ({
 
 export const Default = Template.bind({});
 Default.args = {
-  windowFeatures: {},
+  windowFeatures: {
+    width: 600,
+    height: 540,
+  },
   shareOptions: {
     url: 'https://github.com/',
     redirectUri: 'https://www.domain.com/',

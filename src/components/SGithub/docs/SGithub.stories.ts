@@ -1,13 +1,19 @@
 import { Story } from '@storybook/vue';
 import { action } from '@storybook/addon-actions';
-import SGithub from '../SGithub';
+import { IWindowFeatures } from '@/types/common/windowFeatures';
+import SGithub, { ISGithubShareOptions } from '../SGithub';
+
+interface ISGithubStoryArgs {
+  windowFeatures: IWindowFeatures;
+  shareOptions: ISGithubShareOptions;
+}
 
 export default {
   title: 'Share/SGithub',
   component: SGithub,
 };
 
-const Template: Story = (_args, { argTypes }) => ({
+const Template: Story<ISGithubStoryArgs> = (_args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { SGithub },
   methods: {
@@ -34,9 +40,12 @@ const Template: Story = (_args, { argTypes }) => ({
 
 export const Default = Template.bind({});
 Default.args = {
-  windowFeatures: {},
+  windowFeatures: {
+    width: 900,
+    height: 600,
+  },
   shareOptions: {
     username: 'webistomin',
-    type: 'sponsor',
+    type: 'profile',
   },
 };

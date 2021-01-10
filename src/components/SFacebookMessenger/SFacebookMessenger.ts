@@ -1,9 +1,10 @@
 /**
-* Hey!
-*
-* SFacebookMessenger component used for FacebookMessenger social network
-* @link https://facebook.com
-*/
+ * Hey!
+ *
+ * SFacebookMessenger component used for FacebookMessenger social network
+ * @link https://facebook.com/
+ * @example https://www.facebook.com/dialog/send?link=https%3A%2F%2Fgithub.com%2F&app_id=123456789&redirect_uri=https%3A%2F%2Fwww.domain.com%2F
+ */
 
 import Vue, {
   CreateElement, VNode, VueConstructor,
@@ -12,29 +13,45 @@ import BaseSocial, { TBaseSocialMixin } from '@/mixins/BaseSocial/BaseSocial';
 import getSerialisedParams from '@/utils/getSerialisedParams';
 
 /**
-* Share parameters for link
-* @link https://developers.facebook.com/docs/sharing/reference/send-dialog#examples
-*/
+ * Share parameters for link
+ * @link https://developers.facebook.com/docs/sharing/reference/send-dialog#examples
+ * url => link
+ * appId => app_id
+ * redirectUri => redirect_uri
+ */
 export interface ISFacebookMessengerShareOptions {
   url: string;
   appId: number;
   redirectUri?: string;
+  to?: string;
 }
 
 export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseSocialMixin<ISFacebookMessengerShareOptions>>>).extend({
   name: 'SFacebookMessenger',
 
-  mixins: [BaseSocial<ISFacebookMessengerShareOptions>()],
+  mixins: [BaseSocial<ISFacebookMessengerShareOptions>(
+    'Facebook Messenger',
+    {
+      width: 600,
+      height: 540,
+    },
+    {} as ISFacebookMessengerShareOptions,
+    undefined,
+    true,
+  )],
 
   computed: {
     networkURL(): string {
       const BASE_URL = 'http://www.facebook.com/dialog/send';
       const { shareOptions } = this;
-      const { url, appId, redirectUri } = shareOptions;
+      const {
+        url, appId, redirectUri, to,
+      } = shareOptions;
       const serialisedParams = getSerialisedParams({
         link: url,
         app_id: appId,
         redirect_uri: redirectUri,
+        to,
       });
 
       return `${BASE_URL}${serialisedParams}`;
@@ -42,6 +59,6 @@ export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseSo
   },
 
   render(h: CreateElement): VNode {
-    return this.generateComponent(h, this.networkURL, 'facebook');
+    return this.generateComponent(h, this.networkURL);
   },
 });

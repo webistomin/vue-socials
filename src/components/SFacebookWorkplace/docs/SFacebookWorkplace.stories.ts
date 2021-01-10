@@ -1,13 +1,19 @@
 import { Story } from '@storybook/vue';
 import { action } from '@storybook/addon-actions';
-import SFacebookWorkplace from '../SFacebookWorkplace';
+import { IWindowFeatures } from '@/types/common/windowFeatures';
+import SFacebookWorkplace, { ISFacebookWorkplaceShareOptions } from '../SFacebookWorkplace';
+
+interface ISFacebookMessengerStoryArgs {
+  windowFeatures: IWindowFeatures;
+  shareOptions: ISFacebookWorkplaceShareOptions;
+}
 
 export default {
   title: 'Share/SFacebookWorkplace',
   component: SFacebookWorkplace,
 };
 
-const Template: Story = (_args, { argTypes }) => ({
+const Template: Story<ISFacebookMessengerStoryArgs> = (_args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { SFacebookWorkplace },
   methods: {

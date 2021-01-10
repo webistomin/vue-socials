@@ -55,7 +55,7 @@
 * Built with **a11y** in mind
 * **One API** to rule them all
 * **i18n** support
-* **Built with TypeScript**, so you can enjoy completely typed components
+* **TypeScript** support
 
 ## Documentation 🤗
 

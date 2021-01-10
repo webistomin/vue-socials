@@ -1,9 +1,10 @@
 /**
-* Hey!
-*
-* SGithub component used for GitHub social network
-* @link https://github.com/
-*/
+ * Hey!
+ *
+ * SGithub component used for GitHub social network
+ * @link https://github.com/
+ * @example https://github.com/webistomin/
+ */
 
 import Vue, {
   CreateElement, VNode, VueConstructor,
@@ -19,8 +20,8 @@ const GITHUB_LINK_TYPES = {
 export type TSGithubLinkType = typeof GITHUB_LINK_TYPES[keyof typeof GITHUB_LINK_TYPES];
 
 /**
-* Share parameters for link
-*/
+ * Share parameters for link
+ */
 export interface ISGithubShareOptions {
   username: string;
   type: TSGithubLinkType;
@@ -29,7 +30,16 @@ export interface ISGithubShareOptions {
 export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseSocialMixin<ISGithubShareOptions>>>).extend({
   name: 'SGithub',
 
-  mixins: [BaseSocial<ISGithubShareOptions>()],
+  mixins: [BaseSocial<ISGithubShareOptions>(
+    'GitHub',
+    {
+      width: 900,
+      height: 600,
+    },
+    {} as ISGithubShareOptions,
+    undefined,
+    true,
+  )],
 
   computed: {
     networkURL(): string {
@@ -50,9 +60,26 @@ export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseSo
           return `${BASE_URL}${username}`;
       }
     },
+
+    ariaLabel() {
+      const { shareOptions } = this;
+      const {
+        username, type,
+      } = shareOptions;
+
+      switch (type) {
+        case GITHUB_LINK_TYPES.sponsor:
+          return `Sponsor ${username} on GitHub.`;
+        case GITHUB_LINK_TYPES.follow:
+          return `Follow ${username} on GitHub.`;
+        case GITHUB_LINK_TYPES.profile:
+        default:
+          return `Watch ${username} on GitHub.`;
+      }
+    },
   },
 
   render(h: CreateElement): VNode {
-    return this.generateComponent(h, this.networkURL, 'GitHub');
+    return this.generateComponent(h, this.networkURL);
   },
 });

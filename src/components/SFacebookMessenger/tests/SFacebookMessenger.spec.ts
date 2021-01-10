@@ -1,5 +1,5 @@
-import SFacebookMessenger from '../SFacebookMessenger';
-
-describe('SFacebookMessenger.ts', () => {
-
-});
+// import SFacebookMessenger from '../SFacebookMessenger';
+//
+// describe('SFacebookMessenger.ts', () => {
+//
+// });

@@ -1,5 +1,5 @@
-import SDouban from '../SDouban';
-
-describe('SDouban.ts', () => {
-
-});
+// import SDouban from '../SDouban';
+//
+// describe('SDouban.ts', () => {
+//
+// });

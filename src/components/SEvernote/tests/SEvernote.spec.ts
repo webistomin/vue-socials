@@ -1,5 +1,5 @@
-import SEvernote from '../SEvernote';
-
-describe('SEvernote.ts', () => {
-
-});
+// import SEvernote from '../SEvernote';
+//
+// describe('SEvernote.ts', () => {
+//
+// });

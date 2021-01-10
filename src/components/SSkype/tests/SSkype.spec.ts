@@ -1,5 +1,5 @@
-import SSkype from '../SSkype';
-
-describe('SSkype.ts', () => {
-
-});
+// import SSkype from '../SSkype';
+//
+// describe('SSkype.ts', () => {
+//
+// });

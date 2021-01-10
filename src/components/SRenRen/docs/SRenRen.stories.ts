@@ -1,13 +1,14 @@
 import { Story } from '@storybook/vue';
 import { action } from '@storybook/addon-actions';
-import SRenRen from '../SRenRen';
+import { DEFAULT_WINDOW_FEATURES, TBaseSocialPropsOptions } from '@/mixins/BaseSocial/BaseSocial';
+import SRenRen, { ISRenRenShareOptions } from '../SRenRen';
 
 export default {
   title: 'Share/SRenRen',
   component: SRenRen,
 };
 
-const Template: Story = (_args, { argTypes }) => ({
+const Template: Story<TBaseSocialPropsOptions<ISRenRenShareOptions>> = (_args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { SRenRen },
   methods: {
@@ -37,11 +38,12 @@ const Template: Story = (_args, { argTypes }) => ({
 
 export const Default = Template.bind({});
 Default.args = {
-  windowFeatures: {},
+  windowFeatures: DEFAULT_WINDOW_FEATURES,
   shareOptions: {
     srcUrl: 'https://github.com/',
     resourceUrl: 'https://github.com/',
     title: 'Title',
     description: 'Description',
   },
+  useNativeBehavior: false,
 };

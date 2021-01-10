@@ -1,13 +1,14 @@
 import { Story } from '@storybook/vue';
 import { action } from '@storybook/addon-actions';
-import SPocket from '../SPocket';
+import { DEFAULT_WINDOW_FEATURES, TBaseSocialPropsOptions } from '@/mixins/BaseSocial/BaseSocial';
+import SPocket, { ISPocketShareOptions } from '../SPocket';
 
 export default {
   title: 'Share/SPocket',
   component: SPocket,
 };
 
-const Template: Story = (_args, { argTypes }) => ({
+const Template: Story<TBaseSocialPropsOptions<ISPocketShareOptions>> = (_args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { SPocket },
   methods: {
@@ -34,8 +35,9 @@ const Template: Story = (_args, { argTypes }) => ({
 
 export const Default = Template.bind({});
 Default.args = {
-  windowFeatures: {},
+  windowFeatures: DEFAULT_WINDOW_FEATURES,
   shareOptions: {
     url: 'https://github.com/',
   },
+  useNativeBehavior: false,
 };

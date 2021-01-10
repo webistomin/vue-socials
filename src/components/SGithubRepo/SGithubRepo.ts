@@ -1,9 +1,9 @@
 /**
-* Hey!
-*
-* SGithubRepo component used for GitHub social network
-* @link https://github.com/
-*/
+ * Hey!
+ *
+ * SGithubRepo component used for GitHub social network
+ * @link https://github.com/
+ */
 
 import Vue, {
   CreateElement, VNode, VueConstructor,
@@ -24,8 +24,8 @@ const GITHUB_LINK_TYPES = {
 export type TSGithubLinkType = typeof GITHUB_LINK_TYPES[keyof typeof GITHUB_LINK_TYPES];
 
 /**
-* Share parameters for link
-*/
+ * Share parameters for link
+ */
 export interface ISGithubRepoShareOptions {
   username: string;
   repository: string;
@@ -35,7 +35,13 @@ export interface ISGithubRepoShareOptions {
 export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseSocialMixin<ISGithubRepoShareOptions>>>).extend({
   name: 'SGithubRepo',
 
-  mixins: [BaseSocial<ISGithubRepoShareOptions>()],
+  mixins: [BaseSocial<ISGithubRepoShareOptions>(
+    'GitHub',
+    {
+      width: 900,
+      height: 600,
+    },
+  )],
 
   computed: {
     networkURL(): string {
@@ -63,9 +69,34 @@ export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseSo
           return `${BASE_URL}${username}/${repository}`;
       }
     },
+
+    ariaLabel(): string {
+      const { shareOptions } = this;
+      const { username, repository, type } = shareOptions;
+
+      switch (type) {
+        case GITHUB_LINK_TYPES.watch:
+          return `Watch ${username}/${repository} on GitHub`;
+        case GITHUB_LINK_TYPES.fork:
+          return `Fork ${username}/${repository} on GitHub`;
+        case GITHUB_LINK_TYPES.star:
+          return `Give a star to ${username}/${repository} on GitHub`;
+        case GITHUB_LINK_TYPES.issue:
+          return `Raise a new issue on ${username}/${repository} on GitHub`;
+        case GITHUB_LINK_TYPES.pr:
+          return `Raise a new pull request ${username}/${repository} on GitHub`;
+        case GITHUB_LINK_TYPES.download:
+          return `Download ${username}/${repository} from GitHub`;
+        case GITHUB_LINK_TYPES.template:
+          return `Generate a new repository from ${username}/${repository} on GitHub`;
+        case GITHUB_LINK_TYPES.repo:
+        default:
+          return `Watch ${username}/${repository} on GitHub`;
+      }
+    },
   },
 
   render(h: CreateElement): VNode {
-    return this.generateComponent(h, this.networkURL, 'GitHub');
+    return this.generateComponent(h, this.networkURL);
   },
 });

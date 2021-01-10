@@ -1,13 +1,14 @@
 import { Story } from '@storybook/vue';
 import { action } from '@storybook/addon-actions';
-import SHatena from '../SHatena';
+import { DEFAULT_WINDOW_FEATURES, TBaseSocialPropsOptions } from '@/mixins/BaseSocial/BaseSocial';
+import SHatena, { ISHatenaShareOptions } from '../SHatena';
 
 export default {
   title: 'Share/SHatena',
   component: SHatena,
 };
 
-const Template: Story = (_args, { argTypes }) => ({
+const Template: Story<TBaseSocialPropsOptions<ISHatenaShareOptions>> = (_args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { SHatena },
   methods: {
@@ -34,9 +35,10 @@ const Template: Story = (_args, { argTypes }) => ({
 
 export const Default = Template.bind({});
 Default.args = {
-  windowFeatures: {},
+  windowFeatures: DEFAULT_WINDOW_FEATURES,
   shareOptions: {
     url: 'https://github.com/',
     title: 'Title',
   },
+  useNativeBehavior: false,
 };

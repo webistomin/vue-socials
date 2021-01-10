@@ -1,5 +1,5 @@
-import SThreema from '../SThreema';
-
-describe('SThreema.ts', () => {
-
-});
+// import SThreema from '../SThreema';
+//
+// describe('SThreema.ts', () => {
+//
+// });

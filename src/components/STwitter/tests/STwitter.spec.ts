@@ -1,5 +1,5 @@
-import STwitter from '../STwitter';
-
-describe('STwitter.ts', () => {
-
-});
+// import STwitter from '../STwitter';
+//
+// describe('STwitter.ts', () => {
+//
+// });

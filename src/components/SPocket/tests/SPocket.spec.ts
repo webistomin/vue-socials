@@ -1,5 +1,5 @@
-import SPocket from '../SPocket';
-
-describe('SPocket.ts', () => {
-
-});
+// import SPocket from '../SPocket';
+//
+// describe('SPocket.ts', () => {
+//
+// });

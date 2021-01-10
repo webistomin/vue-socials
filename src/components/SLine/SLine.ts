@@ -23,13 +23,20 @@ export interface ISLineShareOptions {
 export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseSocialMixin<ISLineShareOptions>>>).extend({
   name: 'SLine',
 
-  mixins: [BaseSocial<ISLineShareOptions>()],
+  mixins: [BaseSocial<ISLineShareOptions>(
+    'Line',
+    {
+      width: 600,
+      height: 600,
+    },
+  )],
 
   computed: {
     networkURL(): string {
       const BASE_URL = 'https://lineit.line.me/share/ui';
       const { shareOptions } = this;
       const { url, text } = shareOptions;
+
       const serialisedParams = getSerialisedParams({
         url,
         text,
@@ -40,6 +47,6 @@ export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseSo
   },
 
   render(h: CreateElement): VNode {
-    return this.generateComponent(h, this.networkURL, 'Line');
+    return this.generateComponent(h, this.networkURL);
   },
 });

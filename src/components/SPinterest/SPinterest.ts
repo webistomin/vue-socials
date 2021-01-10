@@ -24,13 +24,20 @@ export interface ISPinterestShareOptions {
 export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseSocialMixin<ISPinterestShareOptions>>>).extend({
   name: 'SPinterest',
 
-  mixins: [BaseSocial<ISPinterestShareOptions>()],
+  mixins: [BaseSocial<ISPinterestShareOptions>(
+    'Pinterest',
+    {
+      width: 700,
+      height: 700,
+    },
+  )],
 
   computed: {
     networkURL(): string {
       const BASE_URL = 'http://pinterest.com/pin/create/button/';
       const { shareOptions } = this;
       const { url, media, description } = shareOptions;
+
       const serialisedParams = getSerialisedParams({
         url,
         media,
@@ -42,6 +49,6 @@ export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseSo
   },
 
   render(h: CreateElement): VNode {
-    return this.generateComponent(h, this.networkURL, 'Pinterest');
+    return this.generateComponent(h, this.networkURL);
   },
 });

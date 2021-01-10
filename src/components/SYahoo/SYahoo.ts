@@ -23,7 +23,9 @@ export interface ISYahooShareOptions {
 export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseSocialMixin<ISYahooShareOptions>>>).extend({
   name: 'SYahoo',
 
-  mixins: [BaseSocial<ISYahooShareOptions>()],
+  mixins: [BaseSocial<ISYahooShareOptions>(
+    'Yahoo',
+  )],
 
   computed: {
     networkURL(): string {
@@ -41,6 +43,6 @@ export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseSo
   },
 
   render(h: CreateElement): VNode {
-    return this.generateComponent(h, this.networkURL, 'Yahoo');
+    return this.generateComponent(h, this.networkURL);
   },
 });

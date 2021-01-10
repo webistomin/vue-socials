@@ -23,13 +23,20 @@ export interface ISInstaPaperShareOptions {
 export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseSocialMixin<ISInstaPaperShareOptions>>>).extend({
   name: 'SInstaPaper',
 
-  mixins: [BaseSocial<ISInstaPaperShareOptions>()],
+  mixins: [BaseSocial<ISInstaPaperShareOptions>(
+    'InstaPaper',
+    {
+      width: 600,
+      height: 600,
+    },
+  )],
 
   computed: {
     networkURL(): string {
       const BASE_URL = 'http://www.instapaper.com/edit';
       const { shareOptions } = this;
       const { url, title, description } = shareOptions;
+
       const serialisedParams = getSerialisedParams({
         url,
         title,
@@ -41,6 +48,6 @@ export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseSo
   },
 
   render(h: CreateElement): VNode {
-    return this.generateComponent(h, this.networkURL, 'InstaPaper');
+    return this.generateComponent(h, this.networkURL);
   },
 });

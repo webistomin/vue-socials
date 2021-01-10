@@ -1,5 +1,5 @@
-import SHackerNews from '../SHackerNews';
-
-describe('SHackerNews.ts', () => {
-
-});
+// import SHackerNews from '../SHackerNews';
+//
+// describe('SHackerNews.ts', () => {
+//
+// });

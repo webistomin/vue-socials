@@ -26,7 +26,9 @@ export interface ISRenRenShareOptions {
 export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseSocialMixin<ISRenRenShareOptions>>>).extend({
   name: 'SRenRen',
 
-  mixins: [BaseSocial<ISRenRenShareOptions>()],
+  mixins: [BaseSocial<ISRenRenShareOptions>(
+    'RenRen',
+  )],
 
   computed: {
     networkURL(): string {
@@ -48,6 +50,6 @@ export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseSo
   },
 
   render(h: CreateElement): VNode {
-    return this.generateComponent(h, this.networkURL, 'RenRen');
+    return this.generateComponent(h, this.networkURL);
   },
 });

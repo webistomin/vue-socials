@@ -28,7 +28,9 @@ export interface ISMailRuShareOptions {
 export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseSocialMixin<ISMailRuShareOptions>>>).extend({
   name: 'SMailRu',
 
-  mixins: [BaseSocial<ISMailRuShareOptions>()],
+  mixins: [BaseSocial<ISMailRuShareOptions>(
+    'Mail.ru',
+  )],
 
   computed: {
     networkURL(): string {
@@ -37,6 +39,7 @@ export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseSo
       const {
         url, title, description, image, swfUrl, width, height,
       } = shareOptions;
+
       const serialisedParams = getSerialisedParams({
         share_url: url,
         title,
@@ -52,6 +55,6 @@ export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseSo
   },
 
   render(h: CreateElement): VNode {
-    return this.generateComponent(h, this.networkURL, 'Mail.ru');
+    return this.generateComponent(h, this.networkURL);
   },
 });

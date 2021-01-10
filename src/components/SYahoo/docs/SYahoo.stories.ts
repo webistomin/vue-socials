@@ -1,13 +1,14 @@
 import { Story } from '@storybook/vue';
 import { action } from '@storybook/addon-actions';
-import SYahoo from '../SYahoo';
+import { DEFAULT_WINDOW_FEATURES, TBaseSocialPropsOptions } from '@/mixins/BaseSocial/BaseSocial';
+import SYahoo, { ISYahooShareOptions } from '../SYahoo';
 
 export default {
   title: 'Share/SYahoo',
   component: SYahoo,
 };
 
-const Template: Story = (_args, { argTypes }) => ({
+const Template: Story<TBaseSocialPropsOptions<ISYahooShareOptions>> = (_args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { SYahoo },
   methods: {
@@ -38,8 +39,11 @@ const Template: Story = (_args, { argTypes }) => ({
 
 export const Default = Template.bind({});
 Default.args = {
-  windowFeatures: {},
+  windowFeatures: DEFAULT_WINDOW_FEATURES,
   shareOptions: {
-    url: 'https://github.com/',
+    email: 'mail@gmail.com',
+    subject: 'Subject',
+    body: 'Hello\nWorld!',
   },
+  useNativeBehavior: false,
 };

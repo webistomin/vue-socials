@@ -1,13 +1,14 @@
 import { Story } from '@storybook/vue';
 import { action } from '@storybook/addon-actions';
-import SWeibo from '../SWeibo';
+import { DEFAULT_WINDOW_FEATURES, TBaseSocialPropsOptions } from '@/mixins/BaseSocial/BaseSocial';
+import SWeibo, { ISWeiboShareOptions } from '../SWeibo';
 
 export default {
   title: 'Share/SWeibo',
   component: SWeibo,
 };
 
-const Template: Story = (_args, { argTypes }) => ({
+const Template: Story<TBaseSocialPropsOptions<ISWeiboShareOptions>> = (_args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { SWeibo },
   methods: {
@@ -35,9 +36,11 @@ const Template: Story = (_args, { argTypes }) => ({
 
 export const Default = Template.bind({});
 Default.args = {
-  windowFeatures: {},
+  windowFeatures: DEFAULT_WINDOW_FEATURES,
   shareOptions: {
     url: 'https://github.com/',
     title: 'Title',
+    appkey: '',
   },
+  useNativeBehavior: false,
 };

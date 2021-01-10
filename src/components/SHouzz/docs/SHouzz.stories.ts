@@ -1,13 +1,14 @@
 import { Story } from '@storybook/vue';
 import { action } from '@storybook/addon-actions';
-import SHouzz from '../SHouzz';
+import { TBaseSocialPropsOptions } from '@/mixins/BaseSocial/BaseSocial';
+import SHouzz, { ISHouzzShareOptions } from '../SHouzz';
 
 export default {
   title: 'Share/SHouzz',
   component: SHouzz,
 };
 
-const Template: Story = (_args, { argTypes }) => ({
+const Template: Story<TBaseSocialPropsOptions<ISHouzzShareOptions>> = (_args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { SHouzz },
   methods: {
@@ -34,12 +35,16 @@ const Template: Story = (_args, { argTypes }) => ({
 
 export const Default = Template.bind({});
 Default.args = {
-  windowFeatures: {},
+  windowFeatures: {
+    width: 1100,
+    height: 700,
+  },
   shareOptions: {
     url: 'https://github.com/',
     id: '123',
-    imageUrl: 'url',
+    image: 'url',
     title: 'Title',
     category: ['category'],
   },
+  useNativeBehavior: false,
 };

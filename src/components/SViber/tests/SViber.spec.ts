@@ -1,5 +1,5 @@
-import SViber from '../SViber';
-
-describe('SViber.ts', () => {
-
-});
+// import SViber from '../SViber';
+//
+// describe('SViber.ts', () => {
+//
+// });

@@ -1,13 +1,14 @@
 import { Story } from '@storybook/vue';
 import { action } from '@storybook/addon-actions';
-import SSkype from '../SSkype';
+import { DEFAULT_WINDOW_FEATURES, TBaseSocialPropsOptions } from '@/mixins/BaseSocial/BaseSocial';
+import SSkype, { ISSkypeShareOptions } from '../SSkype';
 
 export default {
   title: 'Share/SSkype',
   component: SSkype,
 };
 
-const Template: Story = (_args, { argTypes }) => ({
+const Template: Story<TBaseSocialPropsOptions<ISSkypeShareOptions>> = (_args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { SSkype },
   methods: {
@@ -34,9 +35,10 @@ const Template: Story = (_args, { argTypes }) => ({
 
 export const Default = Template.bind({});
 Default.args = {
-  windowFeatures: {},
+  windowFeatures: DEFAULT_WINDOW_FEATURES,
   shareOptions: {
     url: 'https://github.com/',
     text: 'Text',
   },
+  useNativeBehavior: false,
 };

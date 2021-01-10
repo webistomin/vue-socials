@@ -26,7 +26,9 @@ export interface ISVkontakteShareOptions {
 export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseSocialMixin<ISVkontakteShareOptions>>>).extend({
   name: 'SVkontakte',
 
-  mixins: [BaseSocial<ISVkontakteShareOptions>()],
+  mixins: [BaseSocial<ISVkontakteShareOptions>(
+    'Vkontakte'
+  )],
 
   computed: {
     networkURL(): string {
@@ -49,6 +51,6 @@ export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseSo
   },
 
   render(h: CreateElement): VNode {
-    return this.generateComponent(h, this.networkURL, 'vkontakte');
+    return this.generateComponent(h, this.networkURL);
   },
 });

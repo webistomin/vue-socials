@@ -1,5 +1,5 @@
-import SKakaoStory from '../SKakaoStory';
-
-describe('SKakaoStory.ts', () => {
-
-});
+// import SKakaoStory from '../SKakaoStory';
+//
+// describe('SKakaoStory.ts', () => {
+//
+// });

@@ -23,7 +23,9 @@ export interface ISViberShareOptions {
 export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseSocialMixin<ISViberShareOptions>>>).extend({
   name: 'SViber',
 
-  mixins: [BaseSocial<ISViberShareOptions>()],
+  mixins: [BaseSocial<ISViberShareOptions>(
+    'Viber'
+  )],
 
   computed: {
     networkURL(): string {
@@ -39,6 +41,6 @@ export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseSo
   },
 
   render(h: CreateElement): VNode {
-    return this.generateComponent(h, this.networkURL, 'Viber');
+    return this.generateComponent(h, this.networkURL);
   },
 });

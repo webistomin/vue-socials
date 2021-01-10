@@ -1,13 +1,14 @@
 import { Story } from '@storybook/vue';
 import { action } from '@storybook/addon-actions';
-import SVkontakte from '../SVkontakte';
+import SVkontakte, { ISVkontakteShareOptions } from '../SVkontakte';
+import { DEFAULT_WINDOW_FEATURES, TBaseSocialPropsOptions } from '@/mixins/BaseSocial/BaseSocial';
 
 export default {
   title: 'Share/SVkontakte',
   component: SVkontakte,
 };
 
-const Template: Story = (_args, { argTypes }) => ({
+const Template: Story<TBaseSocialPropsOptions<ISVkontakteShareOptions>> = (_args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { SVkontakte },
   methods: {
@@ -33,8 +34,9 @@ const Template: Story = (_args, { argTypes }) => ({
 
 export const Default = Template.bind({});
 Default.args = {
-  windowFeatures: {},
+  windowFeatures: DEFAULT_WINDOW_FEATURES,
   shareOptions: {
     url: 'https://github.com/',
   },
+  useNativeBehavior: false,
 };

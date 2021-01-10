@@ -1,5 +1,5 @@
-import SWeibo from '../SWeibo';
-
-describe('SWeibo.ts', () => {
-
-});
+// import SWeibo from '../SWeibo';
+//
+// describe('SWeibo.ts', () => {
+//
+// });

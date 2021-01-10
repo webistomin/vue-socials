@@ -1,9 +1,10 @@
 /**
-* Hey!
-*
-* SGoogleBookmarks component used for Google social network
-* @link https://www.google.com/bookmarks/
-*/
+ * Hey!
+ *
+ * SGoogleBookmarks component used for Google social network
+ * @link https://www.google.com/bookmarks/
+ * @example https://www.google.com/bookmarks/mark?op=edit&output=popup&bkmk=https%3A%2F%2Fgithub.com%2F&title=Title&annotation=Annotation&labels=tag
+ */
 
 import Vue, {
   CreateElement, VNode, VueConstructor,
@@ -13,8 +14,8 @@ import getSerialisedParams from '@/utils/getSerialisedParams';
 import getSeparatedList from '@/utils/getSeparatedList';
 
 /**
-* Share parameters for link
-*/
+ * Share parameters for link
+ */
 export interface ISGoogleBookmarksShareOptions {
   url: string;
   title?: string;
@@ -25,7 +26,9 @@ export interface ISGoogleBookmarksShareOptions {
 export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseSocialMixin<ISGoogleBookmarksShareOptions>>>).extend({
   name: 'SGoogleBookmarks',
 
-  mixins: [BaseSocial<ISGoogleBookmarksShareOptions>()],
+  mixins: [BaseSocial<ISGoogleBookmarksShareOptions>(
+    'Google Bookmarks',
+  )],
 
   computed: {
     networkURL(): string {
@@ -34,6 +37,7 @@ export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseSo
       const {
         url, title, annotation, tags,
       } = shareOptions;
+
       const serialisedParams = getSerialisedParams({
         op: 'edit',
         output: 'popup',
@@ -48,6 +52,6 @@ export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseSo
   },
 
   render(h: CreateElement): VNode {
-    return this.generateComponent(h, this.networkURL, 'Google Bookmarks');
+    return this.generateComponent(h, this.networkURL);
   },
 });

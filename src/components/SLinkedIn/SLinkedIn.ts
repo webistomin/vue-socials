@@ -22,13 +22,16 @@ export interface ISLinkedInShareOptions {
 export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseSocialMixin<ISLinkedInShareOptions>>>).extend({
   name: 'SLinkedIn',
 
-  mixins: [BaseSocial<ISLinkedInShareOptions>()],
+  mixins: [BaseSocial<ISLinkedInShareOptions>(
+    'LinkedIn',
+  )],
 
   computed: {
     networkURL(): string {
       const BASE_URL = 'https://www.linkedin.com/sharing/share-offsite/';
       const { shareOptions } = this;
       const { url } = shareOptions;
+
       const serialisedParams = getSerialisedParams({
         url,
       });
@@ -38,6 +41,6 @@ export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseSo
   },
 
   render(h: CreateElement): VNode {
-    return this.generateComponent(h, this.networkURL, 'LinkedIn');
+    return this.generateComponent(h, this.networkURL);
   },
 });

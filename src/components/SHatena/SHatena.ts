@@ -22,7 +22,9 @@ export interface ISHatenaShareOptions {
 export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseSocialMixin<ISHatenaShareOptions>>>).extend({
   name: 'SHatena',
 
-  mixins: [BaseSocial<ISHatenaShareOptions>()],
+  mixins: [BaseSocial<ISHatenaShareOptions>(
+    'Hatena',
+  )],
 
   computed: {
     networkURL(): string {
@@ -40,6 +42,6 @@ export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseSo
   },
 
   render(h: CreateElement): VNode {
-    return this.generateComponent(h, this.networkURL, 'Hatena');
+    return this.generateComponent(h, this.networkURL);
   },
 });

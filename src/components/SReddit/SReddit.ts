@@ -24,7 +24,9 @@ export interface ISRedditShareOptions {
 export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseSocialMixin<ISRedditShareOptions>>>).extend({
   name: 'SReddit',
 
-  mixins: [BaseSocial<ISRedditShareOptions>()],
+  mixins: [BaseSocial<ISRedditShareOptions>(
+    'Reddit',
+  )],
 
   computed: {
     networkURL(): string {
@@ -33,6 +35,7 @@ export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseSo
       const {
         url, title, text, selftext,
       } = shareOptions;
+
       const serialisedParams = getSerialisedParams({
         url,
         title,
@@ -45,6 +48,6 @@ export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseSo
   },
 
   render(h: CreateElement): VNode {
-    return this.generateComponent(h, this.networkURL, 'reddit');
+    return this.generateComponent(h, this.networkURL);
   },
 });

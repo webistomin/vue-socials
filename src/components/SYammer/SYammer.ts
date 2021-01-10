@@ -24,7 +24,9 @@ export interface ISYammerShareOptions {
 export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseSocialMixin<ISYammerShareOptions>>>).extend({
   name: 'SYammer',
 
-  mixins: [BaseSocial<ISYammerShareOptions>()],
+  mixins: [BaseSocial<ISYammerShareOptions>(
+    'Yammer',
+  )],
 
   computed: {
     networkURL(): string {
@@ -41,6 +43,6 @@ export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseSo
   },
 
   render(h: CreateElement): VNode {
-    return this.generateComponent(h, this.networkURL, 'Yammer');
+    return this.generateComponent(h, this.networkURL);
   },
 });

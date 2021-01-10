@@ -22,7 +22,9 @@ export interface ISPocketShareOptions {
 export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseSocialMixin<ISPocketShareOptions>>>).extend({
   name: 'SPocket',
 
-  mixins: [BaseSocial<ISPocketShareOptions>()],
+  mixins: [BaseSocial<ISPocketShareOptions>(
+    'GetPocket',
+  )],
 
   computed: {
     networkURL(): string {
@@ -38,6 +40,6 @@ export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseSo
   },
 
   render(h: CreateElement): VNode {
-    return this.generateComponent(h, this.networkURL, 'GetPocket');
+    return this.generateComponent(h, this.networkURL);
   },
 });

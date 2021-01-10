@@ -23,7 +23,9 @@ export interface ISWhatsAppShareOptions {
 export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseSocialMixin<ISWhatsAppShareOptions>>>).extend({
   name: 'SWhatsApp',
 
-  mixins: [BaseSocial<ISWhatsAppShareOptions>()],
+  mixins: [BaseSocial<ISWhatsAppShareOptions>(
+    'WhatsApp'
+  )],
 
   computed: {
     networkURL(): string {
@@ -40,6 +42,6 @@ export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseSo
   },
 
   render(h: CreateElement): VNode {
-    return this.generateComponent(h, this.networkURL, 'WhatsApp');
+    return this.generateComponent(h, this.networkURL);
   },
 });

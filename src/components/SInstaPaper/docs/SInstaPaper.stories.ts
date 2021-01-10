@@ -1,13 +1,14 @@
 import { Story } from '@storybook/vue';
 import { action } from '@storybook/addon-actions';
-import SInstaPaper from '../SInstaPaper';
+import { TBaseSocialPropsOptions } from '@/mixins/BaseSocial/BaseSocial';
+import SInstaPaper, { ISInstaPaperShareOptions } from '../SInstaPaper';
 
 export default {
   title: 'Share/SInstaPaper',
   component: SInstaPaper,
 };
 
-const Template: Story = (_args, { argTypes }) => ({
+const Template: Story<TBaseSocialPropsOptions<ISInstaPaperShareOptions>> = (_args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { SInstaPaper },
   methods: {
@@ -34,8 +35,12 @@ const Template: Story = (_args, { argTypes }) => ({
 
 export const Default = Template.bind({});
 Default.args = {
-  windowFeatures: {},
+  windowFeatures: {
+    width: 600,
+    height: 600,
+  },
   shareOptions: {
     url: 'https://github.com/',
   },
+  useNativeBehavior: false,
 };

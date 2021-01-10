@@ -1,13 +1,14 @@
 import { Story } from '@storybook/vue';
 import { action } from '@storybook/addon-actions';
-import SThreema from '../SThreema';
+import { DEFAULT_WINDOW_FEATURES, TBaseSocialPropsOptions } from '@/mixins/BaseSocial/BaseSocial';
+import SThreema, { ISThreemaShareOptions } from '../SThreema';
 
 export default {
   title: 'Share/SThreema',
   component: SThreema,
 };
 
-const Template: Story = (_args, { argTypes }) => ({
+const Template: Story<TBaseSocialPropsOptions<ISThreemaShareOptions>> = (_args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { SThreema },
   methods: {
@@ -34,9 +35,10 @@ const Template: Story = (_args, { argTypes }) => ({
 
 export const Default = Template.bind({});
 Default.args = {
-  windowFeatures: {},
+  windowFeatures: DEFAULT_WINDOW_FEATURES,
   shareOptions: {
     url: 'https://github.com/',
     id: '',
   },
+  useNativeBehavior: false,
 };

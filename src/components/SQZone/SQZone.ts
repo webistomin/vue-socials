@@ -23,7 +23,9 @@ export interface ISQZoneShareOptions {
 export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseSocialMixin<ISQZoneShareOptions>>>).extend({
   name: 'SQZone',
 
-  mixins: [BaseSocial<ISQZoneShareOptions>()],
+  mixins: [BaseSocial<ISQZoneShareOptions>(
+    'QZone',
+  )],
 
   computed: {
     networkURL(): string {
@@ -41,6 +43,6 @@ export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseSo
   },
 
   render(h: CreateElement): VNode {
-    return this.generateComponent(h, this.networkURL, 'QZone');
+    return this.generateComponent(h, this.networkURL);
   },
 });

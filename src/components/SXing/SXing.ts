@@ -23,7 +23,9 @@ export interface ISXingShareOptions {
 export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseSocialMixin<ISXingShareOptions>>>).extend({
   name: 'SXing',
 
-  mixins: [BaseSocial<ISXingShareOptions>()],
+  mixins: [BaseSocial<ISXingShareOptions>(
+    'Xing',
+  )],
 
   computed: {
     networkURL(): string {
@@ -40,6 +42,6 @@ export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseSo
   },
 
   render(h: CreateElement): VNode {
-    return this.generateComponent(h, this.networkURL, 'Xing');
+    return this.generateComponent(h, this.networkURL);
   },
 });

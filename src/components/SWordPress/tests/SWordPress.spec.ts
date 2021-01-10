@@ -1,5 +1,5 @@
-import SWordPress from '../SWordPress';
-
-describe('SWordPress.ts', () => {
-
-});
+// import SWordPress from '../SWordPress';
+//
+// describe('SWordPress.ts', () => {
+//
+// });

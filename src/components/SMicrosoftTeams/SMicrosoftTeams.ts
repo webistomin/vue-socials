@@ -26,7 +26,9 @@ export interface ISMicrosoftTeamsShareOptions {
 export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseSocialMixin<ISMicrosoftTeamsShareOptions>>>).extend({
   name: 'SMicrosoftTeams',
 
-  mixins: [BaseSocial<ISMicrosoftTeamsShareOptions>()],
+  mixins: [BaseSocial<ISMicrosoftTeamsShareOptions>(
+    'MicrosoftTeams',
+  )],
 
   computed: {
     networkURL(): string {
@@ -35,6 +37,7 @@ export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseSo
       const {
         url, preview, text, instruction, title,
       } = shareOptions;
+
       const serialisedParams = getSerialisedParams({
         href: url,
         preview,
@@ -48,6 +51,6 @@ export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseSo
   },
 
   render(h: CreateElement): VNode {
-    return this.generateComponent(h, this.networkURL, 'MicrosoftTeams');
+    return this.generateComponent(h, this.networkURL);
   },
 });

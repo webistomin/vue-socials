@@ -28,7 +28,13 @@ export interface ISTumblrShareOptions {
 export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseSocialMixin<ISTumblrShareOptions>>>).extend({
   name: 'STumblr',
 
-  mixins: [BaseSocial<ISTumblrShareOptions>()],
+  mixins: [BaseSocial<ISTumblrShareOptions>(
+    'Tumblr',
+    {
+      width: 542,
+      height: 644,
+    },
+  )],
 
   computed: {
     networkURL(): string {
@@ -51,6 +57,6 @@ export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseSo
   },
 
   render(h: CreateElement): VNode {
-    return this.generateComponent(h, this.networkURL, 'Tumblr');
+    return this.generateComponent(h, this.networkURL);
   },
 });

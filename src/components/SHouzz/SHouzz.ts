@@ -27,7 +27,13 @@ export interface ISHouzzShareOptions {
 export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseSocialMixin<ISHouzzShareOptions>>>).extend({
   name: 'SHouzz',
 
-  mixins: [BaseSocial<ISHouzzShareOptions>()],
+  mixins: [BaseSocial<ISHouzzShareOptions>(
+    'Houzz',
+    {
+      width: 1100,
+      height: 700,
+    },
+  )],
 
   computed: {
     networkURL(): string {
@@ -36,6 +42,7 @@ export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseSo
       const {
         id, url, title, image, category,
       } = shareOptions;
+
       const serialisedParams = getSerialisedParams({
         link: url,
         hzid: id,
@@ -49,6 +56,6 @@ export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseSo
   },
 
   render(h: CreateElement): VNode {
-    return this.generateComponent(h, this.networkURL, 'Houzz');
+    return this.generateComponent(h, this.networkURL);
   },
 });

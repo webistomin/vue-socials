@@ -1,5 +1,5 @@
-import SRenRen from '../SRenRen';
-
-describe('SRenRen.ts', () => {
-
-});
+// import SRenRen from '../SRenRen';
+//
+// describe('SRenRen.ts', () => {
+//
+// });

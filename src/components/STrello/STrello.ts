@@ -23,7 +23,9 @@ export interface ISTrelloShareOptions {
 export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseSocialMixin<ISTrelloShareOptions>>>).extend({
   name: 'STrello',
 
-  mixins: [BaseSocial<ISTrelloShareOptions>()],
+  mixins: [BaseSocial<ISTrelloShareOptions>(
+    'Trello',
+  )],
 
   computed: {
     networkURL(): string {
@@ -42,6 +44,6 @@ export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseSo
   },
 
   render(h: CreateElement): VNode {
-    return this.generateComponent(h, this.networkURL, 'Trello');
+    return this.generateComponent(h, this.networkURL);
   },
 });

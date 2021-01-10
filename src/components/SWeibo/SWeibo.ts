@@ -25,7 +25,9 @@ export interface ISWeiboShareOptions {
 export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseSocialMixin<ISWeiboShareOptions>>>).extend({
   name: 'SWeibo',
 
-  mixins: [BaseSocial<ISWeiboShareOptions>()],
+  mixins: [BaseSocial<ISWeiboShareOptions>(
+    'Weibo',
+  )],
 
   computed: {
     networkURL(): string {
@@ -46,6 +48,6 @@ export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseSo
   },
 
   render(h: CreateElement): VNode {
-    return this.generateComponent(h, this.networkURL, 'Weibo');
+    return this.generateComponent(h, this.networkURL);
   },
 });

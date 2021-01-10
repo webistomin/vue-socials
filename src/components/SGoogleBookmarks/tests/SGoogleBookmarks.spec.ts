@@ -1,5 +1,5 @@
-import SGoogleBookmarks from '../SGoogleBookmarks';
-
-describe('SGoogleBookmarks.ts', () => {
-
-});
+// import SGoogleBookmarks from '../SGoogleBookmarks';
+//
+// describe('SGoogleBookmarks.ts', () => {
+//
+// });

@@ -24,13 +24,16 @@ export interface ISTelegramShareOptions {
 export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseSocialMixin<ISTelegramShareOptions>>>).extend({
   name: 'STelegram',
 
-  mixins: [BaseSocial<ISTelegramShareOptions>()],
+  mixins: [BaseSocial<ISTelegramShareOptions>(
+    'Telegram',
+  )],
 
   computed: {
     networkURL(): string {
       const BASE_URL = 'https://t.me/share/url';
       const { shareOptions } = this;
       const { url, text } = shareOptions;
+
       const serialisedParams = getSerialisedParams({
         url,
         text,
@@ -41,6 +44,6 @@ export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseSo
   },
 
   render(h: CreateElement): VNode {
-    return this.generateComponent(h, this.networkURL, 'telegram');
+    return this.generateComponent(h, this.networkURL);
   },
 });

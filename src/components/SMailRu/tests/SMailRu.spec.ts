@@ -1,5 +1,5 @@
-import SMailRu from '../SMailRu';
-
-describe('SMailRu.ts', () => {
-
-});
+// import SMailRu from '../SMailRu';
+//
+// describe('SMailRu.ts', () => {
+//
+// });

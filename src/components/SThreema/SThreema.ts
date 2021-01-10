@@ -22,7 +22,9 @@ export interface ISThreemaShareOptions {
 export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseSocialMixin<ISThreemaShareOptions>>>).extend({
   name: 'SThreema',
 
-  mixins: [BaseSocial<ISThreemaShareOptions>()],
+  mixins: [BaseSocial<ISThreemaShareOptions>(
+    'Threema',
+  )],
 
   computed: {
     networkURL(): string {
@@ -39,6 +41,6 @@ export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseSo
   },
 
   render(h: CreateElement): VNode {
-    return this.generateComponent(h, this.networkURL, 'Threema');
+    return this.generateComponent(h, this.networkURL);
   },
 });

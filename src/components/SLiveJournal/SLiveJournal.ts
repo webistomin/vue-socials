@@ -23,13 +23,16 @@ export interface ISLiveJournalShareOptions {
 export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseSocialMixin<ISLiveJournalShareOptions>>>).extend({
   name: 'SLiveJournal',
 
-  mixins: [BaseSocial<ISLiveJournalShareOptions>()],
+  mixins: [BaseSocial<ISLiveJournalShareOptions>(
+    'LiveJournal',
+  )],
 
   computed: {
     networkURL(): string {
       const BASE_URL = 'http://www.livejournal.com/update.bml';
       const { shareOptions } = this;
       const { subject, url } = shareOptions;
+
       const serialisedParams = getSerialisedParams({
         event: url,
         subject,
@@ -40,6 +43,6 @@ export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseSo
   },
 
   render(h: CreateElement): VNode {
-    return this.generateComponent(h, this.networkURL, 'LiveJournal');
+    return this.generateComponent(h, this.networkURL);
   },
 });

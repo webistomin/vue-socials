@@ -23,13 +23,16 @@ export interface ISKakaoStoryShareOptions {
 export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseSocialMixin<ISKakaoStoryShareOptions>>>).extend({
   name: 'SKakaoStory',
 
-  mixins: [BaseSocial<ISKakaoStoryShareOptions>()],
+  mixins: [BaseSocial<ISKakaoStoryShareOptions>(
+    'KakaoStory',
+  )],
 
   computed: {
     networkURL(): string {
       const BASE_URL = 'https://story.kakao.com/s/share';
       const { shareOptions } = this;
       const { url, text } = shareOptions;
+
       const serialisedParams = getSerialisedParams({
         url,
         text,
@@ -40,6 +43,6 @@ export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseSo
   },
 
   render(h: CreateElement): VNode {
-    return this.generateComponent(h, this.networkURL, 'KakaoStory');
+    return this.generateComponent(h, this.networkURL);
   },
 });

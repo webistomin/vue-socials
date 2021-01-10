@@ -1,5 +1,5 @@
-import SMicrosoftTeams from '../SMicrosoftTeams';
-
-describe('SMicrosoftTeams.ts', () => {
-
-});
+// import SMicrosoftTeams from '../SMicrosoftTeams';
+//
+// describe('SMicrosoftTeams.ts', () => {
+//
+// });

@@ -1,13 +1,14 @@
 import { Story } from '@storybook/vue';
 import { action } from '@storybook/addon-actions';
-import STumblr from '../STumblr';
+import { TBaseSocialPropsOptions } from '@/mixins/BaseSocial/BaseSocial';
+import STumblr, { ISTumblrShareOptions } from '../STumblr';
 
 export default {
   title: 'Share/STumblr',
   component: STumblr,
 };
 
-const Template: Story = (_args, { argTypes }) => ({
+const Template: Story<TBaseSocialPropsOptions<ISTumblrShareOptions>> = (_args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { STumblr },
   methods: {
@@ -32,11 +33,15 @@ const Template: Story = (_args, { argTypes }) => ({
 
 export const Default = Template.bind({});
 Default.args = {
-  windowFeatures: {},
+  windowFeatures: {
+    width: 542,
+    height: 644,
+  },
   shareOptions: {
     canonicalUrl: 'https://github.com/',
     title: 'Title',
     caption: 'Caption',
     tags: ['hash', 'tag'],
   },
+  useNativeBehavior: false,
 };

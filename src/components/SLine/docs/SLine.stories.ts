@@ -1,13 +1,14 @@
 import { Story } from '@storybook/vue';
 import { action } from '@storybook/addon-actions';
-import SLine from '../SLine';
+import { TBaseSocialPropsOptions } from '@/mixins/BaseSocial/BaseSocial';
+import SLine, { ISLineShareOptions } from '../SLine';
 
 export default {
   title: 'Share/SLine',
   component: SLine,
 };
 
-const Template: Story = (_args, { argTypes }) => ({
+const Template: Story<TBaseSocialPropsOptions<ISLineShareOptions>> = (_args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { SLine },
   methods: {
@@ -44,9 +45,13 @@ const Template: Story = (_args, { argTypes }) => ({
 
 export const Default = Template.bind({});
 Default.args = {
-  windowFeatures: {},
+  windowFeatures: {
+    width: 600,
+    height: 600,
+  },
   shareOptions: {
     url: 'https://github.com/',
     text: 'Text',
   },
+  useNativeBehavior: false,
 };

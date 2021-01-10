@@ -26,7 +26,9 @@ export interface ISTwitterShareOptions {
 export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseSocialMixin<ISTwitterShareOptions>>>).extend({
   name: 'STwitter',
 
-  mixins: [BaseSocial<ISTwitterShareOptions>()],
+  mixins: [BaseSocial<ISTwitterShareOptions>(
+    'Twitter',
+  )],
 
   computed: {
     networkURL(): string {
@@ -47,6 +49,6 @@ export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseSo
   },
 
   render(h: CreateElement): VNode {
-    return this.generateComponent(h, this.networkURL, 'facebook');
+    return this.generateComponent(h, this.networkURL);
   },
 });

@@ -26,7 +26,9 @@ export interface ISWordPressShareOptions {
 export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseSocialMixin<ISWordPressShareOptions>>>).extend({
   name: 'SWordPress',
 
-  mixins: [BaseSocial<ISWordPressShareOptions>()],
+  mixins: [BaseSocial<ISWordPressShareOptions>(
+    'WordPress'
+  )],
 
   computed: {
     networkURL(): string {
@@ -47,6 +49,6 @@ export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseSo
   },
 
   render(h: CreateElement): VNode {
-    return this.generateComponent(h, this.networkURL, 'WordPress');
+    return this.generateComponent(h, this.networkURL);
   },
 });

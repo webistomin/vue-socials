@@ -24,13 +24,16 @@ export interface ISOdnoklassnikiShareOptions {
 export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseSocialMixin<ISOdnoklassnikiShareOptions>>>).extend({
   name: 'SOdnoklassniki',
 
-  mixins: [BaseSocial<ISOdnoklassnikiShareOptions>()],
+  mixins: [BaseSocial<ISOdnoklassnikiShareOptions>(
+    'Odnoklassniki',
+  )],
 
   computed: {
     networkURL(): string {
       const BASE_URL = 'https://connect.ok.ru/offer';
       const { shareOptions } = this;
       const { url, title, imageUrl } = shareOptions;
+
       const serialisedParams = getSerialisedParams({
         url,
         title,
@@ -42,6 +45,6 @@ export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseSo
   },
 
   render(h: CreateElement): VNode {
-    return this.generateComponent(h, this.networkURL, 'odnoklassniki');
+    return this.generateComponent(h, this.networkURL);
   },
 });

@@ -2,10 +2,16 @@
  * Hey!
  *
  * SGmail component used for sending Email via GMail
+ * @link https://mail.google.com/
+ * @example https://mail.google.com/mail/u/0/?view=cm&to=google@gmail.com&su=Title&subject=Subject&body=Hello%0AWorld&cc=google1@gmail.com&bcc=google2@gmail.com&fs=1&tf=1
  */
 
-import Vue, { CreateElement, PropOptions, VNode } from 'vue';
+import Vue, {
+  CreateElement, VNode,
+  VueConstructor,
+} from 'vue';
 import getSerialisedParams from '@/utils/getSerialisedParams';
+import BaseSocial, { TBaseSocialMixin } from '@/mixins/BaseSocial/BaseSocial';
 
 /**
  * Share parameters for link
@@ -19,18 +25,12 @@ export interface ISGmailShareOptions {
   bcc?: string;
 }
 
-export default /* #__PURE__ */Vue.extend({
+export default /* #__PURE__ */(Vue as VueConstructor<Vue & InstanceType<TBaseSocialMixin<ISGmailShareOptions>>>).extend({
   name: 'SGmail',
 
-  props: {
-    /**
-     * Share parameters for Email
-     */
-    shareOptions: {
-      type: Object,
-      required: true,
-    } as PropOptions<ISGmailShareOptions>,
-  },
+  mixins: [BaseSocial<ISGmailShareOptions>(
+    'Gmail',
+  )],
 
   computed: {
     networkURL(): string {
@@ -54,14 +54,6 @@ export default /* #__PURE__ */Vue.extend({
   },
 
   render(h: CreateElement): VNode {
-    return h(
-      'a',
-      {
-        attrs: {
-          href: this.networkURL,
-        },
-      },
-      this.$slots.default,
-    );
+    return this.generateComponent(h, this.networkURL);
   },
 });

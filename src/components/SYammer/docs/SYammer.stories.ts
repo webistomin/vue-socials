@@ -1,13 +1,14 @@
 import { Story } from '@storybook/vue';
 import { action } from '@storybook/addon-actions';
-import SYammer from '../SYammer';
+import SYammer, { ISYammerShareOptions } from '../SYammer';
+import { TBaseSocialPropsOptions } from '@/mixins/BaseSocial/BaseSocial';
 
 export default {
   title: 'Share/SYammer',
   component: SYammer,
 };
 
-const Template: Story = (_args, { argTypes }) => ({
+const Template: Story<TBaseSocialPropsOptions<ISYammerShareOptions>> = (_args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { SYammer },
   methods: {
@@ -40,4 +41,5 @@ Default.args = {
     text: 'Text',
     groupId: '',
   },
+  useNativeBehavior: false,
 };

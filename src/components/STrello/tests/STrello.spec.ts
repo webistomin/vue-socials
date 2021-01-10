@@ -1,5 +1,5 @@
-import STrello from '../STrello';
-
-describe('STrello.ts', () => {
-
-});
+// import STrello from '../STrello';
+//
+// describe('STrello.ts', () => {
+//
+// });

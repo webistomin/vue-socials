@@ -1,13 +1,14 @@
 import { Story } from '@storybook/vue';
 import { action } from '@storybook/addon-actions';
-import SLinkedIn from '../SLinkedIn';
+import { DEFAULT_WINDOW_FEATURES, TBaseSocialPropsOptions } from '@/mixins/BaseSocial/BaseSocial';
+import SLinkedIn, { ISLinkedInShareOptions } from '../SLinkedIn';
 
 export default {
   title: 'Share/SLinkedIn',
   component: SLinkedIn,
 };
 
-const Template: Story = (_args, { argTypes }) => ({
+const Template: Story<TBaseSocialPropsOptions<ISLinkedInShareOptions>> = (_args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { SLinkedIn },
   methods: {
@@ -34,8 +35,9 @@ const Template: Story = (_args, { argTypes }) => ({
 
 export const Default = Template.bind({});
 Default.args = {
-  windowFeatures: {},
+  windowFeatures: DEFAULT_WINDOW_FEATURES,
   shareOptions: {
     url: 'https://github.com/',
   },
+  useNativeBehavior: false,
 };

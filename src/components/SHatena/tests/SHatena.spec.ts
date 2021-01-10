@@ -1,5 +1,5 @@
-import SHatena from '../SHatena';
-
-describe('SHatena.ts', () => {
-
-});
+// import SHatena from '../SHatena';
+//
+// describe('SHatena.ts', () => {
+//
+// });

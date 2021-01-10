@@ -1,13 +1,14 @@
 import { Story } from '@storybook/vue';
 import { action } from '@storybook/addon-actions';
-import SWhatsApp from '../SWhatsApp';
+import { DEFAULT_WINDOW_FEATURES, TBaseSocialPropsOptions } from '@/mixins/BaseSocial/BaseSocial';
+import SWhatsApp, { ISWhatsAppShareOptions } from '../SWhatsApp';
 
 export default {
   title: 'Share/SWhatsApp',
   component: SWhatsApp,
 };
 
-const Template: Story = (_args, { argTypes }) => ({
+const Template: Story<TBaseSocialPropsOptions<ISWhatsAppShareOptions>> = (_args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { SWhatsApp },
   methods: {
@@ -32,9 +33,10 @@ const Template: Story = (_args, { argTypes }) => ({
 
 export const Default = Template.bind({});
 Default.args = {
-  windowFeatures: {},
+  windowFeatures: DEFAULT_WINDOW_FEATURES,
   shareOptions: {
     number: '1(999)999-99-99',
     text: 'Hello world!',
   },
+  useNativeBehavior: false,
 };

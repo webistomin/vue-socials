@@ -1,13 +1,14 @@
 import { Story } from '@storybook/vue';
 import { action } from '@storybook/addon-actions';
-import SGithubRepo from '../SGithubRepo';
+import { TBaseSocialPropsOptions } from '@/mixins/BaseSocial/BaseSocial';
+import SGithubRepo, { ISGithubRepoShareOptions } from '../SGithubRepo';
 
 export default {
   title: 'Share/SGithubRepo',
   component: SGithubRepo,
 };
 
-const Template: Story = (_args, { argTypes }) => ({
+const Template: Story<TBaseSocialPropsOptions<ISGithubRepoShareOptions>> = (_args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { SGithubRepo },
   methods: {
@@ -34,10 +35,14 @@ const Template: Story = (_args, { argTypes }) => ({
 
 export const Default = Template.bind({});
 Default.args = {
-  windowFeatures: {},
+  windowFeatures: {
+    width: 900,
+    height: 600,
+  },
   shareOptions: {
     username: 'webistomin',
     repository: 'vue-socials',
     type: 'fork',
   },
+  useNativeBehavior: false,
 };

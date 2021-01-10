@@ -1,13 +1,14 @@
 import { Story } from '@storybook/vue';
 import { action } from '@storybook/addon-actions';
-import SKakaoStory from '../SKakaoStory';
+import { DEFAULT_WINDOW_FEATURES, TBaseSocialPropsOptions } from '@/mixins/BaseSocial/BaseSocial';
+import SKakaoStory, { ISKakaoStoryShareOptions } from '../SKakaoStory';
 
 export default {
   title: 'Share/SKakaoStory',
   component: SKakaoStory,
 };
 
-const Template: Story = (_args, { argTypes }) => ({
+const Template: Story<TBaseSocialPropsOptions<ISKakaoStoryShareOptions>> = (_args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { SKakaoStory },
   methods: {
@@ -35,9 +36,10 @@ const Template: Story = (_args, { argTypes }) => ({
 
 export const Default = Template.bind({});
 Default.args = {
-  windowFeatures: {},
+  windowFeatures: DEFAULT_WINDOW_FEATURES,
   shareOptions: {
     url: 'https://github.com/',
     text: 'Text',
   },
+  useNativeBehavior: false,
 };

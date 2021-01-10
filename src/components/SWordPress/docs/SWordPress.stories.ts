@@ -1,13 +1,14 @@
 import { Story } from '@storybook/vue';
 import { action } from '@storybook/addon-actions';
-import SWordPress from '../SWordPress';
+import { DEFAULT_WINDOW_FEATURES, TBaseSocialPropsOptions } from '@/mixins/BaseSocial/BaseSocial';
+import SWordPress, { ISWordPressShareOptions } from '../SWordPress';
 
 export default {
   title: 'Share/SWordPress',
   component: SWordPress,
 };
 
-const Template: Story = (_args, { argTypes }) => ({
+const Template: Story<TBaseSocialPropsOptions<ISWordPressShareOptions>> = (_args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { SWordPress },
   methods: {
@@ -34,7 +35,7 @@ const Template: Story = (_args, { argTypes }) => ({
 
 export const Default = Template.bind({});
 Default.args = {
-  windowFeatures: {},
+  windowFeatures: DEFAULT_WINDOW_FEATURES,
   shareOptions: {
     domain: 'https://wordpress.org',
     url: 'https://github.com',
@@ -42,4 +43,5 @@ Default.args = {
     text: 'Text',
     image: '',
   },
+  useNativeBehavior: false,
 };

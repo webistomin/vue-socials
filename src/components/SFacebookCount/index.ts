@@ -1,3 +1,3 @@
-import SFbCount from './SFacebookCount';
+import SFacebookCount from './SFacebookCount';
 
-export default SFbCount;
+export default SFacebookCount;

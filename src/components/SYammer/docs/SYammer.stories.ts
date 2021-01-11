@@ -1,7 +1,7 @@
 import { Story } from '@storybook/vue';
 import { action } from '@storybook/addon-actions';
-import SYammer, { ISYammerShareOptions } from '../SYammer';
 import { TBaseSocialPropsOptions } from '@/mixins/BaseSocial/BaseSocial';
+import SYammer, { ISYammerShareOptions } from '../SYammer';
 
 export default {
   title: 'Share/SYammer',

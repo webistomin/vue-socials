@@ -1,13 +1,14 @@
 import { Story } from '@storybook/vue';
 import { action } from '@storybook/addon-actions';
-import STumblrCount from '../STumblrCount';
+import { TBaseSocialPropsOptions } from '@/mixins/BaseSocial/BaseSocial';
+import STumblrCount, { ISTumblrCountShareOptions } from '../STumblrCount';
 
 export default {
   title: 'Count/STumblrCount',
   component: STumblrCount,
 };
 
-const Template: Story = (_args, { argTypes }) => ({
+const Template: Story<TBaseSocialPropsOptions<ISTumblrCountShareOptions>> = (_args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { STumblrCount },
   methods: {

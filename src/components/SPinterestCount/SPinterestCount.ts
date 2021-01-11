@@ -22,16 +22,18 @@ export interface ISPinterestResult {
   count: number;
 }
 
-export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseCountMixin<ISPinterestCountShareOptions>>>).extend({
+export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseCountMixin<ISPinterestCountShareOptions, ISPinterestResult>>>).extend({
   name: 'SPinterestCount',
 
-  mixins: [BaseCount<ISPinterestCountShareOptions>()],
+  mixins: [BaseCount<ISPinterestCountShareOptions, ISPinterestResult>(
+    'Pinterest',
+  )],
 
   methods: {
     handlePinterestResponse(data: ISPinterestResult): void {
-      this.handleResult<ISPinterestResult>(data);
+      this.handleResult(data);
 
-      this.saveCount(data?.count);
+      this.handleCount(data.count);
     },
   },
 
@@ -44,7 +46,15 @@ export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseCo
       url,
     })}`;
 
-    JSONP<ISPinterestResult>(finalURL, (_err, data) => {
+    this.handleLoading(true);
+
+    JSONP<ISPinterestResult>(finalURL, (err, data) => {
+      this.handleLoading(false);
+
+      if (err) {
+        this.handleError(err);
+      }
+
       if (data) {
         this.handlePinterestResponse(data);
       }

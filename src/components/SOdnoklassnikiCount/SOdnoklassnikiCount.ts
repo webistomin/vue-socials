@@ -36,19 +36,21 @@ export interface ISOdnoklassnikiResult {
   count: number;
 }
 
-export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseCountMixin<ISOdnoklassnikiCountShareOptions>>>).extend({
+export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseCountMixin<ISOdnoklassnikiCountShareOptions, ISOdnoklassnikiResult>>>).extend({
   name: 'SOdnoklassnikiCount',
 
-  mixins: [BaseCount<ISOdnoklassnikiCountShareOptions>()],
+  mixins: [BaseCount<ISOdnoklassnikiCountShareOptions, ISOdnoklassnikiResult>(
+    'Odnoklassniki',
+  )],
 
   methods: {
     handleOKResponse(count: number): void {
-      this.handleResult<ISOdnoklassnikiResult>({
+      this.handleResult({
         // index,
         count,
       });
 
-      this.saveCount(count);
+      this.handleCount(count);
 
       // delete window.ODKL.callbacks?.[`cb${index}`];
     },
@@ -82,7 +84,15 @@ export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseCo
       ref,
     })}`;
 
-    HTTP<ISOdnoklassnikiResult>(finalURL, (_err, data) => {
+    this.handleLoading(true);
+
+    HTTP<ISOdnoklassnikiResult>(finalURL, (err, data) => {
+      this.handleLoading(false);
+
+      if (err) {
+        this.handleError(err);
+      }
+
       if (data) {
         this.handleOKResponse(data.count);
       }

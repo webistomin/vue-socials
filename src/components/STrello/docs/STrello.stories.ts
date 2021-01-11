@@ -1,7 +1,7 @@
 import { Story } from '@storybook/vue';
 import { action } from '@storybook/addon-actions';
-import STrello, { ISTrelloShareOptions } from '../STrello';
 import { DEFAULT_WINDOW_FEATURES, TBaseSocialPropsOptions } from '@/mixins/BaseSocial/BaseSocial';
+import STrello, { ISTrelloShareOptions } from '../STrello';
 
 export default {
   title: 'Share/STrello',

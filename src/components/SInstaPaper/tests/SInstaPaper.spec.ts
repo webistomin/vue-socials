@@ -1,5 +1,5 @@
-import SInstaPaper from '../SInstaPaper';
-
-describe('SInstaPaper.ts', () => {
-
-});
+// import SInstaPaper from '../SInstaPaper';
+//
+// describe('SInstaPaper.ts', () => {
+//
+// });

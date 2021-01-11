@@ -22,16 +22,18 @@ export interface ISLineResult {
   share: number;
 }
 
-export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseCountMixin<ISLineCountShareOptions>>>).extend({
+export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseCountMixin<ISLineCountShareOptions, ISLineResult>>>).extend({
   name: 'SLineCount',
 
-  mixins: [BaseCount<ISLineCountShareOptions>()],
+  mixins: [BaseCount<ISLineCountShareOptions, ISLineResult>(
+    'Line',
+  )],
 
   methods: {
     handlePinterestResponse(data: ISLineResult): void {
-      this.handleResult<ISLineResult>(data);
+      this.handleResult(data);
 
-      this.saveCount(data?.share);
+      this.handleCount(data.share);
     },
   },
 
@@ -44,7 +46,15 @@ export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseCo
       url,
     })}`;
 
-    HTTP<ISLineResult>(finalURL, (_err, data) => {
+    this.handleLoading(true);
+
+    HTTP<ISLineResult>(finalURL, (err, data) => {
+      this.handleLoading(false);
+
+      if (err) {
+        this.handleError(err);
+      }
+
       if (data) {
         this.handlePinterestResponse(data);
       }

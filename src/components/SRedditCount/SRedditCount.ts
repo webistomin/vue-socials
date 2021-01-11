@@ -6,24 +6,15 @@
 */
 
 import Vue, { VueConstructor } from 'vue';
-import HTTP from '@/utils/http';
 import getSerialisedParams from '@/utils/getSerialisedParams';
 import BaseCount, { TBaseCountMixin } from '@/mixins/BaseCount/BaseCount';
+import JSONP from '@/utils/jsonp';
 
 /**
 * Share parameters for link
 */
 export interface ISRedditCountShareOptions {
   url: string;
-}
-
-export interface ISRedditResult {
-  data: {
-    after: unknown,
-    before: unknown,
-    children: ISRedditResultChildren[]
-  },
-  kind: string;
 }
 
 export interface ISRedditResultChildren {
@@ -139,16 +130,27 @@ export interface ISRedditResultChildren {
   }
 }
 
-export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseCountMixin<ISRedditCountShareOptions>>>).extend({
+export interface ISRedditResult {
+  data: {
+    after: unknown,
+    before: unknown,
+    children: ISRedditResultChildren[]
+  },
+  kind: string;
+}
+
+export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseCountMixin<ISRedditCountShareOptions, ISRedditResult>>>).extend({
   name: 'SRedditCount',
 
-  mixins: [BaseCount<ISRedditCountShareOptions>()],
+  mixins: [BaseCount<ISRedditCountShareOptions, ISRedditResult>(
+    'Reddit',
+  )],
 
   methods: {
     handleRedditResponse(data: ISRedditResult): void {
-      this.handleResult<ISRedditResult>(data);
+      this.handleResult(data);
 
-      this.saveCount(data?.data?.children?.[0]?.data.score);
+      this.handleCount(data?.data?.children?.[0]?.data.score);
     },
   },
 
@@ -162,10 +164,18 @@ export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseCo
       url,
     })}`;
 
-    HTTP<ISRedditResult>(finalURL, (_err, data) => {
+    this.handleLoading(true);
+
+    JSONP<ISRedditResult>(finalURL, (err, data) => {
+      this.handleLoading(false);
+
+      if (err) {
+        this.handleError(err);
+      }
+
       if (data) {
         this.handleRedditResponse(data);
       }
-    });
+    }, 'jsonp');
   },
 });

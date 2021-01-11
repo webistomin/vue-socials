@@ -1,5 +1,5 @@
-import SHatenaCount from '../SHatenaCount';
-
-describe('SHatenaCount.ts', () => {
-
-});
+// import SHatenaCount from '../SHatenaCount';
+//
+// describe('SHatenaCount.ts', () => {
+//
+// });

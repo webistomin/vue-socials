@@ -1,13 +1,14 @@
 import { Story } from '@storybook/vue';
 import { action } from '@storybook/addon-actions';
-import SOdnoklassnikiCount from '../SOdnoklassnikiCount';
+import { TBaseCountPropsOptions } from '@/mixins/BaseCount/BaseCount';
+import SOdnoklassnikiCount, { ISOdnoklassnikiCountShareOptions } from '../SOdnoklassnikiCount';
 
 export default {
   title: 'Count/SOdnoklassnikiCount',
   component: SOdnoklassnikiCount,
 };
 
-const Template: Story = (_args, { argTypes }) => ({
+const Template: Story<TBaseCountPropsOptions<ISOdnoklassnikiCountShareOptions>> = (_args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { SOdnoklassnikiCount },
   methods: {

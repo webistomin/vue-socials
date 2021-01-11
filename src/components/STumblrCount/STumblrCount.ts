@@ -6,9 +6,9 @@
 */
 
 import Vue, { VueConstructor } from 'vue';
-import HTTP from '@/utils/http';
 import getSerialisedParams from '@/utils/getSerialisedParams';
 import BaseCount, { TBaseCountMixin } from '@/mixins/BaseCount/BaseCount';
+import JSONP from '@/utils/jsonp';
 
 /**
 * Share parameters for link
@@ -29,16 +29,18 @@ export interface ISTumblrResult {
   }
 }
 
-export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseCountMixin<ISTumblrCountShareOptions>>>).extend({
+export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseCountMixin<ISTumblrCountShareOptions, ISTumblrResult>>>).extend({
   name: 'STumblrCount',
 
-  mixins: [BaseCount<ISTumblrCountShareOptions>()],
+  mixins: [BaseCount<ISTumblrCountShareOptions, ISTumblrResult>(
+    'Tumblr',
+  )],
 
   methods: {
     handleTumblrResponse(data: ISTumblrResult): void {
-      this.handleResult<ISTumblrResult>(data);
+      this.handleResult(data);
 
-      this.saveCount(data.response?.note_count);
+      this.handleCount(data.response?.note_count);
     },
   },
 
@@ -51,7 +53,15 @@ export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseCo
       url,
     })}`;
 
-    HTTP<ISTumblrResult>(finalURL, (_err, data) => {
+    this.handleLoading(true);
+
+    JSONP<ISTumblrResult>(finalURL, (err, data) => {
+      this.handleLoading(false);
+
+      if (err) {
+        this.handleError(err);
+      }
+
       if (data) {
         this.handleTumblrResponse(data);
       }

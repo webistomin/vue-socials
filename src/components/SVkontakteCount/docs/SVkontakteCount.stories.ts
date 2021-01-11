@@ -1,13 +1,14 @@
 import { Story } from '@storybook/vue';
 import { action } from '@storybook/addon-actions';
-import SVkontakteCount from '../SVkontakteCount';
+import { TBaseCountPropsOptions } from '@/mixins/BaseCount/BaseCount';
+import SVkontakteCount, { ISVkontakteCountShareOptions } from '../SVkontakteCount';
 
 export default {
   title: 'Count/SVkontakteCount',
   component: SVkontakteCount,
 };
 
-const Template: Story = (_args, { argTypes }) => ({
+const Template: Story<TBaseCountPropsOptions<ISVkontakteCountShareOptions>> = (_args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { SVkontakteCount },
   methods: {

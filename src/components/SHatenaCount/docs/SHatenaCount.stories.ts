@@ -1,13 +1,14 @@
 import { Story } from '@storybook/vue';
 import { action } from '@storybook/addon-actions';
-import SHatenaCount from '../SHatenaCount';
+import { TBaseSocialPropsOptions } from '@/mixins/BaseSocial/BaseSocial';
+import SHatenaCount, { ISHatenaCountShareOptions } from '../SHatenaCount';
 
 export default {
   title: 'Count/SHatenaCount',
   component: SHatenaCount,
 };
 
-const Template: Story = (_args, { argTypes }) => ({
+const Template: Story<TBaseSocialPropsOptions<ISHatenaCountShareOptions>> = (_args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { SHatenaCount },
   methods: {

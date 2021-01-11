@@ -24,7 +24,7 @@ export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseSo
   name: 'SViber',
 
   mixins: [BaseSocial<ISViberShareOptions>(
-    'Viber'
+    'Viber',
   )],
 
   computed: {

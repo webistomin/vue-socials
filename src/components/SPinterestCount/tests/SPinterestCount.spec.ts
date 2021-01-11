@@ -1,5 +1,5 @@
-import SPinterestCount from '../SPinterestCount';
-
-describe('SPinterestCount.ts', () => {
-
-});
+// import SPinterestCount from '../SPinterestCount';
+//
+// describe('SPinterestCount.ts', () => {
+//
+// });

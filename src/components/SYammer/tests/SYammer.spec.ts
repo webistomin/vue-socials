@@ -1,5 +1,5 @@
-import SYammer from '../SYammer';
-
-describe('SYammer.ts', () => {
-
-});
+// import SYammer from '../SYammer';
+//
+// describe('SYammer.ts', () => {
+//
+// });

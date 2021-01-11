@@ -1,5 +1,5 @@
-import SGithubRepoCount from '../SGithubRepoCount';
-
-describe('SGithubRepoCount.ts', () => {
-
-});
+// import SGithubRepoCount from '../SGithubRepoCount';
+//
+// describe('SGithubRepoCount.ts', () => {
+//
+// });

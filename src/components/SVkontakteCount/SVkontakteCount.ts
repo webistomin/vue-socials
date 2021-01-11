@@ -37,17 +37,21 @@ export interface ISVkontakteResult {
   count: number;
 }
 
-export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseCountMixin<ISVkontakteCountShareOptions>>>).extend({
-  mixins: [BaseCount<ISVkontakteCountShareOptions>()],
+export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseCountMixin<ISVkontakteCountShareOptions, ISVkontakteResult>>>).extend({
+  mixins: [BaseCount<ISVkontakteCountShareOptions, ISVkontakteResult>(
+    'Vkontakte',
+  )],
 
   methods: {
     handleVKResponse(index: number, count: number): void {
-      this.handleResult<ISVkontakteResult>({
+      this.handleLoading(false);
+
+      this.handleResult({
         index,
         count,
       });
 
-      this.saveCount(count);
+      this.handleCount(count);
 
       delete window.VK.callbacks?.[`cb${index}`];
     },
@@ -79,6 +83,8 @@ export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseCo
       index,
       url,
     })}`;
+
+    this.handleLoading(true);
 
     JSONP(finalURL);
   },

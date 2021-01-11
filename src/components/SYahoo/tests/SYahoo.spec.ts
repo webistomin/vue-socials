@@ -1,5 +1,5 @@
-import SYahoo from '../SYahoo';
-
-describe('SYahoo.ts', () => {
-
-});
+// import SYahoo from '../SYahoo';
+//
+// describe('SYahoo.ts', () => {
+//
+// });

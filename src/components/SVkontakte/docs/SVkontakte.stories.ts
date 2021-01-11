@@ -1,7 +1,7 @@
 import { Story } from '@storybook/vue';
 import { action } from '@storybook/addon-actions';
-import SVkontakte, { ISVkontakteShareOptions } from '../SVkontakte';
 import { DEFAULT_WINDOW_FEATURES, TBaseSocialPropsOptions } from '@/mixins/BaseSocial/BaseSocial';
+import SVkontakte, { ISVkontakteShareOptions } from '../SVkontakte';
 
 export default {
   title: 'Share/SVkontakte',

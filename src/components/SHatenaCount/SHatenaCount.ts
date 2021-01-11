@@ -1,9 +1,9 @@
 /**
-* Hey!
-*
-* SHatenaCount component used for Hatena social network
-* @link https://b.hatena.ne.jp/
-*/
+ * Hey!
+ *
+ * SHatenaCount component used for Hatena social network
+ * @link https://b.hatena.ne.jp/
+ */
 
 import Vue, { VueConstructor } from 'vue';
 import JSONP from '@/utils/jsonp';
@@ -11,30 +11,30 @@ import getSerialisedParams from '@/utils/getSerialisedParams';
 import BaseCount, { TBaseCountMixin } from '@/mixins/BaseCount/BaseCount';
 
 /**
-* Share parameters for link
-*/
+ * Share parameters for link
+ */
 export interface ISHatenaCountShareOptions {
   url: string;
 }
 
-export type TSHatenaResult = number;
-
-export type TSHatenaResponse = {
-  count: TSHatenaResult
+export type TSHatenaResult = {
+  count: number;
 };
 
-export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseCountMixin<ISHatenaCountShareOptions>>>).extend({
+export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseCountMixin<ISHatenaCountShareOptions, TSHatenaResult>>>).extend({
   name: 'SHatenaCount',
 
-  mixins: [BaseCount<ISHatenaCountShareOptions>()],
+  mixins: [BaseCount<ISHatenaCountShareOptions, TSHatenaResult>(
+    'Hatena',
+  )],
 
   methods: {
     handleOKResponse(count: number): void {
-      this.handleResult<TSHatenaResponse>({
+      this.handleResult({
         count,
       });
 
-      this.saveCount(count);
+      this.handleCount(count);
     },
   },
 
@@ -47,7 +47,15 @@ export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseCo
       url,
     })}`;
 
-    JSONP<TSHatenaResult>(finalURL, (_err, data) => {
+    this.handleLoading(true);
+
+    JSONP<number>(finalURL, (err, data) => {
+      this.handleLoading(false);
+
+      if (err) {
+        this.handleError(err);
+      }
+
       if (data) {
         this.handleOKResponse(data);
       }

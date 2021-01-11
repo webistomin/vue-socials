@@ -1,13 +1,14 @@
 import { Story } from '@storybook/vue';
 import { action } from '@storybook/addon-actions';
-import SRedditCount from '../SRedditCount';
+import { TBaseCountPropsOptions } from '@/mixins/BaseCount/BaseCount';
+import SRedditCount, { ISRedditCountShareOptions } from '../SRedditCount';
 
 export default {
   title: 'Count/SRedditCount',
   component: SRedditCount,
 };
 
-const Template: Story = (_args, { argTypes }) => ({
+const Template: Story<TBaseCountPropsOptions<ISRedditCountShareOptions>> = (_args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { SRedditCount },
   methods: {

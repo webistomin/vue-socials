@@ -27,7 +27,7 @@ export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseSo
   name: 'SWordPress',
 
   mixins: [BaseSocial<ISWordPressShareOptions>(
-    'WordPress'
+    'WordPress',
   )],
 
   computed: {

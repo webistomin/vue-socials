@@ -15,8 +15,9 @@ declare global {
  * It creates window.callbackRegistry to minimize global window pollution.
  * It uses callback to prevent adding the promise polyfill.
  */
-export default function JSONP<T>(url: string, callback?: TJSONPCallback<T>): void {
+export default function JSONP<T>(url: string, callback?: TJSONPCallback<T>, callbackName?: string): void {
   const script = document.createElement('script');
+  const cbName = callbackName || 'callback';
 
   if (callback) {
     if (!window.callbackRegistry) {
@@ -25,7 +26,7 @@ export default function JSONP<T>(url: string, callback?: TJSONPCallback<T>): voi
 
     const key = `cb${String(Math.random()).slice(-6)}`;
 
-    script.src = `${url}${url.indexOf('?') === -1 ? '?' : '&'}callback=callbackRegistry.${key}`;
+    script.src = `${url}${url.indexOf('?') === -1 ? '?' : '&'}${cbName}=callbackRegistry.${key}`;
 
     script.onerror = function JSONPOnError(): void {
       delete window.callbackRegistry[key];

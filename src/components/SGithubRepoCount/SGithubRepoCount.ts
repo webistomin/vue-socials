@@ -7,7 +7,7 @@
 
 import Vue, { VueConstructor } from 'vue';
 import BaseCount, { TBaseCountMixin } from '@/mixins/BaseCount/BaseCount';
-import HTTP from '@/utils/http';
+import JSONP from '@/utils/jsonp';
 
 const GITHUB_LINK_TYPES = {
   watch: 'watch',
@@ -27,7 +27,7 @@ export interface ISGithubRepoCountShareOptions {
   type: TSGithubLinkType;
 }
 
-export interface ISGithubRepoCountResult {
+export interface ISGithubRepoCountSuccessResponse {
   archive_url: string
   archived: boolean
   assignees_url: string
@@ -131,35 +131,67 @@ export interface ISGithubRepoCountResult {
   watchers_count: number
 }
 
-export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseCountMixin<ISGithubRepoCountShareOptions>>>).extend({
+export interface ISGithubRepoCountErrorResponse {
+  documentation_url: string;
+  message: string;
+}
+
+export interface ISGithubRepoCountResult {
+  meta: {
+    'Content-Type': string;
+    'Cache-Control': string;
+    Vary: string;
+    ETag: string;
+    'Last-Modified': string;
+    'X-GitHub-Media-Type': string;
+    status: number;
+    'X-RateLimit-Limit': string;
+    'X-RateLimit-Remaining': string;
+    'X-RateLimit-Reset': string;
+    'X-RateLimit-Used': string;
+  };
+  data: ISGithubRepoCountSuccessResponse | ISGithubRepoCountErrorResponse;
+}
+
+export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseCountMixin<ISGithubRepoCountShareOptions, ISGithubRepoCountResult>>>).extend({
   name: 'SGithubRepoCount',
 
-  mixins: [BaseCount<ISGithubRepoCountShareOptions>()],
+  mixins: [BaseCount<ISGithubRepoCountShareOptions, ISGithubRepoCountResult>(
+    'GitHub',
+  )],
 
   methods: {
     handleGithubResponse(data: ISGithubRepoCountResult): void {
       const { shareOptions } = this;
       const { type } = shareOptions;
-      this.handleResult<ISGithubRepoCountResult>(data);
+      this.handleResult(data);
       let count;
 
       switch (type) {
         case GITHUB_LINK_TYPES.watch:
-          count = data.subscribers_count;
+          if ('subscribers_count' in data.data) {
+            count = data.data.subscribers_count;
+          }
           break;
         case GITHUB_LINK_TYPES.fork:
-          count = data.forks_count;
+          if ('forks_count' in data.data) {
+            count = data.data.forks_count;
+          }
           break;
         case GITHUB_LINK_TYPES.issues:
-          count = data.open_issues_count;
+          if ('open_issues_count' in data.data) {
+            count = data.data.open_issues_count;
+          }
           break;
         case GITHUB_LINK_TYPES.star:
         default:
-          count = data.stargazers_count;
+          if ('stargazers_count' in data.data) {
+            count = data.data.stargazers_count;
+          }
           break;
       }
 
-      this.saveCount(count);
+      this.handleCount(count);
     },
   },
 
@@ -170,7 +202,15 @@ export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseCo
 
     const finalURL = `${BASE_URL}repos/${username}/${repository}`;
 
-    HTTP<ISGithubRepoCountResult>(finalURL, (_err, data) => {
+    this.handleLoading(true);
+
+    JSONP<ISGithubRepoCountResult>(finalURL, (err, data) => {
+      this.handleLoading(false);
+
+      if (err) {
+        this.handleError(err);
+      }
+
       if (data) {
         this.handleGithubResponse(data);
       }

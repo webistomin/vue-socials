@@ -13,7 +13,7 @@ import { isUndefined } from '@/utils/inspect';
 export type TBaseCountDataOptions<R> = {
   count: number | undefined;
   response: R | null;
-  error: Error | null;
+  error: Error | string | null;
   isLoading: boolean;
 };
 
@@ -27,7 +27,7 @@ TBaseCountDataOptions<R>,
 {
   generateComponent(h: CreateElement): VNode;
   handleResult(value: R): void;
-  handleError(value: Error | null): void;
+  handleError(value: Error | string | null): void;
   handleLoading(value: boolean): void;
   handleCount(count: (number | undefined)): void;
 },
@@ -106,7 +106,7 @@ export default function BaseCount<T, R>(
       /**
        * Save response from JSONP or HTTP and emit event
        */
-      handleError(value: Error | null) {
+      handleError(value: Error | string | null) {
         this.error = value;
         this.$emit('error', value);
       },

@@ -27,7 +27,7 @@ export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseSo
   name: 'SVkontakte',
 
   mixins: [BaseSocial<ISVkontakteShareOptions>(
-    'Vkontakte'
+    'Vkontakte',
   )],
 
   computed: {

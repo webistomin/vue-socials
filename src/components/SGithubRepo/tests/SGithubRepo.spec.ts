@@ -1,5 +1,5 @@
-import SGithubRepo from '../SGithubRepo';
-
-describe('SGithubRepo.ts', () => {
-
-});
+// import SGithubRepo from '../SGithubRepo';
+//
+// describe('SGithubRepo.ts', () => {
+//
+// });

@@ -1,13 +1,14 @@
 import { Story } from '@storybook/vue';
 import { action } from '@storybook/addon-actions';
-import SPinterestCount from '../SPinterestCount';
+import { TBaseCountPropsOptions } from '@/mixins/BaseCount/BaseCount';
+import SPinterestCount, { ISPinterestCountShareOptions } from '../SPinterestCount';
 
 export default {
   title: 'Count/SPinterestCount',
   component: SPinterestCount,
 };
 
-const Template: Story = (_args, { argTypes }) => ({
+const Template: Story<TBaseCountPropsOptions<ISPinterestCountShareOptions>> = (_args, { argTypes }) => ({
   props: Object.keys(argTypes),
   components: { SPinterestCount },
   methods: {

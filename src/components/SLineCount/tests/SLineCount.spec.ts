@@ -1,5 +1,5 @@
-import SLineCount from '../SLineCount';
-
-describe('SLineCount.ts', () => {
-
-});
+// import SLineCount from '../SLineCount';
+//
+// describe('SLineCount.ts', () => {
+//
+// });

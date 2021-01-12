@@ -1,9 +1,9 @@
 /**
-* Hey!
-*
-* SWordPress component used for WordPress social network
-* @link https://wordpress.org/
-*/
+ * Hey!
+ *
+ * SWordPress component used for WordPress social network
+ * @link https://wordpress.org/
+ */
 
 import Vue, {
   CreateElement, VNode, VueConstructor,
@@ -12,9 +12,9 @@ import BaseSocial, { TBaseSocialMixin } from '@/mixins/BaseSocial/BaseSocial';
 import getSerialisedParams from '@/utils/getSerialisedParams';
 
 /**
-* Share parameters for link
-* @link https://codex.wordpress.org/Press_This
-*/
+ * Share parameters for link
+ * @link https://codex.wordpress.org/Press_This
+ */
 export interface ISWordPressShareOptions {
   domain: string;
   url: string;

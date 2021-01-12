@@ -1,9 +1,9 @@
 /**
-* Hey!
-*
-* SXing component used for Xing social network
-* @link https://xing.com/
-*/
+ * Hey!
+ *
+ * SXing component used for Xing social network
+ * @link https://xing.com/
+ */
 
 import Vue, {
   CreateElement, VNode, VueConstructor,
@@ -12,9 +12,9 @@ import BaseSocial, { TBaseSocialMixin } from '@/mixins/BaseSocial/BaseSocial';
 import getSerialisedParams from '@/utils/getSerialisedParams';
 
 /**
-* Share parameters for link
-* @link https://dev.xing.com/plugins/share_button/docs
-*/
+ * Share parameters for link
+ * @link https://dev.xing.com/plugins/share_button/docs
+ */
 export interface ISXingShareOptions {
   url: string;
   followUrl?: string;

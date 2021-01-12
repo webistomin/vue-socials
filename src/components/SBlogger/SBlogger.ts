@@ -15,9 +15,9 @@ import getSerialisedParams from '@/utils/getSerialisedParams';
 /**
  * Share parameters for link
  * @link https://stackoverflow.com/a/22583473/13374604
- * u => url
- * n => title
- * t => text
+ * url => u
+ * title => n
+ * text => t
  */
 export interface ISBloggerShareOptions {
   url?: string;

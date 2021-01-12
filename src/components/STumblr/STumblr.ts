@@ -1,9 +1,9 @@
 /**
-* Hey!
-*
-* STumblr component used for Tumblr social network
-* @link https://tumblr.com/
-*/
+ * Hey!
+ *
+ * STumblr component used for Tumblr social network
+ * @link https://tumblr.com/
+ */
 
 import Vue, {
   CreateElement, VNode, VueConstructor,
@@ -13,9 +13,9 @@ import getSerialisedParams from '@/utils/getSerialisedParams';
 import getSeparatedList from '@/utils/getSeparatedList';
 
 /**
-* Share parameters for link
-* @link https://www.tumblr.com/docs/en/share_button
-*/
+ * Share parameters for link
+ * @link https://www.tumblr.com/docs/en/share_button
+ */
 export interface ISTumblrShareOptions {
   canonicalUrl: string;
   title?: string;

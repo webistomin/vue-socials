@@ -1,9 +1,9 @@
 /**
-* Hey!
-*
-* SGithubRepoCount component used for Github social network
-* @link https://github.com/
-*/
+ * Hey!
+ *
+ * SGithubRepoCount component used for Github social network
+ * @link https://github.com/
+ */
 
 import Vue, { VueConstructor } from 'vue';
 import BaseCount, { TBaseCountMixin } from '@/mixins/BaseCount/BaseCount';
@@ -19,8 +19,8 @@ const GITHUB_LINK_TYPES = {
 export type TSGithubLinkType = typeof GITHUB_LINK_TYPES[keyof typeof GITHUB_LINK_TYPES];
 
 /**
-* Share parameters for link
-*/
+ * Share parameters for link
+ */
 export interface ISGithubRepoCountShareOptions {
   username: string;
   repository: string;

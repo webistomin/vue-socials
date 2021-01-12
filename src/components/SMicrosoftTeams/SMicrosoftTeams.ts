@@ -1,9 +1,9 @@
 /**
-* Hey!
-*
-* SMicrosoftTeams component used for MicrosoftTeams social network
-* @link https://www.microsoft.com/en/microsoft-365/microsoft-teams/group-chat-software
-*/
+ * Hey!
+ *
+ * SMicrosoftTeams component used for MicrosoftTeams social network
+ * @link https://www.microsoft.com/en/microsoft-365/microsoft-teams/group-chat-software
+ */
 
 import Vue, {
   CreateElement, VNode, VueConstructor,
@@ -12,9 +12,9 @@ import BaseSocial, { TBaseSocialMixin } from '@/mixins/BaseSocial/BaseSocial';
 import getSerialisedParams from '@/utils/getSerialisedParams';
 
 /**
-* Share parameters for link
-* @link https://docs.microsoft.com/en-us/microsoftteams/platform/concepts/build-and-test/share-to-teams
-*/
+ * Share parameters for link
+ * @link https://docs.microsoft.com/en-us/microsoftteams/platform/concepts/build-and-test/share-to-teams
+ */
 export interface ISMicrosoftTeamsShareOptions {
   url: string;
   preview?: boolean;

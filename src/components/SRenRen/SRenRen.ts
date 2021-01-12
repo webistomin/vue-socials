@@ -1,9 +1,9 @@
 /**
-* Hey!
-*
-* SRenRen component used for RenRen social network
-* @link https://renren.com
-*/
+ * Hey!
+ *
+ * SRenRen component used for RenRen social network
+ * @link https://renren.com
+ */
 
 import Vue, {
   CreateElement, VNode, VueConstructor,
@@ -12,9 +12,9 @@ import BaseSocial, { TBaseSocialMixin } from '@/mixins/BaseSocial/BaseSocial';
 import getSerialisedParams from '@/utils/getSerialisedParams';
 
 /**
-* Share parameters for link
-* @link http://dev.renren.com/website/?widget=rrshare&content=use
-*/
+ * Share parameters for link
+ * @link http://dev.renren.com/website/?widget=rrshare&content=use
+ */
 export interface ISRenRenShareOptions {
   resourceUrl: string;
   srcUrl: string;

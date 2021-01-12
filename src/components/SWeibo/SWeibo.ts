@@ -1,9 +1,9 @@
 /**
-* Hey!
-*
-* SWeibo component used for Weibo social network
-* @link https://weibo.com/
-*/
+ * Hey!
+ *
+ * SWeibo component used for Weibo social network
+ * @link https://weibo.com/
+ */
 
 import Vue, {
   CreateElement, VNode, VueConstructor,
@@ -12,9 +12,9 @@ import BaseSocial, { TBaseSocialMixin } from '@/mixins/BaseSocial/BaseSocial';
 import getSerialisedParams from '@/utils/getSerialisedParams';
 
 /**
-* Share parameters for link
-* @link http://open.weibo.com/wiki/ShareCode
-*/
+ * Share parameters for link
+ * @link http://open.weibo.com/wiki/ShareCode
+ */
 export interface ISWeiboShareOptions {
   url: string;
   title?: string;

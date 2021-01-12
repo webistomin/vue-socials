@@ -1,9 +1,9 @@
 /**
-* Hey!
-*
-* SViber component used for Viber social network
-* @link https://www.viber.com/
-*/
+ * Hey!
+ *
+ * SViber component used for Viber social network
+ * @link https://www.viber.com/
+ */
 
 import Vue, {
   CreateElement, VNode, VueConstructor,
@@ -12,9 +12,9 @@ import BaseSocial, { TBaseSocialMixin } from '@/mixins/BaseSocial/BaseSocial';
 import getSerialisedParams from '@/utils/getSerialisedParams';
 
 /**
-* Share parameters for link
-* @link https://developers.viber.com/docs/tools/share-button/
-*/
+ * Share parameters for link
+ * @link https://developers.viber.com/docs/tools/share-button/
+ */
 export interface ISViberShareOptions {
   url: string;
   text: string;

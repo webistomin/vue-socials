@@ -1,38 +1,24 @@
 /**
-* Hey!
-*
-* SOdnoklassnikiCount component used for Odnoklassniki (English: "Classmates") social network
-* @link https://ok.ru/
-*/
+ * Hey!
+ *
+ * SOdnoklassnikiCount component used for Odnoklassniki (English: "Classmates") social network
+ * @link https://ok.ru/
+ */
 
 import Vue, { VueConstructor } from 'vue';
 import HTTP from '@/utils/http';
 import getSerialisedParams from '@/utils/getSerialisedParams';
 import BaseCount, { TBaseCountMixin } from '@/mixins/BaseCount/BaseCount';
 
-// declare global {
-//   interface Window {
-//     ODKL: {
-//       updateCount?: TSOKCallback;
-//       callbacks?: {
-//         [key: string]: TSOKCallback
-//       };
-//     };
-//   }
-// }
-
-// export type TSOKCallback = (index: string, count: number) => void;
-
 /**
-* Share parameters for link
-* @link https://apiok.ru/en/ext/like
-*/
+ * Share parameters for link
+ * @link https://apiok.ru/en/ext/like
+ */
 export interface ISOdnoklassnikiCountShareOptions {
   ref: string
 }
 
 export interface ISOdnoklassnikiResult {
-  // index: string;
   count: number;
 }
 
@@ -46,13 +32,10 @@ export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseCo
   methods: {
     handleOKResponse(count: number): void {
       this.handleResult({
-        // index,
         count,
       });
 
       this.handleCount(count);
-
-      // delete window.ODKL.callbacks?.[`cb${index}`];
     },
   },
 
@@ -60,23 +43,6 @@ export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseCo
     const { shareOptions } = this;
     const { ref } = shareOptions;
     const BASE_URL = 'https://connect.ok.ru/dk';
-    //
-    // if (!window.ODKL) {
-    //   window.ODKL = {};
-    // }
-    //
-    // if (!window.ODKL.callbacks) {
-    //   window.ODKL.callbacks = {};
-    // }
-    //
-    // window.ODKL.updateCount = (index, count) => {
-    //   const callbackIndex = index;
-    //   window.ODKL.callbacks?.[callbackIndex]?.(callbackIndex, count);
-    // };
-    //
-    // const index = Object.keys(window.ODKL.callbacks).length;
-    // const key = `cb${index}`;
-    // window.ODKL.callbacks[key] = this.handleOKResponse;
 
     const finalURL = `${BASE_URL}${getSerialisedParams({
       'st.cmd': 'extLike',

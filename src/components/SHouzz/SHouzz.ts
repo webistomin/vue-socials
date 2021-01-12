@@ -1,9 +1,9 @@
 /**
-* Hey!
-*
-* SHouzz component used for Houzz social network
-* @link https://www.houzz.com/
-*/
+ * Hey!
+ *
+ * SHouzz component used for Houzz social network
+ * @link https://www.houzz.com/
+ */
 
 import Vue, {
   CreateElement, VNode, VueConstructor,
@@ -13,9 +13,9 @@ import getSerialisedParams from '@/utils/getSerialisedParams';
 import getSeparatedList from '@/utils/getSeparatedList';
 
 /**
-* Share parameters for link
-* @link https://www.houzz.com/buttonsAndBadges/button#houzzbuttondocs
-*/
+ * Share parameters for link
+ * @link https://www.houzz.com/buttonsAndBadges/button#houzzbuttondocs
+ */
 export interface ISHouzzShareOptions {
   id: string;
   url: string;

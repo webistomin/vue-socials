@@ -1,9 +1,9 @@
 /**
-* Hey!
-*
-* STrello component used for Trello social network
-* @link https://trello.com/
-*/
+ * Hey!
+ *
+ * STrello component used for Trello social network
+ * @link https://trello.com/
+ */
 
 import Vue, {
   CreateElement, VNode, VueConstructor,
@@ -12,8 +12,8 @@ import BaseSocial, { TBaseSocialMixin } from '@/mixins/BaseSocial/BaseSocial';
 import getSerialisedParams from '@/utils/getSerialisedParams';
 
 /**
-* Share parameters for link
-*/
+ * Share parameters for link
+ */
 export interface ISTrelloShareOptions {
   url: string;
   name?: string;

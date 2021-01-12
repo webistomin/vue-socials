@@ -1,9 +1,9 @@
 /**
-* Hey!
-*
-* SHatena component used for Hatena social network
-* @link https://b.hatena.ne.jp/
-*/
+ * Hey!
+ *
+ * SHatena component used for Hatena social network
+ * @link https://b.hatena.ne.jp/
+ */
 
 import Vue, {
   CreateElement, VNode, VueConstructor,
@@ -12,8 +12,8 @@ import BaseSocial, { TBaseSocialMixin } from '@/mixins/BaseSocial/BaseSocial';
 import getSerialisedParams from '@/utils/getSerialisedParams';
 
 /**
-* Share parameters for link
-*/
+ * Share parameters for link
+ */
 export interface ISHatenaShareOptions {
   url: string;
   title?: string;

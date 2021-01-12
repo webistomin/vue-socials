@@ -1,9 +1,9 @@
 /**
-* Hey!
-*
-* SSkype component used for Skype social network
-* @link https://web.skype.com/
-*/
+ * Hey!
+ *
+ * SSkype component used for Skype social network
+ * @link https://web.skype.com/
+ */
 
 import Vue, {
   CreateElement, VNode, VueConstructor,
@@ -12,8 +12,8 @@ import BaseSocial, { TBaseSocialMixin } from '@/mixins/BaseSocial/BaseSocial';
 import getSerialisedParams from '@/utils/getSerialisedParams';
 
 /**
-* Share parameters for link
-*/
+ * Share parameters for link
+ */
 export interface ISSkypeShareOptions {
   url: string;
   text?: string;

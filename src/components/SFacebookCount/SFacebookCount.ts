@@ -12,7 +12,7 @@ import getSerialisedParams from '@/utils/getSerialisedParams';
 import getSeparatedList from '@/utils/getSeparatedList';
 import BaseCount, { TBaseCountMixin } from '@/mixins/BaseCount/BaseCount';
 
-export interface ISFacebookCountResult {
+export interface ISFacebookCountSuccessResponse {
   engagement?: {
     reaction_count: number;
     comment_count: number;
@@ -29,7 +29,7 @@ export interface ISFacebookCountResult {
   app_links?: unknown;
 }
 
-export interface ISFacebookCountError {
+export interface ISFacebookCountErrorResponse {
   error: {
     message: string;
     type: string;
@@ -39,7 +39,7 @@ export interface ISFacebookCountError {
   }
 }
 
-export type TSFacebookCountResponse = ISFacebookCountResult | ISFacebookCountError;
+export type TSFacebookCountResult = ISFacebookCountSuccessResponse | ISFacebookCountErrorResponse;
 
 /**
  * @link https://developers.facebook.com/docs/graph-api/reference/v9.0/url
@@ -51,13 +51,13 @@ export interface ISFacebookCountShareOptions {
   scopes?: string[];
 }
 
-export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseCountMixin<ISFacebookCountShareOptions, TSFacebookCountResponse>>>).extend({
-  mixins: [BaseCount<ISFacebookCountShareOptions, TSFacebookCountResponse>(
+export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseCountMixin<ISFacebookCountShareOptions, TSFacebookCountResult>>>).extend({
+  mixins: [BaseCount<ISFacebookCountShareOptions, TSFacebookCountResult>(
     'Facebook',
   )],
 
   methods: {
-    handleFacebookResponse(data: TSFacebookCountResponse) {
+    handleFacebookResponse(data: TSFacebookCountResult) {
       this.handleResult(data);
 
       if ('engagement' in data) {
@@ -82,7 +82,7 @@ export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseCo
 
     this.handleLoading(true);
 
-    JSONP<TSFacebookCountResponse>(finalURL, (err, data) => {
+    JSONP<TSFacebookCountResult>(finalURL, (err, data) => {
       this.handleLoading(false);
 
       if (data) {

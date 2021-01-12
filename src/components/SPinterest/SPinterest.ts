@@ -1,9 +1,9 @@
 /**
-* Hey!
-*
-* SPinterest component used for Pinterest social network
-* @link https://www.pinterest.com/
-*/
+ * Hey!
+ *
+ * SPinterest component used for Pinterest social network
+ * @link https://www.pinterest.com/
+ */
 
 import Vue, {
   CreateElement, VNode, VueConstructor,
@@ -12,9 +12,9 @@ import BaseSocial, { TBaseSocialMixin } from '@/mixins/BaseSocial/BaseSocial';
 import getSerialisedParams from '@/utils/getSerialisedParams';
 
 /**
-* Share parameters for link
-* @link https://developers.pinterest.com/docs/widgets/save/?
-*/
+ * Share parameters for link
+ * @link https://developers.pinterest.com/docs/widgets/save/?
+ */
 export interface ISPinterestShareOptions {
   url: string;
   media: string;

@@ -1,9 +1,9 @@
 /**
-* Hey!
-*
-* SLiveJournal component used for LiveJournal social network
-* @link https://www.livejournal.com/
-*/
+ * Hey!
+ *
+ * SLiveJournal component used for LiveJournal social network
+ * @link https://www.livejournal.com/
+ */
 
 import Vue, {
   CreateElement, VNode, VueConstructor,
@@ -12,9 +12,9 @@ import BaseSocial, { TBaseSocialMixin } from '@/mixins/BaseSocial/BaseSocial';
 import getSerialisedParams from '@/utils/getSerialisedParams';
 
 /**
-* Share parameters for link
-* @link https://www.livejournal.com/developer/extshare
-*/
+ * Share parameters for link
+ * @link https://www.livejournal.com/developer/extshare
+ */
 export interface ISLiveJournalShareOptions {
   url: string;
   subject?: string;

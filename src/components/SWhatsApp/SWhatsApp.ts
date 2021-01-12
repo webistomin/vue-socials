@@ -1,9 +1,9 @@
 /**
-* Hey!
-*
-* SWhatsApp component used for WhatsApp social network
-* @link https://whatsapp.com
-*/
+ * Hey!
+ *
+ * SWhatsApp component used for WhatsApp social network
+ * @link https://whatsapp.com
+ */
 
 import Vue, {
   CreateElement, VNode, VueConstructor,
@@ -12,9 +12,9 @@ import BaseSocial, { TBaseSocialMixin } from '@/mixins/BaseSocial/BaseSocial';
 import getSerialisedParams from '@/utils/getSerialisedParams';
 
 /**
-* Share parameters for link
-* @link https://faq.whatsapp.com/general/chats/how-to-use-click-to-chat
-*/
+ * Share parameters for link
+ * @link https://faq.whatsapp.com/general/chats/how-to-use-click-to-chat
+ */
 export interface ISWhatsAppShareOptions {
   number: string;
   text?: string;

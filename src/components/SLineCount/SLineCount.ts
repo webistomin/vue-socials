@@ -1,9 +1,9 @@
 /**
-* Hey!
-*
-* SLineCount component used for Line social network
-* @link https://line.me/
-*/
+ * Hey!
+ *
+ * SLineCount component used for Line social network
+ * @link https://line.me/
+ */
 
 import Vue, { VueConstructor } from 'vue';
 import HTTP from '@/utils/http';
@@ -11,9 +11,9 @@ import getSerialisedParams from '@/utils/getSerialisedParams';
 import BaseCount, { TBaseCountMixin } from '@/mixins/BaseCount/BaseCount';
 
 /**
-* Share parameters for link
-* @link https://social-plugins.line.me/en/how_to_install#lineitbutton
-*/
+ * Share parameters for link
+ * @link https://social-plugins.line.me/en/how_to_install#lineitbutton
+ */
 export interface ISLineCountShareOptions {
   url: string;
 }

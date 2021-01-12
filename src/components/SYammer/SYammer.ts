@@ -1,9 +1,9 @@
 /**
-* Hey!
-*
-* SYammer component used for Yammer social network
-* @link https://yammer.com/
-*/
+ * Hey!
+ *
+ * SYammer component used for Yammer social network
+ * @link https://yammer.com/
+ */
 
 import Vue, {
   CreateElement, VNode, VueConstructor,
@@ -12,9 +12,9 @@ import BaseSocial, { TBaseSocialMixin } from '@/mixins/BaseSocial/BaseSocial';
 import getSerialisedParams from '@/utils/getSerialisedParams';
 
 /**
-* Share parameters for link
-* @link https://developer.yammer.com/docs/share-button
-*/
+ * Share parameters for link
+ * @link https://developer.yammer.com/docs/share-button
+ */
 export interface ISYammerShareOptions {
   url?: string;
   text?: string;

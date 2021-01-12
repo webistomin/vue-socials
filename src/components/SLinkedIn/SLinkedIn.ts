@@ -1,9 +1,9 @@
 /**
-* Hey!
-*
-* SLinkedIn component used for LinkedIn social network
-* @link https://www.linkedin.com
-*/
+ * Hey!
+ *
+ * SLinkedIn component used for LinkedIn social network
+ * @link https://www.linkedin.com
+ */
 
 import Vue, {
   CreateElement, VNode, VueConstructor,
@@ -12,9 +12,9 @@ import BaseSocial, { TBaseSocialMixin } from '@/mixins/BaseSocial/BaseSocial';
 import getSerialisedParams from '@/utils/getSerialisedParams';
 
 /**
-* Share parameters for link
-* @link https://docs.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/plugins/share-plugin
-*/
+ * Share parameters for link
+ * @link https://docs.microsoft.com/en-us/linkedin/consumer/integrations/self-serve/plugins/share-plugin
+ */
 export interface ISLinkedInShareOptions {
   url: string;
 }

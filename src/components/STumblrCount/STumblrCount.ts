@@ -1,9 +1,9 @@
 /**
-* Hey!
-*
-* STumblrCount component used for Tumblr social network
-* @link https://tumblr.com/
-*/
+ * Hey!
+ *
+ * STumblrCount component used for Tumblr social network
+ * @link https://tumblr.com/
+ */
 
 import Vue, { VueConstructor } from 'vue';
 import getSerialisedParams from '@/utils/getSerialisedParams';
@@ -11,9 +11,9 @@ import BaseCount, { TBaseCountMixin } from '@/mixins/BaseCount/BaseCount';
 import JSONP from '@/utils/jsonp';
 
 /**
-* Share parameters for link
-* @link https://www.tumblr.com/docs/en/share_button
-*/
+ * Share parameters for link
+ * @link https://www.tumblr.com/docs/en/share_button
+ */
 export interface ISTumblrCountShareOptions {
   url: string;
 }

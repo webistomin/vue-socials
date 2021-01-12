@@ -1,9 +1,9 @@
 /**
-* Hey!
-*
-* SYahoo component used for Yahoo social network
-* @link http://compose.mail.yahoo.com/
-*/
+ * Hey!
+ *
+ * SYahoo component used for Yahoo social network
+ * @link http://compose.mail.yahoo.com/
+ */
 
 import Vue, {
   CreateElement, VNode, VueConstructor,
@@ -12,8 +12,8 @@ import BaseSocial, { TBaseSocialMixin } from '@/mixins/BaseSocial/BaseSocial';
 import getSerialisedParams from '@/utils/getSerialisedParams';
 
 /**
-* Share parameters for link
-*/
+ * Share parameters for link
+ */
 export interface ISYahooShareOptions {
   email: string;
   subject?: string;

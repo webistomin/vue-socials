@@ -1,9 +1,9 @@
 /**
-* Hey!
-*
-* STelegram component used for Telegram social network
-* @link https://telegram.org/
-*/
+ * Hey!
+ *
+ * STelegram component used for Telegram social network
+ * @link https://telegram.org/
+ */
 
 import Vue, {
   CreateElement, VNode, VueConstructor,
@@ -12,9 +12,8 @@ import BaseSocial, { TBaseSocialMixin } from '@/mixins/BaseSocial/BaseSocial';
 import getSerialisedParams from '@/utils/getSerialisedParams';
 
 /**
-* Share parameters for link
-* @link https://core.telegram.org/widgets/share#custom-buttons
-
+ * Share parameters for link
+ * @link https://core.telegram.org/widgets/share#custom-buttons
  */
 export interface ISTelegramShareOptions {
   url?: string;

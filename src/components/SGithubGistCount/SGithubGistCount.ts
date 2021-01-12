@@ -23,59 +23,20 @@ export interface ISGithubGistCountShareOptions {
   type: TSGithubLinkType;
 }
 
-export interface SGithubGistCountResult {
-  meta: {
-    'Content-Type': string;
-    'Cache-Control': string;
-    Vary: string;
-    ETag: string;
-    'Last-Modified': string;
-    'X-GitHub-Media-Type': string;
-    status: number;
-    'X-RateLimit-Limit': string;
-    'X-RateLimit-Remaining': string;
-    'X-RateLimit-Reset': string;
-    'X-RateLimit-Used': string;
-  };
-  data: {
-    comments: 0;
-    comments_url: string;
-    commits_url: string;
-    created_at: string;
-    description: string;
-    files: Record<string, unknown>;
-    forks_url: string;
-    git_pull_url: string;
-    git_push_url: string;
-    history: {
-      committed_at: string;
-      url: string;
-      user: {
-        avatar_url: string;
-        events_url: string;
-        followers_url: string;
-        following_url: string;
-        gists_url: string;
-        gravatar_id: string;
-        html_url: string;
-        id: number;
-        login: string;
-        node_id: string;
-        organizations_url: string;
-        received_events_url: string;
-        repos_url: string;
-        site_admin: boolean;
-        starred_url: string;
-        subscriptions_url: string;
-        type: string;
-        url: string;
-      }
-      version: string;
-    }[];
-    html_url: string;
-    id: string;
-    node_id: string;
-    owner: {
+export interface ISGithubGistCountSuccessResponse {
+  comments: 0;
+  comments_url: string;
+  commits_url: string;
+  created_at: string;
+  description: string;
+  files: Record<string, unknown>;
+  forks_url: string;
+  git_pull_url: string;
+  git_push_url: string;
+  history: {
+    committed_at: string;
+    url: string;
+    user: {
       avatar_url: string;
       events_url: string;
       followers_url: string;
@@ -95,13 +56,59 @@ export interface SGithubGistCountResult {
       type: string;
       url: string;
     }
-    public: boolean;
-    truncated: boolean;
-    updated_at: string;
+    version: string;
+  }[];
+  html_url: string;
+  id: string;
+  node_id: string;
+  owner: {
+    avatar_url: string;
+    events_url: string;
+    followers_url: string;
+    following_url: string;
+    gists_url: string;
+    gravatar_id: string;
+    html_url: string;
+    id: number;
+    login: string;
+    node_id: string;
+    organizations_url: string;
+    received_events_url: string;
+    repos_url: string;
+    site_admin: boolean;
+    starred_url: string;
+    subscriptions_url: string;
+    type: string;
     url: string;
-    user: unknown;
-    forks: unknown[]
   }
+  public: boolean;
+  truncated: boolean;
+  updated_at: string;
+  url: string;
+  user: unknown;
+  forks: unknown[]
+}
+
+export interface ISGithubGistCountErrorResponse {
+  documentation_url: string;
+  message: string;
+}
+
+export interface SGithubGistCountResult {
+  meta: {
+    'Content-Type': string;
+    'Cache-Control': string;
+    Vary: string;
+    ETag: string;
+    'Last-Modified': string;
+    'X-GitHub-Media-Type': string;
+    status: number;
+    'X-RateLimit-Limit': string;
+    'X-RateLimit-Remaining': string;
+    'X-RateLimit-Reset': string;
+    'X-RateLimit-Used': string;
+  };
+  data: ISGithubGistCountSuccessResponse | ISGithubGistCountErrorResponse;
 }
 
 export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseCountMixin<ISGithubGistCountShareOptions, SGithubGistCountResult>>>).extend({
@@ -117,7 +124,9 @@ export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseCo
       switch (type) {
         default:
         case GITHUB_LINK_TYPES.fork:
-          count = data.data.forks.length;
+          if ('forks' in data.data) {
+            count = data.data.forks.length;
+          }
           break;
       }
 

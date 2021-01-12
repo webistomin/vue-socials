@@ -1,9 +1,9 @@
 /**
-* Hey!
-*
-* SRedditCount component used for Reddit social network
-* @link https://www.reddit.com/
-*/
+ * Hey!
+ *
+ * SRedditCount component used for Reddit social network
+ * @link https://www.reddit.com/
+ */
 
 import Vue, { VueConstructor } from 'vue';
 import getSerialisedParams from '@/utils/getSerialisedParams';
@@ -11,8 +11,8 @@ import BaseCount, { TBaseCountMixin } from '@/mixins/BaseCount/BaseCount';
 import JSONP from '@/utils/jsonp';
 
 /**
-* Share parameters for link
-*/
+ * Share parameters for link
+ */
 export interface ISRedditCountShareOptions {
   url: string;
 }

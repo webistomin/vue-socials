@@ -1,9 +1,9 @@
 /**
-* Hey!
-*
-* SPocket component used for Pocket social network
-* @link https://getpocket.com/
-*/
+ * Hey!
+ *
+ * SPocket component used for Pocket social network
+ * @link https://getpocket.com/
+ */
 
 import Vue, {
   CreateElement, VNode, VueConstructor,
@@ -12,9 +12,9 @@ import BaseSocial, { TBaseSocialMixin } from '@/mixins/BaseSocial/BaseSocial';
 import getSerialisedParams from '@/utils/getSerialisedParams';
 
 /**
-* Share parameters for link
-* @link https://getpocket.com/publisher/button_docs
-*/
+ * Share parameters for link
+ * @link https://getpocket.com/publisher/button_docs
+ */
 export interface ISPocketShareOptions {
   url: string;
 }

@@ -1,9 +1,9 @@
 /**
-* Hey!
-*
-* SMailRu component used for Mail.ru social network
-* @link https://my.mail.ru/
-*/
+ * Hey!
+ *
+ * SMailRu component used for Mail.ru social network
+ * @link https://my.mail.ru/
+ */
 
 import Vue, {
   CreateElement, VNode, VueConstructor,
@@ -12,9 +12,9 @@ import BaseSocial, { TBaseSocialMixin } from '@/mixins/BaseSocial/BaseSocial';
 import getSerialisedParams from '@/utils/getSerialisedParams';
 
 /**
-* Share parameters for link
+ * Share parameters for link
  * @link https://api.mail.ru/sites/plugins/share/extended/
-*/
+ */
 export interface ISMailRuShareOptions {
   url: string;
   title?: string;

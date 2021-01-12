@@ -1,9 +1,9 @@
 /**
-* Hey!
-*
-* SOdnoklassniki component used for Odnoklassniki (English: "Classmates") social network
-* @link https://ok.ru/
-*/
+ * Hey!
+ *
+ * SOdnoklassniki component used for Odnoklassniki (English: "Classmates") social network
+ * @link https://ok.ru/
+ */
 
 import Vue, {
   CreateElement, VNode, VueConstructor,
@@ -12,9 +12,9 @@ import BaseSocial, { TBaseSocialMixin } from '@/mixins/BaseSocial/BaseSocial';
 import getSerialisedParams from '@/utils/getSerialisedParams';
 
 /**
-* Share parameters for link
-* @link https://apiok.ru/en/ext/like
-*/
+ * Share parameters for link
+ * @link https://apiok.ru/en/ext/like
+ */
 export interface ISOdnoklassnikiShareOptions {
   url: string;
   title?: string;

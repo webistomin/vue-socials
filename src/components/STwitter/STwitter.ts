@@ -1,9 +1,9 @@
 /**
-* Hey!
-*
-* STwitter component used for Twitter social network
-* @link https://twitter.com/
-*/
+ * Hey!
+ *
+ * STwitter component used for Twitter social network
+ * @link https://twitter.com/
+ */
 
 import Vue, {
   CreateElement, VNode, VueConstructor,
@@ -13,9 +13,9 @@ import getSerialisedParams from '@/utils/getSerialisedParams';
 import getSeparatedList from '@/utils/getSeparatedList';
 
 /**
-* Share parameters for link
-* @link https://developer.twitter.com/en/docs/twitter-for-websites/tweet-button/overview
-*/
+ * Share parameters for link
+ * @link https://developer.twitter.com/en/docs/twitter-for-websites/tweet-button/overview
+ */
 export interface ISTwitterShareOptions {
   text?: string;
   url?: string;

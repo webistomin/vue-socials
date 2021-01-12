@@ -1,9 +1,9 @@
 /**
-* Hey!
-*
-* SInstaPaper component used for InstaPaper  social network
-* @link http://www.instapaper.com/
-*/
+ * Hey!
+ *
+ * SInstaPaper component used for InstaPaper  social network
+ * @link http://www.instapaper.com/
+ */
 
 import Vue, {
   CreateElement, VNode, VueConstructor,
@@ -12,8 +12,8 @@ import BaseSocial, { TBaseSocialMixin } from '@/mixins/BaseSocial/BaseSocial';
 import getSerialisedParams from '@/utils/getSerialisedParams';
 
 /**
-* Share parameters for link
-*/
+ * Share parameters for link
+ */
 export interface ISInstaPaperShareOptions {
   url: string;
   title?: string;

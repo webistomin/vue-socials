@@ -1,9 +1,9 @@
 /**
-* Hey!
-*
-* SThreema component used for Threema social network
-* @link https://threema.ch/en
-*/
+ * Hey!
+ *
+ * SThreema component used for Threema social network
+ * @link https://threema.ch/en
+ */
 
 import Vue, {
   CreateElement, VNode, VueConstructor,
@@ -12,8 +12,8 @@ import BaseSocial, { TBaseSocialMixin } from '@/mixins/BaseSocial/BaseSocial';
 import getSerialisedParams from '@/utils/getSerialisedParams';
 
 /**
-* Share parameters for link
-*/
+ * Share parameters for link
+ */
 export interface ISThreemaShareOptions {
   url: string;
   id?: string;

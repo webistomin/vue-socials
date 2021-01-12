@@ -38,7 +38,7 @@ export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseSo
       const { shareOptions } = this;
       const { url, title } = shareOptions;
       const serialisedParams = getSerialisedParams({
-        v: 2,
+        v: '2',
         url,
         title,
       });

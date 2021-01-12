@@ -1,9 +1,9 @@
 /**
-* Hey!
-*
-* SPinterestCount component used for Pinterest social network
-* @link https://www.pinterest.com/
-*/
+ * Hey!
+ *
+ * SPinterestCount component used for Pinterest social network
+ * @link https://www.pinterest.com/
+ */
 
 import Vue, { VueConstructor } from 'vue';
 import JSONP from '@/utils/jsonp';
@@ -11,8 +11,8 @@ import getSerialisedParams from '@/utils/getSerialisedParams';
 import BaseCount, { TBaseCountMixin } from '@/mixins/BaseCount/BaseCount';
 
 /**
-* Share parameters for link
-*/
+ * Share parameters for link
+ */
 export interface ISPinterestCountShareOptions {
   url: string;
 }

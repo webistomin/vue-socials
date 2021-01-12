@@ -1,9 +1,9 @@
 /**
-* Hey!
-*
-* SReddit component used for Reddit social network
-* @link https://www.reddit.com/
-*/
+ * Hey!
+ *
+ * SReddit component used for Reddit social network
+ * @link https://www.reddit.com/
+ */
 
 import Vue, {
   CreateElement, VNode, VueConstructor,
@@ -12,8 +12,8 @@ import BaseSocial, { TBaseSocialMixin } from '@/mixins/BaseSocial/BaseSocial';
 import getSerialisedParams from '@/utils/getSerialisedParams';
 
 /**
-* Share parameters for link
-*/
+ * Share parameters for link
+ */
 export interface ISRedditShareOptions {
   url?: string;
   title?: string;

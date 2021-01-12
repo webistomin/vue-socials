@@ -1,9 +1,9 @@
 /**
-* Hey!
-*
-* SQZone component used for QZone social network
-* @link ...
-*/
+ * Hey!
+ *
+ * SQZone component used for QZone social network
+ * @link https://qzone.qq.com/
+ */
 
 import Vue, {
   CreateElement, VNode, VueConstructor,
@@ -12,8 +12,8 @@ import BaseSocial, { TBaseSocialMixin } from '@/mixins/BaseSocial/BaseSocial';
 import getSerialisedParams from '@/utils/getSerialisedParams';
 
 /**
-* Share parameters for link
-*/
+ * Share parameters for link
+ */
 export interface ISQZoneShareOptions {
   url: string;
   title?: string;

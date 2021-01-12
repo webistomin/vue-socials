@@ -1,9 +1,9 @@
 /**
-* Hey!
-*
-* SLine component used for Line social network
-* @link https://line.me/
-*/
+ * Hey!
+ *
+ * SLine component used for Line social network
+ * @link https://line.me/
+ */
 
 import Vue, {
   CreateElement, VNode, VueConstructor,
@@ -12,9 +12,9 @@ import BaseSocial, { TBaseSocialMixin } from '@/mixins/BaseSocial/BaseSocial';
 import getSerialisedParams from '@/utils/getSerialisedParams';
 
 /**
-* Share parameters for link
-* @link https://social-plugins.line.me/en/how_to_install#lineitbutton
-*/
+ * Share parameters for link
+ * @link https://social-plugins.line.me/en/how_to_install#lineitbutton
+ */
 export interface ISLineShareOptions {
   url: string;
   text?: string;

@@ -26,6 +26,10 @@ export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseSo
 
   mixins: [BaseSocial<ISRedditShareOptions>(
     'Reddit',
+    undefined,
+    undefined,
+    undefined,
+    false,
   )],
 
   computed: {

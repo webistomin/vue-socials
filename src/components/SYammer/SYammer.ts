@@ -26,14 +26,19 @@ export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseSo
 
   mixins: [BaseSocial<ISYammerShareOptions>(
     'Yammer',
+    {
+      width: 900,
+      height: 600,
+    },
   )],
 
   computed: {
     networkURL(): string {
-      const BASE_URL = 'https://www.yammer.com/messages/new?login=true';
+      const BASE_URL = 'https://www.yammer.com/messages/new';
       const { shareOptions } = this;
       const { text, url, groupId } = shareOptions;
       const serialisedParams = getSerialisedParams({
+        login: true,
         status: `${text} ${url}`,
         group_id: groupId,
       });

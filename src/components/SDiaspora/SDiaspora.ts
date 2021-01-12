@@ -36,9 +36,6 @@ export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseSo
       width: 600,
       height: 540,
     },
-    {} as TSDiasporaShareOptions,
-    undefined,
-    true,
   )],
 
   computed: {

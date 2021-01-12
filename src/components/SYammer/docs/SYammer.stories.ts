@@ -35,7 +35,10 @@ const Template: Story<TBaseSocialPropsOptions<ISYammerShareOptions>> = (_args, {
 
 export const Default = Template.bind({});
 Default.args = {
-  windowFeatures: {},
+  windowFeatures: {
+    width: 900,
+    height: 600,
+  },
   shareOptions: {
     url: 'https://github.com/',
     text: 'Text',

@@ -28,6 +28,10 @@ export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseSo
 
   mixins: [BaseSocial<ISTwitterShareOptions>(
     'Twitter',
+    undefined,
+    undefined,
+    undefined,
+    false,
   )],
 
   computed: {

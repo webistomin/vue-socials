@@ -1,8 +1,8 @@
 <svg width="276" height="276" viewBox="0 0 276 276" fill="none" xmlns="http://www.w3.org/2000/svg">
   <g filter="url(#filter0_dd)">
-    <rect x="40" y="40" width="196" height="196" rx="16" fill="#F0F0F3"/>
+    <rect x="40" y="40" width="196" height="196" rx="16" fill="#e6e7ee"/>
   </g>
-  <path d="M138 107.74C130.044 86.144 90 89.352 90 122.012C90 138.284 102.24 159.936 138 182C173.76 159.936 186 138.284 186 122.012C186 89.54 146 86.016 138 107.74Z" fill="#FF3A54"/>
+  <path d="M138 107.74C130.044 86.144 90 89.352 90 122.012C90 138.284 102.24 159.936 138 182C173.76 159.936 186 138.284 186 122.012C186 89.54 146 86.016 138 107.74Z" fill="#2D4CC8"/>
   <defs>
     <filter id="filter0_dd" x="0" y="0" width="276" height="276" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
       <feFlood flood-opacity="0" result="BackgroundImageFix"/>

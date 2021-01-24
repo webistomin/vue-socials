@@ -39,21 +39,22 @@
   },
   "unpkg": "dist/vue-socials.iife.js",
   "jsdelivr": "dist/vue-socials.iife.js",
-  "types": "dist/types/index.d.ts",
+  "types": "dist/types/vue-socials.d.ts",
   "files": [
-    "dist/*",
-    "src/**/*.vue"
+    "dist"
   ],
   "reveal": true,
   "sideEffects": false,
   "scripts": {
     "dev": "start-storybook -p 3000",
     "prebuild": "rimraf dist",
-    "build": "cross-env NODE_ENV=production rollup --config build/rollup.config.js",
+    "build": "run-s prebuild build:all build:typings",
+    "build:all": "cross-env NODE_ENV=production rollup --config build/rollup.config.js",
     "build:ssr": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format cjs",
     "build:esm": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format esm",
     "build:iife": "cross-env NODE_ENV=production rollup --config build/rollup.config.js --format iife",
-    "build:size": "run-s prebuild build check-size",
+    "build:size": "run-s prebuild build:all check-size",
+    "build:typings": "tsc -p tsconfig.package.json --declaration --declarationDir dist/types --emitDeclarationOnly",
     "build:storybook": "build-storybook",
     "eslint:write": "eslint --ext .js,.vue,.ts --ignore-path .gitignore . --fix --max-warnings 0",
     "ls:lint": "npx @ls-lint/ls-lint",

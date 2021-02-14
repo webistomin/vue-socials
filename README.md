@@ -66,7 +66,10 @@ Browse [online documentation here](https://github.com/webistomin/vue-socials.js/
 
 * <img src="./assets/icons/blogger.svg" width="16" height="16"/> [Blogger](#sblogger)
 
-#### SBlogger
+---
+<br>
+
+### SBlogger
 
 **Website**
 
@@ -75,6 +78,10 @@ Browse [online documentation here](https://github.com/webistomin/vue-socials.js/
 **Share link documentation**
 
 [https://stackoverflow.com/questions/22573164/blog-share-on-blogger-link/22583473#22583473](https://stackoverflow.com/questions/22573164/blog-share-on-blogger-link/22583473#22583473)
+
+**Example**
+
+[https://www.blogger.com/blog-this.g?u=https%3A%2F%2Fgithub.com%2F&t=Text&n=Title/](https://www.blogger.com/blog-this.g?u=https%3A%2F%2Fgithub.com%2F&t=Text&n=Title/)
 
 **Usage**
 
@@ -109,7 +116,7 @@ Vue.component('SBlogger', SBlogger)
         </code>
       </td>
       <td>
-        <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/open#window_features">Requested features of the new window</a>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/open#window_features">Requested features of the new window.</a>
       </td>
       <td>
         <code>{ width: 600, height: 540, }</code>
@@ -122,49 +129,55 @@ Vue.component('SBlogger', SBlogger)
         </code>
       </td>
       <td>
-        <code>
-          object
-        </code>
+        <pre>{
+  url: string;
+  title: string;
+  text: string;
+}</pre>
       </td>
       <td>
-        Your share links parameters.
-        <pre>
-          shareOptions: {
-            url: 'https://github.com/',
-            title: 'Title',
-            text: 'Text',
-          }
-        </pre>
+        Your share link parameters.
+        <pre>{ 
+  url: 'https://github.com/',
+  title: 'Title',
+  text: 'Text',
+}</pre>
       </td>
       <td>
-        <code>{ width: 600, height: 540, }</code>
+        <code>{}</code>
       </td>
     </tr>
   </tbody>
 </table>
 
-
+---
+<br>
 
 ## Browsers support 🌎
 
 | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/edge/edge_48x48.png" alt="IE / Edge" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br/>IE / Edge | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/firefox/firefox_48x48.png" alt="Firefox" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br/>Firefox | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/chrome/chrome_48x48.png" alt="Chrome" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br/>Chrome | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/safari/safari_48x48.png" alt="Safari" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br/>Safari | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/safari-ios/safari-ios_48x48.png" alt="iOS Safari" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br/>iOS Safari | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/samsung-internet/samsung-internet_48x48.png" alt="Samsung" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br/>Samsung | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/opera/opera_48x48.png" alt="Opera" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br/>Opera | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/yandex/yandex_48x48.png" alt="Yandex" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br/>Yandex |
 | --------- | --------- | --------- | --------- | --------- | --------- | --------- | --------- |
 | IE11, Edge| last 2 versions| last 2 versions| last 2 versions| last 2 versions| last 2 versions| last 2 versions| last 2 versions
+<br>
 
 ## License 📄
 
 ### [MIT](https://github.com/webistomin/vue-socials.js/blob/master/LICENSE)
+<br>
 
 ## Support the project ⭐
 
 If you feel awesome and want to support us in a small way, please consider starring and sharing the repo!
+<br>
 
 ## Contributing 🎉
 
 Found a bug? Missing a specific feature?
 Your contributions are always welcome! Please have a look at the [contribution guidelines](https://github.com/webistomin/nanogram.js/blob/master/CONTRIBUTING.md) first.
+<br>
 
 ## Contributors ❤️
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+<br>
 

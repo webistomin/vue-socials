@@ -13,11 +13,15 @@
     "@nuxt/typescript-runtime": "^2.0.1",
     "@nuxtjs/axios": "^5.12.5",
     "@nuxtjs/pwa": "^3.3.4",
+    "@nuxtjs/style-resources": "^1.0.0",
+    "@nuxtjs/svg-sprite": "^0.5.2",
     "core-js": "^3.8.3",
     "nuxt": "^2.14.12"
   },
   "devDependencies": {
     "@nuxt/types": "^2.14.12",
-    "@nuxt/typescript-build": "^2.0.4"
+    "@nuxt/typescript-build": "^2.0.4",
+    "node-sass": "^5.0.0",
+    "sass-loader": "^10.1.1"
   }
 }

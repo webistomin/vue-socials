@@ -1,54 +1,60 @@
+const IS_DEV = process.env.NODE_ENV === 'development';
+const PORT = process.env.SERVER_PORT || (IS_DEV ? 3000 : 80);
+const HOST = '0.0.0.0';
+
 export default {
-  // Target (https://go.nuxtjs.dev/config-target)
   target: 'static',
 
-  // Global page headers (https://go.nuxtjs.dev/config-head)
+  server: {
+    port: PORT,
+    host: HOST,
+  },
+
   head: {
-    title: 'vue-socials-docs',
+    htmlAttrs: {
+      lang: 'en',
+      dir: 'ltr',
+    },
+    title: 'Vue Socials',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: '' },
+      { name: 'format-detection', content: 'telephone=no' },
+      { name: 'format-detection', content: 'date=no' },
+      { name: 'format-detection', content: 'address=no' },
+      { name: 'format-detection', content: 'email=no' },
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
     ],
   },
 
-  // Global CSS (https://go.nuxtjs.dev/config-css)
-  css: [
-  ],
+  loading: { color: '#2D4CC8' },
 
-  // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
-  plugins: [
-  ],
+  css: [],
 
-  // Auto import components (https://go.nuxtjs.dev/config-components)
-  components: true,
+  styleResources: {
+    sass: ['./assets/sass/dev.sass'],
+  },
 
-  // Modules for dev and build (recommended) (https://go.nuxtjs.dev/config-modules)
+  plugins: [],
+
   buildModules: [
-    // https://go.nuxtjs.dev/typescript
     '@nuxt/typescript-build',
   ],
 
-  // Modules (https://go.nuxtjs.dev/config-modules)
   modules: [
-    // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
-    // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
-    // https://go.nuxtjs.dev/content
     '@nuxt/content',
+    '@nuxtjs/svg-sprite',
+    '@nuxtjs/style-resources',
   ],
 
-  // Axios module configuration (https://go.nuxtjs.dev/config-axios)
   axios: {},
 
-  // Content module configuration (https://go.nuxtjs.dev/config-content)
   content: {},
 
-  // Build Configuration (https://go.nuxtjs.dev/config-build)
-  build: {
-  },
+  build: {},
 };

@@ -66,25 +66,34 @@ Browse [online documentation here](https://github.com/webistomin/vue-socials.js/
 
 * <img src="./assets/icons/blogger.svg" width="16" height="16"/> [Blogger](#sblogger)
 
-#### Sharing components
+#### SBlogger
 
-##### SBlogger
+**Website**
+
+[https://www.blogger.com/](https://www.blogger.com/)
+
+**Share link documentation**
+
+[https://stackoverflow.com/questions/22573164/blog-share-on-blogger-link/22583473#22583473](https://stackoverflow.com/questions/22573164/blog-share-on-blogger-link/22583473#22583473)
+
+**Usage**
 
 ```js
+import Vue from 'vue'
 import { SBlogger } from 'vue-socials'
 
 Vue.component('SBlogger', SBlogger)
 ```
 
-###### Props
+**Props**
 
 <table>
   <thead>
     <tr>
-      <td>Prop</td>
-      <td>Type</td>
-      <td>Description</td>
-      <td>Default value</td>
+      <td><b>Prop</b></td>
+      <td><b>Type</b></td>
+      <td><b>Description</b></td>
+      <td><b>Default value</b></td>
     </tr>
   </thead>
   <tbody>
@@ -101,6 +110,31 @@ Vue.component('SBlogger', SBlogger)
       </td>
       <td>
         <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/open#window_features">Requested features of the new window</a>
+      </td>
+      <td>
+        <code>{ width: 600, height: 540, }</code>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <code>
+          shareOptions
+        </code>
+      </td>
+      <td>
+        <code>
+          object
+        </code>
+      </td>
+      <td>
+        Your share links parameters.
+        <pre>
+          shareOptions: {
+            url: 'https://github.com/',
+            title: 'Title',
+            text: 'Text',
+          }
+        </pre>
       </td>
       <td>
         <code>{ width: 600, height: 540, }</code>

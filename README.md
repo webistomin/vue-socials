@@ -64,17 +64,50 @@ Browse [online documentation here](https://github.com/webistomin/vue-socials.js/
 
 ### B
 
-* <img src="./assets/icons/blogger.svg" width="16" height="16"/> [Blogger](#s-blogger)
+* <img src="./assets/icons/blogger.svg" width="16" height="16"/> [Blogger](#sblogger)
 
 #### Sharing components
 
-### SBlogger
+##### SBlogger
 
-```vue
+```js
 import { SBlogger } from 'vue-socials'
 
 Vue.component('SBlogger', SBlogger)
 ```
+
+###### Props
+
+<table>
+  <thead>
+    <tr>
+      <td>Prop</td>
+      <td>Type</td>
+      <td>Description</td>
+      <td>Default value</td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <code>
+          windowFeatures
+        </code>
+      </td>
+      <td>
+        <code>
+          object
+        </code>
+      </td>
+      <td>
+        <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/open#window_features">Requested features of the new window</a>
+      </td>
+      <td>
+        <code>{ width: 600, height: 540, }</code>
+      </td>
+    </tr>
+  </tbody>
+</table>
 
 
 

@@ -1,0 +1,27 @@
+{
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": false,
+  "contributors": [
+    {
+      "login": "webistomin",
+      "name": "Alexey Istomin",
+      "avatar_url": "https://avatars.githubusercontent.com/u/30475699?v=4",
+      "profile": "https://webistom.in/en",
+      "contributions": [
+        "a11y",
+        "test",
+        "code",
+        "ideas"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7,
+  "projectName": "vue-socials",
+  "projectOwner": "webistomin",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "skipCi": true
+}

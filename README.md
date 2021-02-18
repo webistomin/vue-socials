@@ -66,6 +66,9 @@ Browse [online documentation here](https://github.com/webistomin/vue-socials.js/
 
 * <img src="./assets/icons/blogger.svg" width="16" height="16"/> [Blogger](#sblogger)
 
+### D
+
+* <img src="./assets/icons/devto.svg" width="16" height="16"/> [DevTo](#sdevto)
 ---
 <br>
 

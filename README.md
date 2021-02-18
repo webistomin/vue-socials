@@ -1,7 +1,4 @@
 <p align="center">
-<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
-<!-- ALL-CONTRIBUTORS-BADGE:END -->
   <img width="124" height="124" src="./assets/logo.svg" alt="Heart">
 </p>
 
@@ -164,22 +161,26 @@ Vue.component('SBlogger', SBlogger)
 | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/edge/edge_48x48.png" alt="IE / Edge" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br/>IE / Edge | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/firefox/firefox_48x48.png" alt="Firefox" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br/>Firefox | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/chrome/chrome_48x48.png" alt="Chrome" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br/>Chrome | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/safari/safari_48x48.png" alt="Safari" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br/>Safari | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/safari-ios/safari-ios_48x48.png" alt="iOS Safari" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br/>iOS Safari | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/samsung-internet/samsung-internet_48x48.png" alt="Samsung" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br/>Samsung | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/opera/opera_48x48.png" alt="Opera" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br/>Opera | [<img src="https://raw.githubusercontent.com/alrra/browser-logos/master/src/yandex/yandex_48x48.png" alt="Yandex" width="24px" height="24px" />](http://godban.github.io/browsers-support-badges/)<br/>Yandex |
 | --------- | --------- | --------- | --------- | --------- | --------- | --------- | --------- |
 | IE11, Edge| last 2 versions| last 2 versions| last 2 versions| last 2 versions| last 2 versions| last 2 versions| last 2 versions
+
 <br>
 
 ## License 📄
 
 ### [MIT](https://github.com/webistomin/vue-socials.js/blob/master/LICENSE)
+
 <br>
 
 ## Support the project ⭐
 
 If you feel awesome and want to support us in a small way, please consider starring and sharing the repo!
+
 <br>
 
 ## Contributing 🎉
 
 Found a bug? Missing a specific feature?
 Your contributions are always welcome! Please have a look at the [contribution guidelines](https://github.com/webistomin/nanogram.js/blob/master/CONTRIBUTING.md) first.
+
 <br>
 
 ## Contributors ❤️
@@ -190,8 +191,8 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- markdownlint-disable -->
 <table>
   <tr>
-    <td align="center"><a href="https://github.com/BodrovIgor"><img src="https://avatars.githubusercontent.com/u/79087208?v=4?s=100" width="100px;" alt=""/><br /><sub><b>BodrovIgor</b></sub></a><br /><a href="#content-BodrovIgor" title="Content">🖋</a> <a href="#design-BodrovIgor" title="Design">🎨</a></td>
     <td align="center"><a href="https://webistom.in/en"><img src="https://avatars.githubusercontent.com/u/30475699?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Alexey Istomin</b></sub></a><br /><a href="#a11y-webistomin" title="Accessibility">️️️️♿️</a> <a href="https://github.com/webistomin/vue-socials/commits?author=webistomin" title="Tests">⚠️</a> <a href="https://github.com/webistomin/vue-socials/commits?author=webistomin" title="Code">💻</a> <a href="#ideas-webistomin" title="Ideas, Planning, & Feedback">🤔</a></td>
+    <td align="center"><a href="https://github.com/BodrovIgor"><img src="https://avatars.githubusercontent.com/u/79087208?v=4?s=100" width="100px;" alt=""/><br /><sub><b>BodrovIgor</b></sub></a><br /><a href="#content-BodrovIgor" title="Content">🖋</a> <a href="#design-BodrovIgor" title="Design">🎨</a></td>
   </tr>
 </table>
 
@@ -199,5 +200,5 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- prettier-ignore-end -->
 
 <!-- ALL-CONTRIBUTORS-LIST:END -->
-<br>
 
+<br>

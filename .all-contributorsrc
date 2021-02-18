@@ -13,6 +13,17 @@
       "contributions": [
         "content",
         "design"
+    },
+    {
+      "login": "webistomin",
+      "name": "Alexey Istomin",
+      "avatar_url": "https://avatars.githubusercontent.com/u/30475699?v=4",
+      "profile": "https://webistom.in/en",
+      "contributions": [
+        "a11y",
+        "test",
+        "code",
+        "ideas"
       ]
     }
   ],

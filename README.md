@@ -52,8 +52,6 @@
 * **No dependencies**
 * **No SDK**
 * **Don't track** the user
-* Built with **a11y** in mind
-* **One API** to rule them all
 * **TypeScript** support
 
 ## Documentation 🤗

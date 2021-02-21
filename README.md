@@ -66,6 +66,140 @@ Browse [online documentation here](https://github.com/webistomin/vue-socials.js/
 
 * <img src="./assets/icons/blogger.svg" width="16" height="16"/> [Blogger](#sblogger)
 
+### D
+
+* <img src="./assets/icons/devto.svg" width="16" height="16"/> [DevTo](#sdevto)
+
+* <img src="./assets/icons/diaspora.svg" width="16" height="16"/> [Diaspora](#sdiaspora)
+
+* <img src="./assets/icons/douban.svg" width="16" height="16"/> [Douban](#sdouban)
+
+### E
+
+* <img src="./assets/icons/email.svg" width="16" height="16"/> [Email](#semail)
+
+* <img src="./assets/icons/evernote.svg" width="16" height="16"/> [Evernote](#severnote)
+
+### F
+
+* <img src="./assets/icons/facebook.svg" width="16" height="16"/> [Facebook](#sfacebook)
+
+<!---FacebookCount--->
+
+* <img src="./assets/icons/facebook-messenger.svg" width="16" height="16"/> [Facebook-Messenger](#sfacebook-messenger)
+
+* <img src="./assets/icons/facebook-workplace.svg" width="16" height="16"/> [Facebook-Workplace](#sfacebook-workplace)
+
+* <img src="./assets/icons/flipboard.svg" width="16" height="16"/> [Flipboard](#sflipboard)
+
+### G
+
+* <img src="./assets/icons/github.svg" width="16" height="16"/> [Github](#sgithub)
+
+<!---SGithubCount--->
+
+<!---SGithubGist--->
+
+<!---SGithubGistCount--->
+
+<!---SGithubRepo--->
+
+<!---SGithubRepoCount--->
+
+* <img src="./assets/icons/gmail.svg" width="16" height="16"/> [Gmail](#sgmail)
+
+* <img src="./assets/icons/google-bookmarks.svg" width="16" height="16"/> [Google-Bookmarks](#sgoogle-bookmarks)
+
+### H
+
+* <img src="./assets/icons/hacker-news.svg" width="16" height="16"/> [Hacker-News](#shacker-news)
+
+* <img src="./assets/icons/hatena.svg" width="16" height="16"/> [Hatena](#shatena)
+
+<!---HatenaCount--->
+
+* <img src="./assets/icons/houzz.svg.svg" width="16" height="16"/> [Houzz](#shouzz)
+
+### I
+
+* <img src="./assets/icons/instapaper.svg" width="16" height="16"/> [Instapaper](#sinstapaper)
+
+## K
+
+* <img src="./assets/icons/kakao.svg" width="16" height="16"/> [KakaoStory](#skakaostory)
+
+## L
+
+* <img src="./assets/icons/line.svg" width="16" height="16"/> [Line](#sline)
+
+<!---LineCount--->
+
+* <img src="./assets/icons/linkedin.svg" width="16" height="16"/> [Linkedin](#slinkedin)
+
+* <img src="./assets/icons/livejournal.svg" width="16" height="16"/> [LiveJournal](#slivejournal)
+
+## M
+
+* <img src="./assets/icons/mailru.svg" width="16" height="16"/> [MailRu](#smailru)
+
+* <img src="./assets/icons/microsoftteams.svg" width="16" height="16"/> [MicrosoftTeams](#smicrosoftteams)
+
+## O
+
+* <img src="./assets/icons/odnoklassniki.svg" width="16" height="16"/> [Odnoklassniki](#sodnoklassniki)
+
+<!---OdnoklassnikiCount--->
+
+## P
+
+* <img src="./assets/icons/pinterest.svg" width="16" height="16"/> [Pinterest](#spinterest)
+
+<!---PinterestCount--->
+
+* <img src="./assets/icons/pocket.svg" width="16" height="16"/> [Poket](#spocket)
+
+## Q
+
+* <img src="./assets/icons/qzone.svg" width="16" height="16"/> [Qzone](#sqzone)
+
+## R
+
+* <img src="./assets/icons/reddit.svg" width="16" height="16"/> [Reddit](#sreddit)
+
+<!---RedditCount--->
+
+* <img src="./assets/icons/renren.svg" width="16" height="16"/> [Renren](#srenren)
+
+## S
+
+* <img src="./assets/icons/skype.svg" width="16" height="16"/> [Skype](#sskype)
+
+* <img src="./assets/icons/sms.svg" width="16" height="16"/> [Sms](#ssms)
+
+## T
+
+* <img src="./assets/icons/telegram.svg" width="16" height="16"/> [Telegram](#stelegram)
+
+* <img src="./assets/icons/threema.svg" width="16" height="16"/> [Threema](#sthreema)
+
+* <img src="./assets/icons/trello.svg" width="16" height="16"/> [Trello](#strello)
+
+* <img src="./assets/icons/tumblr.svg" width="16" height="16"/> [Tumblr](#stumblr)
+
+<!---TumblrCount--->
+
+* <img src="./assets/icons/twitter.svg" width="16" height="16"/> [Twitter](#stwitter)
+
+## V
+
+* <img src="./assets/icons/viber.svg" width="16" height="16"/> [Viber](#sviber)
+
+* <img src="./assets/icons/vkontakte.svg" width="16" height="16"/> [vkontakte](#svkontakte)
+
+<!---VkontakteCount--->
+
+
+
 ---
 <br>
 

@@ -118,7 +118,7 @@ Browse [online documentation here](https://github.com/webistomin/vue-socials.js/
 
 <!---HatenaCount--->
 
-* <img src="./assets/icons/houzz.svg.svg" width="16" height="16"/> [Houzz](#shouzz)
+* <img src="./assets/icons/houzz.svg" width="16" height="16"/> [Houzz](#shouzz)
 
 ### I
 
@@ -180,7 +180,7 @@ Browse [online documentation here](https://github.com/webistomin/vue-socials.js/
 
 * <img src="./assets/icons/telegram.svg" width="16" height="16"/> [Telegram](#stelegram)
 
-* <img src="./assets/icons/threema.svg" width="16" height="16"/> [Threema](#sthreema)
+* <img src="./assets/icons/threema.png" width="16" height="16"/> [Threema](#sthreema)
 
 * <img src="./assets/icons/trello.svg" width="16" height="16"/> [Trello](#strello)
 
@@ -194,11 +194,25 @@ Browse [online documentation here](https://github.com/webistomin/vue-socials.js/
 
 * <img src="./assets/icons/viber.svg" width="16" height="16"/> [Viber](#sviber)
 
-* <img src="./assets/icons/vkontakte.svg" width="16" height="16"/> [vkontakte](#svkontakte)
+* <img src="./assets/icons/vkontakte.svg" width="16" height="16"/> [Vkontakte](#svkontakte)
 
 <!---VkontakteCount--->
 
+## W
 
+* <img src="./assets/icons/weibo.svg" width="16" height="16"/> [Weibo](#sweibo)
+
+* <img src="./assets/icons/whatsapp.svg" width="16" height="16"/> [Whatsapp](#swhatsapp)
+
+## X
+
+* <img src="./assets/icons/xing.svg" width="16" height="16"/> [Xing](#sxing)
+
+## Y
+
+* <img src="./assets/icons/yahoo.svg" width="16" height="16"/> [Yahoo](#syahoo)
+
+* <img src="./assets/icons/yammer.svg" width="16" height="16"/> [Yammer](#syammer)
 
 ---
 <br>

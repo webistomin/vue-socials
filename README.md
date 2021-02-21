@@ -136,7 +136,7 @@ Browse [online documentation here](https://github.com/webistomin/vue-socials.js/
 
 * <img src="./assets/icons/linkedin.svg" width="16" height="16"/> [Linkedin](#slinkedin)
 
-* <img src="./assets/icons/livejournal.svg" width="16" height="16"/> [LiveJournal](#slivejournal)
+* <img src="./assets/icons/livejournal.svg" width="16" height="16"/> [Livejournal](#slivejournal)
 
 ## M
 
@@ -180,7 +180,7 @@ Browse [online documentation here](https://github.com/webistomin/vue-socials.js/
 
 * <img src="./assets/icons/telegram.svg" width="16" height="16"/> [Telegram](#stelegram)
 
-* <img src="./assets/icons/threema.png" width="16" height="16"/> [Threema](#sthreema)
+* <img src="./assets/icons/threema.svg" width="16" height="16"/> [Threema](#sthreema)
 
 * <img src="./assets/icons/trello.svg" width="16" height="16"/> [Trello](#strello)
 

@@ -11,6 +11,7 @@ import Vue, { CreateElement, PropOptions, VNode } from 'vue';
 import { IWindowFeatures } from '@/types/common/windowFeatures';
 import getFormattedWindowFeatures from '@/utils/getFormattedWindowFeatures';
 import getPopupClientRect from '@/utils/getPopupClientRect';
+import { isUndefined } from '@/utils/inspect';
 
 export interface IBaseSocialDataOptions {
   shareDialog: Window | null;
@@ -110,7 +111,13 @@ export default function BaseSocials<T>(
        * It replaces @s in a string with a social network name.
        */
       ariaLabel() {
-        const label = customAriaLabel || 'Share this with @s.';
+        const { $attrs } = this;
+        const { target } = $attrs;
+        let label = customAriaLabel || 'Share this with @s.';
+
+        if (target === '_blank' || isUndefined(target)) {
+          label += ' (opens in new window)';
+        }
 
         return label.replace(/@s/g, name);
       },

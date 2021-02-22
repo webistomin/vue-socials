@@ -136,7 +136,7 @@ Browse [online documentation here](https://github.com/webistomin/vue-socials.js/
 
 * <img src="./assets/icons/linkedin.svg" width="16" height="16"/> [Linkedin](#slinkedin)
 
-* <img src="./assets/icons/livejournal.svg" width="16" height="16"/> [Livejournal](#slivejournal)
+* <img src="./assets/icons/livejournal.svg" width="16" height="16"/> [LiveJournal](#slivejournal)
 
 ## M
 

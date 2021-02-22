@@ -301,7 +301,7 @@ Vue.component('SBlogger', SBlogger)
 ---
 <br>
 
-### SBlogger
+### SDevto
 
 **Website**
 

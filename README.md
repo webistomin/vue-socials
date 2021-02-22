@@ -82,11 +82,9 @@ Browse [online documentation here](https://github.com/webistomin/vue-socials.js/
 
 * <img src="./assets/icons/facebook.svg" width="16" height="16"/> [Facebook](#sfacebook)
 
-<!---FacebookCount--->
+* <img src="./assets/icons/facebook-messenger.svg" width="16" height="16"/> [Facebook Messenger](#sfacebook-messenger)
 
-* <img src="./assets/icons/facebook-messenger.svg" width="16" height="16"/> [Facebook-Messenger](#sfacebook-messenger)
-
-* <img src="./assets/icons/facebook-workplace.svg" width="16" height="16"/> [Facebook-Workplace](#sfacebook-workplace)
+* <img src="./assets/icons/facebook-workplace.svg" width="16" height="16"/> [Facebook Workplace](#sfacebook-workplace)
 
 * <img src="./assets/icons/flipboard.svg" width="16" height="16"/> [Flipboard](#sflipboard)
 
@@ -94,27 +92,15 @@ Browse [online documentation here](https://github.com/webistomin/vue-socials.js/
 
 * <img src="./assets/icons/github.svg" width="16" height="16"/> [Github](#sgithub)
 
-<!---SGithubCount--->
-
-<!---SGithubGist--->
-
-<!---SGithubGistCount--->
-
-<!---SGithubRepo--->
-
-<!---SGithubRepoCount--->
-
 * <img src="./assets/icons/gmail.svg" width="16" height="16"/> [Gmail](#sgmail)
 
-* <img src="./assets/icons/google-bookmarks.svg" width="16" height="16"/> [Google-Bookmarks](#sgoogle-bookmarks)
+* <img src="./assets/icons/google-bookmarks.svg" width="16" height="16"/> [Google Bookmarks](#sgoogle-bookmarks)
 
 ### H
 
-* <img src="./assets/icons/hacker-news.svg" width="16" height="16"/> [Hacker-News](#shacker-news)
+* <img src="./assets/icons/hacker-news.svg" width="16" height="16"/> [Hacker News](#shackernews)
 
 * <img src="./assets/icons/hatena.svg" width="16" height="16"/> [Hatena](#shatena)
-
-<!---HatenaCount--->
 
 * <img src="./assets/icons/houzz.svg" width="16" height="16"/> [Houzz](#shouzz)
 
@@ -124,13 +110,11 @@ Browse [online documentation here](https://github.com/webistomin/vue-socials.js/
 
 ## K
 
-* <img src="./assets/icons/kakao.svg" width="16" height="16"/> [KakaoStory](#skakaostory)
+* <img src="./assets/icons/kakao.svg" width="16" height="16"/> [Kakao Story](#skakaostory)
 
 ## L
 
 * <img src="./assets/icons/line.svg" width="16" height="16"/> [Line](#sline)
-
-<!---LineCount--->
 
 * <img src="./assets/icons/linkedin.svg" width="16" height="16"/> [Linkedin](#slinkedin)
 
@@ -140,19 +124,15 @@ Browse [online documentation here](https://github.com/webistomin/vue-socials.js/
 
 * <img src="./assets/icons/mailru.svg" width="16" height="16"/> [MailRu](#smailru)
 
-* <img src="./assets/icons/microsoftteams.svg" width="16" height="16"/> [MicrosoftTeams](#smicrosoftteams)
+* <img src="./assets/icons/microsoftteams.svg" width="16" height="16"/> [Microsoft Teams](#smicrosoftteams)
 
 ## O
 
 * <img src="./assets/icons/odnoklassniki.svg" width="16" height="16"/> [Odnoklassniki](#sodnoklassniki)
 
-<!---OdnoklassnikiCount--->
-
 ## P
 
 * <img src="./assets/icons/pinterest.svg" width="16" height="16"/> [Pinterest](#spinterest)
-
-<!---PinterestCount--->
 
 * <img src="./assets/icons/pocket.svg" width="16" height="16"/> [Poket](#spocket)
 
@@ -163,8 +143,6 @@ Browse [online documentation here](https://github.com/webistomin/vue-socials.js/
 ## R
 
 * <img src="./assets/icons/reddit.svg" width="16" height="16"/> [Reddit](#sreddit)
-
-<!---RedditCount--->
 
 * <img src="./assets/icons/renren.svg" width="16" height="16"/> [Renren](#srenren)
 
@@ -184,8 +162,6 @@ Browse [online documentation here](https://github.com/webistomin/vue-socials.js/
 
 * <img src="./assets/icons/tumblr.svg" width="16" height="16"/> [Tumblr](#stumblr)
 
-<!---TumblrCount--->
-
 * <img src="./assets/icons/twitter.svg" width="16" height="16"/> [Twitter](#stwitter)
 
 ## V
@@ -193,8 +169,6 @@ Browse [online documentation here](https://github.com/webistomin/vue-socials.js/
 * <img src="./assets/icons/viber.svg" width="16" height="16"/> [Viber](#sviber)
 
 * <img src="./assets/icons/vkontakte.svg" width="16" height="16"/> [Vkontakte](#svkontakte)
-
-<!---VkontakteCount--->
 
 ## W
 
@@ -296,31 +270,94 @@ Vue.component('SBlogger', SBlogger)
   </tbody>
 </table>
 
----
-<br>
-
 ### SDevto
 
-**Website**
+### SDiaspora
 
-[https://dev.to/](https://dev.to/)
+### SDouban
 
-**Share link documentation**
+### SEmail
 
-[https://dev.to/devteam/announcing-off-platform-share-to-dev-functionality-57j9](https://dev.to/devteam/announcing-off-platform-share-to-dev-functionality-57j9)
+### SEvernote
 
-**Example**
+### SFacebook
 
-[https://dev.to/new?prefill=%0A%20%20%20%20%20%20%20%20---%0A%20%20%20%20%20%20%20%20title%3ATitle%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20tags%3Atag%0A%20%20%20%20%20%20%20%20---%0A%20%20%20%20%20%20%20%20Text%201%0AText%202%0A%7B%25%20wikipedia%20https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FWikipedia%20%25%7D](https://dev.to/new?prefill=%0A%20%20%20%20%20%20%20%20---%0A%20%20%20%20%20%20%20%20title%3ATitle%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20tags%3Atag%0A%20%20%20%20%20%20%20%20---%0A%20%20%20%20%20%20%20%20Text%201%0AText%202%0A%7B%25%20wikipedia%20https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FWikipedia%20%25%7D)
+### SFlipBoard
 
-**Usage**
+### SGithub
 
-```js
-import Vue from 'vue'
-import { SDevto } from 'vue-socials'
+### SGithub
 
-Vue.component('SDevto', SDevto)
-```
+### SGmail
+
+### SGoogleBookmarks
+
+### SHackerNews
+
+### SHatena
+
+### SHouzz
+
+### SInstaPaper
+
+### SKakaoStory
+
+### SLine
+
+### SLinkedIn
+
+### SLiveJournal
+
+### SMailRu
+
+### SMicrosoftTeams
+
+### SOdnoklassniki
+
+### SPinterest
+
+### SPocket
+
+### SQZone
+
+### SReddit
+
+### SRenRen
+
+### SSkype
+
+### SSms
+
+### STelegram
+
+### SThreema
+
+### STrello
+
+### STumblr
+
+### STumblr
+
+### STwitter
+
+### SViber
+
+### SVkontakte
+
+### SWeibo
+
+### SWhatsApp
+
+### SWordPress
+
+### SXing
+
+### SYahoo
+
+### SYammer
+
+---
+<br>
 
 ## Browsers support 🌎
 

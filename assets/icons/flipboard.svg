@@ -1,9 +1,1 @@
-<?xml version="1.0" ?>
-<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 100 100">
-    <rect x="0" y="0" width="100" height="100" fill="#c00" />
-    <g shape-rendering="crispEdges" fill="white">
-        <rect x="40" y="40" width="20" height="20" opacity="0.8" />
-        <rect x="40" y="20" width="40" height="20" opacity="0.9" />
-        <rect x="20" y="20" width="20" height="60" />
-    </g>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path fill="#c00" d="M0 0h100v100H0z"/><g shape-rendering="crispEdges" fill="#fff"><path opacity=".8" d="M40 40h20v20H40z"/><path opacity=".9" d="M40 20h40v20H40z"/><path d="M20 20h20v60H20z"/></g></svg>

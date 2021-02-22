@@ -26,7 +26,7 @@ const Template: Story<TBaseSocialPropsOptions<ISHouzzShareOptions>> = (_args, { 
       @popup-block="onBlock"
       @popup-focus="onFocus"
     >
-      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
         <path d="M14.681 24h8.069V10.367L6.599 5.746V0H1.25v24h8.069v-7.556h5.362z"/>
       </svg>
     </s-houzz>

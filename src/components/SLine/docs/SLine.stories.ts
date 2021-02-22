@@ -26,7 +26,7 @@ const Template: Story<TBaseSocialPropsOptions<ISLineShareOptions>> = (_args, { a
       @popup-block="onBlock"
       @popup-focus="onFocus"
     >
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 299.99998 300.00833">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 299.99998 300.00833" aria-hidden="true" focusable="false">
       <defs/>
       <defs>
         <clipPath id="a" clipPathUnits="userSpaceOnUse">

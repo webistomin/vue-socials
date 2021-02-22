@@ -26,7 +26,7 @@ const Template: Story<TBaseSocialPropsOptions<ISFlipBoardShareOptions>> = (_args
       @popup-block="onBlock"
       @popup-focus="onFocus"
     >
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="10 10 44 44">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="10 10 44 44" aria-hidden="true" focusable="false">
       <g fill="#000000">
         <path d="M24.667 54H10V10h14.814l-.147 44z"/>
         <path d="M39.48 10H24.668v14.667H54V10H39.48z" opacity=".85"/>

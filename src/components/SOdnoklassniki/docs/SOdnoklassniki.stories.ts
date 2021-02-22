@@ -26,9 +26,11 @@ const Template: Story<TBaseSocialPropsOptions<ISOdnoklassnikiShareOptions>> = (_
       @popup-block="onBlock"
       @popup-focus="onFocus"
     >
-    <svg xmlns="http://www.w3.org/2000/svg"
-         width="24" height="24" viewBox="0 0 389.404 387.417"
-         enable-background="new 0 0 389.404 387.417"
+    <svg
+      aria-hidden="true" focusable="false"
+      xmlns="http://www.w3.org/2000/svg"
+      width="24" height="24" viewBox="0 0 389.404 387.417"
+      enable-background="new 0 0 389.404 387.417"
     >
       <g>
         <path fill="#000000" d="M389.404,330.724c0,31.312-25.383,56.693-56.693,56.693H56.693C25.382,387.417,0,362.036,0,330.724V56.693C0,25.382,25.382,0,56.693,0h276.018c31.311,0,56.693,25.382,56.693,56.693V330.724z"

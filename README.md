@@ -188,7 +188,6 @@ Browse [online documentation here](https://vue-socials.vercel.app/)
 * <img src="./assets/icons/yammer.svg" width="16" height="16"/> [Yammer](#syammer)
 
 ---
-<br>
 
 ### SBlogger
 
@@ -253,6 +252,8 @@ Browse [online documentation here](https://vue-socials.vercel.app/)
 `popup-close` | `window.open()` has been closed |
 `popup-block` | `window.open()` has been blocked |
 `popup-focus` | `window.open()` has been focused |
+
+---
 
 ### SDevTo
 
@@ -319,6 +320,8 @@ Browse [online documentation here](https://vue-socials.vercel.app/)
 `popup-block` | `window.open()` has been blocked |
 `popup-focus` | `window.open()` has been focused |
 
+---
+
 ### SDiaspora
 
 **Usage**
@@ -381,6 +384,8 @@ Browse [online documentation here](https://vue-socials.vercel.app/)
 `popup-close` | `window.open()` has been closed |
 `popup-block` | `window.open()` has been blocked |
 `popup-focus` | `window.open()` has been focused |
+
+---
 
 ### SDouban
 

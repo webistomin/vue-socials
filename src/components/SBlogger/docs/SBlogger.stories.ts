@@ -2,10 +2,16 @@ import { Story } from '@storybook/vue';
 import { action } from '@storybook/addon-actions';
 import { DEFAULT_WINDOW_FEATURES, TBaseSocialPropsOptions } from '@/mixins/BaseSocial/BaseSocial';
 import SBlogger, { ISBloggerShareOptions } from '../SBlogger';
+import SBloggerMDX from './SBlogger.mdx';
 
 export default {
   title: 'Share/SBlogger',
   component: SBlogger,
+  parameters: {
+    docs: {
+      page: SBloggerMDX,
+    },
+  },
 };
 
 const Template: Story<TBaseSocialPropsOptions<ISBloggerShareOptions>> = (_args, { argTypes }) => ({

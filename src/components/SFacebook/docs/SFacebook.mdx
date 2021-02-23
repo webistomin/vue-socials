@@ -1,7 +1,7 @@
 import { Meta, Story, Preview} from "@storybook/addon-docs/blocks"
-import SEvernote from "../SEvernote"
+import SFacebook from "../SFacebook"
 
-<Meta title='Share/SEvernote' component={ SEvernote } />
+<Meta title='Share/SFacebook' component={ SFacebook } />
 
 <style>{`
   .custom-preview .base-canvas {
@@ -9,19 +9,19 @@ import SEvernote from "../SEvernote"
   }
 `}</style>
 
-# SEvernote
+# SFacebook
 
 ## Preview
 
 <Preview className="custom-preview">
-  <Story id='share-severnote--default' />
+  <Story id='share-sfacebook--default' />
 </Preview>
 
 ## Example
 
 ```html
 <template>
-  <s-evernote
+  <s-facebook
     :window-features="windowFeatures"
     :share-options="shareOptions"
     :use-native-behavior="useNativeBehavior"
@@ -29,23 +29,24 @@ import SEvernote from "../SEvernote"
     @popup-open="onOpen"
     @popup-block="onBlock"
     @popup-focus="onFocus"
-  ></s-evernote>
+  ></s-facebook>
 </template>
 
 <script>
-  import { SEvernote } from 'vue-socials'
+  import { SFacebook } from 'vue-socials'
 
   export default {
-    name: 'SEvernoteSharing',
+    name: 'SFacebookSharing',
 
-    components: { SEvernote },
+    components: { SFacebook },
 
     data() {
       return {
         windowFeatures: {},
         shareOptions: {
           url: 'https://github.com/',
-          title: 'Title',
+          quote: 'Quote',
+          hashtag: '#Github',
         },
         useNativeBehavior: false,
       }
@@ -65,8 +66,8 @@ import SEvernote from "../SEvernote"
 
 | Prop | Type | Description | Default value |
 | ------ | ------ | ------ | ------ |
-`windowFeatures` | `object` | Pass options to `window.open()`. [Requested features of the new window.](https://developer.mozilla.org/en-US/docs/Web/API/Window/open#window_features) | `{ width: 800, height: 560, }`
-`shareOptions` | `object` | Your share link parameters: <br /> **url** – the URL you want to share <br />**title** – your blogpost title <br /> <br /> ```{ url: 'https://github.com/', title: 'Title', }``` | `{}`
+`windowFeatures` | `object` | Pass options to `window.open()`. [Requested features of the new window.](https://developer.mozilla.org/en-US/docs/Web/API/Window/open#window_features) | `{ width: 685, height: 600, }`
+`shareOptions` | `object` | Your share link parameters: <br /> **url** – the URL you want to share <br /> **quote** – your blogpost quote <br /> **hashtag** – your blogpost hashtag <br /> <br /> ```{ url: 'https://github.com/', quote: 'Quote', hashtag: '#Github', }``` | `{}`
 `useNativeBehavior` | `boolean` | Use native link behavior instead of `window.open()` or not | `false`
 
 ## Events

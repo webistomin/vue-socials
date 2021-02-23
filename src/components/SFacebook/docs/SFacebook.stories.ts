@@ -2,10 +2,16 @@ import { Story } from '@storybook/vue';
 import { action } from '@storybook/addon-actions';
 import { TBaseSocialPropsOptions } from '@/mixins/BaseSocial/BaseSocial';
 import SFacebook, { ISFacebookShareOptions } from '../SFacebook';
+import SFacebookMDX from './SFacebook.mdx';
 
 export default {
   title: 'Share/SFacebook',
   component: SFacebook,
+  parameters: {
+    docs: {
+      page: SFacebookMDX,
+    },
+  },
 };
 
 const Template: Story<TBaseSocialPropsOptions<ISFacebookShareOptions>> = (_args, { argTypes }) => ({

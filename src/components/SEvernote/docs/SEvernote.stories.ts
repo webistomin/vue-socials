@@ -2,7 +2,7 @@ import { Story } from '@storybook/vue';
 import { action } from '@storybook/addon-actions';
 import { TBaseSocialPropsOptions } from '@/mixins/BaseSocial/BaseSocial';
 import SEvernote, { ISEvernoteShareOptions } from '../SEvernote';
-import SEvernoteMDX from './SEvernote.mdx'
+import SEvernoteMDX from './SEvernote.mdx';
 
 export default {
   title: 'Share/SEvernote',

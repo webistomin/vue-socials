@@ -450,6 +450,8 @@ Browse [online documentation here](https://vue-socials.vercel.app/)
 `popup-block` | `window.open()` has been blocked |
 `popup-focus` | `window.open()` has been focused |
 
+---
+
 ### SEmail
 
 **Usage**
@@ -488,7 +490,70 @@ Browse [online documentation here](https://vue-socials.vercel.app/)
 | ------ | ------ | ------ | ------ |
 `shareOptions` | `object` | Your share link parameters: <br /> **mail** – e-mail recipient address <br /> **subject** – subject of e-mail <br /> **cc** – carbon copy e-mail address <br />  **bcc** – blind carbon copy e-mail address <br /> **body** – body of e-mail <br /> <br /> ```{ mail: 'google@gmail.com', cc: ['google1@gmail.com', 'google3@gmail.com'], bcc: ['google2@gmail.com', 'google4@gmail.com'], subject: 'Subject', body: 'Hello\nWorld', }``` | `{}`
 
+---
+
 ### SEvernote
+
+**Usage**
+
+```vue
+<template>
+  <s-evernote
+    :window-features="windowFeatures"
+    :share-options="shareOptions"
+    :use-native-behavior="useNativeBehavior"
+    @popup-close="onClose"
+    @popup-open="onOpen"
+    @popup-block="onBlock"
+    @popup-focus="onFocus"
+  ></s-evernote>
+</template>
+
+<script>
+  import { SEvernote } from 'vue-socials'
+
+  export default {
+    name: 'SEvernoteSharing',
+    
+    components: { SEvernote },
+    
+    data() {
+      return {
+        windowFeatures: {},
+        shareOptions: {
+          url: 'https://github.com/',
+          title: 'Title',
+        },
+        useNativeBehavior: false,
+      }
+    },
+    
+    methods: {
+      onClose() {},
+      onOpen() {},
+      onBlock() {},
+      onFocus() {},
+    }
+  };
+</script>
+```
+
+**Props**
+
+| Prop | Type | Description | Default value |
+| ------ | ------ | ------ | ------ |
+`windowFeatures` | `object` | Pass options to `window.open()`. [Requested features of the new window.](https://developer.mozilla.org/en-US/docs/Web/API/Window/open#window_features) | `{ width: 800, height: 560, }`
+`shareOptions` | `object` | Your share link parameters: <br /> **url** – the URL you want to share <br />**title** – your blogpost title <br /> <br /> ```{ url: 'https://github.com/', title: 'Title', }``` | `{}`
+`useNativeBehavior` | `boolean` | Use native link behavior instead of `window.open()` or not | `false`
+
+**Events**
+
+| Event name | Usage |
+| ------ | ------ |
+`popup-open` | `window.open()` has been opened |
+`popup-close` | `window.open()` has been closed |
+`popup-block` | `window.open()` has been blocked |
+`popup-focus` | `window.open()` has been focused |
 
 ### SFacebook
 

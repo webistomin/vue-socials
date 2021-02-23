@@ -2,10 +2,16 @@ import { Story } from '@storybook/vue';
 import { action } from '@storybook/addon-actions';
 import { TBaseSocialPropsOptions } from '@/mixins/BaseSocial/BaseSocial';
 import SEvernote, { ISEvernoteShareOptions } from '../SEvernote';
+import SEvernoteMDX from './SEvernote.mdx'
 
 export default {
   title: 'Share/SEvernote',
   component: SEvernote,
+  parameters: {
+    docs: {
+      page: SEvernoteMDX,
+    },
+  },
 };
 
 const Template: Story<TBaseSocialPropsOptions<ISEvernoteShareOptions>> = (_args, { argTypes }) => ({

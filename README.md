@@ -192,20 +192,6 @@ Browse [online documentation here](https://github.com/webistomin/vue-socials.js/
 
 ### SBlogger
 
-**Website**
-
-[https://www.blogger.com/](https://www.blogger.com/)
-
-**Share link documentation**
-
-[https://stackoverflow.com/questions/22573164/blog-share-on-blogger-link/22583473#22583473](https://stackoverflow.com/questions/22573164/blog-share-on-blogger-link/22583473#22583473)
-
-**Example**
-
-[https://www.blogger.com/blog-this.g?u=https%3A%2F%2Fgithub.com%2F&t=Text&n=Title/](https://www.blogger.com/blog-this.g?u=https%3A%2F%2Fgithub.com%2F&t=Text&n=Title/)
-
-**Usage**
-
 ```js
 import Vue from 'vue'
 import { SBlogger } from 'vue-socials'
@@ -215,63 +201,13 @@ Vue.component('SBlogger', SBlogger)
 
 **Props**
 
-<table>
-  <thead>
-    <tr>
-      <td><b>Prop</b></td>
-      <td><b>Type</b></td>
-      <td><b>Description</b></td>
-      <td><b>Default value</b></td>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>
-        <code>
-          windowFeatures
-        </code>
-      </td>
-      <td>
-        <code>
-          object
-        </code>
-      </td>
-      <td>
-        <a href="https://developer.mozilla.org/en-US/docs/Web/API/Window/open#window_features">Requested features of the new window.</a>
-      </td>
-      <td>
-        <code>{ width: 600, height: 540, }</code>
-      </td>
-    </tr>
-    <tr>
-      <td>
-        <code>
-          shareOptions
-        </code>
-      </td>
-      <td>
-        <pre>{
-  url: string;
-  title: string;
-  text: string;
-}</pre>
-      </td>
-      <td>
-        Your share link parameters.
-        <pre>{ 
-  url: 'https://github.com/',
-  title: 'Title',
-  text: 'Text',
-}</pre>
-      </td>
-      <td>
-        <code>{}</code>
-      </td>
-    </tr>
-  </tbody>
-</table>
+| Prop | Type | Description | Default value |
+| ------ | ------ | ------ | ------ |
+`windowFeatures` | `object` | [Requested features of the new window.](https://developer.mozilla.org/en-US/docs/Web/API/Window/open#window_features) | `{ width: 600, height: 540, }`
+`shareOptions` | `object` | Your share link parameters. <br /> **url** – <br /> **title** –  <br /> **text** – <br /> <br />```{ url: 'https://github.com/', title: 'Title', text: 'Text', } ``` | `{}`
+`useNativeBehavior` | `boolean` | Use native link behavior instead of `window.open()` or not | `false`
 
-### SDevto
+### SDevTo
 
 ### SDiaspora
 
@@ -356,9 +292,6 @@ Vue.component('SBlogger', SBlogger)
 ### SYahoo
 
 ### SYammer
-
----
-<br>
 
 ## Browsers support 🌎
 

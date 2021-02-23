@@ -9,7 +9,7 @@
 <p align="center">
   Social media share buttons and counts for <a href="https://vuejs.org/">Vue.js</a>.
   <br>
-  <a href=""><strong>Explore website »</strong></a>
+  <a href="https://vue-socials.vercel.app/"><strong>Explore website »</strong></a>
 </p>
 
 <br>
@@ -55,7 +55,7 @@
 
 ## Documentation 🤗
 
-Browse [online documentation here](https://github.com/webistomin/vue-socials.js/blob/master/LICENSE)
+Browse [online documentation here](https://vue-socials.vercel.app/)
 
 ### Socials
 

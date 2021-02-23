@@ -452,6 +452,42 @@ Browse [online documentation here](https://vue-socials.vercel.app/)
 
 ### SEmail
 
+**Usage**
+
+```vue
+<template>
+  <s-email :share-options="shareOptions"></s-email>
+</template>
+
+<script>
+  import { SEmail } from 'vue-socials'
+
+  export default {
+    name: 'SEmailSharing',
+    
+    components: { SEmail },
+    
+    data() {
+      return {
+        shareOptions: {
+          mail: 'google@gmail.com',
+          cc: ['google1@gmail.com', 'google3@gmail.com'],
+          bcc: ['google2@gmail.com', 'google4@gmail.com'],
+          subject: 'Subject',
+          body: 'Hello\nWorld',
+        },
+      }
+    },
+  };
+</script>
+```
+
+**Props**
+
+| Prop | Type | Description | Default value |
+| ------ | ------ | ------ | ------ |
+`shareOptions` | `object` | Your share link parameters: <br /> **mail** – e-mail recipient address <br /> **subject** – subject of e-mail <br /> **cc** – carbon copy e-mail address <br />  **bcc** – blind carbon copy e-mail address <br /> **body** – body of e-mail <br /> <br /> ```{ mail: 'google@gmail.com', cc: ['google1@gmail.com', 'google3@gmail.com'], bcc: ['google2@gmail.com', 'google4@gmail.com'], subject: 'Subject', body: 'Hello\nWorld', }``` | `{}`
+
 ### SEvernote
 
 ### SFacebook

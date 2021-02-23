@@ -1,5 +1,6 @@
 import { Story } from '@storybook/vue';
 import SEmail, { ISEmailShareOptions } from '../SEmail';
+import SEmailMDX from './SEmail.mdx';
 
 interface ISEmailStoryArgs {
   shareOptions: ISEmailShareOptions;
@@ -8,6 +9,11 @@ interface ISEmailStoryArgs {
 export default {
   title: 'Share/SEmail',
   component: SEmail,
+  parameters: {
+    docs: {
+      page: SEmailMDX,
+    },
+  },
 };
 
 const Template: Story<ISEmailStoryArgs> = (_args, { argTypes }) => ({

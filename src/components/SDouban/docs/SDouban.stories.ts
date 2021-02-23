@@ -2,10 +2,16 @@ import { Story } from '@storybook/vue';
 import { action } from '@storybook/addon-actions';
 import { TBaseSocialPropsOptions } from '@/mixins/BaseSocial/BaseSocial';
 import SDouban, { ISDoubanShareOptions } from '../SDouban';
+import SDoubanMDX from './SDouban.mdx';
 
 export default {
   title: 'Share/SDouban',
   component: SDouban,
+  parameters: {
+    docs: {
+      page: SDoubanMDX,
+    },
+  },
 };
 
 const Template: Story<TBaseSocialPropsOptions<ISDoubanShareOptions>> = (_args, { argTypes }) => ({

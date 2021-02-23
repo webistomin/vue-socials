@@ -207,6 +207,15 @@ Vue.component('SBlogger', SBlogger)
 `shareOptions` | `object` | Your share link parameters: <br /> **url** – the URL you want to share <br /> **title** – your blogpost title  <br /> **text** – your blogpost content <br /> <br />```{ url: 'https://github.com/', title: 'Title', text: 'Text', } ``` | `{}`
 `useNativeBehavior` | `boolean` | Use native link behavior instead of `window.open()` or not | `false`
 
+**Events**
+
+| Event name | Usage |
+| ------ | ------ |
+`popup-open` | `window.open()` has been opened |
+`popup-close` | `window.open()` has been closed |
+`popup-block` | `window.open()` has been blocked |
+`popup-focus` | `window.open()` has been focused |
+
 ### SDevTo
 
 ### SDiaspora

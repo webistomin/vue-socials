@@ -321,6 +321,67 @@ Browse [online documentation here](https://vue-socials.vercel.app/)
 
 ### SDiaspora
 
+**Usage**
+
+```vue
+<template>
+  <s-diaspora
+    :window-features="windowFeatures"
+    :share-options="shareOptions"
+    :use-native-behavior="useNativeBehavior"
+    @popup-close="onClose"
+    @popup-open="onOpen"
+    @popup-block="onBlock"
+    @popup-focus="onFocus"
+  ></s-diaspora>
+</template>
+
+<script>
+  import { SDiaspora } from 'vue-socials'
+
+  export default {
+    name: 'SDiasporaSharing',
+    
+    components: { SDiaspora },
+    
+    data() {
+      return {
+        windowFeatures: {},
+        shareOptions: {
+          url: 'https://github.com/',
+          title: 'Title',
+        },
+        useNativeBehavior: false,
+      }
+    },
+    
+    methods: {
+      onClose() {},
+      onOpen() {},
+      onBlock() {},
+      onFocus() {},
+    }
+  };
+</script>
+```
+
+**Props**
+
+| Prop | Type | Description | Default value |
+| ------ | ------ | ------ | ------ |
+`windowFeatures` | `object` | Pass options to `window.open()`. [Requested features of the new window.](https://developer.mozilla.org/en-US/docs/Web/API/Window/open#window_features) | `{ width: 600, height: 540, }`
+`shareOptions` | `object` | Your share link parameters: <br /> **url** – the URL you want to share <br />**title** – your blogpost title <br /> <br /> ```{ url: 'https://github.com/', title: 'Title', }``` | `{}`
+`useNativeBehavior` | `boolean` | Use native link behavior instead of `window.open()` or not | `false`
+
+**Events**
+
+| Event name | Usage |
+| ------ | ------ |
+`popup-open` | `window.open()` has been opened |
+`popup-close` | `window.open()` has been closed |
+`popup-block` | `window.open()` has been blocked |
+`popup-focus` | `window.open()` has been focused |
+
 ### SDouban
 
 ### SEmail

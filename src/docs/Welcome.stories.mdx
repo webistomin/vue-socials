@@ -1,0 +1,135 @@
+import { Meta } from '@storybook/addon-docs/blocks';
+import logo from '../../assets/logo.svg'
+
+<Meta title="VueSocials/Welcome" />
+
+<style>{`
+  .intro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .intro__title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    margin-bottom: 44px;
+    text-align: center;
+  }
+
+  .intro__code {
+    display: block;
+    padding: 12px 24px;
+    margin-bottom: 44px !important;
+    background-color: #F0F0F3;
+    border: 1px solid rgb(229, 231, 235);
+    color: rgb(17, 24, 39);
+    font-family: Menlo, ui-monospace, SFMono-Regular, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  }
+
+  .intro__list {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    row-gap: 10px;
+  }
+
+  @media (min-width: 620px) {
+    .intro__list {
+      row-gap: 20px;
+      column-gap: 20px;
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  @media all and (-ms-high-contrast:none) {
+  .intro__list {
+      display: -ms-grid;
+      -ms-grid-columns: 1fr 1fr;
+      -ms-grid-rows: 1fr 1fr;
+    }
+  }
+
+  .intro__item {
+    display: block;
+    padding: 20px 30px 20px 15px;
+    border: 1px solid rgb(229, 231, 235);
+    border-radius: 5px;
+    color: #333333;
+    display: flex;
+    align-items: flex-start;
+  }
+
+  .intro__item h3 {
+    margin-bottom: 10px !important;
+  }
+
+  .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    border: 0;
+    clip: rect(0 0 0 0);
+    -webkit-clip-path: inset(50%);
+    clip-path: inset(50%);
+  }
+`}</style>
+
+<section className="intro">
+  <h1 className="intro__title">
+    <img src={logo} width="124" height="124" alt="Blue Heart" className="intro__logo" />
+    <strong className="intro__title-text">Vue Socials</strong>
+  </h1>
+
+  <span className="intro__code">
+    $ npm install vue-socials
+  </span>
+
+  <h2 className="visually-hidden">Features</h2>
+
+  <ul className="intro__list">
+    <li className="intro__item">
+      <div>
+        <h3>🍤 Small</h3>
+        <code>~7KB</code> (minified and gzipped)
+      </div>
+    </li>
+    <li className="intro__item">
+      <div>
+        <h3>🌳 Tree-shakeable</h3>
+        Unused components can be easily removed by modern bundlers
+      </div>
+    </li>
+    <li className="intro__item">
+      <div>
+        <h3>💅 Customizable</h3>
+        Components doesn't depend on any CSS library. Is is unstyled by default.
+      </div>
+    </li>
+    <li className="intro__item">
+      <div>
+        <h3>💅 Ethical</h3>
+        Do not insert any pesky tracking code
+      </div>
+    </li>
+    <li className="intro__item">
+      <div>
+        <h3>♿ a11y</h3>
+        DOM attributes like <code>aria-label</code> are added automatically.
+      </div>
+    </li>
+    <li className="intro__item">
+      <div>
+        <h3>🦾 DX friendly</h3>
+        Written in TypeScript
+      </div>
+    </li>
+  </ul>
+</section>
+

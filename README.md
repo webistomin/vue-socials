@@ -192,11 +192,49 @@ Browse [online documentation here](https://github.com/webistomin/vue-socials.js/
 
 ### SBlogger
 
-```js
-import Vue from 'vue'
-import { SBlogger } from 'vue-socials'
+**Usage**
 
-Vue.component('SBlogger', SBlogger)
+```vue
+<template>
+  <s-blogger
+    :window-features="windowFeatures"
+    :share-options="shareOptions"
+    :use-native-behavior="useNativeBehavior"
+    @popup-close="onClose"
+    @popup-open="onOpen"
+    @popup-block="onBlock"
+    @popup-focus="onFocus"
+  ></s-blogger>
+</template>
+
+<script>
+  import { SBlogger } from 'vue-socials'
+
+  export default {
+    name: 'SBloggerSharing',
+    
+    components: { SBlogger },
+    
+    data() {
+      return {
+        windowFeatures: {},
+        shareOptions: { 
+          url: 'https://github.com/', 
+          title: 'Title', 
+          text: 'Text',
+        },
+        useNativeBehavior: false,
+      }
+    },
+    
+    methods: {
+      onClose() {},
+      onOpen() {},
+      onBlock() {},
+      onFocus() {},
+    }
+  };
+</script>
 ```
 
 **Props**

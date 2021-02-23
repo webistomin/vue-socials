@@ -133,7 +133,7 @@ Browse [online documentation here](https://github.com/webistomin/vue-socials.js/
 
 * <img src="./assets/icons/pinterest.svg" width="16" height="16"/> [Pinterest](#spinterest)
 
-* <img src="./assets/icons/pocket.svg" width="16" height="16"/> [Poket](#spocket)
+* <img src="./assets/icons/pocket.svg" width="16" height="16"/> [Pocket](#spocket)
 
 ## Q
 

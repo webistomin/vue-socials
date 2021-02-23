@@ -204,7 +204,7 @@ Vue.component('SBlogger', SBlogger)
 | Prop | Type | Description | Default value |
 | ------ | ------ | ------ | ------ |
 `windowFeatures` | `object` | [Requested features of the new window.](https://developer.mozilla.org/en-US/docs/Web/API/Window/open#window_features) | `{ width: 600, height: 540, }`
-`shareOptions` | `object` | Your share link parameters. <br /> **url** – <br /> **title** –  <br /> **text** – <br /> <br />```{ url: 'https://github.com/', title: 'Title', text: 'Text', } ``` | `{}`
+`shareOptions` | `object` | Your share link parameters: <br /> **url** – <br /> **title** –  <br /> **text** – <br /> <br />```{ url: 'https://github.com/', title: 'Title', text: 'Text', } ``` | `{}`
 `useNativeBehavior` | `boolean` | Use native link behavior instead of `window.open()` or not | `false`
 
 ### SDevTo

@@ -621,6 +621,69 @@ Browse [online documentation here](https://vue-socials.vercel.app/)
 `popup-block` | `window.open()` has been blocked |
 `popup-focus` | `window.open()` has been focused |
 
+---
+
+### SFacebookCount
+
+**Usage**
+
+```vue
+<template>
+  <s-facebook-count
+    :share-options="shareOptions"
+    @load="onLoad"
+    @error="onError"
+    @loading="onLoading"
+  ></s-facebook-count>
+</template>
+
+<script>
+  import { SFacebookCount } from 'vue-socials'
+
+  export default {
+    name: 'SFacebookCountSharing',
+    
+    components: { SFacebookCount },
+    
+    data() {
+      return {
+        tag: 'span',
+        shareOptions: {
+          id: 'https://github.com/',
+          fields: ['id', 'og_object'],
+          accessToken: '',
+        },
+      }
+    },
+    
+    methods: {
+      onLoad() {},
+      onError() {},
+      onLoading() {},
+    }
+  };
+</script>
+```
+
+**Props**
+
+| Prop | Type | Description | Default value |
+| ------ | ------ | ------ | ------ |
+`shareOptions` | `object` | Your share link parameters: <br /> **id** – the URL you want to share <br /> **accessToken** – your facebook access token <br /> **fields** – a comma-separated list of fields you want to request. <br /> <br /> ```{ id: 'https://github.com/', fields: ['id', 'og_object'], accessToken: '', }``` | `{}`
+`tag` | `string` | Dynamic HTML tag or component  | `span`
+
+**Events**
+
+| Event name | Usage |
+| ------ | ------ |
+`load` |  the request has finished successfully | 
+`error` | the request has finished with error |
+`loading` | the request has started |
+
+**⚠️ Warning**
+
+This component uses `JSONP` so the content won't be available during `SSR`.
+
 ### SFlipBoard
 
 ### SGithub

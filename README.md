@@ -175,6 +175,8 @@ Browse [online documentation here](https://github.com/webistomin/vue-socials.js/
 
 * <img src="./assets/icons/whatsapp.svg" width="16" height="16"/> [Whatsapp](#swhatsapp)
 
+* <img src="./assets/icons/wordpress.svg" width="16" height="16"/> [Wordpress](#swordpress)
+
 ## X
 
 * <img src="./assets/icons/xing.svg" width="16" height="16"/> [Xing](#sxing)

@@ -2,10 +2,16 @@ import { Story } from '@storybook/vue';
 import { action } from '@storybook/addon-actions';
 import { DEFAULT_WINDOW_FEATURES, TBaseSocialPropsOptions } from '@/mixins/BaseSocial/BaseSocial';
 import SDevTo, { ISDevToShareOptions } from '../SDevTo';
+import SDevToMDX from './SDevTo.mdx';
 
 export default {
   title: 'Share/SDevTo',
   component: SDevTo,
+  parameters: {
+    docs: {
+      page: SDevToMDX,
+    },
+  },
 };
 
 const Template: Story<TBaseSocialPropsOptions<ISDevToShareOptions>> = (_args, { argTypes }) => ({

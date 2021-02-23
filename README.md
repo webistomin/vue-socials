@@ -256,6 +256,69 @@ Browse [online documentation here](https://vue-socials.vercel.app/)
 
 ### SDevTo
 
+**Usage**
+
+```vue
+<template>
+  <s-dev-to
+    :window-features="windowFeatures"
+    :share-options="shareOptions"
+    :use-native-behavior="useNativeBehavior"
+    @popup-close="onClose"
+    @popup-open="onOpen"
+    @popup-block="onBlock"
+    @popup-focus="onFocus"
+  ></s-dev-to>
+</template>
+
+<script>
+  import { SDevTo } from 'vue-socials'
+
+  export default {
+    name: 'SDevToSharing',
+    
+    components: { SDevTo },
+    
+    data() {
+      return {
+        windowFeatures: {},
+        shareOptions: {
+          title: 'Title',
+          isPublished: false,
+          tags: ['tag', 'tag2'],
+          content: 'Text 1\nText 2\n{% wikipedia https://en.wikipedia.org/wiki/Wikipedia %}',
+        },
+        useNativeBehavior: false,
+      }
+    },
+    
+    methods: {
+      onClose() {},
+      onOpen() {},
+      onBlock() {},
+      onFocus() {},
+    }
+  };
+</script>
+```
+
+**Props**
+
+| Prop | Type | Description | Default value |
+| ------ | ------ | ------ | ------ |
+`windowFeatures` | `object` | Pass options to `window.open()`. [Requested features of the new window.](https://developer.mozilla.org/en-US/docs/Web/API/Window/open#window_features) | `{ width: 600, height: 540, }`
+`shareOptions` | `object` | Your share link parameters: <br /> **title** – your blogpost title <br /> **isPublished** – is your blogpost published </br> **tags** – hashtags for blogpost <br /> **content** – your blogpost content <br />```{ title: 'Title', isPublished: false, tags: ['tag', 'tag2'], content: 'Text 1\nText 2\n{% wikipedia https://en.wikipedia.org/wiki/Wikipedia %}',}``` | `{}`
+`useNativeBehavior` | `boolean` | Use native link behavior instead of `window.open()` or not | `false`
+
+**Events**
+
+| Event name | Usage |
+| ------ | ------ |
+`popup-open` | `window.open()` has been opened |
+`popup-close` | `window.open()` has been closed |
+`popup-block` | `window.open()` has been blocked |
+`popup-focus` | `window.open()` has been focused |
+
 ### SDiaspora
 
 ### SDouban

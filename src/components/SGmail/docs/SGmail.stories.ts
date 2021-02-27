@@ -41,7 +41,6 @@ Default.args = {
     su: 'Title',
     cc: 'google1@gmail.com',
     bcc: 'google2@gmail.com',
-    subject: 'Subject',
     body: 'Hello\nWorld',
   },
   useNativeBehavior: false,

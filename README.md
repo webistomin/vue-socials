@@ -1261,7 +1261,7 @@ This component uses `JSONP` so the content won't be available during `SSR`.
 
 | Prop | Type | Description | Default value |
 | ------ | ------ | ------ | ------ |
-`shareOptions` | `object` | Your share link parameters: <br /> **username** – your github username <br /> **repository** – your github repository <br /> **type** – share link type (watch, type, fork, issues) <br /> <br /> ```{ gistId: 'e3683b03ba936ade91d33dbc721cd6d8', type: 'fork', }``` | `{}`
+`shareOptions` | `object` | Your share link parameters: <br /> **username** – your github username <br /> **repository** – your github repository <br /> **type** – share link type (watch, type, fork, issues) <br /> <br /> ```{ username: 'webistomin', repository: 'nanogram.js', type: 'fork', }``` | `{}`
 `tag` | `string` | Dynamic HTML tag or component  | `span`
 
 **Events**
@@ -1279,6 +1279,72 @@ This component uses `JSONP` so the content won't be available during `SSR`.
 ---
 
 ### SGmail
+
+**Usage**
+
+```vue
+<template>
+  <s-gmail
+    :window-features="windowFeatures"
+    :share-options="shareOptions"
+    :use-native-behavior="useNativeBehavior"
+    @popup-close="onClose"
+    @popup-open="onOpen"
+    @popup-block="onBlock"
+    @popup-focus="onFocus"
+  ></s-gmail>
+</template>
+
+<script>
+  import { SGmail } from 'vue-socials'
+
+  export default {
+    name: 'SGmailSharing',
+    
+    components: { SGmail },
+    
+    data() {
+      return {
+        windowFeatures: {},
+        shareOptions: {
+          to: 'google@gmail.com',
+          su: 'Title',
+          cc: 'google1@gmail.com',
+          bcc: 'google2@gmail.com',
+          body: 'Hello\nWorld',
+        },
+        useNativeBehavior: false,
+      }
+    },
+    
+    methods: {
+      onClose() {},
+      onOpen() {},
+      onBlock() {},
+      onFocus() {},
+    }
+  };
+</script>
+```
+
+**Props**
+
+| Prop | Type | Description | Default value |
+| ------ | ------ | ------ | ------ |
+`windowFeatures` | `object` | Pass options to `window.open()`. [Requested features of the new window.](https://developer.mozilla.org/en-US/docs/Web/API/Window/open#window_features) | `{ width: 600, height: 540, }`
+`shareOptions` | `object` | Your share link parameters: <br /> **to** – e-mail recipient address <br /> **su** – subject of e-mail <br /> **cc** – carbon copy e-mail address <br />  **bcc** – blind carbon copy e-mail address <br />  **body** – body of e-mail <br /> <br /> ```{ to: 'google@gmail.com', su: 'Title', cc: 'google1@gmail.com', bcc: 'google2@gmail.com', body: 'Hello\nWorld',}``` | `{}`
+`useNativeBehavior` | `boolean` | Use native link behavior instead of `window.open()` or not | `false`
+
+**Events**
+
+| Event name | Usage |
+| ------ | ------ |
+`popup-open` | `window.open()` has been opened |
+`popup-close` | `window.open()` has been closed |
+`popup-block` | `window.open()` has been blocked |
+`popup-focus` | `window.open()` has been focused |
+
+---
 
 ### SGoogleBookmarks
 

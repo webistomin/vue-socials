@@ -19,7 +19,6 @@ import BaseSocial, { TBaseSocialMixin } from '@/mixins/BaseSocial/BaseSocial';
 export interface ISGmailShareOptions {
   to: string;
   su?: string;
-  subject?: string;
   body?: string;
   cc?: string;
   bcc?: string;
@@ -37,13 +36,12 @@ export default /* #__PURE__ */(Vue as VueConstructor<Vue & InstanceType<TBaseSoc
       const BASE_URL = 'https://mail.google.com/mail/';
       const { shareOptions } = this;
       const {
-        to, su, subject, body, cc, bcc,
+        to, su, body, cc, bcc,
       } = shareOptions;
       const serialisedParams = getSerialisedParams({
         view: 'cm',
         to,
         su,
-        subject,
         body,
         cc,
         bcc,

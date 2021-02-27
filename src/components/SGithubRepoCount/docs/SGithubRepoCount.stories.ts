@@ -2,7 +2,7 @@ import { Story } from '@storybook/vue';
 import { action } from '@storybook/addon-actions';
 import { TBaseCountPropsOptions } from '@/mixins/BaseCount/BaseCount';
 import SGithubRepoCount, { ISGithubRepoCountShareOptions } from '../SGithubRepoCount';
-import SGithubRepoCountMDX from './SGithubGistCount.mdx';
+import SGithubRepoCountMDX from './SGithubRepoCount.mdx';
 
 export default {
   title: 'Count/SGithubRepoCount',

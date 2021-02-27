@@ -3894,16 +3894,16 @@ This component uses `JSONP` so the content won't be available during `SSR`.
 
 ## License 📄
 
-### [MIT](https://github.com/webistomin/vue-socials.js/blob/master/LICENSE)
+### [MIT](https://github.com/webistomin/vue-socials/blob/master/LICENSE)
 
 ## Support the project ⭐
 
-If you feel awesome and want to support us in a small way, please consider starring and sharing the repo!
+If you feel awesome and want to support me in a small way, please consider starring and sharing the repo!
 
 ## Contributing 🎉
 
 Found a bug? Missing a specific feature?
-Your contributions are always welcome! Please have a look at the [contribution guidelines](https://github.com/webistomin/nanogram.js/blob/master/CONTRIBUTING.md) first.
+Your contributions are always welcome! Please have a look at the [contribution guidelines](https://github.com/webistomin/vue-socials/blob/master/CONTRIBUTING.md) first.
 
 ## Contributors ❤️
 

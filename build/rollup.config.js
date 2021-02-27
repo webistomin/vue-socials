@@ -11,7 +11,7 @@ import copy from 'rollup-plugin-copy';
 import minimist from 'minimist';
 import findIndex from 'lodash.findindex';
 
-const esbrowserslist = fs.readFileSync('./.browserslistrc')
+const ES_BROWSERSLIST = fs.readFileSync('./.browserslistrc')
   .toString()
   .split('\n');
 
@@ -19,7 +19,7 @@ const argv = minimist(process.argv.slice(2));
 
 const projectRoot = path.resolve(__dirname, '..');
 
-const baseConfig = {
+const BASE_CONFIG = {
   input: 'src/vue-socials.ts',
   plugins: {
     resolve: {
@@ -80,7 +80,7 @@ const baseConfig = {
         [
           '@babel/preset-env',
           {
-            targets: esbrowserslist,
+            targets: ES_BROWSERSLIST,
           },
         ],
       ],
@@ -88,41 +88,38 @@ const baseConfig = {
   },
 };
 
-// ESM/UMD/IIFE shared settings: externals
-// Refer to https://rollupjs.org/guide/en/#warning-treating-module-as-external-dependency
 const external = [
-  // list external dependencies, exactly the way it is written in the import statement.
-  // eg. 'jquery'
   'vue',
 ];
 
-// UMD/IIFE shared settings: output.globals
-// Refer to https://rollupjs.org/guide/en#output-globals for details
 const globals = {
-  // Provide global variable names to replace your external imports
-  // eg. jquery: '$'
   vue: 'Vue',
 };
 
-// Customize configs for individual targets
-const buildFormats = [];
+const BUILD_FORMATS = [];
+
+/**
+ * ESM
+ */
 if (!argv.format || argv.format === 'esm') {
-  const esConfig = {
-    ...baseConfig,
+  const ESM_CONFIG = {
+    ...BASE_CONFIG,
     input: 'src/vue-socials-esm.ts',
     external,
     output: {
-      file: 'dist/vue-socials.esm.js',
+      dir: 'dist/esm',
       format: 'esm',
       exports: 'named',
+      sourcemap: true,
+      preserveModules: true,
     },
     plugins: [
-      resolve(baseConfig.plugins.resolve),
-      replace(baseConfig.plugins.replace),
-      ...baseConfig.plugins.preVue,
-      vue(baseConfig.plugins.vue),
-      ...baseConfig.plugins.postVue,
-      babel(baseConfig.plugins.babel),
+      resolve(BASE_CONFIG.plugins.resolve),
+      replace(BASE_CONFIG.plugins.replace),
+      ...BASE_CONFIG.plugins.preVue,
+      vue(BASE_CONFIG.plugins.vue),
+      ...BASE_CONFIG.plugins.postVue,
+      babel(BASE_CONFIG.plugins.babel),
       commonjs(),
       copy({
         targets: [
@@ -131,12 +128,44 @@ if (!argv.format || argv.format === 'esm') {
       }),
     ],
   };
-  buildFormats.push(esConfig);
+
+  BUILD_FORMATS.push(ESM_CONFIG);
 }
 
+/**
+ * ES
+ */
+if (!argv.format || argv.format === 'es') {
+  const ES_CONFIG = {
+    ...BASE_CONFIG,
+    input: 'src/vue-socials-esm.ts',
+    external,
+    output: {
+      file: 'dist/vue-socials.es.js',
+      format: 'esm',
+      exports: 'named',
+      sourcemap: true,
+    },
+    plugins: [
+      resolve(BASE_CONFIG.plugins.resolve),
+      replace(BASE_CONFIG.plugins.replace),
+      ...BASE_CONFIG.plugins.preVue,
+      vue(BASE_CONFIG.plugins.vue),
+      ...BASE_CONFIG.plugins.postVue,
+      babel(BASE_CONFIG.plugins.babel),
+      commonjs(),
+    ],
+  };
+
+  BUILD_FORMATS.push(ES_CONFIG);
+}
+
+/**
+ * CJS
+ */
 if (!argv.format || argv.format === 'cjs') {
-  const umdConfig = {
-    ...baseConfig,
+  const CJS_CONFIG = {
+    ...BASE_CONFIG,
     external,
     output: {
       compact: true,
@@ -147,27 +176,31 @@ if (!argv.format || argv.format === 'cjs') {
       globals,
     },
     plugins: [
-      resolve(baseConfig.plugins.resolve),
-      replace(baseConfig.plugins.replace),
-      ...baseConfig.plugins.preVue,
+      resolve(BASE_CONFIG.plugins.resolve),
+      replace(BASE_CONFIG.plugins.replace),
+      ...BASE_CONFIG.plugins.preVue,
       vue({
-        ...baseConfig.plugins.vue,
+        ...BASE_CONFIG.plugins.vue,
         template: {
-          ...baseConfig.plugins.vue.template,
+          ...BASE_CONFIG.plugins.vue.template,
           optimizeSSR: true,
         },
       }),
-      ...baseConfig.plugins.postVue,
-      babel(baseConfig.plugins.babel),
+      ...BASE_CONFIG.plugins.postVue,
+      babel(BASE_CONFIG.plugins.babel),
       commonjs(),
     ],
   };
-  buildFormats.push(umdConfig);
+
+  BUILD_FORMATS.push(CJS_CONFIG);
 }
 
+/**
+ * IIFE
+ */
 if (!argv.format || argv.format === 'iife') {
-  const unpkgConfig = {
-    ...baseConfig,
+  const IIFE_CONFIG = {
+    ...BASE_CONFIG,
     external,
     output: {
       compact: true,
@@ -178,12 +211,12 @@ if (!argv.format || argv.format === 'iife') {
       globals,
     },
     plugins: [
-      resolve(baseConfig.plugins.resolve),
-      replace(baseConfig.plugins.replace),
-      ...baseConfig.plugins.preVue,
-      vue(baseConfig.plugins.vue),
-      ...baseConfig.plugins.postVue,
-      babel(baseConfig.plugins.babel),
+      resolve(BASE_CONFIG.plugins.resolve),
+      replace(BASE_CONFIG.plugins.replace),
+      ...BASE_CONFIG.plugins.preVue,
+      vue(BASE_CONFIG.plugins.vue),
+      ...BASE_CONFIG.plugins.postVue,
+      babel(BASE_CONFIG.plugins.babel),
       commonjs(),
       terser({
         output: {
@@ -192,8 +225,7 @@ if (!argv.format || argv.format === 'iife') {
       }),
     ],
   };
-  buildFormats.push(unpkgConfig);
+  BUILD_FORMATS.push(IIFE_CONFIG);
 }
 
-// Export config
-export default buildFormats;
+export default BUILD_FORMATS;

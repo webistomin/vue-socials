@@ -1,0 +1,81 @@
+import { Meta, Story, Preview} from "@storybook/addon-docs/blocks"
+import SGithubRepo from "../SGithubRepo"
+
+<Meta title='Share/SGithubRepo' component={ SGithubRepo } />
+
+<style>{`
+  .custom-preview .base-canvas {
+    height: auto;
+  }
+`}</style>
+
+# SGithubRepo
+
+## Preview
+
+<Preview className="custom-preview">
+  <Story id='share-sgithubrepo--default' />
+</Preview>
+
+## Example
+
+```html
+<template>
+  <s-github-repo
+    :window-features="windowFeatures"
+    :share-options="shareOptions"
+    :use-native-behavior="useNativeBehavior"
+    @popup-close="onClose"
+    @popup-open="onOpen"
+    @popup-block="onBlock"
+    @popup-focus="onFocus"
+  ></s-github-repo>
+</template>
+
+<script>
+  import { SGithubRepo } from 'vue-socials'
+
+  export default {
+    name: 'SGithubRepoSharing',
+
+    components: { SGithubRepo },
+
+    data() {
+      return {
+        windowFeatures: {},
+        shareOptions: {
+          username: 'webistomin',
+          repository: 'vue-socials',
+          type: 'fork',
+        },
+        useNativeBehavior: false,
+      }
+    },
+
+    methods: {
+      onClose() {},
+      onOpen() {},
+      onBlock() {},
+      onFocus() {},
+    }
+  };
+</script>
+```
+
+## Props
+
+| Prop | Type | Description | Default value |
+| ------ | ------ | ------ | ------ |
+`windowFeatures` | `object` | Pass options to `window.open()`. [Requested features of the new window.](https://developer.mozilla.org/en-US/docs/Web/API/Window/open#window_features) | `{ width: 834, height: 572, }`
+`shareOptions` | `object` | Your share link parameters: <br /> **username** – your gist username <br /> **repository** – your repository name <br /> **type** – share link type (repo, watch, star, fork, download, issue, pr, template) <br /> <br /> ```{ username: 'webistomin', repository: 'vue-socials', type: 'fork', }``` | `{}`
+`useNativeBehavior` | `boolean` | Use native link behavior instead of `window.open()` or not | `false`
+
+## Events
+
+| Event name | Usage |
+| ------ | ------ |
+`popup-open` | `window.open()` has been opened |
+`popup-close` | `window.open()` has been closed |
+`popup-block` | `window.open()` has been blocked |
+`popup-focus` | `window.open()` has been focused |
+

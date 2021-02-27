@@ -97,7 +97,7 @@
     "@vue/eslint-config-typescript": "^7.0.0",
     "agadoo": "^2.0.0",
     "babel-loader": "^8.2.2",
-    "consola": "^2.15.0",
+    "consola": "^2.15.3",
     "cross-env": "^7.0.3",
     "dotenv": "^8.2.0",
     "eslint": "^7.18.0",

@@ -2,10 +2,16 @@ import { Story } from '@storybook/vue';
 import { action } from '@storybook/addon-actions';
 import { DEFAULT_WINDOW_FEATURES, TBaseSocialPropsOptions } from '@/mixins/BaseSocial/BaseSocial';
 import SFacebookMessenger, { ISFacebookMessengerShareOptions } from '../SFacebookMessenger';
+import SFacebookMessengerMDX from './SFacebookMessenger.mdx';
 
 export default {
   title: 'Share/SFacebookMessenger',
   component: SFacebookMessenger,
+  parameters: {
+    docs: {
+      page: SFacebookMessengerMDX,
+    },
+  },
 };
 
 const Template: Story<TBaseSocialPropsOptions<ISFacebookMessengerShareOptions>> = (_args, { argTypes }) => ({

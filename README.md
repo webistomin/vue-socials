@@ -753,6 +753,66 @@ This component uses `JSONP` so the content won't be available during `SSR`.
 
 ### SFacebookWorkplace
 
+**Usage**
+
+```vue
+<template>
+  <s-facebook-workplace
+    :window-features="windowFeatures"
+    :share-options="shareOptions"
+    :use-native-behavior="useNativeBehavior"
+    @popup-close="onClose"
+    @popup-open="onOpen"
+    @popup-block="onBlock"
+    @popup-focus="onFocus"
+  ></s-facebook-workplace>
+</template>
+
+<script>
+  import { SFacebookWorkplace } from 'vue-socials'
+
+  export default {
+    name: 'SFacebookWorkplaceSharing',
+    
+    components: { SFacebookWorkplace },
+    
+    data() {
+      return {
+        windowFeatures: {},
+        shareOptions: {
+          url: 'https://github.com/',
+        },
+        useNativeBehavior: false,
+      }
+    },
+    
+    methods: {
+      onClose() {},
+      onOpen() {},
+      onBlock() {},
+      onFocus() {},
+    }
+  };
+</script>
+```
+
+**Props**
+
+| Prop | Type | Description | Default value |
+| ------ | ------ | ------ | ------ |
+`windowFeatures` | `object` | Pass options to `window.open()`. [Requested features of the new window.](https://developer.mozilla.org/en-US/docs/Web/API/Window/open#window_features) | `{ width: 685, height: 600, }`
+`shareOptions` | `object` | Your share link parameters: <br /> **url** – the URL you want to share <br /> <br /> ```{ url: 'https://github.com/', quote: 'Quote', hashtag: '#Github', }``` | `{}`
+`useNativeBehavior` | `boolean` | Use native link behavior instead of `window.open()` or not | `false`
+
+**Events**
+
+| Event name | Usage |
+| ------ | ------ |
+`popup-open` | `window.open()` has been opened |
+`popup-close` | `window.open()` has been closed |
+`popup-block` | `window.open()` has been blocked |
+`popup-focus` | `window.open()` has been focused |
+
 ### SFlipBoard
 
 **Usage**

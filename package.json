@@ -65,7 +65,7 @@
     "ls:lint": "npx @ls-lint/ls-lint",
     "tree-shake": "agadoo",
     "check-size": "size-limit",
-    "release": "dotenv release-it",
+    "release": "dotenv release-it --verbose",
     "create-component": "ts-node ./scripts/create-component/index.ts"
   },
   "peerDependencies": {
@@ -99,7 +99,7 @@
     "babel-loader": "^8.2.2",
     "consola": "^2.15.3",
     "cross-env": "^7.0.3",
-    "dotenv": "^8.2.0",
+    "dotenv-cli": "^4.0.0",
     "eslint": "^7.20.0",
     "eslint-config-airbnb-typescript": "^12.3.1",
     "eslint-import-resolver-typescript": "^2.4.0",

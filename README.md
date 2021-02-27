@@ -684,6 +684,75 @@ Browse [online documentation here](https://vue-socials.vercel.app/)
 
 This component uses `JSONP` so the content won't be available during `SSR`.
 
+### SFacebookMessenger
+
+**Usage**
+
+```vue
+<template>
+  <s-facebook-messenger
+    :window-features="windowFeatures"
+    :share-options="shareOptions"
+    :use-native-behavior="useNativeBehavior"
+    @popup-close="onClose"
+    @popup-open="onOpen"
+    @popup-block="onBlock"
+    @popup-focus="onFocus"
+  ></s-facebook-messenger>
+</template>
+
+<script>
+  import { SFacebookMessenger } from 'vue-socials'
+
+  export default {
+    name: 'SFacebookMessengerSharing',
+    
+    components: { SFacebookMessenger },
+    
+    data() {
+      return {
+        windowFeatures: {},
+        shareOptions: {
+          url: 'https://github.com/',
+          redirectUri: 'https://www.domain.com/',
+          appId: 123456789,
+          to: undefined,
+        },
+        useNativeBehavior: false,
+      }
+    },
+    
+    methods: {
+      onClose() {},
+      onOpen() {},
+      onBlock() {},
+      onFocus() {},
+    }
+  };
+</script>
+```
+
+**Props**
+
+| Prop | Type | Description | Default value |
+| ------ | ------ | ------ | ------ |
+`windowFeatures` | `object` | Pass options to `window.open()`. [Requested features of the new window.](https://developer.mozilla.org/en-US/docs/Web/API/Window/open#window_features) | `{ width: 685, height: 600, }`
+`shareOptions` | `object` | Your share link parameters: <br /> **url** – the URL you want to share <br /> **redirectUri** – The URL to redirect to after a person clicks a button on the dialog. <br /> **appId** – Your app's unique identifier. <br />  **to** – A user ID of a recipient. Once the dialog comes up, the sender can specify additional people as recipients. <br /> <br /> ```{ url: 'https://github.com/', quote: 'Quote', hashtag: '#Github', }``` | `{}`
+`useNativeBehavior` | `boolean` | Use native link behavior instead of `window.open()` or not | `false`
+
+**Events**
+
+| Event name | Usage |
+| ------ | ------ |
+`popup-open` | `window.open()` has been opened |
+`popup-close` | `window.open()` has been closed |
+`popup-block` | `window.open()` has been blocked |
+`popup-focus` | `window.open()` has been focused |
+
+---
+
+### SFacebookWorkplace
+
 ### SFlipBoard
 
 **Usage**
@@ -729,8 +798,6 @@ This component uses `JSONP` so the content won't be available during `SSR`.
   };
 </script>
 ```
-
-**Props**
 
 **Props**
 

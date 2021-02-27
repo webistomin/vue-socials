@@ -88,7 +88,7 @@
     "@storybook/addon-a11y": "^6.1.15",
     "@storybook/addon-actions": "^6.1.15",
     "@storybook/addon-essentials": "^6.1.15",
-    "@storybook/addon-links": "^6.1.15",
+    "@storybook/addon-links": "^6.1.20",
     "@storybook/addons": "^6.1.15",
     "@storybook/theming": "^6.1.15",
     "@storybook/vue": "^6.1.15",

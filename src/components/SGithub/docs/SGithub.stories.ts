@@ -2,10 +2,16 @@ import { Story } from '@storybook/vue';
 import { action } from '@storybook/addon-actions';
 import { TBaseSocialPropsOptions } from '@/mixins/BaseSocial/BaseSocial';
 import SGithub, { ISGithubShareOptions } from '../SGithub';
+import SGithubMDX from './SGithub.mdx';
 
 export default {
   title: 'Share/SGithub',
   component: SGithub,
+  parameters: {
+    docs: {
+      page: SGithubMDX,
+    },
+  },
 };
 
 const Template: Story<TBaseSocialPropsOptions<ISGithubShareOptions>> = (_args, { argTypes }) => ({

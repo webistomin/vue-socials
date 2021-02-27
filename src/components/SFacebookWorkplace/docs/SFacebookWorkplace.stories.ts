@@ -2,10 +2,16 @@ import { Story } from '@storybook/vue';
 import { action } from '@storybook/addon-actions';
 import { TBaseSocialPropsOptions } from '@/mixins/BaseSocial/BaseSocial';
 import SFacebookWorkplace, { ISFacebookWorkplaceShareOptions } from '../SFacebookWorkplace';
+import SFacebookWorkplaceMDX from './SFacebookMessenger.mdx';
 
 export default {
   title: 'Share/SFacebookWorkplace',
   component: SFacebookWorkplace,
+  parameters: {
+    docs: {
+      page: SFacebookWorkplaceMDX,
+    },
+  },
 };
 
 const Template: Story<TBaseSocialPropsOptions<ISFacebookWorkplaceShareOptions>> = (_args, { argTypes }) => ({

@@ -2,10 +2,16 @@ import { Story } from '@storybook/vue';
 import { action } from '@storybook/addon-actions';
 import { TBaseSocialPropsOptions } from '@/mixins/BaseSocial/BaseSocial';
 import SFlipBoard, { ISFlipBoardShareOptions } from '../SFlipBoard';
+import SFlipBoardMDX from './SFlipBoard.mdx';
 
 export default {
   title: 'Share/SFlipBoard',
   component: SFlipBoard,
+  parameters: {
+    docs: {
+      page: SFlipBoardMDX,
+    },
+  },
 };
 
 const Template: Story<TBaseSocialPropsOptions<ISFlipBoardShareOptions>> = (_args, { argTypes }) => ({

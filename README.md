@@ -81,7 +81,7 @@ Browse [online documentation here](https://vue-socials.vercel.app/)
 
 * <img src="./assets/icons/facebook.svg" width="16" height="16"/> [Facebook](#sfacebook)
   
-  * <img src="./assets/icons/facebook.svg" width="16" height="16"/> [Facebook counter](#sfacebookcounter)
+  * <img src="./assets/icons/facebook.svg" width="16" height="16"/> [Facebook counter](#sfacebookcount)
 
 * <img src="./assets/icons/facebook-messenger.svg" width="16" height="16"/> [Facebook Messenger](#sfacebookmessenger)
 
@@ -92,6 +92,16 @@ Browse [online documentation here](https://vue-socials.vercel.app/)
 ### G
 
 * <img src="./assets/icons/github.svg" width="16" height="16"/> [Github](#sgithub)
+
+  * <img src="./assets/icons/github.svg" width="16" height="16"/> [Github counter](#sgithubcount)
+
+* <img src="./assets/icons/github.svg" width="16" height="16"/> [Github gist](#sgithubgist)
+
+  * <img src="./assets/icons/github.svg" width="16" height="16"/> [Github gist counter](#sgithubgistcount) 
+
+* <img src="./assets/icons/github.svg" width="16" height="16"/> [Github repository](#sgithubgist)
+
+  * <img src="./assets/icons/github.svg" width="16" height="16"/> [Github repository counter](#sgithubrepositorycount)   
 
 * <img src="./assets/icons/gmail.svg" width="16" height="16"/> [Gmail](#sgmail)
 
@@ -686,6 +696,8 @@ Browse [online documentation here](https://vue-socials.vercel.app/)
 
 This component uses `JSONP` so the content won't be available during `SSR`.
 
+---
+
 ### SFacebookMessenger
 
 **Usage**
@@ -739,7 +751,7 @@ This component uses `JSONP` so the content won't be available during `SSR`.
 | Prop | Type | Description | Default value |
 | ------ | ------ | ------ | ------ |
 `windowFeatures` | `object` | Pass options to `window.open()`. [Requested features of the new window.](https://developer.mozilla.org/en-US/docs/Web/API/Window/open#window_features) | `{ width: 685, height: 600, }`
-`shareOptions` | `object` | Your share link parameters: <br /> **url** – the URL you want to share <br /> **redirectUri** – The URL to redirect to after a person clicks a button on the dialog. <br /> **appId** – Your app's unique identifier. <br />  **to** – A user ID of a recipient. Once the dialog comes up, the sender can specify additional people as recipients. <br /> <br /> ```{ url: 'https://github.com/', quote: 'Quote', hashtag: '#Github', }``` | `{}`
+`shareOptions` | `object` | Your share link parameters: <br /> **url** – the URL you want to share <br /> **redirectUri** – The URL to redirect to after a person clicks a button on the dialog. <br /> **appId** – Your app's unique identifier. <br />  **to** – A user ID of a recipient. Once the dialog comes up, the sender can specify additional people as recipients. <br /> <br /> ```url: 'https://github.com/', redirectUri: 'https://www.domain.com/', appId: 123456789, to: undefined,``` | `{}`
 `useNativeBehavior` | `boolean` | Use native link behavior instead of `window.open()` or not | `false`
 
 **Events**
@@ -803,7 +815,7 @@ This component uses `JSONP` so the content won't be available during `SSR`.
 | Prop | Type | Description | Default value |
 | ------ | ------ | ------ | ------ |
 `windowFeatures` | `object` | Pass options to `window.open()`. [Requested features of the new window.](https://developer.mozilla.org/en-US/docs/Web/API/Window/open#window_features) | `{ width: 685, height: 600, }`
-`shareOptions` | `object` | Your share link parameters: <br /> **url** – the URL you want to share <br /> <br /> ```{ url: 'https://github.com/', quote: 'Quote', hashtag: '#Github', }``` | `{}`
+`shareOptions` | `object` | Your share link parameters: <br /> **url** – the URL you want to share <br /> <br /> ```{ url: 'https://github.com/', }``` | `{}`
 `useNativeBehavior` | `boolean` | Use native link behavior instead of `window.open()` or not | `false`
 
 **Events**
@@ -814,6 +826,8 @@ This component uses `JSONP` so the content won't be available during `SSR`.
 `popup-close` | `window.open()` has been closed |
 `popup-block` | `window.open()` has been blocked |
 `popup-focus` | `window.open()` has been focused |
+
+---
 
 ### SFlipBoard
 
@@ -882,7 +896,196 @@ This component uses `JSONP` so the content won't be available during `SSR`.
 
 ### SGithub
 
-### SGithub
+**Usage**
+
+```vue
+<template>
+  <s-github
+    :window-features="windowFeatures"
+    :share-options="shareOptions"
+    :use-native-behavior="useNativeBehavior"
+    @popup-close="onClose"
+    @popup-open="onOpen"
+    @popup-block="onBlock"
+    @popup-focus="onFocus"
+  ></s-github>
+</template>
+
+<script>
+  import { SGithub } from 'vue-socials'
+
+  export default {
+    name: 'SSGithubSharing',
+    
+    components: { SGithub },
+    
+    data() {
+      return {
+        windowFeatures: {},
+        shareOptions: {
+          username: 'webistomin',
+          type: 'profile',
+        },
+        useNativeBehavior: false,
+      }
+    },
+    
+    methods: {
+      onClose() {},
+      onOpen() {},
+      onBlock() {},
+      onFocus() {},
+    }
+  };
+</script>
+```
+
+**Props**
+
+| Prop | Type | Description | Default value |
+| ------ | ------ | ------ | ------ |
+`windowFeatures` | `object` | Pass options to `window.open()`. [Requested features of the new window.](https://developer.mozilla.org/en-US/docs/Web/API/Window/open#window_features) | `{ width: 834, height: 572, }`
+`shareOptions` | `object` | Your share link parameters: <br /> **username** – your GitHub username <br /> **type** – share link type (sponsor, follow, profile) <br /> <br /> ```username: 'webistomin', type: 'profile',``` | `{}`
+`useNativeBehavior` | `boolean` | Use native link behavior instead of `window.open()` or not | `false`
+
+**Events**
+
+| Event name | Usage |
+| ------ | ------ |
+`popup-open` | `window.open()` has been opened |
+`popup-close` | `window.open()` has been closed |
+`popup-block` | `window.open()` has been blocked |
+`popup-focus` | `window.open()` has been focused |
+
+---
+
+### SGithubCount
+
+**Usage**
+
+```vue
+<template>
+  <s-github-count
+    :share-options="shareOptions"
+    @load="onLoad"
+    @error="onError"
+    @loading="onLoading"
+  ></s-github-count>
+</template>
+
+<script>
+  import { SGithubCount } from 'vue-socials'
+
+  export default {
+    name: 'SGithubCountSharing',
+    
+    components: { SGithubCount },
+    
+    data() {
+      return {
+        tag: 'span',
+        shareOptions: {
+          username: 'webistomin',
+          type: 'follow',
+        },
+      }
+    },
+    
+    methods: {
+      onLoad() {},
+      onError() {},
+      onLoading() {},
+    }
+  };
+</script>
+```
+
+**Props**
+
+| Prop | Type | Description | Default value |
+| ------ | ------ | ------ | ------ |
+`shareOptions` | `object` | Your share link parameters: <br /> **username** – your GitHub username <br /> **type** – share link type (follow) <br /> <br /> ```{ id: 'https://github.com/', fields: ['id', 'og_object'], accessToken: '', }``` | `{}`
+`tag` | `string` | Dynamic HTML tag or component  | `span`
+
+**Events**
+
+| Event name | Usage |
+| ------ | ------ |
+`load` |  the request has finished successfully | 
+`error` | the request has finished with error |
+`loading` | the request has started |
+
+**⚠️ Warning**
+
+This component uses `JSONP` so the content won't be available during `SSR`.
+
+---
+
+### SGithubGist
+
+**Usage**
+
+```vue
+<template>
+  <s-github-gist
+    :window-features="windowFeatures"
+    :share-options="shareOptions"
+    :use-native-behavior="useNativeBehavior"
+    @popup-close="onClose"
+    @popup-open="onOpen"
+    @popup-block="onBlock"
+    @popup-focus="onFocus"
+  ></s-github-gist>
+</template>
+
+<script>
+  import { SGithubGist } from 'vue-socials'
+
+  export default {
+    name: 'SSGithubGistSharing',
+    
+    components: { SGithubGist },
+    
+    data() {
+      return {
+        windowFeatures: {},
+        shareOptions: {
+          username: 'ai',
+          gistId: 'e3683b03ba936ade91d33dbc721cd6d8',
+          type: 'star',
+        },
+        useNativeBehavior: false,
+      }
+    },
+    
+    methods: {
+      onClose() {},
+      onOpen() {},
+      onBlock() {},
+      onFocus() {},
+    }
+  };
+</script>
+```
+
+**Props**
+
+| Prop | Type | Description | Default value |
+| ------ | ------ | ------ | ------ |
+`windowFeatures` | `object` | Pass options to `window.open()`. [Requested features of the new window.](https://developer.mozilla.org/en-US/docs/Web/API/Window/open#window_features) | `{ width: 834, height: 572, }`
+`shareOptions` | `object` | Your share link parameters: <br /> **username** – your gist username <br /> **gistId** – your gist id <br /> **type** – share link type (gist, star, fork, download) <br /> <br /> ```{ username: 'ai', gistId: 'e3683b03ba936ade91d33dbc721cd6d8', type: 'star', }``` | `{}`
+`useNativeBehavior` | `boolean` | Use native link behavior instead of `window.open()` or not | `false`
+
+**Events**
+
+| Event name | Usage |
+| ------ | ------ |
+`popup-open` | `window.open()` has been opened |
+`popup-close` | `window.open()` has been closed |
+`popup-block` | `window.open()` has been blocked |
+`popup-focus` | `window.open()` has been focused |
+
+---
 
 ### SGmail
 

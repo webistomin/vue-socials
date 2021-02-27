@@ -2,10 +2,16 @@ import { Story } from '@storybook/vue';
 import { action } from '@storybook/addon-actions';
 import { TBaseCountPropsOptions } from '@/mixins/BaseCount/BaseCount';
 import SGithubCount, { ISGithubCountShareOptions } from '../SGithubCount';
+import SGithubCountMDX from './SGithubCount.mdx';
 
 export default {
   title: 'Count/SGithubCount',
   component: SGithubCount,
+  parameters: {
+    docs: {
+      page: SGithubCountMDX,
+    },
+  },
 };
 
 const Template: Story<TBaseCountPropsOptions<ISGithubCountShareOptions>> = (_args, { argTypes }) => ({

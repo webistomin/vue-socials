@@ -81,9 +81,9 @@ Browse [online documentation here](https://vue-socials.vercel.app/)
 
 * <img src="./assets/icons/facebook.svg" width="16" height="16"/> [Facebook](#sfacebook)
 
-* <img src="./assets/icons/facebook-messenger.svg" width="16" height="16"/> [Facebook Messenger](#sfacebook-messenger)
+* <img src="./assets/icons/facebook-messenger.svg" width="16" height="16"/> [Facebook Messenger](#sfacebookmessenger)
 
-* <img src="./assets/icons/facebook-workplace.svg" width="16" height="16"/> [Facebook Workplace](#sfacebook-workplace)
+* <img src="./assets/icons/facebook-workplace.svg" width="16" height="16"/> [Facebook Workplace](#sfacebookworkplace)
 
 * <img src="./assets/icons/flipboard.svg" width="16" height="16"/> [Flipboard](#sflipboard)
 
@@ -93,7 +93,7 @@ Browse [online documentation here](https://vue-socials.vercel.app/)
 
 * <img src="./assets/icons/gmail.svg" width="16" height="16"/> [Gmail](#sgmail)
 
-* <img src="./assets/icons/google-bookmarks.svg" width="16" height="16"/> [Google Bookmarks](#sgoogle-bookmarks)
+* <img src="./assets/icons/google-bookmarks.svg" width="16" height="16"/> [Google Bookmarks](#sgooglebookmarks)
 
 ### H
 

@@ -80,6 +80,8 @@ Browse [online documentation here](https://vue-socials.vercel.app/)
 ### F
 
 * <img src="./assets/icons/facebook.svg" width="16" height="16"/> [Facebook](#sfacebook)
+  
+  * <img src="./assets/icons/facebook.svg" width="16" height="16"/> [Facebook counter](#sfacebookcounter)
 
 * <img src="./assets/icons/facebook-messenger.svg" width="16" height="16"/> [Facebook Messenger](#sfacebookmessenger)
 

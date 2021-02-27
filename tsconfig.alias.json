@@ -1,12 +1,12 @@
 {
   "compilerOptions": {
-    "target": "ES2019",
+  "target": "ES2019",
     "module": "ESNext",
     "strict": true,
     "declaration": true,
     "declarationDir": "dist/types",
     "emitDeclarationOnly": true,
-    "outDir": "dist/types",
+    "outDir": "dist",
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "importHelpers": true,
@@ -17,29 +17,29 @@
     "sourceMap": true,
     "baseUrl": ".",
     "types": [
-      "node",
-      "vue"
-    ],
+    "node",
+    "vue"
+  ],
     "paths": {
-      "@/*": [
-        "src/*"
-      ]
-    },
-    "lib": [
-      "esnext",
-      "dom",
-      "dom.iterable",
-      "scripthost"
+    "@/*": [
+      "dist/types"
     ]
   },
-  "include": [
-    "src/**/*.ts",
-  ],
-  "exclude": [
-    "node_modules",
-    "src/**/tests/**",
-    "src/**/docs/**",
-    "src/vue-socials.ts",
-    "src/vue-socials-esm.ts",
+  "lib": [
+    "esnext",
+    "dom",
+    "dom.iterable",
+    "scripthost"
   ]
+},
+  "include": [
+  "src/**/*.ts",
+],
+  "exclude": [
+  "node_modules",
+  "src/**/tests/**",
+  "src/**/docs/**",
+  "src/vue-socials.ts",
+  "src/vue-socials-esm.ts",
+]
 }

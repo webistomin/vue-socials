@@ -1,7 +1,7 @@
 import { Meta, Story, Preview} from "@storybook/addon-docs/blocks"
-import SGithubCount from "../SGithubCount"
+import SGithubGistCount from "../SGithubGistCount"
 
-<Meta title='Count/SGithubCount' component={ SGithubCount } />
+<Meta title='Count/SGithubGistCount' component={ SGithubGistCount } />
 
 <style>{`
   .custom-preview .base-canvas {
@@ -9,40 +9,40 @@ import SGithubCount from "../SGithubCount"
   }
 `}</style>
 
-# SGithubCount
+# SGithubGistCount
 
 ## Preview
 
 <Preview className="custom-preview">
-  <Story id='count-sgithubcount--default' />
+  <Story id='count-sgithubgistcount--default' />
 </Preview>
 
 ## Example
 
 ```html
 <template>
-  <s-github-count
+  <s-github-gist-count
     :share-options="shareOptions"
     @load="onLoad"
     @error="onError"
     @loading="onLoading"
-  ></s-github-count>
+  ></s-github-gist-count>
 </template>
 
 <script>
-  import { SGithubCount } from 'vue-socials'
+  import { SGithubGistCount } from 'vue-socials'
 
   export default {
-    name: 'SGithubCountSharing',
+    name: 'SGithubGistCountSharing',
 
-    components: { SGithubCount },
+    components: { SGithubGistCount },
 
     data() {
       return {
         tag: 'span',
         shareOptions: {
-          username: 'webistomin',
-          type: 'follow',
+          gistId: 'e3683b03ba936ade91d33dbc721cd6d8',
+          type: 'fork',
         },
       }
     },
@@ -60,7 +60,7 @@ import SGithubCount from "../SGithubCount"
 
 | Prop | Type | Description | Default value |
 | ------ | ------ | ------ | ------ |
-`shareOptions` | `object` | Your share link parameters: <br /> **username** – your GitHub username <br /> **type** – share link type (follow) <br /> <br /> ```{ id: 'https://github.com/', fields: ['id', 'og_object'], accessToken: '', }``` | `{}`
+`shareOptions` | `object` | Your share link parameters: <br /> **gistId** – your gist id <br /> **type** – share link type (fork) <br /> <br /> ```{ gistId: 'e3683b03ba936ade91d33dbc721cd6d8', type: 'fork', }``` | `{}`
 `tag` | `string` | Dynamic HTML tag or component  | `span`
 
 ## Events

@@ -1087,6 +1087,68 @@ This component uses `JSONP` so the content won't be available during `SSR`.
 
 ---
 
+### SGithubGistCount
+
+**Usage**
+
+```vue
+<template>
+  <s-github-gist-count
+    :share-options="shareOptions"
+    @load="onLoad"
+    @error="onError"
+    @loading="onLoading"
+  ></s-github-gist-count>
+</template>
+
+<script>
+  import { SGithubGistCount } from 'vue-socials'
+
+  export default {
+    name: 'SGithubGistCountSharing',
+    
+    components: { SGithubGistCount },
+    
+    data() {
+      return {
+        tag: 'span',
+        shareOptions: {
+          gistId: 'e3683b03ba936ade91d33dbc721cd6d8',
+          type: 'fork',
+        },
+      }
+    },
+    
+    methods: {
+      onLoad() {},
+      onError() {},
+      onLoading() {},
+    }
+  };
+</script>
+```
+
+**Props**
+
+| Prop | Type | Description | Default value |
+| ------ | ------ | ------ | ------ |
+`shareOptions` | `object` | Your share link parameters: <br /> **gistId** – your gist id <br /> **type** – share link type (fork) <br /> <br /> ```{ gistId: 'e3683b03ba936ade91d33dbc721cd6d8', type: 'fork', }``` | `{}`
+`tag` | `string` | Dynamic HTML tag or component  | `span`
+
+**Events**
+
+| Event name | Usage |
+| ------ | ------ |
+`load` |  the request has finished successfully | 
+`error` | the request has finished with error |
+`loading` | the request has started |
+
+**⚠️ Warning**
+
+This component uses `JSONP` so the content won't be available during `SSR`.
+
+---
+
 ### SGmail
 
 ### SGoogleBookmarks

@@ -2,7 +2,7 @@ import { Story } from '@storybook/vue';
 import { action } from '@storybook/addon-actions';
 import { TBaseSocialPropsOptions } from '@/mixins/BaseSocial/BaseSocial';
 import SFacebookWorkplace, { ISFacebookWorkplaceShareOptions } from '../SFacebookWorkplace';
-import SFacebookWorkplaceMDX from './SFacebookMessenger.mdx';
+import SFacebookWorkplaceMDX from './SFacebookWorkplace.mdx';
 
 export default {
   title: 'Share/SFacebookWorkplace',

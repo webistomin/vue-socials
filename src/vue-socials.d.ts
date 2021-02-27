@@ -1,3 +1,4 @@
+/* eslint-disable import/first,import/newline-after-import */
 import { PluginFunction } from 'vue';
 
 declare const VueSocials: PluginFunction<never>;

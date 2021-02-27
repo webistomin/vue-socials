@@ -1,6 +1,6 @@
 {
   "name": "vue-socials",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "author": {
     "name": "Alexey Istomin",
     "email": "webistomin@gmail.com",
@@ -35,13 +35,16 @@
       "require": "./dist/vue-socials.cjs.js",
       "import": "./dist/vue-socials.esm.js",
       "default": "./dist/vue-socials.esm.js"
-    }
+    },
+    "./": "./",
+    "./package.json": "./package.json"
   },
   "unpkg": "dist/vue-socials.iife.js",
   "jsdelivr": "dist/vue-socials.iife.js",
   "types": "dist/types/vue-socials.d.ts",
   "files": [
-    "dist"
+    "dist",
+    "src"
   ],
   "reveal": true,
   "sideEffects": false,
@@ -121,7 +124,8 @@
     "vue-template-compiler": "^2.6.12"
   },
   "engines": {
-    "node": ">=10"
+    "node": ">= 14.15.4",
+    "npm": ">= 6.14.7"
   },
   "license": "MIT",
   "bugs": {

@@ -39,7 +39,10 @@ const baseConfig = {
       }),
     ],
     replace: {
-      'process.env.NODE_ENV': JSON.stringify('production'),
+      values: {
+        'process.env.NODE_ENV': JSON.stringify('production'),
+      },
+      preventAssignment: true,
     },
     vue: {
       normalizer: '~vue-runtime-helpers/dist/normalize-component.js',

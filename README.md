@@ -3675,7 +3675,7 @@ This component uses `JSONP` so the content won't be available during `SSR`.
 | Prop | Type | Description | Default value |
 | ------ | ------ | ------ | ------ |
 `windowFeatures` | `object` | Pass options to `window.open()`. [Requested features of the new window.](https://developer.mozilla.org/en-US/docs/Web/API/Window/open#window_features) | `{ width: 600, height: 540, }`
-`shareOptions` | `object` | Your share link parameters: <br /> **title** – post title <br /> **text** – post text <br /> **domain** – your domain <br /> **url** – the url of the current page **image** – url of an image file | `{}`
+`shareOptions` | `object` | Your share link parameters: <br /> **title** – post title <br /> **text** – post text <br /> **domain** – your domain <br /> **url** – the url of the current page  <br /> **image** – url of an image file | `{}`
 `useNativeBehavior` | `boolean` | Use native link behavior instead of `window.open()` or not | `false`
 
 **Events**
@@ -3740,7 +3740,7 @@ This component uses `JSONP` so the content won't be available during `SSR`.
 | Prop | Type | Description | Default value |
 | ------ | ------ | ------ | ------ |
 `windowFeatures` | `object` | Pass options to `window.open()`. [Requested features of the new window.](https://developer.mozilla.org/en-US/docs/Web/API/Window/open#window_features) | `{ width: 600, height: 540, }`
-`shareOptions` | `object` | Your share link parameters: <br /> **url** – A fixed URL to be shared **followUrl** – The URL of a XING news page for the Follow button shown on the success page. | `{}`
+`shareOptions` | `object` | Your share link parameters: <br /> **url** – A fixed URL to be shared  <br /> **followUrl** – The URL of a XING news page for the Follow button shown on the success page. | `{}`
 `useNativeBehavior` | `boolean` | Use native link behavior instead of `window.open()` or not | `false`
 
 **Events**

@@ -44,7 +44,8 @@
   "types": "dist/types/vue-socials.d.ts",
   "files": [
     "dist",
-    "src"
+    "src",
+    "types"
   ],
   "reveal": true,
   "sideEffects": false,

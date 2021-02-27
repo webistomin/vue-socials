@@ -2,10 +2,16 @@ import { Story } from '@storybook/vue';
 import { action } from '@storybook/addon-actions';
 import { DEFAULT_WINDOW_FEATURES, TBaseSocialPropsOptions } from '@/mixins/BaseSocial/BaseSocial';
 import STrello, { ISTrelloShareOptions } from '../STrello';
+import STrelloMDX from './STrello.mdx';
 
 export default {
   title: 'Share/STrello',
   component: STrello,
+  parameters: {
+    docs: {
+      page: STrelloMDX,
+    },
+  },
 };
 
 const Template: Story<TBaseSocialPropsOptions<ISTrelloShareOptions>> = (_args, { argTypes }) => ({

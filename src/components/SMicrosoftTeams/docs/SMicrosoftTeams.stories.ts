@@ -2,10 +2,16 @@ import { Story } from '@storybook/vue';
 import { action } from '@storybook/addon-actions';
 import { DEFAULT_WINDOW_FEATURES, TBaseSocialPropsOptions } from '@/mixins/BaseSocial/BaseSocial';
 import SMicrosoftTeams, { ISMicrosoftTeamsShareOptions } from '../SMicrosoftTeams';
+import SMicrosoftTeamsMDX from './SMisrosoftTeams.mdx';
 
 export default {
   title: 'Share/SMicrosoftTeams',
   component: SMicrosoftTeams,
+  parameters: {
+    docs: {
+      page: SMicrosoftTeamsMDX,
+    },
+  },
 };
 
 const Template: Story<TBaseSocialPropsOptions<ISMicrosoftTeamsShareOptions>> = (_args, { argTypes }) => ({

@@ -2,10 +2,16 @@ import { Story } from '@storybook/vue';
 import { action } from '@storybook/addon-actions';
 import { DEFAULT_WINDOW_FEATURES, TBaseSocialPropsOptions } from '@/mixins/BaseSocial/BaseSocial';
 import SOdnoklassniki, { ISOdnoklassnikiShareOptions } from '../SOdnoklassniki';
+import SOdnoklassnikiMDX from './SOdnoklassniki.mdx';
 
 export default {
   title: 'Share/SOdnoklassniki',
   component: SOdnoklassniki,
+  parameters: {
+    docs: {
+      page: SOdnoklassnikiMDX,
+    },
+  },
 };
 
 const Template: Story<TBaseSocialPropsOptions<ISOdnoklassnikiShareOptions>> = (_args, { argTypes }) => ({

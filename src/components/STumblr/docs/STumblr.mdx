@@ -1,0 +1,82 @@
+import { Meta, Story, Preview} from "@storybook/addon-docs/blocks"
+import STumblr from "../STumblr"
+
+<Meta title='Share/STumblr' component={ STumblr } />
+
+<style>{`
+  .custom-preview .base-canvas {
+    height: auto;
+  }
+`}</style>
+
+# STumblr
+
+## Preview
+
+<Preview className="custom-preview">
+  <Story id='share-stumblr--default' />
+</Preview>
+
+## Example
+
+```html
+<template>
+  <s-tumblr
+    :window-features="windowFeatures"
+    :share-options="shareOptions"
+    :use-native-behavior="useNativeBehavior"
+    @popup-close="onClose"
+    @popup-open="onOpen"
+    @popup-block="onBlock"
+    @popup-focus="onFocus"
+  ></s-tumblr>
+</template>
+
+<script>
+  import { STumblr } from 'vue-socials'
+
+  export default {
+    name: 'STumblrSharing',
+
+    components: { STumblr },
+
+    data() {
+      return {
+        windowFeatures: {},
+        shareOptions: {
+          canonicalUrl: 'https://github.com/',
+          title: 'Title',
+          caption: 'Caption',
+          tags: ['hash', 'tag'],
+        },
+        useNativeBehavior: false,
+      }
+    },
+
+    methods: {
+      onClose() {},
+      onOpen() {},
+      onBlock() {},
+      onFocus() {},
+    }
+  };
+</script>
+```
+
+## Props
+
+| Prop | Type | Description | Default value |
+| ------ | ------ | ------ | ------ |
+`windowFeatures` | `object` | Pass options to `window.open()`. [Requested features of the new window.](https://developer.mozilla.org/en-US/docs/Web/API/Window/open#window_features) | `{ width: 600, height: 540, }`
+`shareOptions` | `object` | Your share link parameters: <br /> **canonicalUrl** – the URL you want to share <br /> **title** – title of the Text post <br /> **caption** – post caption <br /> **tags** – list of tags <br />  | `{}`
+`useNativeBehavior` | `boolean` | Use native link behavior instead of `window.open()` or not | `false`
+
+## Events
+
+| Event name | Usage |
+| ------ | ------ |
+`popup-open` | `window.open()` has been opened |
+`popup-close` | `window.open()` has been closed |
+`popup-block` | `window.open()` has been blocked |
+`popup-focus` | `window.open()` has been focused |
+

@@ -1,0 +1,83 @@
+import { Meta, Story, Preview} from "@storybook/addon-docs/blocks"
+import SMicrosoftTeams from "../SMicrosoftTeams"
+
+<Meta title='Share/SMicrosoftTeams' component={ SMicrosoftTeams } />
+
+<style>{`
+  .custom-preview .base-canvas {
+    height: auto;
+  }
+`}</style>
+
+# SMicrosoftTeams
+
+## Preview
+
+<Preview className="custom-preview">
+  <Story id='share-smicrosoftteams--default' />
+</Preview>
+
+## Example
+
+```html
+<template>
+  <s-microsoft-teams
+    :window-features="windowFeatures"
+    :share-options="shareOptions"
+    :use-native-behavior="useNativeBehavior"
+    @popup-close="onClose"
+    @popup-open="onOpen"
+    @popup-block="onBlock"
+    @popup-focus="onFocus"
+  ></s-microsoft-teams>
+</template>
+
+<script>
+  import { SMicrosoftTeams } from 'vue-socials'
+
+  export default {
+    name: 'SMicrosoftTeamsSharing',
+
+    components: { SMicrosoftTeams },
+
+    data() {
+      return {
+        windowFeatures: {},
+        shareOptions: {
+          url: 'https://github.com/',
+          preview: true,
+          text: 'Text',
+          title: 'Title',
+          instruction: 'Instruction',
+        },
+        useNativeBehavior: false,
+      }
+    },
+
+    methods: {
+      onClose() {},
+      onOpen() {},
+      onBlock() {},
+      onFocus() {},
+    }
+  };
+</script>
+```
+
+## Props
+
+| Prop | Type | Description | Default value |
+| ------ | ------ | ------ | ------ |
+`windowFeatures` | `object` | Pass options to `window.open()`. [Requested features of the new window.](https://developer.mozilla.org/en-US/docs/Web/API/Window/open#window_features) | `{ width: 600, height: 540, }`
+`shareOptions` | `object` | Your share link parameters: <br /> **url** – the URL you want to share <br /> **title** – Default Text to be inserted in the assignments "Title" field (50 character limit) <br /> **text** – Default Text to be inserted before the link in the message compose box (200 character limit) <br /> **preview** – Whether or not to show a preview of the content to share.<br /> **instruction** – Default Text to be inserted in the assignments "Instructions" field (200 character limit) <br /> | `{}`
+`useNativeBehavior` | `boolean` | Use native link behavior instead of `window.open()` or not | `false`
+
+## Events
+
+| Event name | Usage |
+| ------ | ------ |
+`popup-open` | `window.open()` has been opened |
+`popup-close` | `window.open()` has been closed |
+`popup-block` | `window.open()` has been blocked |
+`popup-focus` | `window.open()` has been focused |
+

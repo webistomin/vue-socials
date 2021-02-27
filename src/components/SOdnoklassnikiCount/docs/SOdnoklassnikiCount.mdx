@@ -1,0 +1,77 @@
+import { Meta, Story, Preview} from "@storybook/addon-docs/blocks"
+import SOdnoklassnikiCount from "../SOdnoklassnikiCount"
+
+<Meta title='Count/SOdnoklassnikiCount' component={ SOdnoklassnikiCount } />
+
+<style>{`
+  .custom-preview .base-canvas {
+    height: auto;
+  }
+`}</style>
+
+# SOdnoklassnikiCount
+
+## Preview
+
+<Preview className="custom-preview">
+  <Story id='count-sodnoklassnikicount--default' />
+</Preview>
+
+## Example
+
+```html
+<template>
+  <s-odnoklassniki-count
+    :tag="tag"
+    :share-options="shareOptions"
+    @load="onLoad"
+    @error="onError"
+    @loading="onLoading"
+  ></s-odnoklassniki-count>
+</template>
+
+<script>
+  import { SOdnoklassnikiCount } from 'vue-socials'
+
+  export default {
+    name: 'SOdnoklassnikiCountSharing',
+
+    components: { SOdnoklassnikiCount },
+
+    data() {
+      return {
+        tag: 'span',
+        shareOptions: {
+          ref: 'https://github.com/',
+        },
+      }
+    },
+
+    methods: {
+      onLoad() {},
+      onError() {},
+      onLoading() {},
+    }
+  };
+</script>
+```
+
+## Props
+
+| Prop | Type | Description | Default value |
+| ------ | ------ | ------ | ------ |
+`shareOptions` | `object` | Your share link parameters: <br /> **ref** – the URL you want to share <br /> | `{}`
+`tag` | `string` | Dynamic HTML tag or component  | `span`
+
+## Events
+
+| Event name | Usage |
+| ------ | ------ |
+`load` |  the request has finished successfully |
+`error` | the request has finished with error |
+`loading` | the request has started |
+
+## ⚠️ Warning
+
+This component uses `JSONP` so the content won't be available during `SSR`.
+

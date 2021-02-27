@@ -2,10 +2,16 @@ import { Story } from '@storybook/vue';
 import { action } from '@storybook/addon-actions';
 import { TBaseSocialPropsOptions } from '@/mixins/BaseSocial/BaseSocial';
 import STumblrCount, { ISTumblrCountShareOptions } from '../STumblrCount';
+import STumblrCountMDX from './STumblrCount.mdx';
 
 export default {
   title: 'Count/STumblrCount',
   component: STumblrCount,
+  parameters: {
+    docs: {
+      page: STumblrCountMDX,
+    },
+  },
 };
 
 const Template: Story<TBaseSocialPropsOptions<ISTumblrCountShareOptions>> = (_args, { argTypes }) => ({

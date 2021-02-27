@@ -52,6 +52,7 @@
 * **No dependencies**
 * **No SDK**
 * **Don't track** the user
+* Built with **a11y** in mind
 
 ## Documentation 🤗
 
@@ -113,6 +114,8 @@ Browse [online documentation here](https://vue-socials.vercel.app/)
 
 * <img src="./assets/icons/hatena.svg" width="16" height="16"/> [Hatena](#shatena)
 
+  * <img src="./assets/icons/hatena.svg" width="16" height="16"/> [Hatena counter](#shatenacount)
+
 * <img src="./assets/icons/houzz.svg" width="16" height="16"/> [Houzz](#shouzz)
 
 ### I
@@ -126,6 +129,8 @@ Browse [online documentation here](https://vue-socials.vercel.app/)
 ## L
 
 * <img src="./assets/icons/line.svg" width="16" height="16"/> [Line](#sline)
+
+  * * <img src="./assets/icons/line.svg" width="16" height="16"/> [Line counter](#slinecount)
 
 * <img src="./assets/icons/linkedin.svg" width="16" height="16"/> [Linkedin](#slinkedin)
 
@@ -141,9 +146,13 @@ Browse [online documentation here](https://vue-socials.vercel.app/)
 
 * <img src="./assets/icons/odnoklassniki.svg" width="16" height="16"/> [Odnoklassniki](#sodnoklassniki)
 
+  * * <img src="./assets/icons/odnoklassniki.svg" width="16" height="16"/> [Odnoklassniki counter](#sodnoklassnikicount)
+
 ## P
 
 * <img src="./assets/icons/pinterest.svg" width="16" height="16"/> [Pinterest](#spinterest)
+
+  * <img src="./assets/icons/pinterest.svg" width="16" height="16"/> [Pinterest counter](#spinterestcount)
 
 * <img src="./assets/icons/pocket.svg" width="16" height="16"/> [Pocket](#spocket)
 
@@ -154,6 +163,8 @@ Browse [online documentation here](https://vue-socials.vercel.app/)
 ## R
 
 * <img src="./assets/icons/reddit.svg" width="16" height="16"/> [Reddit](#sreddit)
+
+  * <img src="./assets/icons/reddit.svg" width="16" height="16"/> [Reddit counter](#sredditcount)
 
 * <img src="./assets/icons/renren.svg" width="16" height="16"/> [Renren](#srenren)
 
@@ -173,6 +184,8 @@ Browse [online documentation here](https://vue-socials.vercel.app/)
 
 * <img src="./assets/icons/tumblr.svg" width="16" height="16"/> [Tumblr](#stumblr)
 
+  * <img src="./assets/icons/tumblr.svg" width="16" height="16"/> [Tumblr counter](#stumblrcount)
+
 * <img src="./assets/icons/twitter.svg" width="16" height="16"/> [Twitter](#stwitter)
 
 ## V
@@ -180,6 +193,8 @@ Browse [online documentation here](https://vue-socials.vercel.app/)
 * <img src="./assets/icons/viber.svg" width="16" height="16"/> [Viber](#sviber)
 
 * <img src="./assets/icons/vkontakte.svg" width="16" height="16"/> [Vkontakte](#svkontakte)
+
+  * <img src="./assets/icons/vkontakte.svg" width="16" height="16"/> [Vkontakte counter](#svkontaktecount)
 
 ## W
 
@@ -253,7 +268,7 @@ Browse [online documentation here](https://vue-socials.vercel.app/)
 | Prop | Type | Description | Default value |
 | ------ | ------ | ------ | ------ |
 `windowFeatures` | `object` | Pass options to `window.open()`. [Requested features of the new window.](https://developer.mozilla.org/en-US/docs/Web/API/Window/open#window_features) | `{ width: 600, height: 540, }`
-`shareOptions` | `object` | Your share link parameters: <br /> **url** – the URL you want to share <br /> **title** – your blogpost title  <br /> **text** – your blogpost content <br /> <br />```{ url: 'https://github.com/', title: 'Title', text: 'Text', } ``` | `{}`
+`shareOptions` | `object` | Your share link parameters: <br /> **url** – the URL you want to share <br /> **title** – your blogpost title  <br /> **text** – your blogpost content <br /> <br /> | `{}`
 `useNativeBehavior` | `boolean` | Use native link behavior instead of `window.open()` or not | `false`
 
 **Events**
@@ -320,7 +335,7 @@ Browse [online documentation here](https://vue-socials.vercel.app/)
 | Prop | Type | Description | Default value |
 | ------ | ------ | ------ | ------ |
 `windowFeatures` | `object` | Pass options to `window.open()`. [Requested features of the new window.](https://developer.mozilla.org/en-US/docs/Web/API/Window/open#window_features) | `{ width: 600, height: 540, }`
-`shareOptions` | `object` | Your share link parameters: <br /> **title** – your blogpost title <br /> **isPublished** – is your blogpost published <br /> **tags** – hashtags for blogpost <br /> **content** – your blogpost content <br /> <br /> ```{ title: 'Title', isPublished: false, tags: ['tag', 'tag2'], content: 'Text 1\nText 2\n{% wikipedia https://en.wikipedia.org/wiki/Wikipedia %}',}``` | `{}`
+`shareOptions` | `object` | Your share link parameters: <br /> **title** – your blogpost title <br /> **isPublished** – is your blogpost published <br /> **tags** – hashtags for blogpost <br /> **content** – your blogpost content <br /> | `{}`
 `useNativeBehavior` | `boolean` | Use native link behavior instead of `window.open()` or not | `false`
 
 **Events**
@@ -385,7 +400,7 @@ Browse [online documentation here](https://vue-socials.vercel.app/)
 | Prop | Type | Description | Default value |
 | ------ | ------ | ------ | ------ |
 `windowFeatures` | `object` | Pass options to `window.open()`. [Requested features of the new window.](https://developer.mozilla.org/en-US/docs/Web/API/Window/open#window_features) | `{ width: 600, height: 540, }`
-`shareOptions` | `object` | Your share link parameters: <br /> **url** – the URL you want to share <br />**title** – your blogpost title <br /> <br /> ```{ url: 'https://github.com/', title: 'Title', }``` | `{}`
+`shareOptions` | `object` | Your share link parameters: <br /> **url** – the URL you want to share <br />**title** – your blogpost title <br /> | `{}`
 `useNativeBehavior` | `boolean` | Use native link behavior instead of `window.open()` or not | `false`
 
 **Events**
@@ -450,7 +465,7 @@ Browse [online documentation here](https://vue-socials.vercel.app/)
 | Prop | Type | Description | Default value |
 | ------ | ------ | ------ | ------ |
 `windowFeatures` | `object` | Pass options to `window.open()`. [Requested features of the new window.](https://developer.mozilla.org/en-US/docs/Web/API/Window/open#window_features) | `{ width: 1100, height: 450, }`
-`shareOptions` | `object` | Your share link parameters: <br /> **url** – the URL you want to share <br />**title** – your blogpost title <br /> <br /> ```{ url: 'https://github.com/', title: 'Title', }``` | `{}`
+`shareOptions` | `object` | Your share link parameters: <br /> **url** – the URL you want to share <br />**title** – your blogpost title <br /> | `{}`
 `useNativeBehavior` | `boolean` | Use native link behavior instead of `window.open()` or not | `false`
 
 **Events**
@@ -500,7 +515,7 @@ Browse [online documentation here](https://vue-socials.vercel.app/)
 
 | Prop | Type | Description | Default value |
 | ------ | ------ | ------ | ------ |
-`shareOptions` | `object` | Your share link parameters: <br /> **mail** – e-mail recipient address <br /> **subject** – subject of e-mail <br /> **cc** – carbon copy e-mail address <br />  **bcc** – blind carbon copy e-mail address <br /> **body** – body of e-mail <br /> <br /> ```{ mail: 'google@gmail.com', cc: ['google1@gmail.com', 'google3@gmail.com'], bcc: ['google2@gmail.com', 'google4@gmail.com'], subject: 'Subject', body: 'Hello\nWorld', }``` | `{}`
+`shareOptions` | `object` | Your share link parameters: <br /> **mail** – e-mail recipient address <br /> **subject** – subject of e-mail <br /> **cc** – carbon copy e-mail address <br />  **bcc** – blind carbon copy e-mail address <br /> **body** – body of e-mail <br /> | `{}`
 
 ---
 
@@ -555,7 +570,7 @@ Browse [online documentation here](https://vue-socials.vercel.app/)
 | Prop | Type | Description | Default value |
 | ------ | ------ | ------ | ------ |
 `windowFeatures` | `object` | Pass options to `window.open()`. [Requested features of the new window.](https://developer.mozilla.org/en-US/docs/Web/API/Window/open#window_features) | `{ width: 800, height: 560, }`
-`shareOptions` | `object` | Your share link parameters: <br /> **url** – the URL you want to share <br />**title** – your blogpost title <br /> <br /> ```{ url: 'https://github.com/', title: 'Title', }``` | `{}`
+`shareOptions` | `object` | Your share link parameters: <br /> **url** – the URL you want to share <br />**title** – your blogpost title <br /> | `{}`
 `useNativeBehavior` | `boolean` | Use native link behavior instead of `window.open()` or not | `false`
 
 **Events**
@@ -621,7 +636,7 @@ Browse [online documentation here](https://vue-socials.vercel.app/)
 | Prop | Type | Description | Default value |
 | ------ | ------ | ------ | ------ |
 `windowFeatures` | `object` | Pass options to `window.open()`. [Requested features of the new window.](https://developer.mozilla.org/en-US/docs/Web/API/Window/open#window_features) | `{ width: 685, height: 600, }`
-`shareOptions` | `object` | Your share link parameters: <br /> **url** – the URL you want to share <br /> **quote** – your blogpost quote <br /> **hashtag** – your blogpost hashtag <br /> <br /> ```{ url: 'https://github.com/', quote: 'Quote', hashtag: '#Github', }``` | `{}`
+`shareOptions` | `object` | Your share link parameters: <br /> **url** – the URL you want to share <br /> **quote** – your blogpost quote <br /> **hashtag** – your blogpost hashtag <br /> | `{}`
 `useNativeBehavior` | `boolean` | Use native link behavior instead of `window.open()` or not | `false`
 
 **Events**
@@ -681,7 +696,7 @@ Browse [online documentation here](https://vue-socials.vercel.app/)
 
 | Prop | Type | Description | Default value |
 | ------ | ------ | ------ | ------ |
-`shareOptions` | `object` | Your share link parameters: <br /> **id** – the URL you want to share <br /> **accessToken** – your facebook access token <br /> **fields** – a comma-separated list of fields you want to request. <br /> <br /> ```{ id: 'https://github.com/', fields: ['id', 'og_object'], accessToken: '', }``` | `{}`
+`shareOptions` | `object` | Your share link parameters: <br /> **id** – the URL you want to share <br /> **accessToken** – your facebook access token <br /> **fields** – a comma-separated list of fields you want to request. <br /> | `{}`
 `tag` | `string` | Dynamic HTML tag or component  | `span`
 
 **Events**
@@ -751,7 +766,7 @@ This component uses `JSONP` so the content won't be available during `SSR`.
 | Prop | Type | Description | Default value |
 | ------ | ------ | ------ | ------ |
 `windowFeatures` | `object` | Pass options to `window.open()`. [Requested features of the new window.](https://developer.mozilla.org/en-US/docs/Web/API/Window/open#window_features) | `{ width: 685, height: 600, }`
-`shareOptions` | `object` | Your share link parameters: <br /> **url** – the URL you want to share <br /> **redirectUri** – The URL to redirect to after a person clicks a button on the dialog. <br /> **appId** – Your app's unique identifier. <br />  **to** – A user ID of a recipient. Once the dialog comes up, the sender can specify additional people as recipients. <br /> <br /> ```url: 'https://github.com/', redirectUri: 'https://www.domain.com/', appId: 123456789, to: undefined,``` | `{}`
+`shareOptions` | `object` | Your share link parameters: <br /> **url** – the URL you want to share <br /> **redirectUri** – The URL to redirect to after a person clicks a button on the dialog. <br /> **appId** – Your app's unique identifier. <br />  **to** – A user ID of a recipient. Once the dialog comes up, the sender can specify additional people as recipients. <br /> | `{}`
 `useNativeBehavior` | `boolean` | Use native link behavior instead of `window.open()` or not | `false`
 
 **Events**
@@ -815,7 +830,7 @@ This component uses `JSONP` so the content won't be available during `SSR`.
 | Prop | Type | Description | Default value |
 | ------ | ------ | ------ | ------ |
 `windowFeatures` | `object` | Pass options to `window.open()`. [Requested features of the new window.](https://developer.mozilla.org/en-US/docs/Web/API/Window/open#window_features) | `{ width: 685, height: 600, }`
-`shareOptions` | `object` | Your share link parameters: <br /> **url** – the URL you want to share <br /> <br /> ```{ url: 'https://github.com/', }``` | `{}`
+`shareOptions` | `object` | Your share link parameters: <br /> **url** – the URL you want to share <br /> | `{}`
 `useNativeBehavior` | `boolean` | Use native link behavior instead of `window.open()` or not | `false`
 
 **Events**
@@ -880,7 +895,7 @@ This component uses `JSONP` so the content won't be available during `SSR`.
 | Prop | Type | Description | Default value |
 | ------ | ------ | ------ | ------ |
 `windowFeatures` | `object` | Pass options to `window.open()`. [Requested features of the new window.](https://developer.mozilla.org/en-US/docs/Web/API/Window/open#window_features) | `{ width: 834, height: 572, }`
-`shareOptions` | `object` | Your share link parameters: <br /> **url** – the URL you want to share <br />**title** – your blogpost title <br /> <br /> ```{ url: 'https://github.com/', title: 'Title', }``` | `{}`
+`shareOptions` | `object` | Your share link parameters: <br /> **url** – the URL you want to share <br />**title** – your blogpost title <br /> | `{}`
 `useNativeBehavior` | `boolean` | Use native link behavior instead of `window.open()` or not | `false`
 
 **Events**
@@ -945,7 +960,7 @@ This component uses `JSONP` so the content won't be available during `SSR`.
 | Prop | Type | Description | Default value |
 | ------ | ------ | ------ | ------ |
 `windowFeatures` | `object` | Pass options to `window.open()`. [Requested features of the new window.](https://developer.mozilla.org/en-US/docs/Web/API/Window/open#window_features) | `{ width: 834, height: 572, }`
-`shareOptions` | `object` | Your share link parameters: <br /> **username** – your GitHub username <br /> **type** – share link type (sponsor, follow, profile) <br /> <br /> ```username: 'webistomin', type: 'profile',``` | `{}`
+`shareOptions` | `object` | Your share link parameters: <br /> **username** – your GitHub username <br /> **type** – share link type (sponsor, follow, profile) <br /> | `{}`
 `useNativeBehavior` | `boolean` | Use native link behavior instead of `window.open()` or not | `false`
 
 **Events**
@@ -1004,7 +1019,7 @@ This component uses `JSONP` so the content won't be available during `SSR`.
 
 | Prop | Type | Description | Default value |
 | ------ | ------ | ------ | ------ |
-`shareOptions` | `object` | Your share link parameters: <br /> **username** – your GitHub username <br /> **type** – share link type (follow) <br /> <br /> ```{ id: 'https://github.com/', fields: ['id', 'og_object'], accessToken: '', }``` | `{}`
+`shareOptions` | `object` | Your share link parameters: <br /> **username** – your GitHub username <br /> **type** – share link type (follow) <br /> | `{}`
 `tag` | `string` | Dynamic HTML tag or component  | `span`
 
 **Events**
@@ -1073,7 +1088,7 @@ This component uses `JSONP` so the content won't be available during `SSR`.
 | Prop | Type | Description | Default value |
 | ------ | ------ | ------ | ------ |
 `windowFeatures` | `object` | Pass options to `window.open()`. [Requested features of the new window.](https://developer.mozilla.org/en-US/docs/Web/API/Window/open#window_features) | `{ width: 834, height: 572, }`
-`shareOptions` | `object` | Your share link parameters: <br /> **username** – your gist username <br /> **gistId** – your gist id <br /> **type** – share link type (gist, star, fork, download) <br /> <br /> ```{ username: 'ai', gistId: 'e3683b03ba936ade91d33dbc721cd6d8', type: 'star', }``` | `{}`
+`shareOptions` | `object` | Your share link parameters: <br /> **username** – your gist username <br /> **gistId** – your gist id <br /> **type** – share link type (gist, star, fork, download) <br /> | `{}`
 `useNativeBehavior` | `boolean` | Use native link behavior instead of `window.open()` or not | `false`
 
 **Events**
@@ -1132,7 +1147,7 @@ This component uses `JSONP` so the content won't be available during `SSR`.
 
 | Prop | Type | Description | Default value |
 | ------ | ------ | ------ | ------ |
-`shareOptions` | `object` | Your share link parameters: <br /> **gistId** – your gist id <br /> **type** – share link type (fork) <br /> <br /> ```{ gistId: 'e3683b03ba936ade91d33dbc721cd6d8', type: 'fork', }``` | `{}`
+`shareOptions` | `object` | Your share link parameters: <br /> **gistId** – your gist id <br /> **type** – share link type (fork) <br /> | `{}`
 `tag` | `string` | Dynamic HTML tag or component  | `span`
 
 **Events**
@@ -1201,7 +1216,7 @@ This component uses `JSONP` so the content won't be available during `SSR`.
 | Prop | Type | Description | Default value |
 | ------ | ------ | ------ | ------ |
 `windowFeatures` | `object` | Pass options to `window.open()`. [Requested features of the new window.](https://developer.mozilla.org/en-US/docs/Web/API/Window/open#window_features) | `{ width: 834, height: 572, }`
-`shareOptions` | `object` | Your share link parameters: <br /> **username** – your gist username <br /> **repository** – your repository name <br /> **type** – share link type (repo, watch, star, fork, download, issue, pr, template) <br /> <br /> ```{ username: 'webistomin', repository: 'vue-socials', type: 'fork', }``` | `{}`
+`shareOptions` | `object` | Your share link parameters: <br /> **username** – your gist username <br /> **repository** – your repository name <br /> **type** – share link type (repo, watch, star, fork, download, issue, pr, template) <br /> | `{}`
 `useNativeBehavior` | `boolean` | Use native link behavior instead of `window.open()` or not | `false`
 
 **Events**
@@ -1261,7 +1276,7 @@ This component uses `JSONP` so the content won't be available during `SSR`.
 
 | Prop | Type | Description | Default value |
 | ------ | ------ | ------ | ------ |
-`shareOptions` | `object` | Your share link parameters: <br /> **username** – your github username <br /> **repository** – your github repository <br /> **type** – share link type (watch, type, fork, issues) <br /> <br /> ```{ username: 'webistomin', repository: 'nanogram.js', type: 'fork', }``` | `{}`
+`shareOptions` | `object` | Your share link parameters: <br /> **username** – your github username <br /> **repository** – your github repository <br /> **type** – share link type (watch, type, fork, issues) <br /> | `{}`
 `tag` | `string` | Dynamic HTML tag or component  | `span`
 
 **Events**
@@ -1332,7 +1347,7 @@ This component uses `JSONP` so the content won't be available during `SSR`.
 | Prop | Type | Description | Default value |
 | ------ | ------ | ------ | ------ |
 `windowFeatures` | `object` | Pass options to `window.open()`. [Requested features of the new window.](https://developer.mozilla.org/en-US/docs/Web/API/Window/open#window_features) | `{ width: 600, height: 540, }`
-`shareOptions` | `object` | Your share link parameters: <br /> **to** – e-mail recipient address <br /> **su** – subject of e-mail <br /> **cc** – carbon copy e-mail address <br />  **bcc** – blind carbon copy e-mail address <br />  **body** – body of e-mail <br /> <br /> ```{ to: 'google@gmail.com', su: 'Title', cc: 'google1@gmail.com', bcc: 'google2@gmail.com', body: 'Hello\nWorld',}``` | `{}`
+`shareOptions` | `object` | Your share link parameters: <br /> **to** – e-mail recipient address <br /> **su** – subject of e-mail <br /> **cc** – carbon copy e-mail address <br />  **bcc** – blind carbon copy e-mail address <br />  **body** – body of e-mail <br /> | `{}`
 `useNativeBehavior` | `boolean` | Use native link behavior instead of `window.open()` or not | `false`
 
 **Events**
@@ -1348,69 +1363,2528 @@ This component uses `JSONP` so the content won't be available during `SSR`.
 
 ### SGoogleBookmarks
 
+**Usage**
+
+```vue
+<template>
+  <s-google-bookmarks
+    :window-features="windowFeatures"
+    :share-options="shareOptions"
+    :use-native-behavior="useNativeBehavior"
+    @popup-close="onClose"
+    @popup-open="onOpen"
+    @popup-block="onBlock"
+    @popup-focus="onFocus"
+  ></s-google-bookmarks>
+</template>
+
+<script>
+  import { SGoogleBookmarks } from 'vue-socials'
+
+  export default {
+    name: 'SGoogleBookmarksSharing',
+    
+    components: { SGoogleBookmarks },
+    
+    data() {
+      return {
+        windowFeatures: {},
+        shareOptions: {
+          url: 'https://github.com/',
+          title: 'Title',
+          annotation: 'Annotation',
+          tags: ['tag'],
+        },
+        useNativeBehavior: false,
+      }
+    },
+    
+    methods: {
+      onClose() {},
+      onOpen() {},
+      onBlock() {},
+      onFocus() {},
+    }
+  };
+</script>
+```
+
+**Props**
+
+| Prop | Type | Description | Default value |
+| ------ | ------ | ------ | ------ |
+`windowFeatures` | `object` | Pass options to `window.open()`. [Requested features of the new window.](https://developer.mozilla.org/en-US/docs/Web/API/Window/open#window_features) | `{ width: 600, height: 540, }`
+`shareOptions` | `object` | Your share link parameters: <br /> **title** – your bookmark title <br /> **url** – your url <br /> **annotation** – your text <br /> **tags** – your keywords or hashtags <br /> | `{}`
+`useNativeBehavior` | `boolean` | Use native link behavior instead of `window.open()` or not | `false`
+
+**Events**
+
+| Event name | Usage |
+| ------ | ------ |
+`popup-open` | `window.open()` has been opened |
+`popup-close` | `window.open()` has been closed |
+`popup-block` | `window.open()` has been blocked |
+`popup-focus` | `window.open()` has been focused |
+
+---
+
 ### SHackerNews
+
+**Usage**
+
+```vue
+<template>
+  <s-hacker-news
+    :window-features="windowFeatures"
+    :share-options="shareOptions"
+    :use-native-behavior="useNativeBehavior"
+    @popup-close="onClose"
+    @popup-open="onOpen"
+    @popup-block="onBlock"
+    @popup-focus="onFocus"
+  ></s-hacker-news>
+</template>
+
+<script>
+  import { SHackerNews } from 'vue-socials'
+
+  export default {
+    name: 'SHackerNewsSharing',
+    
+    components: { SHackerNews },
+    
+    data() {
+      return {
+        windowFeatures: {},
+        shareOptions: {
+          url: 'https://github.com/',
+          title: 'Title',
+        },
+        useNativeBehavior: false,
+      }
+    },
+    
+    methods: {
+      onClose() {},
+      onOpen() {},
+      onBlock() {},
+      onFocus() {},
+    }
+  };
+</script>
+```
+
+**Props**
+
+| Prop | Type | Description | Default value |
+| ------ | ------ | ------ | ------ |
+`windowFeatures` | `object` | Pass options to `window.open()`. [Requested features of the new window.](https://developer.mozilla.org/en-US/docs/Web/API/Window/open#window_features) | `{ width: 600, height: 540, }`
+`shareOptions` | `object` | Your share link parameters: <br /> **title** – your bookmark title <br /> **url** – your url <br /> | `{}`
+`useNativeBehavior` | `boolean` | Use native link behavior instead of `window.open()` or not | `false`
+
+**Events**
+
+| Event name | Usage |
+| ------ | ------ |
+`popup-open` | `window.open()` has been opened |
+`popup-close` | `window.open()` has been closed |
+`popup-block` | `window.open()` has been blocked |
+`popup-focus` | `window.open()` has been focused |
+
+---
 
 ### SHatena
 
+**Usage**
+
+```vue
+<template>
+  <s-hatena
+    :window-features="windowFeatures"
+    :share-options="shareOptions"
+    :use-native-behavior="useNativeBehavior"
+    @popup-close="onClose"
+    @popup-open="onOpen"
+    @popup-block="onBlock"
+    @popup-focus="onFocus"
+  ></s-hatena>
+</template>
+
+<script>
+  import { SHatena } from 'vue-socials'
+
+  export default {
+    name: 'SHatenaSharing',
+    
+    components: { SHatena },
+    
+    data() {
+      return {
+        windowFeatures: {},
+        shareOptions: {
+          url: 'https://github.com/',
+          title: 'Title',
+        },
+        useNativeBehavior: false,
+      }
+    },
+    
+    methods: {
+      onClose() {},
+      onOpen() {},
+      onBlock() {},
+      onFocus() {},
+    }
+  };
+</script>
+```
+
+**Props**
+
+| Prop | Type | Description | Default value |
+| ------ | ------ | ------ | ------ |
+`windowFeatures` | `object` | Pass options to `window.open()`. [Requested features of the new window.](https://developer.mozilla.org/en-US/docs/Web/API/Window/open#window_features) | `{ width: 600, height: 540, }`
+`shareOptions` | `object` | Your share link parameters: <br /> **title** – your bookmark title <br /> **url** – your url <br /> | `{}`
+`useNativeBehavior` | `boolean` | Use native link behavior instead of `window.open()` or not | `false`
+
+**Events**
+
+| Event name | Usage |
+| ------ | ------ |
+`popup-open` | `window.open()` has been opened |
+`popup-close` | `window.open()` has been closed |
+`popup-block` | `window.open()` has been blocked |
+`popup-focus` | `window.open()` has been focused |
+
+---
+
+### SHatenaCount
+
+**Usage**
+
+```vue
+<template>
+  <s-hatena-count
+    :share-options="shareOptions"
+    @load="onLoad"
+    @error="onError"
+    @loading="onLoading"
+  ></s-hatena-count>
+</template>
+
+<script>
+  import { SHatenaCount } from 'vue-socials'
+
+  export default {
+    name: 'SHatenaCountSharing',
+    
+    components: { SHatenaCount },
+    
+    data() {
+      return {
+        tag: 'span',
+        shareOptions: {
+          url: 'https://github.com/',
+        },
+      }
+    },
+    
+    methods: {
+      onLoad() {},
+      onError() {},
+      onLoading() {},
+    }
+  };
+</script>
+```
+
+**Props**
+
+| Prop | Type | Description | Default value |
+| ------ | ------ | ------ | ------ |
+`shareOptions` | `object` | Your share link parameters: <br /> **url** – the URL you want to share <br /> | `{}`
+`tag` | `string` | Dynamic HTML tag or component  | `span`
+
+**Events**
+
+| Event name | Usage |
+| ------ | ------ |
+`load` |  the request has finished successfully | 
+`error` | the request has finished with error |
+`loading` | the request has started |
+
+**⚠️ Warning**
+
+This component uses `JSONP` so the content won't be available during `SSR`.
+
+---
+
 ### SHouzz
+
+**Usage**
+
+```vue
+<template>
+  <s-houzz
+    :window-features="windowFeatures"
+    :share-options="shareOptions"
+    :use-native-behavior="useNativeBehavior"
+    @popup-close="onClose"
+    @popup-open="onOpen"
+    @popup-block="onBlock"
+    @popup-focus="onFocus"
+  ></s-houzz>
+</template>
+
+<script>
+  import { SHouzz } from 'vue-socials'
+
+  export default {
+    name: 'SHouzzSharing',
+    
+    components: { SHouzz },
+    
+    data() {
+      return {
+        windowFeatures: {},
+        shareOptions: {
+          url: 'https://github.com/',
+          id: '123',
+          image: 'url',
+          title: 'Title',
+          category: ['category'],
+        },
+        useNativeBehavior: false,
+      }
+    },
+    
+    methods: {
+      onClose() {},
+      onOpen() {},
+      onBlock() {},
+      onFocus() {},
+    }
+  };
+</script>
+```
+
+**Props**
+
+| Prop | Type | Description | Default value |
+| ------ | ------ | ------ | ------ |
+`windowFeatures` | `object` | Pass options to `window.open()`. [Requested features of the new window.](https://developer.mozilla.org/en-US/docs/Web/API/Window/open#window_features) | `{ width: 1100, height: 700, }`
+`shareOptions` | `object` | Your share link parameters: <br /> **url** – Canonical URL of your product. If you already have products listed in Houzz, make sure the URLs match exactly to prevent duplicate listings and maintain accuracy of the Ideabook count. <br /> **id** – A unique identifier that verifies you own this web page. <br /> **image** – URL of hi-res product image. <br /> **title** – Title of the product. <br /> **category** –  Keywords to help categorize the product. (ie. 'Wall Sconces') <br /> | `{}`
+`useNativeBehavior` | `boolean` | Use native link behavior instead of `window.open()` or not | `false`
+
+**Events**
+
+| Event name | Usage |
+| ------ | ------ |
+`popup-open` | `window.open()` has been opened |
+`popup-close` | `window.open()` has been closed |
+`popup-block` | `window.open()` has been blocked |
+`popup-focus` | `window.open()` has been focused |
+
+---
 
 ### SInstaPaper
 
+**Usage**
+
+```vue
+<template>
+  <s-insta-paper
+    :window-features="windowFeatures"
+    :share-options="shareOptions"
+    :use-native-behavior="useNativeBehavior"
+    @popup-close="onClose"
+    @popup-open="onOpen"
+    @popup-block="onBlock"
+    @popup-focus="onFocus"
+  ></s-insta-paper>
+</template>
+
+<script>
+  import { SInstaPaper } from 'vue-socials'
+
+  export default {
+    name: 'SInstaPaperSharing',
+    
+    components: { SInstaPaper },
+    
+    data() {
+      return {
+        windowFeatures: {},
+        shareOptions: {
+          url: 'https://github.com/',
+        },
+        useNativeBehavior: false,
+      }
+    },
+    
+    methods: {
+      onClose() {},
+      onOpen() {},
+      onBlock() {},
+      onFocus() {},
+    }
+  };
+</script>
+```
+
+**Props**
+
+| Prop | Type | Description | Default value |
+| ------ | ------ | ------ | ------ |
+`windowFeatures` | `object` | Pass options to `window.open()`. [Requested features of the new window.](https://developer.mozilla.org/en-US/docs/Web/API/Window/open#window_features) | `{ width: 600, height: 600, }`
+`shareOptions` | `object` | Your share link parameters: <br /> **url** – the URL you want to share <br /> | `{}`
+`useNativeBehavior` | `boolean` | Use native link behavior instead of `window.open()` or not | `false`
+
+**Events**
+
+| Event name | Usage |
+| ------ | ------ |
+`popup-open` | `window.open()` has been opened |
+`popup-close` | `window.open()` has been closed |
+`popup-block` | `window.open()` has been blocked |
+`popup-focus` | `window.open()` has been focused |
+
+---
+
 ### SKakaoStory
+
+**Usage**
+
+```vue
+<template>
+  <s-kakao-story
+    :window-features="windowFeatures"
+    :share-options="shareOptions"
+    :use-native-behavior="useNativeBehavior"
+    @popup-close="onClose"
+    @popup-open="onOpen"
+    @popup-block="onBlock"
+    @popup-focus="onFocus"
+  ></s-kakao-story>
+</template>
+
+<script>
+  import { SKakaoStory } from 'vue-socials'
+
+  export default {
+    name: 'SKakaoStorySharing',
+    
+    components: { SKakaoStory },
+    
+    data() {
+      return {
+        windowFeatures: {},
+        shareOptions: {
+          url: 'https://github.com/',
+          text: 'Text',
+        },
+        useNativeBehavior: false,
+      }
+    },
+    
+    methods: {
+      onClose() {},
+      onOpen() {},
+      onBlock() {},
+      onFocus() {},
+    }
+  };
+</script>
+```
+
+**Props**
+
+| Prop | Type | Description | Default value |
+| ------ | ------ | ------ | ------ |
+`windowFeatures` | `object` | Pass options to `window.open()`. [Requested features of the new window.](https://developer.mozilla.org/en-US/docs/Web/API/Window/open#window_features) | `{ width: 600, height: 540, }`
+`shareOptions` | `object` | Your share link parameters: <br /> **url** – the URL you want to share <br /> **text** – your blogpost text <br /> | `{}`
+`useNativeBehavior` | `boolean` | Use native link behavior instead of `window.open()` or not | `false`
+
+**Events**
+
+| Event name | Usage |
+| ------ | ------ |
+`popup-open` | `window.open()` has been opened |
+`popup-close` | `window.open()` has been closed |
+`popup-block` | `window.open()` has been blocked |
+`popup-focus` | `window.open()` has been focused |
+
+---
 
 ### SLine
 
+**Usage**
+
+```vue
+<template>
+  <s-line
+    :window-features="windowFeatures"
+    :share-options="shareOptions"
+    :use-native-behavior="useNativeBehavior"
+    @popup-close="onClose"
+    @popup-open="onOpen"
+    @popup-block="onBlock"
+    @popup-focus="onFocus"
+  ></s-line>
+</template>
+
+<script>
+  import { SLine } from 'vue-socials'
+
+  export default {
+    name: 'SLineSharing',
+    
+    components: { SLine },
+    
+    data() {
+      return {
+        windowFeatures: {},
+        shareOptions: {
+          url: 'https://github.com/',
+          text: 'Text',
+        },
+        useNativeBehavior: false,
+      }
+    },
+    
+    methods: {
+      onClose() {},
+      onOpen() {},
+      onBlock() {},
+      onFocus() {},
+    }
+  };
+</script>
+```
+
+**Props**
+
+| Prop | Type | Description | Default value |
+| ------ | ------ | ------ | ------ |
+`windowFeatures` | `object` | Pass options to `window.open()`. [Requested features of the new window.](https://developer.mozilla.org/en-US/docs/Web/API/Window/open#window_features) | `{ width: 600, height: 540, }`
+`shareOptions` | `object` | Your share link parameters: <br /> **url** – the URL you want to share <br /> **text** – your blogpost text <br /> | `{}`
+`useNativeBehavior` | `boolean` | Use native link behavior instead of `window.open()` or not | `false`
+
+**Events**
+
+| Event name | Usage |
+| ------ | ------ |
+`popup-open` | `window.open()` has been opened |
+`popup-close` | `window.open()` has been closed |
+`popup-block` | `window.open()` has been blocked |
+`popup-focus` | `window.open()` has been focused |
+
+---
+
+### SLineCount
+
+**Usage**
+
+```vue
+<template>
+  <s-line-count
+    :share-options="shareOptions"
+    @load="onLoad"
+    @error="onError"
+    @loading="onLoading"
+  ></s-line-count>
+</template>
+
+<script>
+  import { SLineCount } from 'vue-socials'
+
+  export default {
+    name: 'SLineCountSharing',
+    
+    components: { SLineCount },
+    
+    data() {
+      return {
+        tag: 'span',
+        shareOptions: {
+          url: 'https://github.com/',
+        },
+      }
+    },
+    
+    methods: {
+      onLoad() {},
+      onError() {},
+      onLoading() {},
+    }
+  };
+</script>
+```
+
+**Props**
+
+| Prop | Type | Description | Default value |
+| ------ | ------ | ------ | ------ |
+`shareOptions` | `object` | Your share link parameters: <br /> **url** – the URL you want to share <br /> | `{}`
+`tag` | `string` | Dynamic HTML tag or component  | `span`
+
+**Events**
+
+| Event name | Usage |
+| ------ | ------ |
+`load` |  the request has finished successfully | 
+`error` | the request has finished with error |
+`loading` | the request has started |
+
+---
+
 ### SLinkedIn
+
+**Usage**
+
+```vue
+<template>
+  <s-linked-in
+    :window-features="windowFeatures"
+    :share-options="shareOptions"
+    :use-native-behavior="useNativeBehavior"
+    @popup-close="onClose"
+    @popup-open="onOpen"
+    @popup-block="onBlock"
+    @popup-focus="onFocus"
+  ></s-linked-in>
+</template>
+
+<script>
+  import { SLinkedIn } from 'vue-socials'
+
+  export default {
+    name: 'SLinkedInSharing',
+    
+    components: { SLinkedIn },
+    
+    data() {
+      return {
+        windowFeatures: {},
+        shareOptions: {
+          url: 'https://github.com/',
+        },
+        useNativeBehavior: false,
+      }
+    },
+    
+    methods: {
+      onClose() {},
+      onOpen() {},
+      onBlock() {},
+      onFocus() {},
+    }
+  };
+</script>
+```
+
+**Props**
+
+| Prop | Type | Description | Default value |
+| ------ | ------ | ------ | ------ |
+`windowFeatures` | `object` | Pass options to `window.open()`. [Requested features of the new window.](https://developer.mozilla.org/en-US/docs/Web/API/Window/open#window_features) | `{ width: 600, height: 540, }`
+`shareOptions` | `object` | Your share link parameters: <br /> **url** – the URL you want to share <br /> | `{}`
+`useNativeBehavior` | `boolean` | Use native link behavior instead of `window.open()` or not | `false`
+
+**Events**
+
+| Event name | Usage |
+| ------ | ------ |
+`popup-open` | `window.open()` has been opened |
+`popup-close` | `window.open()` has been closed |
+`popup-block` | `window.open()` has been blocked |
+`popup-focus` | `window.open()` has been focused |
+
+---
 
 ### SLiveJournal
 
+**Usage**
+
+```vue
+<template>
+  <s-live-journal
+    :window-features="windowFeatures"
+    :share-options="shareOptions"
+    :use-native-behavior="useNativeBehavior"
+    @popup-close="onClose"
+    @popup-open="onOpen"
+    @popup-block="onBlock"
+    @popup-focus="onFocus"
+  ></s-live-journal>
+</template>
+
+<script>
+  import { SLiveJournal } from 'vue-socials'
+
+  export default {
+    name: 'SLiveJournalSharing',
+    
+    components: { SLiveJournal },
+    
+    data() {
+      return {
+        windowFeatures: {},
+        shareOptions: {
+          url: 'https://github.com/',
+          subject: 'Title',
+        },
+        useNativeBehavior: false,
+      }
+    },
+    
+    methods: {
+      onClose() {},
+      onOpen() {},
+      onBlock() {},
+      onFocus() {},
+    }
+  };
+</script>
+```
+
+**Props**
+
+| Prop | Type | Description | Default value |
+| ------ | ------ | ------ | ------ |
+`windowFeatures` | `object` | Pass options to `window.open()`. [Requested features of the new window.](https://developer.mozilla.org/en-US/docs/Web/API/Window/open#window_features) | `{ width: 600, height: 540, }`
+`shareOptions` | `object` | Your share link parameters: <br /> **url** – the URL you want to share <br /> **subject** – your title <br /> | `{}`
+`useNativeBehavior` | `boolean` | Use native link behavior instead of `window.open()` or not | `false`
+
+**Events**
+
+| Event name | Usage |
+| ------ | ------ |
+`popup-open` | `window.open()` has been opened |
+`popup-close` | `window.open()` has been closed |
+`popup-block` | `window.open()` has been blocked |
+`popup-focus` | `window.open()` has been focused |
+
+---
+
 ### SMailRu
+
+**Usage**
+
+```vue
+<template>
+  <s-mail-ru
+    :window-features="windowFeatures"
+    :share-options="shareOptions"
+    :use-native-behavior="useNativeBehavior"
+    @popup-close="onClose"
+    @popup-open="onOpen"
+    @popup-block="onBlock"
+    @popup-focus="onFocus"
+  ></s-mail-ru>
+</template>
+
+<script>
+  import { SMailRu } from 'vue-socials'
+
+  export default {
+    name: 'SMailRuSharing',
+    
+    components: { SMailRu },
+    
+    data() {
+      return {
+        windowFeatures: {},
+        shareOptions: {
+          url: 'https://github.com/',
+          title: 'Title',
+          description: 'Description',
+          image: '',
+          swfUrl: '',
+        },
+        useNativeBehavior: false,
+      }
+    },
+    
+    methods: {
+      onClose() {},
+      onOpen() {},
+      onBlock() {},
+      onFocus() {},
+    }
+  };
+</script>
+```
+
+**Props**
+
+| Prop | Type | Description | Default value |
+| ------ | ------ | ------ | ------ |
+`windowFeatures` | `object` | Pass options to `window.open()`. [Requested features of the new window.](https://developer.mozilla.org/en-US/docs/Web/API/Window/open#window_features) | `{ width: 600, height: 540, }`
+`shareOptions` | `object` | Your share link parameters: <br /> **url** – the URL you want to share <br /> **title** – your title <br /> **description** – your description <br /> **image** – your image <br /> **swfUrl** – your flash-player with video <br /> | `{}`
+`useNativeBehavior` | `boolean` | Use native link behavior instead of `window.open()` or not | `false`
+
+**Events**
+
+| Event name | Usage |
+| ------ | ------ |
+`popup-open` | `window.open()` has been opened |
+`popup-close` | `window.open()` has been closed |
+`popup-block` | `window.open()` has been blocked |
+`popup-focus` | `window.open()` has been focused |
+
+---
 
 ### SMicrosoftTeams
 
+**Usage**
+
+```vue
+<template>
+  <s-microsoft-teams
+    :window-features="windowFeatures"
+    :share-options="shareOptions"
+    :use-native-behavior="useNativeBehavior"
+    @popup-close="onClose"
+    @popup-open="onOpen"
+    @popup-block="onBlock"
+    @popup-focus="onFocus"
+  ></s-microsoft-teams>
+</template>
+
+<script>
+  import { SMicrosoftTeams } from 'vue-socials'
+
+  export default {
+    name: 'SMicrosoftTeamsSharing',
+    
+    components: { SMicrosoftTeams },
+    
+    data() {
+      return {
+        windowFeatures: {},
+        shareOptions: {
+          url: 'https://github.com/',
+          preview: true,
+          text: 'Text',
+          title: 'Title',
+          instruction: 'Instruction',
+        },
+        useNativeBehavior: false,
+      }
+    },
+    
+    methods: {
+      onClose() {},
+      onOpen() {},
+      onBlock() {},
+      onFocus() {},
+    }
+  };
+</script>
+```
+
+**Props**
+
+| Prop | Type | Description | Default value |
+| ------ | ------ | ------ | ------ |
+`windowFeatures` | `object` | Pass options to `window.open()`. [Requested features of the new window.](https://developer.mozilla.org/en-US/docs/Web/API/Window/open#window_features) | `{ width: 600, height: 540, }`
+`shareOptions` | `object` | Your share link parameters: <br /> **url** – the URL you want to share <br /> **title** – Default Text to be inserted in the assignments "Title" field (50 character limit) <br /> **text** – Default Text to be inserted before the link in the message compose box (200 character limit) <br /> **preview** – Whether or not to show a preview of the content to share.<br /> **instruction** – Default Text to be inserted in the assignments "Instructions" field (200 character limit) <br /> | `{}`
+`useNativeBehavior` | `boolean` | Use native link behavior instead of `window.open()` or not | `false`
+
+**Events**
+
+| Event name | Usage |
+| ------ | ------ |
+`popup-open` | `window.open()` has been opened |
+`popup-close` | `window.open()` has been closed |
+`popup-block` | `window.open()` has been blocked |
+`popup-focus` | `window.open()` has been focused |
+
+---
+
 ### SOdnoklassniki
+
+**Usage**
+
+```vue
+<template>
+  <s-odnoklassniki
+    :window-features="windowFeatures"
+    :share-options="shareOptions"
+    :use-native-behavior="useNativeBehavior"
+    @popup-close="onClose"
+    @popup-open="onOpen"
+    @popup-block="onBlock"
+    @popup-focus="onFocus"
+  ></s-odnoklassniki>
+</template>
+
+<script>
+  import { SOdnoklassniki } from 'vue-socials'
+
+  export default {
+    name: 'SOdnoklassnikiSharing',
+    
+    components: { SOdnoklassniki },
+    
+    data() {
+      return {
+        windowFeatures: {},
+        shareOptions: {
+          url: 'https://github.com/',
+        },
+        useNativeBehavior: false,
+      }
+    },
+    
+    methods: {
+      onClose() {},
+      onOpen() {},
+      onBlock() {},
+      onFocus() {},
+    }
+  };
+</script>
+```
+
+**Props**
+
+| Prop | Type | Description | Default value |
+| ------ | ------ | ------ | ------ |
+`windowFeatures` | `object` | Pass options to `window.open()`. [Requested features of the new window.](https://developer.mozilla.org/en-US/docs/Web/API/Window/open#window_features) | `{ width: 600, height: 540, }`
+`shareOptions` | `object` | Your share link parameters: <br /> **url** – the URL you want to share <br /> | `{}`
+`useNativeBehavior` | `boolean` | Use native link behavior instead of `window.open()` or not | `false`
+
+**Events**
+
+| Event name | Usage |
+| ------ | ------ |
+`popup-open` | `window.open()` has been opened |
+`popup-close` | `window.open()` has been closed |
+`popup-block` | `window.open()` has been blocked |
+`popup-focus` | `window.open()` has been focused |
+
+---
+
+### SOdnoklassnikiCount
+
+**Usage**
+
+```vue
+<template>
+  <s-odnoklassniki-count
+    :tag="tag"
+    :share-options="shareOptions"
+    @load="onLoad"
+    @error="onError"
+    @loading="onLoading"
+  ></s-odnoklassniki-count>
+</template>
+
+<script>
+  import { SOdnoklassnikiCount } from 'vue-socials'
+
+  export default {
+    name: 'SOdnoklassnikiCountSharing',
+    
+    components: { SOdnoklassnikiCount },
+    
+    data() {
+      return {
+        tag: 'span',
+        shareOptions: {
+          ref: 'https://github.com/',
+        },
+      }
+    },
+    
+    methods: {
+      onLoad() {},
+      onError() {},
+      onLoading() {},
+    }
+  };
+</script>
+```
+
+**Props**
+
+| Prop | Type | Description | Default value |
+| ------ | ------ | ------ | ------ |
+`shareOptions` | `object` | Your share link parameters: <br /> **ref** – the URL you want to share <br /> | `{}`
+`tag` | `string` | Dynamic HTML tag or component  | `span`
+
+**Events**
+
+| Event name | Usage |
+| ------ | ------ |
+`load` |  the request has finished successfully | 
+`error` | the request has finished with error |
+`loading` | the request has started |
+
+**⚠️ Warning**
+
+This component uses `JSONP` so the content won't be available during `SSR`.
+
+---
 
 ### SPinterest
 
+**Usage**
+
+```vue
+<template>
+  <s-pinterest
+    :window-features="windowFeatures"
+    :share-options="shareOptions"
+    :use-native-behavior="useNativeBehavior"
+    @popup-close="onClose"
+    @popup-open="onOpen"
+    @popup-block="onBlock"
+    @popup-focus="onFocus"
+  ></s-pinterest>
+</template>
+
+<script>
+  import { SPinterest } from 'vue-socials'
+
+  export default {
+    name: 'SSPinterestSharing',
+    
+    components: { SPinterest },
+    
+    data() {
+      return {
+        windowFeatures: {},
+        shareOptions: {
+          url: 'https://github.com/',
+          media: '',
+          description: 'Description',
+        },
+        useNativeBehavior: false,
+      }
+    },
+    
+    methods: {
+      onClose() {},
+      onOpen() {},
+      onBlock() {},
+      onFocus() {},
+    }
+  };
+</script>
+```
+
+**Props**
+
+| Prop | Type | Description | Default value |
+| ------ | ------ | ------ | ------ |
+`windowFeatures` | `object` | Pass options to `window.open()`. [Requested features of the new window.](https://developer.mozilla.org/en-US/docs/Web/API/Window/open#window_features) | `{ width: 600, height: 540, }`
+`shareOptions` | `object` | Your share link parameters: <br /> **url** – the URL you want to share <br /> **media** – Overrides the image and substitutes a different image in the Pin Create form. <br /> **description** – Overrides the default image description and substitutes an image description you provide. <br /> | `{}`
+`useNativeBehavior` | `boolean` | Use native link behavior instead of `window.open()` or not | `false`
+
+**Events**
+
+| Event name | Usage |
+| ------ | ------ |
+`popup-open` | `window.open()` has been opened |
+`popup-close` | `window.open()` has been closed |
+`popup-block` | `window.open()` has been blocked |
+`popup-focus` | `window.open()` has been focused |
+
+---
+
+### SPinterestCount
+
+**Usage**
+
+```vue
+<template>
+  <s-pinterest-count
+    :tag="tag"
+    :share-options="shareOptions"
+    @load="onLoad"
+    @error="onError"
+    @loading="onLoading"
+  ></s-pinterest-count>
+</template>
+
+<script>
+  import { SPinterestCount } from 'vue-socials'
+
+  export default {
+    name: 'SPinterestCountSharing',
+    
+    components: { SPinterestCount },
+    
+    data() {
+      return {
+        tag: 'span',
+        shareOptions: {
+          url: 'https://github.com/',
+        },
+      }
+    },
+    
+    methods: {
+      onLoad() {},
+      onError() {},
+      onLoading() {},
+    }
+  };
+</script>
+```
+
+**Props**
+
+| Prop | Type | Description | Default value |
+| ------ | ------ | ------ | ------ |
+`shareOptions` | `object` | Your share link parameters: <br /> **url** – the URL you want to share <br /> | `{}`
+`tag` | `string` | Dynamic HTML tag or component  | `span`
+
+**Events**
+
+| Event name | Usage |
+| ------ | ------ |
+`load` |  the request has finished successfully | 
+`error` | the request has finished with error |
+`loading` | the request has started |
+
+**⚠️ Warning**
+
+This component uses `JSONP` so the content won't be available during `SSR`.
+
+---
+
 ### SPocket
+
+**Usage**
+
+```vue
+<template>
+  <s-pocket
+    :window-features="windowFeatures"
+    :share-options="shareOptions"
+    :use-native-behavior="useNativeBehavior"
+    @popup-close="onClose"
+    @popup-open="onOpen"
+    @popup-block="onBlock"
+    @popup-focus="onFocus"
+  ></s-pocket>
+</template>
+
+<script>
+  import { SPocket } from 'vue-socials'
+
+  export default {
+    name: 'SPocketSharing',
+    
+    components: { SPocket },
+    
+    data() {
+      return {
+        windowFeatures: {},
+        shareOptions: {
+          url: 'https://github.com/',
+        },
+        useNativeBehavior: false,
+      }
+    },
+    
+    methods: {
+      onClose() {},
+      onOpen() {},
+      onBlock() {},
+      onFocus() {},
+    }
+  };
+</script>
+```
+
+**Props**
+
+| Prop | Type | Description | Default value |
+| ------ | ------ | ------ | ------ |
+`windowFeatures` | `object` | Pass options to `window.open()`. [Requested features of the new window.](https://developer.mozilla.org/en-US/docs/Web/API/Window/open#window_features) | `{ width: 600, height: 540, }`
+`shareOptions` | `object` | Your share link parameters: <br /> **url** – the URL you want to share <br /> | `{}`
+`useNativeBehavior` | `boolean` | Use native link behavior instead of `window.open()` or not | `false`
+
+**Events**
+
+| Event name | Usage |
+| ------ | ------ |
+`popup-open` | `window.open()` has been opened |
+`popup-close` | `window.open()` has been closed |
+`popup-block` | `window.open()` has been blocked |
+`popup-focus` | `window.open()` has been focused |
+
+---
 
 ### SQZone
 
+**Usage**
+
+```vue
+<template>
+  <s-q-zone
+    :window-features="windowFeatures"
+    :share-options="shareOptions"
+    :use-native-behavior="useNativeBehavior"
+    @popup-close="onClose"
+    @popup-open="onOpen"
+    @popup-block="onBlock"
+    @popup-focus="onFocus"
+  ></s-q-zone>
+</template>
+
+<script>
+  import { SQZone } from 'vue-socials'
+
+  export default {
+    name: 'SQZoneSharing',
+    
+    components: { SQZone },
+    
+    data() {
+      return {
+        windowFeatures: {},
+        shareOptions: {
+          url: 'https://github.com/',
+          title: 'Title',
+          summary: 'Summary',
+        },
+        useNativeBehavior: false,
+      }
+    },
+    
+    methods: {
+      onClose() {},
+      onOpen() {},
+      onBlock() {},
+      onFocus() {},
+    }
+  };
+</script>
+```
+
+**Props**
+
+| Prop | Type | Description | Default value |
+| ------ | ------ | ------ | ------ |
+`windowFeatures` | `object` | Pass options to `window.open()`. [Requested features of the new window.](https://developer.mozilla.org/en-US/docs/Web/API/Window/open#window_features) | `{ width: 600, height: 540, }`
+`shareOptions` | `object` | Your share link parameters: <br /> **url** – the URL you want to share <br /> **title** – your title <br /> **summary** – your text <br /> | `{}`
+`useNativeBehavior` | `boolean` | Use native link behavior instead of `window.open()` or not | `false`
+
+**Events**
+
+| Event name | Usage |
+| ------ | ------ |
+`popup-open` | `window.open()` has been opened |
+`popup-close` | `window.open()` has been closed |
+`popup-block` | `window.open()` has been blocked |
+`popup-focus` | `window.open()` has been focused |
+
+---
+
 ### SReddit
+
+**Usage**
+
+```vue
+<template>
+  <s-reddit
+    :window-features="windowFeatures"
+    :share-options="shareOptions"
+    :use-native-behavior="useNativeBehavior"
+    @popup-close="onClose"
+    @popup-open="onOpen"
+    @popup-block="onBlock"
+    @popup-focus="onFocus"
+  ></s-reddit>
+</template>
+
+<script>
+  import { SReddit } from 'vue-socials'
+
+  export default {
+    name: 'SRedditSharing',
+    
+    components: { SReddit },
+    
+    data() {
+      return {
+        windowFeatures: {},
+        shareOptions: {
+          url: 'https://github.com/',
+          title: 'Title',
+          text: 'Hello World!',
+          selftext: true,
+        },
+        useNativeBehavior: false,
+      }
+    },
+    
+    methods: {
+      onClose() {},
+      onOpen() {},
+      onBlock() {},
+      onFocus() {},
+    }
+  };
+</script>
+```
+
+**Props**
+
+| Prop | Type | Description | Default value |
+| ------ | ------ | ------ | ------ |
+`windowFeatures` | `object` | Pass options to `window.open()`. [Requested features of the new window.](https://developer.mozilla.org/en-US/docs/Web/API/Window/open#window_features) | `{ width: 600, height: 540, }`
+`shareOptions` | `object` | Your share link parameters: <br /> **url** – the URL you want to share <br /> **title** – your title <br /> **text** – your text <br /> **selftext** – sets the displayed tab to the self post tab <br /> | `{}`
+`useNativeBehavior` | `boolean` | Use native link behavior instead of `window.open()` or not | `false`
+
+**Events**
+
+| Event name | Usage |
+| ------ | ------ |
+`popup-open` | `window.open()` has been opened |
+`popup-close` | `window.open()` has been closed |
+`popup-block` | `window.open()` has been blocked |
+`popup-focus` | `window.open()` has been focused |
+
+---
+
+### SRedditCount
+
+**Usage**
+
+```vue
+<template>
+  <s-reddit-count
+    :tag="tag"
+    :share-options="shareOptions"
+    @load="onLoad"
+    @error="onError"
+    @loading="onLoading"
+  ></s-reddit-count>
+</template>
+
+<script>
+  import { SRedditCount } from 'vue-socials'
+
+  export default {
+    name: 'SRedditCountSharing',
+    
+    components: { SRedditCount },
+    
+    data() {
+      return {
+        tag: 'span',
+        shareOptions: {
+          url: 'https://github.com/',
+        },
+      }
+    },
+    
+    methods: {
+      onLoad() {},
+      onError() {},
+      onLoading() {},
+    }
+  };
+</script>
+```
+
+**Props**
+
+| Prop | Type | Description | Default value |
+| ------ | ------ | ------ | ------ |
+`shareOptions` | `object` | Your share link parameters: <br /> **url** – the URL you want to share <br /> | `{}`
+`tag` | `string` | Dynamic HTML tag or component  | `span`
+
+**Events**
+
+| Event name | Usage |
+| ------ | ------ |
+`load` |  the request has finished successfully | 
+`error` | the request has finished with error |
+`loading` | the request has started |
+
+**⚠️ Warning**
+
+This component uses `JSONP` so the content won't be available during `SSR`.
+
+---
 
 ### SRenRen
 
+**Usage**
+
+```vue
+<template>
+  <s-ren-ren
+    :window-features="windowFeatures"
+    :share-options="shareOptions"
+    :use-native-behavior="useNativeBehavior"
+    @popup-close="onClose"
+    @popup-open="onOpen"
+    @popup-block="onBlock"
+    @popup-focus="onFocus"
+  ></s-ren-ren>
+</template>
+
+<script>
+  import { SRenRen } from 'vue-socials'
+
+  export default {
+    name: 'SRenRenSharing',
+    
+    components: { SRenRen },
+    
+    data() {
+      return {
+        windowFeatures: {},
+        shareOptions: {
+          srcUrl: 'https://github.com/',
+          resourceUrl: 'https://github.com/',
+          title: 'Title',
+          description: 'Description',
+          pic: '',
+        },
+        useNativeBehavior: false,
+      }
+    },
+    
+    methods: {
+      onClose() {},
+      onOpen() {},
+      onBlock() {},
+      onFocus() {},
+    }
+  };
+</script>
+```
+
+**Props**
+
+| Prop | Type | Description | Default value |
+| ------ | ------ | ------ | ------ |
+`windowFeatures` | `object` | Pass options to `window.open()`. [Requested features of the new window.](https://developer.mozilla.org/en-US/docs/Web/API/Window/open#window_features) | `{ width: 600, height: 540, }`
+`shareOptions` | `object` | Your share link parameters: <br /> **srcUrl** – the URL you want to share <br /> **resourceUrl** – the source Url of the shared resource, the default is the Referer in the header <br /> **title** – your title <br /> **description** – your text <br /> **pic** – your image <br /> | `{}`
+`useNativeBehavior` | `boolean` | Use native link behavior instead of `window.open()` or not | `false`
+
+**Events**
+
+| Event name | Usage |
+| ------ | ------ |
+`popup-open` | `window.open()` has been opened |
+`popup-close` | `window.open()` has been closed |
+`popup-block` | `window.open()` has been blocked |
+`popup-focus` | `window.open()` has been focused |
+
+---
+
 ### SSkype
+
+**Usage**
+
+```vue
+<template>
+  <s-skype
+    :window-features="windowFeatures"
+    :share-options="shareOptions"
+    :use-native-behavior="useNativeBehavior"
+    @popup-close="onClose"
+    @popup-open="onOpen"
+    @popup-block="onBlock"
+    @popup-focus="onFocus"
+  ></s-skype>
+</template>
+
+<script>
+  import { SSkype } from 'vue-socials'
+
+  export default {
+    name: 'SSkypeSharing',
+    
+    components: { SSkype },
+    
+    data() {
+      return {
+        windowFeatures: {},
+        shareOptions: {
+          url: 'https://github.com/',
+          text: 'Text',
+        },
+        useNativeBehavior: false,
+      }
+    },
+    
+    methods: {
+      onClose() {},
+      onOpen() {},
+      onBlock() {},
+      onFocus() {},
+    }
+  };
+</script>
+```
+
+**Props**
+
+| Prop | Type | Description | Default value |
+| ------ | ------ | ------ | ------ |
+`windowFeatures` | `object` | Pass options to `window.open()`. [Requested features of the new window.](https://developer.mozilla.org/en-US/docs/Web/API/Window/open#window_features) | `{ width: 600, height: 540, }`
+`shareOptions` | `object` | Your share link parameters: <br /> **url** – the URL you want to share <br /> **text** – your text <br />  | `{}`
+`useNativeBehavior` | `boolean` | Use native link behavior instead of `window.open()` or not | `false`
+
+**Events**
+
+| Event name | Usage |
+| ------ | ------ |
+`popup-open` | `window.open()` has been opened |
+`popup-close` | `window.open()` has been closed |
+`popup-block` | `window.open()` has been blocked |
+`popup-focus` | `window.open()` has been focused |
+
+---
 
 ### SSms
 
+**Usage**
+
+```vue
+<template>
+  <s-sms
+    :window-features="windowFeatures"
+    :share-options="shareOptions"
+    :use-native-behavior="useNativeBehavior"
+    @popup-close="onClose"
+    @popup-open="onOpen"
+    @popup-block="onBlock"
+    @popup-focus="onFocus"
+  ></s-sms>
+</template>
+
+<script>
+  import { SSms } from 'vue-socials'
+
+  export default {
+    name: 'SSmsSharing',
+    
+    components: { SSms },
+    
+    data() {
+      return {
+        windowFeatures: {},
+        shareOptions: {
+          number: '+1(999)999-99-99',
+          body: 'Hello world!',
+        },
+        useNativeBehavior: false,
+      }
+    },
+    
+    methods: {
+      onClose() {},
+      onOpen() {},
+      onBlock() {},
+      onFocus() {},
+    }
+  };
+</script>
+```
+
+**Props**
+
+| Prop | Type | Description | Default value |
+| ------ | ------ | ------ | ------ |
+`shareOptions` | `object` | Your share link parameters: <br /> **number** – your number <br /> **body** – your text <br />  | `{}`
+
+---
+
 ### STelegram
+
+**Usage**
+
+```vue
+<template>
+  <s-telegram
+    :window-features="windowFeatures"
+    :share-options="shareOptions"
+    :use-native-behavior="useNativeBehavior"
+    @popup-close="onClose"
+    @popup-open="onOpen"
+    @popup-block="onBlock"
+    @popup-focus="onFocus"
+  ></s-telegram>
+</template>
+
+<script>
+  import { STelegram } from 'vue-socials'
+
+  export default {
+    name: 'STelegramSharing',
+    
+    components: { STelegram },
+    
+    data() {
+      return {
+        windowFeatures: {},
+        shareOptions: {
+          url: 'https://github.com/',
+          text: 'Text',
+        },
+        useNativeBehavior: false,
+      }
+    },
+    
+    methods: {
+      onClose() {},
+      onOpen() {},
+      onBlock() {},
+      onFocus() {},
+    }
+  };
+</script>
+```
+
+**Props**
+
+| Prop | Type | Description | Default value |
+| ------ | ------ | ------ | ------ |
+`windowFeatures` | `object` | Pass options to `window.open()`. [Requested features of the new window.](https://developer.mozilla.org/en-US/docs/Web/API/Window/open#window_features) | `{ width: 600, height: 540, }`
+`shareOptions` | `object` | Your share link parameters: <br /> **url** – the URL you want to share <br /> **text** – your text <br />  | `{}`
+`useNativeBehavior` | `boolean` | Use native link behavior instead of `window.open()` or not | `false`
+
+**Events**
+
+| Event name | Usage |
+| ------ | ------ |
+`popup-open` | `window.open()` has been opened |
+`popup-close` | `window.open()` has been closed |
+`popup-block` | `window.open()` has been blocked |
+`popup-focus` | `window.open()` has been focused |
+
+---
 
 ### SThreema
 
+**Usage**
+
+```vue
+<template>
+  <s-threema
+    :window-features="windowFeatures"
+    :share-options="shareOptions"
+    :use-native-behavior="useNativeBehavior"
+    @popup-close="onClose"
+    @popup-open="onOpen"
+    @popup-block="onBlock"
+    @popup-focus="onFocus"
+  ></s-threema>
+</template>
+
+<script>
+  import { SThreema } from 'vue-socials'
+
+  export default {
+    name: 'SThreemaSharing',
+    
+    components: { SThreema },
+    
+    data() {
+      return {
+        windowFeatures: {},
+        shareOptions: {
+          url: 'https://github.com/',
+          id: '',
+        },
+        useNativeBehavior: false,
+      }
+    },
+    
+    methods: {
+      onClose() {},
+      onOpen() {},
+      onBlock() {},
+      onFocus() {},
+    }
+  };
+</script>
+```
+
+**Props**
+
+| Prop | Type | Description | Default value |
+| ------ | ------ | ------ | ------ |
+`windowFeatures` | `object` | Pass options to `window.open()`. [Requested features of the new window.](https://developer.mozilla.org/en-US/docs/Web/API/Window/open#window_features) | `{ width: 600, height: 540, }`
+`shareOptions` | `object` | Your share link parameters: <br /> **url** – the URL you want to share <br /> **id** – your id <br />  | `{}`
+`useNativeBehavior` | `boolean` | Use native link behavior instead of `window.open()` or not | `false`
+
+**Events**
+
+| Event name | Usage |
+| ------ | ------ |
+`popup-open` | `window.open()` has been opened |
+`popup-close` | `window.open()` has been closed |
+`popup-block` | `window.open()` has been blocked |
+`popup-focus` | `window.open()` has been focused |
+
+---
+
 ### STrello
 
-### STumblr
+**Usage**
+
+```vue
+<template>
+  <s-trello
+    :window-features="windowFeatures"
+    :share-options="shareOptions"
+    :use-native-behavior="useNativeBehavior"
+    @popup-close="onClose"
+    @popup-open="onOpen"
+    @popup-block="onBlock"
+    @popup-focus="onFocus"
+  ></s-trello>
+</template>
+
+<script>
+  import { STrello } from 'vue-socials'
+
+  export default {
+    name: 'STrelloSharing',
+    
+    components: { STrello },
+    
+    data() {
+      return {
+        windowFeatures: {},
+        shareOptions: {
+          url: 'https://github.com/',
+          name: 'Name',
+          description: 'Description',
+        },
+        useNativeBehavior: false,
+      }
+    },
+    
+    methods: {
+      onClose() {},
+      onOpen() {},
+      onBlock() {},
+      onFocus() {},
+    }
+  };
+</script>
+```
+
+**Props**
+
+| Prop | Type | Description | Default value |
+| ------ | ------ | ------ | ------ |
+`windowFeatures` | `object` | Pass options to `window.open()`. [Requested features of the new window.](https://developer.mozilla.org/en-US/docs/Web/API/Window/open#window_features) | `{ width: 600, height: 540, }`
+`shareOptions` | `object` | Your share link parameters: <br /> **url** – the URL you want to share <br /> **name** – your card name <br /> **description** – your card description <br />  | `{}`
+`useNativeBehavior` | `boolean` | Use native link behavior instead of `window.open()` or not | `false`
+
+**Events**
+
+| Event name | Usage |
+| ------ | ------ |
+`popup-open` | `window.open()` has been opened |
+`popup-close` | `window.open()` has been closed |
+`popup-block` | `window.open()` has been blocked |
+`popup-focus` | `window.open()` has been focused |
+
+---
 
 ### STumblr
+
+**Usage**
+
+```vue
+<template>
+  <s-tumblr
+    :window-features="windowFeatures"
+    :share-options="shareOptions"
+    :use-native-behavior="useNativeBehavior"
+    @popup-close="onClose"
+    @popup-open="onOpen"
+    @popup-block="onBlock"
+    @popup-focus="onFocus"
+  ></s-tumblr>
+</template>
+
+<script>
+  import { STumblr } from 'vue-socials'
+
+  export default {
+    name: 'STumblrSharing',
+    
+    components: { STumblr },
+    
+    data() {
+      return {
+        windowFeatures: {},
+        shareOptions: {
+          canonicalUrl: 'https://github.com/',
+          title: 'Title',
+          caption: 'Caption',
+          tags: ['hash', 'tag'],
+        },
+        useNativeBehavior: false,
+      }
+    },
+    
+    methods: {
+      onClose() {},
+      onOpen() {},
+      onBlock() {},
+      onFocus() {},
+    }
+  };
+</script>
+```
+
+**Props**
+
+| Prop | Type | Description | Default value |
+| ------ | ------ | ------ | ------ |
+`windowFeatures` | `object` | Pass options to `window.open()`. [Requested features of the new window.](https://developer.mozilla.org/en-US/docs/Web/API/Window/open#window_features) | `{ width: 600, height: 540, }`
+`shareOptions` | `object` | Your share link parameters: <br /> **canonicalUrl** – the URL you want to share <br /> **title** – title of the Text post <br /> **caption** – post caption <br /> **tags** – list of tags <br />  | `{}`
+`useNativeBehavior` | `boolean` | Use native link behavior instead of `window.open()` or not | `false`
+
+**Events**
+
+| Event name | Usage |
+| ------ | ------ |
+`popup-open` | `window.open()` has been opened |
+`popup-close` | `window.open()` has been closed |
+`popup-block` | `window.open()` has been blocked |
+`popup-focus` | `window.open()` has been focused |
+
+---
+
+### STumblrCount
+
+**Usage**
+
+```vue
+<template>
+  <s-tumblr-count
+    :tag="tag"
+    :share-options="shareOptions"
+    @load="onLoad"
+    @error="onError"
+    @loading="onLoading"
+  ></s-tumblr-count>
+</template>
+
+<script>
+  import { STumblrCount } from 'vue-socials'
+
+  export default {
+    name: 'STumblrCountSharing',
+    
+    components: { STumblrCount },
+    
+    data() {
+      return {
+        tag: 'span',
+        shareOptions: {
+          url: 'https://github.com/',
+        },
+      }
+    },
+    
+    methods: {
+      onLoad() {},
+      onError() {},
+      onLoading() {},
+    }
+  };
+</script>
+```
+
+**Props**
+
+| Prop | Type | Description | Default value |
+| ------ | ------ | ------ | ------ |
+`shareOptions` | `object` | Your share link parameters: <br /> **url** – the URL you want to share <br /> | `{}`
+`tag` | `string` | Dynamic HTML tag or component  | `span`
+
+**Events**
+
+| Event name | Usage |
+| ------ | ------ |
+`load` |  the request has finished successfully | 
+`error` | the request has finished with error |
+`loading` | the request has started |
+
+**⚠️ Warning**
+
+This component uses `JSONP` so the content won't be available during `SSR`.
+
+---
 
 ### STwitter
 
+**Usage**
+
+```vue
+<template>
+  <s-twitter
+    :window-features="windowFeatures"
+    :share-options="shareOptions"
+    :use-native-behavior="useNativeBehavior"
+    @popup-close="onClose"
+    @popup-open="onOpen"
+    @popup-block="onBlock"
+    @popup-focus="onFocus"
+  ></s-twitter>
+</template>
+
+<script>
+  import { STwitter } from 'vue-socials'
+
+  export default {
+    name: 'STwitterSharing',
+    
+    components: { STwitter },
+    
+    data() {
+      return {
+        windowFeatures: {},
+        shareOptions: {
+          url: 'https://github.com/',
+          text: 'Hello world',
+          hashtags: ['hash', 'tag'],
+          via: 'twitterdev',
+        },
+        useNativeBehavior: false,
+      }
+    },
+    
+    methods: {
+      onClose() {},
+      onOpen() {},
+      onBlock() {},
+      onFocus() {},
+    }
+  };
+</script>
+```
+
+**Props**
+
+| Prop | Type | Description | Default value |
+| ------ | ------ | ------ | ------ |
+`windowFeatures` | `object` | Pass options to `window.open()`. [Requested features of the new window.](https://developer.mozilla.org/en-US/docs/Web/API/Window/open#window_features) | `{ width: 600, height: 540, }`
+`shareOptions` | `object` | Your share link parameters: <br /> **url** – the URL you want to share <br /> **text** – post text <br /> **via** – username  <br /> **hashtags** – list of tags <br />  | `{}`
+`useNativeBehavior` | `boolean` | Use native link behavior instead of `window.open()` or not | `false`
+
+**Events**
+
+| Event name | Usage |
+| ------ | ------ |
+`popup-open` | `window.open()` has been opened |
+`popup-close` | `window.open()` has been closed |
+`popup-block` | `window.open()` has been blocked |
+`popup-focus` | `window.open()` has been focused |
+
+---
+
 ### SViber
+
+**Usage**
+
+```vue
+<template>
+  <s-viber
+    :window-features="windowFeatures"
+    :share-options="shareOptions"
+    :use-native-behavior="useNativeBehavior"
+    @popup-close="onClose"
+    @popup-open="onOpen"
+    @popup-block="onBlock"
+    @popup-focus="onFocus"
+  ></s-viber>
+</template>
+
+<script>
+  import { SViber } from 'vue-socials'
+
+  export default {
+    name: 'SViberSharing',
+    
+    components: { SViber },
+    
+    data() {
+      return {
+        windowFeatures: {},
+        shareOptions: {
+          url: 'https://github.com/',
+          text: 'Text',
+        },
+        useNativeBehavior: false,
+      }
+    },
+    
+    methods: {
+      onClose() {},
+      onOpen() {},
+      onBlock() {},
+      onFocus() {},
+    }
+  };
+</script>
+```
+
+**Props**
+
+| Prop | Type | Description | Default value |
+| ------ | ------ | ------ | ------ |
+`windowFeatures` | `object` | Pass options to `window.open()`. [Requested features of the new window.](https://developer.mozilla.org/en-US/docs/Web/API/Window/open#window_features) | `{ width: 600, height: 540, }`
+`shareOptions` | `object` | Your share link parameters: <br /> **url** – the URL you want to share <br /> **text** – post text  | `{}`
+`useNativeBehavior` | `boolean` | Use native link behavior instead of `window.open()` or not | `false`
+
+**Events**
+
+| Event name | Usage |
+| ------ | ------ |
+`popup-open` | `window.open()` has been opened |
+`popup-close` | `window.open()` has been closed |
+`popup-block` | `window.open()` has been blocked |
+`popup-focus` | `window.open()` has been focused |
+
+---
 
 ### SVkontakte
 
+**Usage**
+
+```vue
+<template>
+  <s-vkontakte
+    :window-features="windowFeatures"
+    :share-options="shareOptions"
+    :use-native-behavior="useNativeBehavior"
+    @popup-close="onClose"
+    @popup-open="onOpen"
+    @popup-block="onBlock"
+    @popup-focus="onFocus"
+  ></s-vkontakte>
+</template>
+
+<script>
+  import { SVkontakte } from 'vue-socials'
+
+  export default {
+    name: 'SVkontakteSharing',
+    
+    components: { SVkontakte },
+    
+    data() {
+      return {
+        windowFeatures: {},
+        shareOptions: {
+          url: 'https://github.com/',
+          title: 'Title',
+          image: '',
+          noParse: false,
+          noVkLinks: false,
+        },
+        useNativeBehavior: false,
+      }
+    },
+    
+    methods: {
+      onClose() {},
+      onOpen() {},
+      onBlock() {},
+      onFocus() {},
+    }
+  };
+</script>
+```
+
+**Props**
+
+| Prop | Type | Description | Default value |
+| ------ | ------ | ------ | ------ |
+`windowFeatures` | `object` | Pass options to `window.open()`. [Requested features of the new window.](https://developer.mozilla.org/en-US/docs/Web/API/Window/open#window_features) | `{ width: 600, height: 540, }`
+`shareOptions` | `object` | Your share link parameters: <br /> **url** – the URL you want to share <br /> **title** – post title  <br /> **image** – image URL <br /> **noParse** – don't do additional request for missing information <br /> **noVkLinks** – don't add active profile links  | `{}`
+`useNativeBehavior` | `boolean` | Use native link behavior instead of `window.open()` or not | `false`
+
+**Events**
+
+| Event name | Usage |
+| ------ | ------ |
+`popup-open` | `window.open()` has been opened |
+`popup-close` | `window.open()` has been closed |
+`popup-block` | `window.open()` has been blocked |
+`popup-focus` | `window.open()` has been focused |
+
+---
+
+### SVkontakteCount
+
+**Usage**
+
+```vue
+<template>
+  <s-vkontakte-count
+    :tag="tag"
+    :share-options="shareOptions"
+    @load="onLoad"
+    @error="onError"
+    @loading="onLoading"
+  ></s-vkontakte-count>
+</template>
+
+<script>
+  import { SVkontakteCount } from 'vue-socials'
+
+  export default {
+    name: 'SVkontakteCountSharing',
+    
+    components: { SVkontakteCount },
+    
+    data() {
+      return {
+        tag: 'span',
+        shareOptions: {
+          url: 'https://github.com/',
+        },
+      }
+    },
+    
+    methods: {
+      onLoad() {},
+      onError() {},
+      onLoading() {},
+    }
+  };
+</script>
+```
+
+**Props**
+
+| Prop | Type | Description | Default value |
+| ------ | ------ | ------ | ------ |
+`shareOptions` | `object` | Your share link parameters: <br /> **url** – the URL you want to share <br /> | `{}`
+`tag` | `string` | Dynamic HTML tag or component  | `span`
+
+**Events**
+
+| Event name | Usage |
+| ------ | ------ |
+`load` |  the request has finished successfully | 
+`error` | the request has finished with error |
+`loading` | the request has started |
+
+**⚠️ Warning**
+
+This component uses `JSONP` so the content won't be available during `SSR`.
+
+---
+
 ### SWeibo
+
+**Usage**
+
+```vue
+<template>
+  <s-weibo
+    :window-features="windowFeatures"
+    :share-options="shareOptions"
+    :use-native-behavior="useNativeBehavior"
+    @popup-close="onClose"
+    @popup-open="onOpen"
+    @popup-block="onBlock"
+    @popup-focus="onFocus"
+  ></s-weibo>
+</template>
+
+<script>
+  import { SWeibo } from 'vue-socials'
+
+  export default {
+    name: 'SWeiboSharing',
+    
+    components: { SWeibo },
+    
+    data() {
+      return {
+        windowFeatures: {},
+        shareOptions: {
+          url: 'https://github.com/',
+          title: 'Title',
+          appkey: '',
+        },
+        useNativeBehavior: false,
+      }
+    },
+    
+    methods: {
+      onClose() {},
+      onOpen() {},
+      onBlock() {},
+      onFocus() {},
+    }
+  };
+</script>
+```
+
+**Props**
+
+| Prop | Type | Description | Default value |
+| ------ | ------ | ------ | ------ |
+`windowFeatures` | `object` | Pass options to `window.open()`. [Requested features of the new window.](https://developer.mozilla.org/en-US/docs/Web/API/Window/open#window_features) | `{ width: 600, height: 540, }`
+`shareOptions` | `object` | Your share link parameters: <br /> **url** – the URL you want to share <br /> **title** – post title  <br /> **appkey** – your app key | `{}`
+`useNativeBehavior` | `boolean` | Use native link behavior instead of `window.open()` or not | `false`
+
+**Events**
+
+| Event name | Usage |
+| ------ | ------ |
+`popup-open` | `window.open()` has been opened |
+`popup-close` | `window.open()` has been closed |
+`popup-block` | `window.open()` has been blocked |
+`popup-focus` | `window.open()` has been focused |
+
+---
 
 ### SWhatsApp
 
+**Usage**
+
+```vue
+<template>
+  <s-whats-app
+    :window-features="windowFeatures"
+    :share-options="shareOptions"
+    :use-native-behavior="useNativeBehavior"
+    @popup-close="onClose"
+    @popup-open="onOpen"
+    @popup-block="onBlock"
+    @popup-focus="onFocus"
+  ></s-whats-app>
+</template>
+
+<script>
+  import { SWhatsApp } from 'vue-socials'
+
+  export default {
+    name: 'SWhatsAppSharing',
+    
+    components: { SWhatsApp },
+    
+    data() {
+      return {
+        windowFeatures: {},
+        shareOptions: {
+          number: '1(999)999-99-99',
+          text: 'Hello world!',
+        },
+        useNativeBehavior: false,
+      }
+    },
+    
+    methods: {
+      onClose() {},
+      onOpen() {},
+      onBlock() {},
+      onFocus() {},
+    }
+  };
+</script>
+```
+
+**Props**
+
+| Prop | Type | Description | Default value |
+| ------ | ------ | ------ | ------ |
+`windowFeatures` | `object` | Pass options to `window.open()`. [Requested features of the new window.](https://developer.mozilla.org/en-US/docs/Web/API/Window/open#window_features) | `{ width: 600, height: 540, }`
+`shareOptions` | `object` | Your share link parameters: <br /> **number** – your number <br /> **text** – post text | `{}`
+`useNativeBehavior` | `boolean` | Use native link behavior instead of `window.open()` or not | `false`
+
+**Events**
+
+| Event name | Usage |
+| ------ | ------ |
+`popup-open` | `window.open()` has been opened |
+`popup-close` | `window.open()` has been closed |
+`popup-block` | `window.open()` has been blocked |
+`popup-focus` | `window.open()` has been focused |
+
+---
+
 ### SWordPress
+
+**Usage**
+
+```vue
+<template>
+  <s-word-press
+    :window-features="windowFeatures"
+    :share-options="shareOptions"
+    :use-native-behavior="useNativeBehavior"
+    @popup-close="onClose"
+    @popup-open="onOpen"
+    @popup-block="onBlock"
+    @popup-focus="onFocus"
+  ></s-word-press>
+</template>
+
+<script>
+  import { SWordPress } from 'vue-socials'
+
+  export default {
+    name: 'SWordPressSharing',
+    
+    components: { SWordPress },
+    
+    data() {
+      return {
+        windowFeatures: {},
+        shareOptions: {
+          domain: 'https://wordpress.org',
+          url: 'https://github.com',
+          title: 'Title',
+          text: 'Text',
+          image: '',
+        },
+        useNativeBehavior: false,
+      }
+    },
+    
+    methods: {
+      onClose() {},
+      onOpen() {},
+      onBlock() {},
+      onFocus() {},
+    }
+  };
+</script>
+```
+
+**Props**
+
+| Prop | Type | Description | Default value |
+| ------ | ------ | ------ | ------ |
+`windowFeatures` | `object` | Pass options to `window.open()`. [Requested features of the new window.](https://developer.mozilla.org/en-US/docs/Web/API/Window/open#window_features) | `{ width: 600, height: 540, }`
+`shareOptions` | `object` | Your share link parameters: <br /> **title** – post title <br /> **text** – post text <br /> **domain** – your domain <br /> **url** – the url of the current page **image** – url of an image file | `{}`
+`useNativeBehavior` | `boolean` | Use native link behavior instead of `window.open()` or not | `false`
+
+**Events**
+
+| Event name | Usage |
+| ------ | ------ |
+`popup-open` | `window.open()` has been opened |
+`popup-close` | `window.open()` has been closed |
+`popup-block` | `window.open()` has been blocked |
+`popup-focus` | `window.open()` has been focused |
+
+---
 
 ### SXing
 
+**Usage**
+
+```vue
+<template>
+  <s-xing
+    :window-features="windowFeatures"
+    :share-options="shareOptions"
+    :use-native-behavior="useNativeBehavior"
+    @popup-close="onClose"
+    @popup-open="onOpen"
+    @popup-block="onBlock"
+    @popup-focus="onFocus"
+  ></s-xing>
+</template>
+
+<script>
+  import { SXing } from 'vue-socials'
+
+  export default {
+    name: 'SXingSharing',
+    
+    components: { SXing },
+    
+    data() {
+      return {
+        windowFeatures: {},
+        shareOptions: {
+          url: 'https://github.com/',
+          followUrl: '',
+        },
+        useNativeBehavior: false,
+      }
+    },
+    
+    methods: {
+      onClose() {},
+      onOpen() {},
+      onBlock() {},
+      onFocus() {},
+    }
+  };
+</script>
+```
+
+**Props**
+
+| Prop | Type | Description | Default value |
+| ------ | ------ | ------ | ------ |
+`windowFeatures` | `object` | Pass options to `window.open()`. [Requested features of the new window.](https://developer.mozilla.org/en-US/docs/Web/API/Window/open#window_features) | `{ width: 600, height: 540, }`
+`shareOptions` | `object` | Your share link parameters: <br /> **url** – A fixed URL to be shared **followUrl** – The URL of a XING news page for the Follow button shown on the success page. | `{}`
+`useNativeBehavior` | `boolean` | Use native link behavior instead of `window.open()` or not | `false`
+
+**Events**
+
+| Event name | Usage |
+| ------ | ------ |
+`popup-open` | `window.open()` has been opened |
+`popup-close` | `window.open()` has been closed |
+`popup-block` | `window.open()` has been blocked |
+`popup-focus` | `window.open()` has been focused |
+
+---
+
 ### SYahoo
 
+**Usage**
+
+```vue
+<template>
+  <s-yahoo
+    :window-features="windowFeatures"
+    :share-options="shareOptions"
+    :use-native-behavior="useNativeBehavior"
+    @popup-close="onClose"
+    @popup-open="onOpen"
+    @popup-block="onBlock"
+    @popup-focus="onFocus"
+  ></s-yahoo>
+</template>
+
+<script>
+  import { SYahoo } from 'vue-socials'
+
+  export default {
+    name: 'SYahooSharing',
+    
+    components: { SYahoo },
+    
+    data() {
+      return {
+        windowFeatures: {},
+        shareOptions: {
+          email: 'mail@gmail.com',
+          subject: 'Subject',
+          body: 'Hello\nWorld!',
+        },
+        useNativeBehavior: false,
+      }
+    },
+    
+    methods: {
+      onClose() {},
+      onOpen() {},
+      onBlock() {},
+      onFocus() {},
+    }
+  };
+</script>
+```
+
+**Props**
+
+| Prop | Type | Description | Default value |
+| ------ | ------ | ------ | ------ |
+`windowFeatures` | `object` | Pass options to `window.open()`. [Requested features of the new window.](https://developer.mozilla.org/en-US/docs/Web/API/Window/open#window_features) | `{ width: 600, height: 540, }`
+`shareOptions` | `object` | Your share link parameters: <br /> **email** – e-mail recipient address <br /> **subject** – subject of e-mail  <br /> **body** – body of e-mail | `{}`
+`useNativeBehavior` | `boolean` | Use native link behavior instead of `window.open()` or not | `false`
+
+**Events**
+
+| Event name | Usage |
+| ------ | ------ |
+`popup-open` | `window.open()` has been opened |
+`popup-close` | `window.open()` has been closed |
+`popup-block` | `window.open()` has been blocked |
+`popup-focus` | `window.open()` has been focused |
+
+---
+
 ### SYammer
+
+**Usage**
+
+```vue
+<template>
+  <s-yammer
+    :window-features="windowFeatures"
+    :share-options="shareOptions"
+    :use-native-behavior="useNativeBehavior"
+    @popup-close="onClose"
+    @popup-open="onOpen"
+    @popup-block="onBlock"
+    @popup-focus="onFocus"
+  ></s-yammer>
+</template>
+
+<script>
+  import { SYammer } from 'vue-socials'
+
+  export default {
+    name: 'SYammerSharing',
+    
+    components: { SYammer },
+    
+    data() {
+      return {
+        windowFeatures: {},
+        shareOptions: {
+          url: 'https://github.com/',
+          text: 'Text',
+          groupId: '',
+        },
+        useNativeBehavior: false,
+      }
+    },
+    
+    methods: {
+      onClose() {},
+      onOpen() {},
+      onBlock() {},
+      onFocus() {},
+    }
+  };
+</script>
+```
+
+**Props**
+
+| Prop | Type | Description | Default value |
+| ------ | ------ | ------ | ------ |
+`windowFeatures` | `object` | Pass options to `window.open()`. [Requested features of the new window.](https://developer.mozilla.org/en-US/docs/Web/API/Window/open#window_features) | `{ width: 600, height: 540, }`
+`shareOptions` | `object` | Your share link parameters: <br /> **url** – A fixed URL to be shared <br /> **text** – post text  <br /> **groupId** – your group id | `{}`
+`useNativeBehavior` | `boolean` | Use native link behavior instead of `window.open()` or not | `false`
+
+**Events**
+
+| Event name | Usage |
+| ------ | ------ |
+`popup-open` | `window.open()` has been opened |
+`popup-close` | `window.open()` has been closed |
+`popup-block` | `window.open()` has been blocked |
+`popup-focus` | `window.open()` has been focused |
+
+---
 
 ## Browsers support 🌎
 

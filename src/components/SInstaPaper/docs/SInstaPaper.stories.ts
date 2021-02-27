@@ -2,10 +2,16 @@ import { Story } from '@storybook/vue';
 import { action } from '@storybook/addon-actions';
 import { TBaseSocialPropsOptions } from '@/mixins/BaseSocial/BaseSocial';
 import SInstaPaper, { ISInstaPaperShareOptions } from '../SInstaPaper';
+import SInstaPaperMDX from './SInstaPaper.mdx';
 
 export default {
   title: 'Share/SInstaPaper',
   component: SInstaPaper,
+  parameters: {
+    docs: {
+      page: SInstaPaperMDX,
+    },
+  },
 };
 
 const Template: Story<TBaseSocialPropsOptions<ISInstaPaperShareOptions>> = (_args, { argTypes }) => ({

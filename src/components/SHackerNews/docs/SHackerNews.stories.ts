@@ -2,10 +2,16 @@ import { Story } from '@storybook/vue';
 import { action } from '@storybook/addon-actions';
 import { DEFAULT_WINDOW_FEATURES, TBaseSocialPropsOptions } from '@/mixins/BaseSocial/BaseSocial';
 import SHackerNews, { ISHackerNewsShareOptions } from '../SHackerNews';
+import SHackerNewsMDX from './SHackerNews.mdx';
 
 export default {
   title: 'Share/SHackerNews',
   component: SHackerNews,
+  parameters: {
+    docs: {
+      page: SHackerNewsMDX,
+    },
+  },
 };
 
 const Template: Story<TBaseSocialPropsOptions<ISHackerNewsShareOptions>> = (_args, { argTypes }) => ({

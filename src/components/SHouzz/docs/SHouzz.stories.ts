@@ -2,10 +2,16 @@ import { Story } from '@storybook/vue';
 import { action } from '@storybook/addon-actions';
 import { TBaseSocialPropsOptions } from '@/mixins/BaseSocial/BaseSocial';
 import SHouzz, { ISHouzzShareOptions } from '../SHouzz';
+import SHouzzMDX from './SHouzz.mdx';
 
 export default {
   title: 'Share/SHouzz',
   component: SHouzz,
+  parameters: {
+    docs: {
+      page: SHouzzMDX,
+    },
+  },
 };
 
 const Template: Story<TBaseSocialPropsOptions<ISHouzzShareOptions>> = (_args, { argTypes }) => ({

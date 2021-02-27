@@ -2,10 +2,16 @@ import { Story } from '@storybook/vue';
 import { action } from '@storybook/addon-actions';
 import { DEFAULT_WINDOW_FEATURES, TBaseSocialPropsOptions } from '@/mixins/BaseSocial/BaseSocial';
 import SThreema, { ISThreemaShareOptions } from '../SThreema';
+import SThreemaMDX from './SThreema.mdx';
 
 export default {
   title: 'Share/SThreema',
   component: SThreema,
+  parameters: {
+    docs: {
+      page: SThreemaMDX,
+    },
+  },
 };
 
 const Template: Story<TBaseSocialPropsOptions<ISThreemaShareOptions>> = (_args, { argTypes }) => ({

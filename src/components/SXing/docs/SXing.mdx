@@ -1,0 +1,80 @@
+import { Meta, Story, Preview} from "@storybook/addon-docs/blocks"
+import SXing from "../SXing"
+
+<Meta title='Share/SXing' component={ SXing } />
+
+<style>{`
+  .custom-preview .base-canvas {
+    height: auto;
+  }
+`}</style>
+
+# SXing
+
+## Preview
+
+<Preview className="custom-preview">
+  <Story id='share-sxing--default' />
+</Preview>
+
+## Example
+
+```html
+<template>
+  <s-xing
+    :window-features="windowFeatures"
+    :share-options="shareOptions"
+    :use-native-behavior="useNativeBehavior"
+    @popup-close="onClose"
+    @popup-open="onOpen"
+    @popup-block="onBlock"
+    @popup-focus="onFocus"
+  ></s-xing>
+</template>
+
+<script>
+  import { SXing } from 'vue-socials'
+
+  export default {
+    name: 'SXingSharing',
+
+    components: { SXing },
+
+    data() {
+      return {
+        windowFeatures: {},
+        shareOptions: {
+          url: 'https://github.com/',
+          followUrl: '',
+        },
+        useNativeBehavior: false,
+      }
+    },
+
+    methods: {
+      onClose() {},
+      onOpen() {},
+      onBlock() {},
+      onFocus() {},
+    }
+  };
+</script>
+```
+
+## Props
+
+| Prop | Type | Description | Default value |
+| ------ | ------ | ------ | ------ |
+`windowFeatures` | `object` | Pass options to `window.open()`. [Requested features of the new window.](https://developer.mozilla.org/en-US/docs/Web/API/Window/open#window_features) | `{ width: 600, height: 540, }`
+`shareOptions` | `object` | Your share link parameters: <br /> **url** – A fixed URL to be shared **followUrl** – The URL of a XING news page for the Follow button shown on the success page. | `{}`
+`useNativeBehavior` | `boolean` | Use native link behavior instead of `window.open()` or not | `false`
+
+## Events
+
+| Event name | Usage |
+| ------ | ------ |
+`popup-open` | `window.open()` has been opened |
+`popup-close` | `window.open()` has been closed |
+`popup-block` | `window.open()` has been blocked |
+`popup-focus` | `window.open()` has been focused |
+

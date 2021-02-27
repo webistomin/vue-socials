@@ -2,10 +2,16 @@ import { Story } from '@storybook/vue';
 import { action } from '@storybook/addon-actions';
 import { DEFAULT_WINDOW_FEATURES, TBaseSocialPropsOptions } from '@/mixins/BaseSocial/BaseSocial';
 import SVkontakte, { ISVkontakteShareOptions } from '../SVkontakte';
+import SVkontakteMDX from './SVkontakte.mdx';
 
 export default {
   title: 'Share/SVkontakte',
   component: SVkontakte,
+  parameters: {
+    docs: {
+      page: SVkontakteMDX,
+    },
+  },
 };
 
 const Template: Story<TBaseSocialPropsOptions<ISVkontakteShareOptions>> = (_args, { argTypes }) => ({

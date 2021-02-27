@@ -1,0 +1,80 @@
+import { Meta, Story, Preview} from "@storybook/addon-docs/blocks"
+import SWhatsApp from "../SWhatsApp"
+
+<Meta title='Share/SWhatsApp' component={ SWhatsApp } />
+
+<style>{`
+  .custom-preview .base-canvas {
+    height: auto;
+  }
+`}</style>
+
+# SWhatsApp
+
+## Preview
+
+<Preview className="custom-preview">
+  <Story id='share-swhatsapp--default' />
+</Preview>
+
+## Example
+
+```html
+<template>
+  <s-whats-app
+    :window-features="windowFeatures"
+    :share-options="shareOptions"
+    :use-native-behavior="useNativeBehavior"
+    @popup-close="onClose"
+    @popup-open="onOpen"
+    @popup-block="onBlock"
+    @popup-focus="onFocus"
+  ></s-whats-app>
+</template>
+
+<script>
+  import { SWhatsApp } from 'vue-socials'
+
+  export default {
+    name: 'SWhatsAppSharing',
+
+    components: { SWhatsApp },
+
+    data() {
+      return {
+        windowFeatures: {},
+        shareOptions: {
+          number: '1(999)999-99-99',
+          text: 'Hello world!',
+        },
+        useNativeBehavior: false,
+      }
+    },
+
+    methods: {
+      onClose() {},
+      onOpen() {},
+      onBlock() {},
+      onFocus() {},
+    }
+  };
+</script>
+```
+
+## Props
+
+| Prop | Type | Description | Default value |
+| ------ | ------ | ------ | ------ |
+`windowFeatures` | `object` | Pass options to `window.open()`. [Requested features of the new window.](https://developer.mozilla.org/en-US/docs/Web/API/Window/open#window_features) | `{ width: 600, height: 540, }`
+`shareOptions` | `object` | Your share link parameters: <br /> **number** – your number <br /> **text** – post text | `{}`
+`useNativeBehavior` | `boolean` | Use native link behavior instead of `window.open()` or not | `false`
+
+## Events
+
+| Event name | Usage |
+| ------ | ------ |
+`popup-open` | `window.open()` has been opened |
+`popup-close` | `window.open()` has been closed |
+`popup-block` | `window.open()` has been blocked |
+`popup-focus` | `window.open()` has been focused |
+

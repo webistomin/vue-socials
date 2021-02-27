@@ -2,10 +2,16 @@ import { Story } from '@storybook/vue';
 import { action } from '@storybook/addon-actions';
 import { DEFAULT_WINDOW_FEATURES, TBaseSocialPropsOptions } from '@/mixins/BaseSocial/BaseSocial';
 import SWordPress, { ISWordPressShareOptions } from '../SWordPress';
+import SWordPressMDX from './SWordPress.mdx';
 
 export default {
   title: 'Share/SWordPress',
   component: SWordPress,
+  parameters: {
+    docs: {
+      page: SWordPressMDX,
+    },
+  },
 };
 
 const Template: Story<TBaseSocialPropsOptions<ISWordPressShareOptions>> = (_args, { argTypes }) => ({

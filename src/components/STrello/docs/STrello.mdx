@@ -1,0 +1,81 @@
+import { Meta, Story, Preview} from "@storybook/addon-docs/blocks"
+import STrello from "../STrello"
+
+<Meta title='Share/STrello' component={ STrello } />
+
+<style>{`
+  .custom-preview .base-canvas {
+    height: auto;
+  }
+`}</style>
+
+# STrello
+
+## Preview
+
+<Preview className="custom-preview">
+  <Story id='share-strello--default' />
+</Preview>
+
+## Example
+
+```html
+<template>
+  <s-trello
+    :window-features="windowFeatures"
+    :share-options="shareOptions"
+    :use-native-behavior="useNativeBehavior"
+    @popup-close="onClose"
+    @popup-open="onOpen"
+    @popup-block="onBlock"
+    @popup-focus="onFocus"
+  ></s-trello>
+</template>
+
+<script>
+  import { STrello } from 'vue-socials'
+
+  export default {
+    name: 'STrelloSharing',
+
+    components: { STrello },
+
+    data() {
+      return {
+        windowFeatures: {},
+        shareOptions: {
+          url: 'https://github.com/',
+          name: 'Name',
+          description: 'Description',
+        },
+        useNativeBehavior: false,
+      }
+    },
+
+    methods: {
+      onClose() {},
+      onOpen() {},
+      onBlock() {},
+      onFocus() {},
+    }
+  };
+</script>
+```
+
+## Props
+
+| Prop | Type | Description | Default value |
+| ------ | ------ | ------ | ------ |
+`windowFeatures` | `object` | Pass options to `window.open()`. [Requested features of the new window.](https://developer.mozilla.org/en-US/docs/Web/API/Window/open#window_features) | `{ width: 600, height: 540, }`
+`shareOptions` | `object` | Your share link parameters: <br /> **url** – the URL you want to share <br /> **name** – your card name <br /> **description** – your card description <br />  | `{}`
+`useNativeBehavior` | `boolean` | Use native link behavior instead of `window.open()` or not | `false`
+
+## Events
+
+| Event name | Usage |
+| ------ | ------ |
+`popup-open` | `window.open()` has been opened |
+`popup-close` | `window.open()` has been closed |
+`popup-block` | `window.open()` has been blocked |
+`popup-focus` | `window.open()` has been focused |
+

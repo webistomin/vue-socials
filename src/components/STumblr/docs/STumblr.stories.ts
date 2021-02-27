@@ -2,10 +2,16 @@ import { Story } from '@storybook/vue';
 import { action } from '@storybook/addon-actions';
 import { TBaseSocialPropsOptions } from '@/mixins/BaseSocial/BaseSocial';
 import STumblr, { ISTumblrShareOptions } from '../STumblr';
+import STumblrMDX from './STumblr.mdx';
 
 export default {
   title: 'Share/STumblr',
   component: STumblr,
+  parameters: {
+    docs: {
+      page: STumblrMDX,
+    },
+  },
 };
 
 const Template: Story<TBaseSocialPropsOptions<ISTumblrShareOptions>> = (_args, { argTypes }) => ({

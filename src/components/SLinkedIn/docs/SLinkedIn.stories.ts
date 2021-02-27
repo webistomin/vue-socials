@@ -2,10 +2,16 @@ import { Story } from '@storybook/vue';
 import { action } from '@storybook/addon-actions';
 import { DEFAULT_WINDOW_FEATURES, TBaseSocialPropsOptions } from '@/mixins/BaseSocial/BaseSocial';
 import SLinkedIn, { ISLinkedInShareOptions } from '../SLinkedIn';
+import SLinkedInMDX from './SLinkedIn.mdx';
 
 export default {
   title: 'Share/SLinkedIn',
   component: SLinkedIn,
+  parameters: {
+    docs: {
+      page: SLinkedInMDX,
+    },
+  },
 };
 
 const Template: Story<TBaseSocialPropsOptions<ISLinkedInShareOptions>> = (_args, { argTypes }) => ({

@@ -2,10 +2,16 @@ import { Story } from '@storybook/vue';
 import { action } from '@storybook/addon-actions';
 import { DEFAULT_WINDOW_FEATURES, TBaseSocialPropsOptions } from '@/mixins/BaseSocial/BaseSocial';
 import SHatena, { ISHatenaShareOptions } from '../SHatena';
+import SHatenaMDX from './SHatena.mdx';
 
 export default {
   title: 'Share/SHatena',
   component: SHatena,
+  parameters: {
+    docs: {
+      page: SHatenaMDX,
+    },
+  },
 };
 
 const Template: Story<TBaseSocialPropsOptions<ISHatenaShareOptions>> = (_args, { argTypes }) => ({

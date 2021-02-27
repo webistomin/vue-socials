@@ -1,0 +1,83 @@
+import { Meta, Story, Preview} from "@storybook/addon-docs/blocks"
+import SHouzz from "../SHouzz"
+
+<Meta title='Share/SHouzz' component={ SHouzz } />
+
+<style>{`
+  .custom-preview .base-canvas {
+    height: auto;
+  }
+`}</style>
+
+# SHouzz
+
+## Preview
+
+<Preview className="custom-preview">
+  <Story id='share-shouzz--default' />
+</Preview>
+
+## Example
+
+```html
+<template>
+  <s-houzz
+    :window-features="windowFeatures"
+    :share-options="shareOptions"
+    :use-native-behavior="useNativeBehavior"
+    @popup-close="onClose"
+    @popup-open="onOpen"
+    @popup-block="onBlock"
+    @popup-focus="onFocus"
+  ></s-houzz>
+</template>
+
+<script>
+  import { SHouzz } from 'vue-socials'
+
+  export default {
+    name: 'SHouzzSharing',
+
+    components: { SHouzz },
+
+    data() {
+      return {
+        windowFeatures: {},
+        shareOptions: {
+          url: 'https://github.com/',
+          id: '123',
+          image: 'url',
+          title: 'Title',
+          category: ['category'],
+        },
+        useNativeBehavior: false,
+      }
+    },
+
+    methods: {
+      onClose() {},
+      onOpen() {},
+      onBlock() {},
+      onFocus() {},
+    }
+  };
+</script>
+```
+
+## Props
+
+| Prop | Type | Description | Default value |
+| ------ | ------ | ------ | ------ |
+`windowFeatures` | `object` | Pass options to `window.open()`. [Requested features of the new window.](https://developer.mozilla.org/en-US/docs/Web/API/Window/open#window_features) | `{ width: 1100, height: 700, }`
+`shareOptions` | `object` | Your share link parameters: <br /> **url** – Canonical URL of your product. If you already have products listed in Houzz, make sure the URLs match exactly to prevent duplicate listings and maintain accuracy of the Ideabook count. <br /> **id** – A unique identifier that verifies you own this web page. <br /> **image** – URL of hi-res product image. <br /> **title** – Title of the product. <br /> **category** –  Keywords to help categorize the product. (ie. 'Wall Sconces') <br /> | `{}`
+`useNativeBehavior` | `boolean` | Use native link behavior instead of `window.open()` or not | `false`
+
+## Events
+
+| Event name | Usage |
+| ------ | ------ |
+`popup-open` | `window.open()` has been opened |
+`popup-close` | `window.open()` has been closed |
+`popup-block` | `window.open()` has been blocked |
+`popup-focus` | `window.open()` has been focused |
+

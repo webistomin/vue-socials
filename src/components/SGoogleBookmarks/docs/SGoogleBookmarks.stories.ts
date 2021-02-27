@@ -2,10 +2,16 @@ import { Story } from '@storybook/vue';
 import { action } from '@storybook/addon-actions';
 import { DEFAULT_WINDOW_FEATURES, TBaseSocialPropsOptions } from '@/mixins/BaseSocial/BaseSocial';
 import SGoogleBookmarks, { ISGoogleBookmarksShareOptions } from '../SGoogleBookmarks';
+import SGoogleBookmarksMDX from './SGoogleBookmarks.mdx';
 
 export default {
   title: 'Share/SGoogleBookmarks',
   component: SGoogleBookmarks,
+  parameters: {
+    docs: {
+      page: SGoogleBookmarksMDX,
+    },
+  },
 };
 
 const Template: Story<TBaseSocialPropsOptions<ISGoogleBookmarksShareOptions>> = (_args, { argTypes }) => ({

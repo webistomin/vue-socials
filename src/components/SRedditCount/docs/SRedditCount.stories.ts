@@ -2,10 +2,16 @@ import { Story } from '@storybook/vue';
 import { action } from '@storybook/addon-actions';
 import { TBaseCountPropsOptions } from '@/mixins/BaseCount/BaseCount';
 import SRedditCount, { ISRedditCountShareOptions } from '../SRedditCount';
+import SRedditCountMDX from './SRedditCount.mdx';
 
 export default {
   title: 'Count/SRedditCount',
   component: SRedditCount,
+  parameters: {
+    docs: {
+      page: SRedditCountMDX,
+    },
+  },
 };
 
 const Template: Story<TBaseCountPropsOptions<ISRedditCountShareOptions>> = (_args, { argTypes }) => ({

@@ -2,10 +2,16 @@ import { Story } from '@storybook/vue';
 import { action } from '@storybook/addon-actions';
 import { DEFAULT_WINDOW_FEATURES, TBaseSocialPropsOptions } from '@/mixins/BaseSocial/BaseSocial';
 import SPocket, { ISPocketShareOptions } from '../SPocket';
+import SPocketMDX from './SPocket.mdx';
 
 export default {
   title: 'Share/SPocket',
   component: SPocket,
+  parameters: {
+    docs: {
+      page: SPocketMDX,
+    },
+  },
 };
 
 const Template: Story<TBaseSocialPropsOptions<ISPocketShareOptions>> = (_args, { argTypes }) => ({

@@ -2,10 +2,16 @@ import { Story } from '@storybook/vue';
 import { action } from '@storybook/addon-actions';
 import { DEFAULT_WINDOW_FEATURES, TBaseSocialPropsOptions } from '@/mixins/BaseSocial/BaseSocial';
 import SWhatsApp, { ISWhatsAppShareOptions } from '../SWhatsApp';
+import SWhatsAppMDX from './SWhatsApp.mdx';
 
 export default {
   title: 'Share/SWhatsApp',
   component: SWhatsApp,
+  parameters: {
+    docs: {
+      page: SWhatsAppMDX,
+    },
+  },
 };
 
 const Template: Story<TBaseSocialPropsOptions<ISWhatsAppShareOptions>> = (_args, { argTypes }) => ({

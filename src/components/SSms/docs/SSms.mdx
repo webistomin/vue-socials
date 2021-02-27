@@ -1,0 +1,68 @@
+import { Meta, Story, Preview} from "@storybook/addon-docs/blocks"
+import SSms from "../SSms"
+
+<Meta title='Share/SSms' component={ SSms } />
+
+<style>{`
+  .custom-preview .base-canvas {
+    height: auto;
+  }
+`}</style>
+
+# SSms
+
+## Preview
+
+<Preview className="custom-preview">
+  <Story id='share-ssms--default' />
+</Preview>
+
+## Example
+
+```html
+<template>
+  <s-sms
+    :window-features="windowFeatures"
+    :share-options="shareOptions"
+    :use-native-behavior="useNativeBehavior"
+    @popup-close="onClose"
+    @popup-open="onOpen"
+    @popup-block="onBlock"
+    @popup-focus="onFocus"
+  ></s-sms>
+</template>
+
+<script>
+  import { SSms } from 'vue-socials'
+
+  export default {
+    name: 'SSmsSharing',
+
+    components: { SSms },
+
+    data() {
+      return {
+        windowFeatures: {},
+        shareOptions: {
+          number: '+1(999)999-99-99',
+          body: 'Hello world!',
+        },
+        useNativeBehavior: false,
+      }
+    },
+
+    methods: {
+      onClose() {},
+      onOpen() {},
+      onBlock() {},
+      onFocus() {},
+    }
+  };
+</script>
+```
+
+## Props
+
+| Prop | Type | Description | Default value |
+| ------ | ------ | ------ | ------ |
+`shareOptions` | `object` | Your share link parameters: <br /> **number** – your number <br /> **body** – your text <br />  | `{}`

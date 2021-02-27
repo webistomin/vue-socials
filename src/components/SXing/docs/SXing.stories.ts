@@ -2,10 +2,16 @@ import { Story } from '@storybook/vue';
 import { action } from '@storybook/addon-actions';
 import { DEFAULT_WINDOW_FEATURES, TBaseSocialPropsOptions } from '@/mixins/BaseSocial/BaseSocial';
 import SXing, { ISXingShareOptions } from '../SXing';
+import SXingMDX from './SXing.mdx';
 
 export default {
   title: 'Share/SXing',
   component: SXing,
+  parameters: {
+    docs: {
+      page: SXingMDX,
+    },
+  },
 };
 
 const Template: Story<TBaseSocialPropsOptions<ISXingShareOptions>> = (_args, { argTypes }) => ({

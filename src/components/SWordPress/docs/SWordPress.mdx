@@ -1,0 +1,83 @@
+import { Meta, Story, Preview} from "@storybook/addon-docs/blocks"
+import SWordPress from "../SWordPress"
+
+<Meta title='Share/SWordPress' component={ SWordPress } />
+
+<style>{`
+  .custom-preview .base-canvas {
+    height: auto;
+  }
+`}</style>
+
+# SWordPress
+
+## Preview
+
+<Preview className="custom-preview">
+  <Story id='share-swordpress--default' />
+</Preview>
+
+## Example
+
+```html
+<template>
+  <s-word-press
+    :window-features="windowFeatures"
+    :share-options="shareOptions"
+    :use-native-behavior="useNativeBehavior"
+    @popup-close="onClose"
+    @popup-open="onOpen"
+    @popup-block="onBlock"
+    @popup-focus="onFocus"
+  ></s-word-press>
+</template>
+
+<script>
+  import { SWordPress } from 'vue-socials'
+
+  export default {
+    name: 'SWordPressSharing',
+
+    components: { SWordPress },
+
+    data() {
+      return {
+        windowFeatures: {},
+        shareOptions: {
+          domain: 'https://wordpress.org',
+          url: 'https://github.com',
+          title: 'Title',
+          text: 'Text',
+          image: '',
+        },
+        useNativeBehavior: false,
+      }
+    },
+
+    methods: {
+      onClose() {},
+      onOpen() {},
+      onBlock() {},
+      onFocus() {},
+    }
+  };
+</script>
+```
+
+## Props
+
+| Prop | Type | Description | Default value |
+| ------ | ------ | ------ | ------ |
+`windowFeatures` | `object` | Pass options to `window.open()`. [Requested features of the new window.](https://developer.mozilla.org/en-US/docs/Web/API/Window/open#window_features) | `{ width: 600, height: 540, }`
+`shareOptions` | `object` | Your share link parameters: <br /> **title** – post title <br /> **text** – post text <br /> **domain** – your domain <br /> **url** – the url of the current page **image** – url of an image file | `{}`
+`useNativeBehavior` | `boolean` | Use native link behavior instead of `window.open()` or not | `false`
+
+## Events
+
+| Event name | Usage |
+| ------ | ------ |
+`popup-open` | `window.open()` has been opened |
+`popup-close` | `window.open()` has been closed |
+`popup-block` | `window.open()` has been blocked |
+`popup-focus` | `window.open()` has been focused |
+

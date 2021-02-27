@@ -2,10 +2,16 @@ import { Story } from '@storybook/vue';
 import { action } from '@storybook/addon-actions';
 import { DEFAULT_WINDOW_FEATURES, TBaseSocialPropsOptions } from '@/mixins/BaseSocial/BaseSocial';
 import SRenRen, { ISRenRenShareOptions } from '../SRenRen';
+import SRenRenMDX from './SRenRen.mdx';
 
 export default {
   title: 'Share/SRenRen',
   component: SRenRen,
+  parameters: {
+    docs: {
+      page: SRenRenMDX,
+    },
+  },
 };
 
 const Template: Story<TBaseSocialPropsOptions<ISRenRenShareOptions>> = (_args, { argTypes }) => ({
@@ -44,6 +50,7 @@ Default.args = {
     resourceUrl: 'https://github.com/',
     title: 'Title',
     description: 'Description',
+    pic: '',
   },
   useNativeBehavior: false,
 };

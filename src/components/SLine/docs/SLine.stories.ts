@@ -2,10 +2,16 @@ import { Story } from '@storybook/vue';
 import { action } from '@storybook/addon-actions';
 import { TBaseSocialPropsOptions } from '@/mixins/BaseSocial/BaseSocial';
 import SLine, { ISLineShareOptions } from '../SLine';
+import SLineMDX from './SLine.mdx';
 
 export default {
   title: 'Share/SLine',
   component: SLine,
+  parameters: {
+    docs: {
+      page: SLineMDX,
+    },
+  },
 };
 
 const Template: Story<TBaseSocialPropsOptions<ISLineShareOptions>> = (_args, { argTypes }) => ({

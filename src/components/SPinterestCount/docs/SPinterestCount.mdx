@@ -1,0 +1,77 @@
+import { Meta, Story, Preview} from "@storybook/addon-docs/blocks"
+import SPinterestCount from "../SPinterestCount"
+
+<Meta title='Count/SPinterestCount' component={ SPinterestCount } />
+
+<style>{`
+  .custom-preview .base-canvas {
+    height: auto;
+  }
+`}</style>
+
+# SPinterestCount
+
+## Preview
+
+<Preview className="custom-preview">
+  <Story id='count-spinterestcount--default' />
+</Preview>
+
+## Example
+
+```html
+<template>
+  <s-pinterest-count
+    :tag="tag"
+    :share-options="shareOptions"
+    @load="onLoad"
+    @error="onError"
+    @loading="onLoading"
+  ></s-pinterest-count>
+</template>
+
+<script>
+  import { SPinterestCount } from 'vue-socials'
+
+  export default {
+    name: 'SPinterestCountSharing',
+
+    components: { SPinterestCount },
+
+    data() {
+      return {
+        tag: 'span',
+        shareOptions: {
+          url: 'https://github.com/',
+        },
+      }
+    },
+
+    methods: {
+      onLoad() {},
+      onError() {},
+      onLoading() {},
+    }
+  };
+</script>
+```
+
+## Props
+
+| Prop | Type | Description | Default value |
+| ------ | ------ | ------ | ------ |
+`shareOptions` | `object` | Your share link parameters: <br /> **url** – the URL you want to share <br /> | `{}`
+`tag` | `string` | Dynamic HTML tag or component  | `span`
+
+## Events
+
+| Event name | Usage |
+| ------ | ------ |
+`load` |  the request has finished successfully |
+`error` | the request has finished with error |
+`loading` | the request has started |
+
+## ⚠️ Warning
+
+This component uses `JSONP` so the content won't be available during `SSR`.
+

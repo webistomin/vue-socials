@@ -1,0 +1,72 @@
+import { Meta, Story, Preview} from "@storybook/addon-docs/blocks"
+import SLineCount from "../SLineCount"
+
+<Meta title='Count/SLineCount' component={ SLineCount } />
+
+<style>{`
+  .custom-preview .base-canvas {
+    height: auto;
+  }
+`}</style>
+
+# SLineCount
+
+## Preview
+
+<Preview className="custom-preview">
+  <Story id='count-slinecount--default' />
+</Preview>
+
+## Example
+
+```html
+<template>
+  <s-line-count
+    :share-options="shareOptions"
+    @load="onLoad"
+    @error="onError"
+    @loading="onLoading"
+  ></s-line-count>
+</template>
+
+<script>
+  import { SLineCount } from 'vue-socials'
+
+  export default {
+    name: 'SLineCountSharing',
+
+    components: { SLineCount },
+
+    data() {
+      return {
+        tag: 'span',
+        shareOptions: {
+          url: 'https://github.com/',
+        },
+      }
+    },
+
+    methods: {
+      onLoad() {},
+      onError() {},
+      onLoading() {},
+    }
+  };
+</script>
+```
+
+## Props
+
+| Prop | Type | Description | Default value |
+| ------ | ------ | ------ | ------ |
+`shareOptions` | `object` | Your share link parameters: <br /> **url** – the URL you want to share <br /> | `{}`
+`tag` | `string` | Dynamic HTML tag or component  | `span`
+
+## Events
+
+| Event name | Usage |
+| ------ | ------ |
+`load` |  the request has finished successfully |
+`error` | the request has finished with error |
+`loading` | the request has started |
+

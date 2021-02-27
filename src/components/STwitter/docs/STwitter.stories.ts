@@ -2,10 +2,16 @@ import { Story } from '@storybook/vue';
 import { action } from '@storybook/addon-actions';
 import { DEFAULT_WINDOW_FEATURES, TBaseSocialPropsOptions } from '@/mixins/BaseSocial/BaseSocial';
 import STwitter, { ISTwitterShareOptions } from '../STwitter';
+import STwitterMDX from './STwitter.mdx';
 
 export default {
   title: 'Share/STwitter',
   component: STwitter,
+  parameters: {
+    docs: {
+      page: STwitterMDX,
+    },
+  },
 };
 
 const Template: Story<TBaseSocialPropsOptions<ISTwitterShareOptions>> = (_args, { argTypes }) => ({

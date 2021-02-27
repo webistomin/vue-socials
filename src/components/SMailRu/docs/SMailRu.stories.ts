@@ -2,10 +2,16 @@ import { Story } from '@storybook/vue';
 import { action } from '@storybook/addon-actions';
 import { DEFAULT_WINDOW_FEATURES, TBaseSocialPropsOptions } from '@/mixins/BaseSocial/BaseSocial';
 import SMailRu, { ISMailRuShareOptions } from '../SMailRu';
+import SMailRuMDX from './SMailRu.mdx';
 
 export default {
   title: 'Share/SMailRu',
   component: SMailRu,
+  parameters: {
+    docs: {
+      page: SMailRuMDX,
+    },
+  },
 };
 
 const Template: Story<TBaseSocialPropsOptions<ISMailRuShareOptions>> = (_args, { argTypes }) => ({

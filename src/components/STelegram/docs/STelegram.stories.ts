@@ -2,10 +2,16 @@ import { Story } from '@storybook/vue';
 import { action } from '@storybook/addon-actions';
 import { DEFAULT_WINDOW_FEATURES, TBaseSocialPropsOptions } from '@/mixins/BaseSocial/BaseSocial';
 import STelegram, { ISTelegramShareOptions } from '../STelegram';
+import STelegramMDX from './STelegram.mdx';
 
 export default {
   title: 'Share/STelegram',
   component: STelegram,
+  parameters: {
+    docs: {
+      page: STelegramMDX,
+    },
+  },
 };
 
 const Template: Story<TBaseSocialPropsOptions<ISTelegramShareOptions>> = (_args, { argTypes }) => ({

@@ -2,10 +2,16 @@ import { Story } from '@storybook/vue';
 import { action } from '@storybook/addon-actions';
 import { DEFAULT_WINDOW_FEATURES, TBaseSocialPropsOptions } from '@/mixins/BaseSocial/BaseSocial';
 import SViber, { ISViberShareOptions } from '../SViber';
+import SViberMDX from './SViber.mdx';
 
 export default {
   title: 'Share/SViber',
   component: SViber,
+  parameters: {
+    docs: {
+      page: SViberMDX,
+    },
+  },
 };
 
 const Template: Story<TBaseSocialPropsOptions<ISViberShareOptions>> = (_args, { argTypes }) => ({

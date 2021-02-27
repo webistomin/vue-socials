@@ -1,9 +1,15 @@
 import { Story } from '@storybook/vue';
 import SSms from '../SSms';
+import SSmsMDX from './SSms.mdx';
 
 export default {
   title: 'Share/SSms',
   component: SSms,
+  parameters: {
+    docs: {
+      page: SSmsMDX,
+    },
+  },
 };
 
 const Template: Story = (_args, { argTypes }) => ({

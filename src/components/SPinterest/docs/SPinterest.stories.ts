@@ -2,10 +2,16 @@ import { Story } from '@storybook/vue';
 import { action } from '@storybook/addon-actions';
 import { TBaseSocialPropsOptions } from '@/mixins/BaseSocial/BaseSocial';
 import SPinterest, { ISPinterestShareOptions } from '../SPinterest';
+import SPinterestMDX from './SPinterest.mdx';
 
 export default {
   title: 'Share/SPinterest',
   component: SPinterest,
+  parameters: {
+    docs: {
+      page: SPinterestMDX,
+    },
+  },
 };
 
 const Template: Story<TBaseSocialPropsOptions<ISPinterestShareOptions>> = (_args, { argTypes }) => ({

@@ -1,0 +1,83 @@
+import { Meta, Story, Preview} from "@storybook/addon-docs/blocks"
+import SRenRen from "../SRenRen"
+
+<Meta title='Share/SRenRen' component={ SRenRen } />
+
+<style>{`
+  .custom-preview .base-canvas {
+    height: auto;
+  }
+`}</style>
+
+# SRenRen
+
+## Preview
+
+<Preview className="custom-preview">
+  <Story id='share-srenren--default' />
+</Preview>
+
+## Example
+
+```html
+<template>
+  <s-ren-ren
+    :window-features="windowFeatures"
+    :share-options="shareOptions"
+    :use-native-behavior="useNativeBehavior"
+    @popup-close="onClose"
+    @popup-open="onOpen"
+    @popup-block="onBlock"
+    @popup-focus="onFocus"
+  ></s-ren-ren>
+</template>
+
+<script>
+  import { SRenRen } from 'vue-socials'
+
+  export default {
+    name: 'SRenRenSharing',
+
+    components: { SRenRen },
+
+    data() {
+      return {
+        windowFeatures: {},
+        shareOptions: {
+          srcUrl: 'https://github.com/',
+          resourceUrl: 'https://github.com/',
+          title: 'Title',
+          description: 'Description',
+          pic: '',
+        },
+        useNativeBehavior: false,
+      }
+    },
+
+    methods: {
+      onClose() {},
+      onOpen() {},
+      onBlock() {},
+      onFocus() {},
+    }
+  };
+</script>
+```
+
+## Props
+
+| Prop | Type | Description | Default value |
+| ------ | ------ | ------ | ------ |
+`windowFeatures` | `object` | Pass options to `window.open()`. [Requested features of the new window.](https://developer.mozilla.org/en-US/docs/Web/API/Window/open#window_features) | `{ width: 600, height: 540, }`
+`shareOptions` | `object` | Your share link parameters: <br /> **srcUrl** – the URL you want to share <br /> **resourceUrl** – the source Url of the shared resource, the default is the Referer in the header <br /> **title** – your title <br /> **description** – your text <br /> **pic** – your image <br /> | `{}`
+`useNativeBehavior` | `boolean` | Use native link behavior instead of `window.open()` or not | `false`
+
+## Events
+
+| Event name | Usage |
+| ------ | ------ |
+`popup-open` | `window.open()` has been opened |
+`popup-close` | `window.open()` has been closed |
+`popup-block` | `window.open()` has been blocked |
+`popup-focus` | `window.open()` has been focused |
+

@@ -2,10 +2,16 @@ import { Story } from '@storybook/vue';
 import { action } from '@storybook/addon-actions';
 import { DEFAULT_WINDOW_FEATURES, TBaseSocialPropsOptions } from '@/mixins/BaseSocial/BaseSocial';
 import SKakaoStory, { ISKakaoStoryShareOptions } from '../SKakaoStory';
+import SKakaoStoryMDX from './SKakaoStory.mdx';
 
 export default {
   title: 'Share/SKakaoStory',
   component: SKakaoStory,
+  parameters: {
+    docs: {
+      page: SKakaoStoryMDX,
+    },
+  },
 };
 
 const Template: Story<TBaseSocialPropsOptions<ISKakaoStoryShareOptions>> = (_args, { argTypes }) => ({

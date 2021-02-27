@@ -22,16 +22,16 @@
 <img alt="NPM downloads" src="https://img.shields.io/npm/dm/vue-socials.svg">
 </a>
  <a href="https://github.com/webistomin/vue-socials">
-<img alt="GitHub issues" src="https://img.shields.io/github/issues/webistomin/vue-socials.js">
+<img alt="GitHub issues" src="https://img.shields.io/github/issues/webistomin/vue-socials">
 </a>
  <a href="https://github.com/webistomin/vue-socials">
-  <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/webistomin/vue-socials.js">
+  <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/webistomin/vue-socials">
 </a>
  <a href="https://github.com/webistomin/vue-socials">
-    <img alt="npm type definitions" src="https://img.shields.io/npm/types/vue-socials.js">
+    <img alt="npm type definitions" src="https://img.shields.io/npm/types/vue-socials">
 </a>
 <a href="https://bundlephobia.com/result?p=vue-socials">
-  <img alt="npm bundle size" src="https://img.shields.io/bundlephobia/minzip/vue-socials.js">
+  <img alt="npm bundle size" src="https://img.shields.io/bundlephobia/minzip/vue-socials">
   </a>
 </p>
 

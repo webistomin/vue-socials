@@ -137,6 +137,12 @@
   "homepage": "https://github.com/webistomin/vue-socials#readme",
   "repository": {
     "type": "git",
-    "url": "githttps://github.com/webistomin/vue-socials.js.git"
-  }
+    "url": "githttps://github.com/webistomin/vue-socials.git"
+  },
+  "contributors": [
+    {
+      "name": "BodrovIgor",
+      "url": "https://github.com/BodrovIgor"
+    }
+  ]
 }

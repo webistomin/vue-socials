@@ -960,7 +960,7 @@ This component uses `JSONP` so the content won't be available during `SSR`.
   import { SGithub } from 'vue-socials'
 
   export default {
-    name: 'SSGithubSharing',
+    name: 'SGithubSharing',
     
     components: { SGithub },
     
@@ -1087,7 +1087,7 @@ This component uses `JSONP` so the content won't be available during `SSR`.
   import { SGithubGist } from 'vue-socials'
 
   export default {
-    name: 'SSGithubGistSharing',
+    name: 'SGithubGistSharing',
     
     components: { SGithubGist },
     
@@ -2380,7 +2380,7 @@ This component uses `JSONP` so the content won't be available during `SSR`.
   import { SPinterest } from 'vue-socials'
 
   export default {
-    name: 'SSPinterestSharing',
+    name: 'SPinterestSharing',
     
     components: { SPinterest },
     

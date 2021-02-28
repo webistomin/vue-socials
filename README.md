@@ -160,7 +160,7 @@ Browse [online documentation here](https://vue-socials.vercel.app/)
 
 * <img src="https://raw.githubusercontent.com/webistomin/vue-socials/main/assets/icons/line.svg" width="16" height="16"/> [Line](#sline)
 
-  * * <img src="https://raw.githubusercontent.com/webistomin/vue-socials/main/assets/icons/line.svg" width="16" height="16"/> [Line counter](#slinecount)
+  * <img src="https://raw.githubusercontent.com/webistomin/vue-socials/main/assets/icons/line.svg" width="16" height="16"/> [Line counter](#slinecount)
 
 * <img src="https://raw.githubusercontent.com/webistomin/vue-socials/main/assets/icons/linkedin.svg" width="16" height="16"/> [Linkedin](#slinkedin)
 
@@ -176,7 +176,7 @@ Browse [online documentation here](https://vue-socials.vercel.app/)
 
 * <img src="https://raw.githubusercontent.com/webistomin/vue-socials/main/assets/icons/odnoklassniki.svg" width="16" height="16"/> [Odnoklassniki](#sodnoklassniki)
 
-  * * <img src="https://raw.githubusercontent.com/webistomin/vue-socials/main/assets/icons/odnoklassniki.svg" width="16" height="16"/> [Odnoklassniki counter](#sodnoklassnikicount)
+  * <img src="https://raw.githubusercontent.com/webistomin/vue-socials/main/assets/icons/odnoklassniki.svg" width="16" height="16"/> [Odnoklassniki counter](#sodnoklassnikicount)
 
 ## P
 

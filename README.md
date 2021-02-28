@@ -130,9 +130,9 @@ Browse [online documentation here](https://vue-socials.vercel.app/)
 
   * <img src="https://raw.githubusercontent.com/webistomin/vue-socials/main/assets/icons/github.svg" width="16" height="16"/> [Github gist counter](#sgithubgistcount) 
 
-* <img src="https://raw.githubusercontent.com/webistomin/vue-socials/main/assets/icons/github.svg" width="16" height="16"/> [Github repository](#sgithubgist)
+* <img src="https://raw.githubusercontent.com/webistomin/vue-socials/main/assets/icons/github.svg" width="16" height="16"/> [Github repository](#sgithubrepo)
 
-  * <img src="https://raw.githubusercontent.com/webistomin/vue-socials/main/assets/icons/github.svg" width="16" height="16"/> [Github repository counter](#sgithubrepositorycount)   
+  * <img src="https://raw.githubusercontent.com/webistomin/vue-socials/main/assets/icons/github.svg" width="16" height="16"/> [Github repository counter](#sgithubrepocount)   
 
 * <img src="https://raw.githubusercontent.com/webistomin/vue-socials/main/assets/icons/gmail.svg" width="16" height="16"/> [Gmail](#sgmail)
 

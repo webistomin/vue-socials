@@ -1,5 +1,5 @@
 <p align="center">
-  <img width="124" height="124" src="./assets/logo.svg" alt="Heart">
+  <img width="124" height="124" src="https://raw.githubusercontent.com/webistomin/vue-socials/main/assets/logo.svg" alt="Heart">
 </p>
 
 <h1 align="center">
@@ -37,6 +37,7 @@
 
 <p align="center">
   <a href="#key-features-">Key Features</a> •
+  <a href="#installation-">Installation</a> •
   <a href="#documentation-">Documentation</a> •
   <a href="#browsers-support-">Browsers support</a> •
   <a href="#license-">License</a>  •
@@ -54,6 +55,35 @@
 * **Don't track** the user
 * Built with **a11y** in mind
 
+## Installation  🚀
+
+**npm**
+```shell
+npm install vue-socials
+```
+
+**yarn**
+```shell
+yarn add vue-socials
+```
+
+**Import all components**
+```js
+import Vue from 'vue'
+import VueSocials from 'vue-socials';
+
+Vue.use(VueSocials)
+```
+
+**Import only specific component**
+```js
+import Vue from 'vue'
+import { SGithub } from 'vue-socials';
+
+Vue.component('SGithub', SGithub)
+```
+
+
 ## Documentation 🤗
 
 Browse [online documentation here](https://vue-socials.vercel.app/)
@@ -62,157 +92,157 @@ Browse [online documentation here](https://vue-socials.vercel.app/)
 
 ### B
 
-* <img src="./assets/icons/blogger.svg" width="16" height="16"/> [Blogger](#sblogger)
+* <img src="https://raw.githubusercontent.com/webistomin/vue-socials/main/assets/icons/blogger.svg" width="16" height="16"/> [Blogger](#sblogger)
 
 ### D
 
-* <img src="./assets/icons/devto.svg" width="16" height="16"/> [DevTo](#sdevto)
+* <img src="https://raw.githubusercontent.com/webistomin/vue-socials/main/assets/icons/devto.svg" width="16" height="16"/> [DevTo](#sdevto)
 
-* <img src="./assets/icons/diaspora.svg" width="16" height="16"/> [Diaspora](#sdiaspora)
+* <img src="https://raw.githubusercontent.com/webistomin/vue-socials/main/assets/icons/diaspora.svg" width="16" height="16"/> [Diaspora](#sdiaspora)
 
-* <img src="./assets/icons/douban.svg" width="16" height="16"/> [Douban](#sdouban)
+* <img src="https://raw.githubusercontent.com/webistomin/vue-socials/main/assets/icons/douban.svg" width="16" height="16"/> [Douban](#sdouban)
 
 ### E
 
-* <img src="./assets/icons/email.svg" width="16" height="16"/> [Email](#semail)
+* <img src="https://raw.githubusercontent.com/webistomin/vue-socials/main/assets/icons/email.svg" width="16" height="16"/> [Email](#semail)
 
-* <img src="./assets/icons/evernote.svg" width="16" height="16"/> [Evernote](#severnote)
+* <img src="https://raw.githubusercontent.com/webistomin/vue-socials/main/assets/icons/evernote.svg" width="16" height="16"/> [Evernote](#severnote)
 
 ### F
 
-* <img src="./assets/icons/facebook.svg" width="16" height="16"/> [Facebook](#sfacebook)
+* <img src="https://raw.githubusercontent.com/webistomin/vue-socials/main/assets/icons/facebook.svg" width="16" height="16"/> [Facebook](#sfacebook)
   
-  * <img src="./assets/icons/facebook.svg" width="16" height="16"/> [Facebook counter](#sfacebookcount)
+  * <img src="https://raw.githubusercontent.com/webistomin/vue-socials/main/assets/icons/facebook.svg" width="16" height="16"/> [Facebook counter](#sfacebookcount)
 
-* <img src="./assets/icons/facebook-messenger.svg" width="16" height="16"/> [Facebook Messenger](#sfacebookmessenger)
+* <img src="https://raw.githubusercontent.com/webistomin/vue-socials/main/assets/icons/facebook-messenger.svg" width="16" height="16"/> [Facebook Messenger](#sfacebookmessenger)
 
-* <img src="./assets/icons/facebook-workplace.svg" width="16" height="16"/> [Facebook Workplace](#sfacebookworkplace)
+* <img src="https://raw.githubusercontent.com/webistomin/vue-socials/main/assets/icons/facebook-workplace.svg" width="16" height="16"/> [Facebook Workplace](#sfacebookworkplace)
 
-* <img src="./assets/icons/flipboard.svg" width="16" height="16"/> [Flipboard](#sflipboard)
+* <img src="https://raw.githubusercontent.com/webistomin/vue-socials/main/assets/icons/flipboard.svg" width="16" height="16"/> [Flipboard](#sflipboard)
 
 ### G
 
-* <img src="./assets/icons/github.svg" width="16" height="16"/> [Github](#sgithub)
+* <img src="https://raw.githubusercontent.com/webistomin/vue-socials/main/assets/icons/github.svg" width="16" height="16"/> [Github](#sgithub)
 
-  * <img src="./assets/icons/github.svg" width="16" height="16"/> [Github counter](#sgithubcount)
+  * <img src="https://raw.githubusercontent.com/webistomin/vue-socials/main/assets/icons/github.svg" width="16" height="16"/> [Github counter](#sgithubcount)
 
-* <img src="./assets/icons/github.svg" width="16" height="16"/> [Github gist](#sgithubgist)
+* <img src="https://raw.githubusercontent.com/webistomin/vue-socials/main/assets/icons/github.svg" width="16" height="16"/> [Github gist](#sgithubgist)
 
-  * <img src="./assets/icons/github.svg" width="16" height="16"/> [Github gist counter](#sgithubgistcount) 
+  * <img src="https://raw.githubusercontent.com/webistomin/vue-socials/main/assets/icons/github.svg" width="16" height="16"/> [Github gist counter](#sgithubgistcount) 
 
-* <img src="./assets/icons/github.svg" width="16" height="16"/> [Github repository](#sgithubgist)
+* <img src="https://raw.githubusercontent.com/webistomin/vue-socials/main/assets/icons/github.svg" width="16" height="16"/> [Github repository](#sgithubgist)
 
-  * <img src="./assets/icons/github.svg" width="16" height="16"/> [Github repository counter](#sgithubrepositorycount)   
+  * <img src="https://raw.githubusercontent.com/webistomin/vue-socials/main/assets/icons/github.svg" width="16" height="16"/> [Github repository counter](#sgithubrepositorycount)   
 
-* <img src="./assets/icons/gmail.svg" width="16" height="16"/> [Gmail](#sgmail)
+* <img src="https://raw.githubusercontent.com/webistomin/vue-socials/main/assets/icons/gmail.svg" width="16" height="16"/> [Gmail](#sgmail)
 
-* <img src="./assets/icons/google-bookmarks.svg" width="16" height="16"/> [Google Bookmarks](#sgooglebookmarks)
+* <img src="https://raw.githubusercontent.com/webistomin/vue-socials/main/assets/icons/google-bookmarks.svg" width="16" height="16"/> [Google Bookmarks](#sgooglebookmarks)
 
 ### H
 
-* <img src="./assets/icons/hacker-news.svg" width="16" height="16"/> [Hacker News](#shackernews)
+* <img src="https://raw.githubusercontent.com/webistomin/vue-socials/main/assets/icons/hacker-news.svg" width="16" height="16"/> [Hacker News](#shackernews)
 
-* <img src="./assets/icons/hatena.svg" width="16" height="16"/> [Hatena](#shatena)
+* <img src="https://raw.githubusercontent.com/webistomin/vue-socials/main/assets/icons/hatena.svg" width="16" height="16"/> [Hatena](#shatena)
 
-  * <img src="./assets/icons/hatena.svg" width="16" height="16"/> [Hatena counter](#shatenacount)
+  * <img src="https://raw.githubusercontent.com/webistomin/vue-socials/main/assets/icons/hatena.svg" width="16" height="16"/> [Hatena counter](#shatenacount)
 
-* <img src="./assets/icons/houzz.svg" width="16" height="16"/> [Houzz](#shouzz)
+* <img src="https://raw.githubusercontent.com/webistomin/vue-socials/main/assets/icons/houzz.svg" width="16" height="16"/> [Houzz](#shouzz)
 
 ### I
 
-* <img src="./assets/icons/instapaper.svg" width="16" height="16"/> [Instapaper](#sinstapaper)
+* <img src="https://raw.githubusercontent.com/webistomin/vue-socials/main/assets/icons/instapaper.svg" width="16" height="16"/> [Instapaper](#sinstapaper)
 
 ## K
 
-* <img src="./assets/icons/kakao.svg" width="16" height="16"/> [Kakao Story](#skakaostory)
+* <img src="https://raw.githubusercontent.com/webistomin/vue-socials/main/assets/icons/kakao.svg" width="16" height="16"/> [Kakao Story](#skakaostory)
 
 ## L
 
-* <img src="./assets/icons/line.svg" width="16" height="16"/> [Line](#sline)
+* <img src="https://raw.githubusercontent.com/webistomin/vue-socials/main/assets/icons/line.svg" width="16" height="16"/> [Line](#sline)
 
-  * * <img src="./assets/icons/line.svg" width="16" height="16"/> [Line counter](#slinecount)
+  * * <img src="https://raw.githubusercontent.com/webistomin/vue-socials/main/assets/icons/line.svg" width="16" height="16"/> [Line counter](#slinecount)
 
-* <img src="./assets/icons/linkedin.svg" width="16" height="16"/> [Linkedin](#slinkedin)
+* <img src="https://raw.githubusercontent.com/webistomin/vue-socials/main/assets/icons/linkedin.svg" width="16" height="16"/> [Linkedin](#slinkedin)
 
-* <img src="./assets/icons/livejournal.svg" width="16" height="16"/> [LiveJournal](#slivejournal)
+* <img src="https://raw.githubusercontent.com/webistomin/vue-socials/main/assets/icons/livejournal.svg" width="16" height="16"/> [LiveJournal](#slivejournal)
 
 ## M
 
-* <img src="./assets/icons/mailru.svg" width="16" height="16"/> [MailRu](#smailru)
+* <img src="https://raw.githubusercontent.com/webistomin/vue-socials/main/assets/icons/mailru.svg" width="16" height="16"/> [MailRu](#smailru)
 
-* <img src="./assets/icons/microsoftteams.svg" width="16" height="16"/> [Microsoft Teams](#smicrosoftteams)
+* <img src="https://raw.githubusercontent.com/webistomin/vue-socials/main/assets/icons/microsoftteams.svg" width="16" height="16"/> [Microsoft Teams](#smicrosoftteams)
 
 ## O
 
-* <img src="./assets/icons/odnoklassniki.svg" width="16" height="16"/> [Odnoklassniki](#sodnoklassniki)
+* <img src="https://raw.githubusercontent.com/webistomin/vue-socials/main/assets/icons/odnoklassniki.svg" width="16" height="16"/> [Odnoklassniki](#sodnoklassniki)
 
-  * * <img src="./assets/icons/odnoklassniki.svg" width="16" height="16"/> [Odnoklassniki counter](#sodnoklassnikicount)
+  * * <img src="https://raw.githubusercontent.com/webistomin/vue-socials/main/assets/icons/odnoklassniki.svg" width="16" height="16"/> [Odnoklassniki counter](#sodnoklassnikicount)
 
 ## P
 
-* <img src="./assets/icons/pinterest.svg" width="16" height="16"/> [Pinterest](#spinterest)
+* <img src="https://raw.githubusercontent.com/webistomin/vue-socials/main/assets/icons/pinterest.svg" width="16" height="16"/> [Pinterest](#spinterest)
 
-  * <img src="./assets/icons/pinterest.svg" width="16" height="16"/> [Pinterest counter](#spinterestcount)
+  * <img src="https://raw.githubusercontent.com/webistomin/vue-socials/main/assets/icons/pinterest.svg" width="16" height="16"/> [Pinterest counter](#spinterestcount)
 
-* <img src="./assets/icons/pocket.svg" width="16" height="16"/> [Pocket](#spocket)
+* <img src="https://raw.githubusercontent.com/webistomin/vue-socials/main/assets/icons/pocket.svg" width="16" height="16"/> [Pocket](#spocket)
 
 ## Q
 
-* <img src="./assets/icons/qzone.svg" width="16" height="16"/> [Qzone](#sqzone)
+* <img src="https://raw.githubusercontent.com/webistomin/vue-socials/main/assets/icons/qzone.svg" width="16" height="16"/> [Qzone](#sqzone)
 
 ## R
 
-* <img src="./assets/icons/reddit.svg" width="16" height="16"/> [Reddit](#sreddit)
+* <img src="https://raw.githubusercontent.com/webistomin/vue-socials/main/assets/icons/reddit.svg" width="16" height="16"/> [Reddit](#sreddit)
 
-  * <img src="./assets/icons/reddit.svg" width="16" height="16"/> [Reddit counter](#sredditcount)
+  * <img src="https://raw.githubusercontent.com/webistomin/vue-socials/main/assets/icons/reddit.svg" width="16" height="16"/> [Reddit counter](#sredditcount)
 
-* <img src="./assets/icons/renren.svg" width="16" height="16"/> [Renren](#srenren)
+* <img src="https://raw.githubusercontent.com/webistomin/vue-socials/main/assets/icons/renren.svg" width="16" height="16"/> [Renren](#srenren)
 
 ## S
 
-* <img src="./assets/icons/skype.svg" width="16" height="16"/> [Skype](#sskype)
+* <img src="https://raw.githubusercontent.com/webistomin/vue-socials/main/assets/icons/skype.svg" width="16" height="16"/> [Skype](#sskype)
 
-* <img src="./assets/icons/sms.svg" width="16" height="16"/> [Sms](#ssms)
+* <img src="https://raw.githubusercontent.com/webistomin/vue-socials/main/assets/icons/sms.svg" width="16" height="16"/> [Sms](#ssms)
 
 ## T
 
-* <img src="./assets/icons/telegram.svg" width="16" height="16"/> [Telegram](#stelegram)
+* <img src="https://raw.githubusercontent.com/webistomin/vue-socials/main/assets/icons/telegram.svg" width="16" height="16"/> [Telegram](#stelegram)
 
-* <img src="./assets/icons/threema.svg" width="16" height="16"/> [Threema](#sthreema)
+* <img src="https://raw.githubusercontent.com/webistomin/vue-socials/main/assets/icons/threema.svg" width="16" height="16"/> [Threema](#sthreema)
 
-* <img src="./assets/icons/trello.svg" width="16" height="16"/> [Trello](#strello)
+* <img src="https://raw.githubusercontent.com/webistomin/vue-socials/main/assets/icons/trello.svg" width="16" height="16"/> [Trello](#strello)
 
-* <img src="./assets/icons/tumblr.svg" width="16" height="16"/> [Tumblr](#stumblr)
+* <img src="https://raw.githubusercontent.com/webistomin/vue-socials/main/assets/icons/tumblr.svg" width="16" height="16"/> [Tumblr](#stumblr)
 
-  * <img src="./assets/icons/tumblr.svg" width="16" height="16"/> [Tumblr counter](#stumblrcount)
+  * <img src="https://raw.githubusercontent.com/webistomin/vue-socials/main/assets/icons/tumblr.svg" width="16" height="16"/> [Tumblr counter](#stumblrcount)
 
-* <img src="./assets/icons/twitter.svg" width="16" height="16"/> [Twitter](#stwitter)
+* <img src="https://raw.githubusercontent.com/webistomin/vue-socials/main/assets/icons/twitter.svg" width="16" height="16"/> [Twitter](#stwitter)
 
 ## V
 
-* <img src="./assets/icons/viber.svg" width="16" height="16"/> [Viber](#sviber)
+* <img src="https://raw.githubusercontent.com/webistomin/vue-socials/main/assets/icons/viber.svg" width="16" height="16"/> [Viber](#sviber)
 
-* <img src="./assets/icons/vkontakte.svg" width="16" height="16"/> [Vkontakte](#svkontakte)
+* <img src="https://raw.githubusercontent.com/webistomin/vue-socials/main/assets/icons/vkontakte.svg" width="16" height="16"/> [Vkontakte](#svkontakte)
 
-  * <img src="./assets/icons/vkontakte.svg" width="16" height="16"/> [Vkontakte counter](#svkontaktecount)
+  * <img src="https://raw.githubusercontent.com/webistomin/vue-socials/main/assets/icons/vkontakte.svg" width="16" height="16"/> [Vkontakte counter](#svkontaktecount)
 
 ## W
 
-* <img src="./assets/icons/weibo.svg" width="16" height="16"/> [Weibo](#sweibo)
+* <img src="https://raw.githubusercontent.com/webistomin/vue-socials/main/assets/icons/weibo.svg" width="16" height="16"/> [Weibo](#sweibo)
 
-* <img src="./assets/icons/whatsapp.svg" width="16" height="16"/> [Whatsapp](#swhatsapp)
+* <img src="https://raw.githubusercontent.com/webistomin/vue-socials/main/assets/icons/whatsapp.svg" width="16" height="16"/> [Whatsapp](#swhatsapp)
 
-* <img src="./assets/icons/wordpress.svg" width="16" height="16"/> [Wordpress](#swordpress)
+* <img src="https://raw.githubusercontent.com/webistomin/vue-socials/main/assets/icons/wordpress.svg" width="16" height="16"/> [Wordpress](#swordpress)
 
 ## X
 
-* <img src="./assets/icons/xing.svg" width="16" height="16"/> [Xing](#sxing)
+* <img src="https://raw.githubusercontent.com/webistomin/vue-socials/main/assets/icons/xing.svg" width="16" height="16"/> [Xing](#sxing)
 
 ## Y
 
-* <img src="./assets/icons/yahoo.svg" width="16" height="16"/> [Yahoo](#syahoo)
+* <img src="https://raw.githubusercontent.com/webistomin/vue-socials/main/assets/icons/yahoo.svg" width="16" height="16"/> [Yahoo](#syahoo)
 
-* <img src="./assets/icons/yammer.svg" width="16" height="16"/> [Yammer](#syammer)
+* <img src="https://raw.githubusercontent.com/webistomin/vue-socials/main/assets/icons/yammer.svg" width="16" height="16"/> [Yammer](#syammer)
 
 ---
 

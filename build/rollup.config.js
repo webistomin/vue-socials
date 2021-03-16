@@ -110,7 +110,6 @@ if (!argv.format || argv.format === 'esm') {
       dir: 'dist/esm',
       format: 'esm',
       exports: 'named',
-      sourcemap: true,
       preserveModules: true,
     },
     plugins: [
@@ -148,7 +147,6 @@ if (!argv.format || argv.format === 'es') {
       file: 'dist/vue-socials.es.js',
       format: 'esm',
       exports: 'named',
-      sourcemap: true,
     },
     plugins: [
       resolve(BASE_CONFIG.plugins.resolve),

@@ -10,8 +10,8 @@ export interface IParamsObject {
  */
 export default function getSerialisedParams(object: IParamsObject): string {
   const params = Object.entries(object)
-    .filter(([, value]) => value !== undefined && value !== null && !Number.isNaN(value) && value !== '')
-    .map(([key, value]) => `${encodeURIComponent(key)}=${encodeURIComponent(String(value))}`);
+    .filter((param) => param[1] !== undefined && param[1] !== null && !Number.isNaN(param[1]) && param[1] !== '')
+    .map((param) => `${encodeURIComponent(param[0])}=${encodeURIComponent(String(param[1]))}`);
 
   return params.length > 0 ? `?${params.join('&')}` : '';
 }

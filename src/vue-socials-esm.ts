@@ -9,8 +9,8 @@ import * as components from '@/components';
  * Install function executed by Vue.use()
  */
 const install: PluginFunction<never> = function installVueSocials(Vue: typeof _Vue) {
-  Object.entries(components).forEach(([componentName, component]) => {
-    Vue.component(componentName, component);
+  Object.entries(components).forEach((item) => {
+    Vue.component(item[0], item[1]);
   });
 };
 

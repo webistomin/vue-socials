@@ -1,3 +1,3 @@
-import SqZone from './SQZone';
+import SQZone from './SQZone';
 
-export default SqZone;
+export default SQZone;

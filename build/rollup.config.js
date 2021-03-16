@@ -123,7 +123,11 @@ if (!argv.format || argv.format === 'esm') {
       commonjs(),
       copy({
         targets: [
-          { src: 'src/vue-socials.d.ts', dest: 'dist/types' },
+          {
+            src: 'src/lib.d.ts',
+            dest: 'dist/types',
+            rename: (name, extension) => `vue-socials.d.${extension}`,
+          },
         ],
       }),
     ],

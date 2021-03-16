@@ -1,30 +1,17 @@
 {
   "name": "vue-socials",
   "version": "1.1.0",
+  "license": "MIT",
   "author": {
     "name": "Alexey Istomin",
     "email": "webistomin@gmail.com",
     "url": "https://github.com/webistomin"
   },
-  "description": "Social media share buttons and counts for Vue.js",
-  "keywords": [
-    "social",
-    "share",
-    "sharing",
-    "share-buttons",
-    "social-buttons",
-    "social-share",
-    "vkontakte",
-    "mailru",
-    "odnoklassniki",
-    "facebook",
-    "twitter",
-    "messenger",
-    "linkedin",
-    "reddit",
-    "tumblr",
-    "telegram",
-    "whatsapp"
+  "contributors": [
+    {
+      "name": "BodrovIgor",
+      "url": "https://github.com/BodrovIgor"
+    }
   ],
   "main": "dist/vue-socials.cjs.js",
   "browser": "dist/vue-socials.esm.js",
@@ -47,7 +34,6 @@
     "src",
     "types"
   ],
-  "reveal": true,
   "sideEffects": false,
   "scripts": {
     "dev": "start-storybook -p 3000",
@@ -131,7 +117,6 @@
     "node": ">= 14.15.4",
     "npm": ">= 6.14.7"
   },
-  "license": "MIT",
   "bugs": {
     "url": "https://github.com/webistomin/vue-socials/issues"
   },
@@ -140,10 +125,25 @@
     "type": "git",
     "url": "githttps://github.com/webistomin/vue-socials.git"
   },
-  "contributors": [
-    {
-      "name": "BodrovIgor",
-      "url": "https://github.com/BodrovIgor"
-    }
-  ]
+  "description": "Social media share buttons and counts for Vue.js",
+  "keywords": [
+    "social",
+    "share",
+    "sharing",
+    "share-buttons",
+    "social-buttons",
+    "social-share",
+    "vkontakte",
+    "mailru",
+    "odnoklassniki",
+    "facebook",
+    "twitter",
+    "messenger",
+    "linkedin",
+    "reddit",
+    "tumblr",
+    "telegram",
+    "whatsapp"
+  ],
+  "reveal": true
 }

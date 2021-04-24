@@ -3,7 +3,7 @@
 export const parameters = {};
 
 // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
-// export const decorators = [function BaseCanvasDecorator() {
+// function BaseCanvasDecorator() {
 //   return {
 //     components: { BaseCanvas },
 //     template: `
@@ -12,4 +12,6 @@ export const parameters = {};
 //     </base-canvas>
 //   `,
 //   };
-// }];
+// }
+
+// export const decorators = [BaseCanvasDecorator];

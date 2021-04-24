@@ -5,10 +5,10 @@
  * @link https://b.hatena.ne.jp/
  */
 
-import Vue, { VueConstructor } from 'vue';
+import { defineComponent } from 'vue';
 import JSONP from '@/utils/jsonp';
 import getSerialisedParams from '@/utils/getSerialisedParams';
-import BaseCount, { TBaseCountMixin } from '@/mixins/BaseCount/BaseCount';
+import BaseCount from '@/mixins/BaseCount/BaseCount';
 
 /**
  * Share parameters for link
@@ -21,7 +21,7 @@ export type TSHatenaResult = {
   count: number;
 };
 
-export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseCountMixin<ISHatenaCountShareOptions, TSHatenaResult>>>).extend({
+export default /* #__PURE__ */ defineComponent({
   name: 'SHatenaCount',
 
   mixins: [BaseCount<ISHatenaCountShareOptions, TSHatenaResult>(

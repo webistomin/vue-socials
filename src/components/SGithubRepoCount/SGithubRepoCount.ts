@@ -5,8 +5,8 @@
  * @link https://github.com/
  */
 
-import Vue, { VueConstructor } from 'vue';
-import BaseCount, { TBaseCountMixin } from '@/mixins/BaseCount/BaseCount';
+import { defineComponent } from 'vue';
+import BaseCount from '@/mixins/BaseCount/BaseCount';
 import JSONP from '@/utils/jsonp';
 
 const GITHUB_LINK_TYPES = {
@@ -153,7 +153,7 @@ export interface ISGithubRepoCountResult {
   data: ISGithubRepoCountSuccessResponse | ISGithubRepoCountErrorResponse;
 }
 
-export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseCountMixin<ISGithubRepoCountShareOptions, ISGithubRepoCountResult>>>).extend({
+export default /* #__PURE__ */ defineComponent({
   name: 'SGithubRepoCount',
 
   mixins: [BaseCount<ISGithubRepoCountShareOptions, ISGithubRepoCountResult>(

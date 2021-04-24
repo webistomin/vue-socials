@@ -1,4 +1,4 @@
-import { Story } from '@storybook/vue';
+import { Story } from '@storybook/vue3';
 import { action } from '@storybook/addon-actions';
 import { DEFAULT_WINDOW_FEATURES, TBaseSocialPropsOptions } from '@/mixins/BaseSocial/BaseSocial';
 import SVkontakte, { ISVkontakteShareOptions } from '../SVkontakte';
@@ -14,19 +14,28 @@ export default {
   },
 };
 
-const Template: Story<TBaseSocialPropsOptions<ISVkontakteShareOptions>> = (_args, { argTypes }) => ({
-  props: Object.keys(argTypes),
+const Template: Story<TBaseSocialPropsOptions<ISVkontakteShareOptions>> = (args) => ({
   components: { SVkontakte },
-  methods: {
-    onClose: action('emit close'),
-    onOpen: action('emit open'),
-    onBlock: action('emit block'),
-    onFocus: action('emit focus'),
+
+  setup() {
+    const onClose = action('emit close');
+    const onOpen = action('emit open');
+    const onBlock = action('emit block');
+    const onFocus = action('emit focus');
+
+    return {
+      args,
+      onClose,
+      onOpen,
+      onBlock,
+      onFocus,
+    };
   },
+
   template: `
     <s-vkontakte
       class="base-social"
-      v-bind="$props"
+      v-bind="args"
       @popup-close="onClose"
       @popup-open="onOpen"
       @popup-block="onBlock"

@@ -4,9 +4,8 @@
  * Base count mixin used for every social count component.
  */
 
-import { ExtendedVue } from 'vue/types/vue';
-import Vue, {
-  Component, CreateElement, PropOptions, VNode,
+import {
+  Component, VNode, defineComponent, h, PropType,
 } from 'vue';
 import { isUndefined } from '@/utils/inspect';
 
@@ -22,32 +21,20 @@ export type TBaseCountPropsOptions<T> = {
   shareOptions: T;
 };
 
-export type TBaseCountMixin<T, R> = ExtendedVue<Vue,
-TBaseCountDataOptions<R>,
-{
-  generateComponent(h: CreateElement): VNode;
-  handleResult(value: R): void;
-  handleError(value: Error | string | null): void;
-  handleLoading(value: boolean): void;
-  handleCount(count: (number | undefined)): void;
-},
-unknown,
-TBaseCountPropsOptions<T>
->;
-
 /**
  * Wrapper around Vue mixin to pass parameters inside.
  * We use multiple parameters instead of a single object because
  * it causes problems with tree-shaking. I don't know why.
  * A little bit inconvenient, but overall OK :)
  */
+// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 export default function BaseCount<T, R>(
   name: string,
   customShareOptions?: T,
   isShareOptionsRequired?: boolean,
   customAriaLabel?: string,
-): TBaseCountMixin<T, R> {
-  return /* #__PURE__ */Vue.extend({
+) {
+  return /* #__PURE__ */ defineComponent({
     props: {
       /**
        * Component tag
@@ -61,9 +48,9 @@ export default function BaseCount<T, R>(
        */
       shareOptions: {
         type: Object,
-        default: () => customShareOptions || {} as T,
+        default: () => customShareOptions || {} as PropType<T>,
         required: isShareOptionsRequired || true,
-      } as PropOptions<T>,
+      },
     },
 
     data(): TBaseCountDataOptions<R> {
@@ -74,6 +61,8 @@ export default function BaseCount<T, R>(
         isLoading: false,
       };
     },
+
+    emits: ['load', 'error', 'loading'],
 
     computed: {
       /**
@@ -126,28 +115,25 @@ export default function BaseCount<T, R>(
       /**
        * Create new count component
        */
-      generateComponent(h: CreateElement): VNode {
-        const children = this.$scopedSlots.default || ((props) => [props.count]);
+      generateComponent(): VNode {
+        const children = this.$slots.default?.({
+          isLoading: this.isLoading,
+          response: this.response,
+          count: this.count,
+        }) || [this.count];
 
         return h(
           this.tag,
           {
-            attrs: {
-              'aria-label': this.ariaLabel,
-            },
-            on: this.$listeners,
+            'aria-label': this.ariaLabel,
           },
-          children({
-            isLoading: this.isLoading,
-            response: this.response,
-            count: this.count,
-          }),
+          children,
         );
       },
     },
 
-    render(h: CreateElement): VNode {
-      return this.generateComponent(h);
+    render(): VNode {
+      return this.generateComponent();
     },
   });
 }

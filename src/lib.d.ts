@@ -1,7 +1,7 @@
 /* eslint-disable import/first,import/newline-after-import */
-import { PluginFunction } from 'vue';
+import { Plugin } from 'vue';
 
-declare const VueSocials: PluginFunction<never>;
+declare const VueSocials: Exclude<Plugin['install'], undefined>;
 
 /**
  * All Components

@@ -5,8 +5,8 @@
  * @link https://gist.github.com/
  */
 
-import Vue, { VueConstructor } from 'vue';
-import BaseCount, { TBaseCountMixin } from '@/mixins/BaseCount/BaseCount';
+import { defineComponent } from 'vue';
+import BaseCount from '@/mixins/BaseCount/BaseCount';
 import JSONP from '@/utils/jsonp';
 
 const GITHUB_LINK_TYPES = {
@@ -111,7 +111,7 @@ export interface SGithubGistCountResult {
   data: ISGithubGistCountSuccessResponse | ISGithubGistCountErrorResponse;
 }
 
-export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseCountMixin<ISGithubGistCountShareOptions, SGithubGistCountResult>>>).extend({
+export default /* #__PURE__ */ defineComponent({
   name: 'SGithubGistCount',
 
   methods: {

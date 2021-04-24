@@ -6,10 +6,8 @@
  * @example https://news.ycombinator.com/submitlink?u=https%3A%2F%2Fgithub.com%2F&t=Title
  */
 
-import Vue, {
-  CreateElement, VNode, VueConstructor,
-} from 'vue';
-import BaseSocial, { TBaseSocialMixin } from '@/mixins/BaseSocial/BaseSocial';
+import { VNode, defineComponent } from 'vue';
+import BaseSocial from '@/mixins/BaseSocial/BaseSocial';
 import getSerialisedParams from '@/utils/getSerialisedParams';
 
 /**
@@ -20,7 +18,7 @@ export interface ISHackerNewsShareOptions {
   title?: string;
 }
 
-export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseSocialMixin<ISHackerNewsShareOptions>>>).extend({
+export default /* #__PURE__ */ defineComponent({
   name: 'SHackerNews',
 
   mixins: [BaseSocial<ISHackerNewsShareOptions>(
@@ -42,7 +40,7 @@ export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseSo
     },
   },
 
-  render(h: CreateElement): VNode {
-    return this.generateComponent(h, this.networkURL);
+  render(): VNode {
+    return this.generateComponent(this.networkURL);
   },
 });

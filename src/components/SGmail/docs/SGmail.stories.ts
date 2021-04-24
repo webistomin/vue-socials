@@ -1,4 +1,4 @@
-import { Story } from '@storybook/vue';
+import { Story } from '@storybook/vue3';
 import { action } from '@storybook/addon-actions';
 import { DEFAULT_WINDOW_FEATURES, TBaseSocialPropsOptions } from '@/mixins/BaseSocial/BaseSocial';
 import SGmail, { ISGmailShareOptions } from '../SGmail';
@@ -8,19 +8,28 @@ export default {
   component: SGmail,
 };
 
-const Template: Story<TBaseSocialPropsOptions<ISGmailShareOptions>> = (_args, { argTypes }) => ({
-  props: Object.keys(argTypes),
+const Template: Story<TBaseSocialPropsOptions<ISGmailShareOptions>> = (args) => ({
   components: { SGmail },
-  methods: {
-    onClose: action('emit close'),
-    onOpen: action('emit open'),
-    onBlock: action('emit block'),
-    onFocus: action('emit focus'),
+
+  setup() {
+    const onClose = action('emit close');
+    const onOpen = action('emit open');
+    const onBlock = action('emit block');
+    const onFocus = action('emit focus');
+
+    return {
+      args,
+      onClose,
+      onOpen,
+      onBlock,
+      onFocus,
+    };
   },
+
   template: `
     <s-gmail
       class="base-social"
-      v-bind="$props"
+      v-bind="args"
       @popup-close="onClose"
       @popup-open="onOpen"
       @popup-block="onBlock"

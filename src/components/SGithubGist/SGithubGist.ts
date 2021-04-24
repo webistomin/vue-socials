@@ -6,10 +6,8 @@
  * @example https://gist.github.com/ai/e3683b03ba936ade91d33dbc721cd6d8/stargazers
  */
 
-import Vue, {
-  CreateElement, VNode, VueConstructor,
-} from 'vue';
-import BaseSocial, { TBaseSocialMixin } from '@/mixins/BaseSocial/BaseSocial';
+import { VNode, defineComponent } from 'vue';
+import BaseSocial from '@/mixins/BaseSocial/BaseSocial';
 
 const GITHUB_LINK_TYPES = {
   gist: 'gist',
@@ -29,7 +27,7 @@ export interface ISGithubGistShareOptions {
   type: TSGithubLinkType;
 }
 
-export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseSocialMixin<ISGithubGistShareOptions>>>).extend({
+export default /* #__PURE__ */ defineComponent({
   name: 'SGithubGist',
 
   mixins: [BaseSocial<ISGithubGistShareOptions>(
@@ -59,7 +57,7 @@ export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseSo
       }
     },
 
-    ariaLabel() {
+    ariaLabel(): string {
       const { shareOptions } = this;
       const {
         type,
@@ -79,7 +77,7 @@ export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseSo
     },
   },
 
-  render(h: CreateElement): VNode {
-    return this.generateComponent(h, this.networkURL);
+  render(): VNode {
+    return this.generateComponent(this.networkURL);
   },
 });

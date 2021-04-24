@@ -5,10 +5,8 @@
  * @link https://www.livejournal.com/
  */
 
-import Vue, {
-  CreateElement, VNode, VueConstructor,
-} from 'vue';
-import BaseSocial, { TBaseSocialMixin } from '@/mixins/BaseSocial/BaseSocial';
+import { VNode, defineComponent } from 'vue';
+import BaseSocial from '@/mixins/BaseSocial/BaseSocial';
 import getSerialisedParams from '@/utils/getSerialisedParams';
 
 /**
@@ -20,7 +18,7 @@ export interface ISLiveJournalShareOptions {
   subject?: string;
 }
 
-export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseSocialMixin<ISLiveJournalShareOptions>>>).extend({
+export default /* #__PURE__ */ defineComponent({
   name: 'SLiveJournal',
 
   mixins: [BaseSocial<ISLiveJournalShareOptions>(
@@ -42,7 +40,7 @@ export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseSo
     },
   },
 
-  render(h: CreateElement): VNode {
-    return this.generateComponent(h, this.networkURL);
+  render(): VNode {
+    return this.generateComponent(this.networkURL);
   },
 });

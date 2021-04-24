@@ -9,7 +9,10 @@ import * as components from '@/components';
  * Install function executed by Vue.use()
  */
 const install: Exclude<Plugin['install'], undefined> = function installVueSocials(app: App) {
-  Object.entries(components).forEach(([componentName, component]) => {
+  Object.entries(components).forEach((item) => {
+    const componentName = item[0];
+    const component = item[1];
+
     app.component(componentName, component);
   });
 };

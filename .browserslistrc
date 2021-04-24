@@ -7,4 +7,4 @@ not Edge < 79
 iOS >= 10
 Safari >= 10
 Android >= 6
-Explorer >= 11
+Explorer > 11

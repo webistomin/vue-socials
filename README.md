@@ -59,28 +59,62 @@
 
 **npm**
 ```shell
+# Vue 2
 npm install vue-socials
+
+# Vue 3
+npm install vue-socials@next
 ```
 
 **yarn**
 ```shell
+# Vue 2
 yarn add vue-socials
+
+# Vue 3
+yarn add vue-socials@next
 ```
 
 **Import all components**
 ```js
+/**
+ * Vue 2
+ */
 import Vue from 'vue'
 import VueSocials from 'vue-socials';
 
 Vue.use(VueSocials)
+
+/**
+ * Vue 3
+ */
+import { createApp } from 'vue'
+import VueSocials from 'vue-socials';
+import App from './App.vue'
+
+const app = createApp(App)
+app.use(VueSocials)
 ```
 
 **Import only specific component**
 ```js
+/**
+ * Vue 2
+ */
 import Vue from 'vue'
 import { SGithub } from 'vue-socials';
 
 Vue.component('SGithub', SGithub)
+
+/**
+ * Vue 3
+ */
+import { createApp } from 'vue'
+import { SGithub } from 'vue-socials';
+import App from './App.vue'
+
+const app = createApp(App)
+app.component('SGithub', SGithub)
 ```
 
 

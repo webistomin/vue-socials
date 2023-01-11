@@ -4,7 +4,9 @@
  * SSms component used for sending SMS via an HTML link
  */
 
-import Vue, { CreateElement, PropOptions, VNode } from 'vue';
+import {
+  defineComponent, h, PropType, VNode,
+} from 'vue';
 import getSerialisedParams from '@/utils/getSerialisedParams';
 
 /**
@@ -15,7 +17,7 @@ export interface ISSmsShareOptions {
   body?: string;
 }
 
-export default /* #__PURE__ */Vue.extend({
+export default /* #__PURE__ */ defineComponent({
   name: 'SSms',
 
   props: {
@@ -23,9 +25,9 @@ export default /* #__PURE__ */Vue.extend({
      * Share parameters for SMS
      */
     shareOptions: {
-      type: Object,
+      type: Object as PropType<ISSmsShareOptions>,
       required: true,
-    } as PropOptions<ISSmsShareOptions>,
+    },
   },
 
   computed: {
@@ -41,7 +43,7 @@ export default /* #__PURE__ */Vue.extend({
     },
   },
 
-  render(h: CreateElement): VNode {
+  render(): VNode {
     return h(
       'a',
       {
@@ -49,7 +51,7 @@ export default /* #__PURE__ */Vue.extend({
           href: this.networkURL,
         },
       },
-      this.$slots.default,
+      this.$slots.default?.(),
     );
   },
 });

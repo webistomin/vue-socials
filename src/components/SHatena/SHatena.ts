@@ -5,10 +5,8 @@
  * @link https://b.hatena.ne.jp/
  */
 
-import Vue, {
-  CreateElement, VNode, VueConstructor,
-} from 'vue';
-import BaseSocial, { TBaseSocialMixin } from '@/mixins/BaseSocial/BaseSocial';
+import { VNode, defineComponent } from 'vue';
+import BaseSocial from '@/mixins/BaseSocial/BaseSocial';
 import getSerialisedParams from '@/utils/getSerialisedParams';
 
 /**
@@ -19,7 +17,7 @@ export interface ISHatenaShareOptions {
   title?: string;
 }
 
-export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseSocialMixin<ISHatenaShareOptions>>>).extend({
+export default /* #__PURE__ */ defineComponent({
   name: 'SHatena',
 
   mixins: [BaseSocial<ISHatenaShareOptions>(
@@ -41,7 +39,7 @@ export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseSo
     },
   },
 
-  render(h: CreateElement): VNode {
-    return this.generateComponent(h, this.networkURL);
+  render(): VNode {
+    return this.generateComponent(this.networkURL);
   },
 });

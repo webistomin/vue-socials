@@ -10,11 +10,13 @@ import plugin, * as components from '@/vue-socials-esm';
  */
 type NamedExports = Exclude<typeof components, 'default'>;
 type ExtendedPlugin = typeof plugin & NamedExports;
-
 Object.entries(components).forEach((item) => {
-  if (item[0] !== 'default') {
-    const key = item[0] as Exclude<keyof NamedExports, 'default'>;
-    const val = item[1] as Exclude<ExtendedPlugin, typeof plugin>;
+  const componentName = item[0];
+  const component = item[1];
+
+  if (componentName !== 'default') {
+    const key = componentName as Exclude<keyof NamedExports, 'default'>;
+    const val = component as Exclude<ExtendedPlugin, typeof plugin>;
     (plugin as ExtendedPlugin)[key] = val;
   }
 });

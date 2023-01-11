@@ -5,10 +5,10 @@
  * @link https://www.pinterest.com/
  */
 
-import Vue, { VueConstructor } from 'vue';
+import { defineComponent } from 'vue';
 import JSONP from '@/utils/jsonp';
 import getSerialisedParams from '@/utils/getSerialisedParams';
-import BaseCount, { TBaseCountMixin } from '@/mixins/BaseCount/BaseCount';
+import BaseCount from '@/mixins/BaseCount/BaseCount';
 
 /**
  * Share parameters for link
@@ -22,7 +22,7 @@ export interface ISPinterestResult {
   count: number;
 }
 
-export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseCountMixin<ISPinterestCountShareOptions, ISPinterestResult>>>).extend({
+export default /* #__PURE__ */ defineComponent({
   name: 'SPinterestCount',
 
   mixins: [BaseCount<ISPinterestCountShareOptions, ISPinterestResult>(

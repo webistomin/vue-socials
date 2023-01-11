@@ -6,10 +6,8 @@
  * @example https://www.google.com/bookmarks/mark?op=edit&output=popup&bkmk=https%3A%2F%2Fgithub.com%2F&title=Title&annotation=Annotation&labels=tag
  */
 
-import Vue, {
-  CreateElement, VNode, VueConstructor,
-} from 'vue';
-import BaseSocial, { TBaseSocialMixin } from '@/mixins/BaseSocial/BaseSocial';
+import { VNode, defineComponent } from 'vue';
+import BaseSocial from '@/mixins/BaseSocial/BaseSocial';
 import getSerialisedParams from '@/utils/getSerialisedParams';
 import getSeparatedList from '@/utils/getSeparatedList';
 
@@ -23,7 +21,7 @@ export interface ISGoogleBookmarksShareOptions {
   tags?: string[];
 }
 
-export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseSocialMixin<ISGoogleBookmarksShareOptions>>>).extend({
+export default /* #__PURE__ */ defineComponent({
   name: 'SGoogleBookmarks',
 
   mixins: [BaseSocial<ISGoogleBookmarksShareOptions>(
@@ -51,7 +49,7 @@ export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseSo
     },
   },
 
-  render(h: CreateElement): VNode {
-    return this.generateComponent(h, this.networkURL);
+  render(): VNode {
+    return this.generateComponent(this.networkURL);
   },
 });

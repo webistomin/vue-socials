@@ -5,10 +5,10 @@
  * @link https://line.me/
  */
 
-import Vue, { VueConstructor } from 'vue';
+import { defineComponent } from 'vue';
 import HTTP from '@/utils/http';
 import getSerialisedParams from '@/utils/getSerialisedParams';
-import BaseCount, { TBaseCountMixin } from '@/mixins/BaseCount/BaseCount';
+import BaseCount from '@/mixins/BaseCount/BaseCount';
 
 /**
  * Share parameters for link
@@ -22,7 +22,7 @@ export interface ISLineResult {
   share: number;
 }
 
-export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseCountMixin<ISLineCountShareOptions, ISLineResult>>>).extend({
+export default /* #__PURE__ */ defineComponent({
   name: 'SLineCount',
 
   mixins: [BaseCount<ISLineCountShareOptions, ISLineResult>(

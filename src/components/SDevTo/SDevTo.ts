@@ -6,10 +6,8 @@
  * @example https://dev.to/new?prefill=%0A%20%20%20%20%20%20%20%20---%0A%20%20%20%20%20%20%20%20title%3ATitle%0A%20%20%20%20%20%20%20%20%0A%20%20%20%20%20%20%20%20tags%3Atag%0A%20%20%20%20%20%20%20%20---%0A%20%20%20%20%20%20%20%20Text%201%0AText%202%0A%7B%25%20wikipedia%20https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FWikipedia%20%25%7D
  */
 
-import Vue, {
-  CreateElement, VNode, VueConstructor,
-} from 'vue';
-import BaseSocial, { TBaseSocialMixin } from '@/mixins/BaseSocial/BaseSocial';
+import { VNode, defineComponent } from 'vue';
+import BaseSocial from '@/mixins/BaseSocial/BaseSocial';
 import getSerialisedParams from '@/utils/getSerialisedParams';
 import getSeparatedList from '@/utils/getSeparatedList';
 
@@ -24,7 +22,7 @@ export interface ISDevToShareOptions {
   content?: string;
 }
 
-export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseSocialMixin<ISDevToShareOptions>>>).extend({
+export default /* #__PURE__ */ defineComponent({
   name: 'SDevTo',
 
   mixins: [BaseSocial<ISDevToShareOptions>(
@@ -58,7 +56,7 @@ export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseSo
     },
   },
 
-  render(h: CreateElement): VNode {
-    return this.generateComponent(h, this.networkURL);
+  render(): VNode {
+    return this.generateComponent(this.networkURL);
   },
 });

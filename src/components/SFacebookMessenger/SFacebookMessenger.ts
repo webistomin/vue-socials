@@ -6,10 +6,8 @@
  * @example https://www.facebook.com/dialog/send?link=https%3A%2F%2Fgithub.com%2F&app_id=123456789&redirect_uri=https%3A%2F%2Fwww.domain.com%2F
  */
 
-import Vue, {
-  CreateElement, VNode, VueConstructor,
-} from 'vue';
-import BaseSocial, { TBaseSocialMixin } from '@/mixins/BaseSocial/BaseSocial';
+import { VNode, defineComponent } from 'vue';
+import BaseSocial from '@/mixins/BaseSocial/BaseSocial';
 import getSerialisedParams from '@/utils/getSerialisedParams';
 
 /**
@@ -26,7 +24,7 @@ export interface ISFacebookMessengerShareOptions {
   to?: string;
 }
 
-export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseSocialMixin<ISFacebookMessengerShareOptions>>>).extend({
+export default /* #__PURE__ */ defineComponent({
   name: 'SFacebookMessenger',
 
   mixins: [BaseSocial<ISFacebookMessengerShareOptions>(
@@ -51,7 +49,7 @@ export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseSo
     },
   },
 
-  render(h: CreateElement): VNode {
-    return this.generateComponent(h, this.networkURL);
+  render(): VNode {
+    return this.generateComponent(this.networkURL);
   },
 });

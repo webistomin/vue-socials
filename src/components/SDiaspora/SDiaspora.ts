@@ -6,10 +6,8 @@
  * @example https://share.diasporafoundation.org/?url=https%3A%2F%2Fgithub.com%2F&title=Title/
  */
 
-import Vue, {
-  CreateElement, VNode, VueConstructor,
-} from 'vue';
-import BaseSocial, { TBaseSocialMixin } from '@/mixins/BaseSocial/BaseSocial';
+import { VNode, defineComponent } from 'vue';
+import BaseSocial from '@/mixins/BaseSocial/BaseSocial';
 import getSerialisedParams from '@/utils/getSerialisedParams';
 
 /**
@@ -22,12 +20,11 @@ export interface ISDiasporaShareOptions {
   title: string;
 }
 
-export type TSDiasporaShareOptionsUrl = Omit<ISDiasporaShareOptions, 'url'>;
-export type TSDiasporaShareOptionsTitle = Omit<ISDiasporaShareOptions, 'title'>;
+type RequireAtLeastOne<T> = { [K in keyof T]-?: Required<Pick<T, K>> & Partial<Pick<T, Exclude<keyof T, K>>>; }[keyof T];
 
-export type TSDiasporaShareOptions = TSDiasporaShareOptionsUrl | TSDiasporaShareOptionsTitle;
+export type TSDiasporaShareOptions = RequireAtLeastOne<ISDiasporaShareOptions>;
 
-export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseSocialMixin<ISDiasporaShareOptions>>>).extend({
+export default /* #__PURE__ */ defineComponent({
   name: 'SDiaspora',
 
   mixins: [BaseSocial<TSDiasporaShareOptions>(
@@ -53,7 +50,7 @@ export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseSo
     },
   },
 
-  render(h: CreateElement): VNode {
-    return this.generateComponent(h, this.networkURL);
+  render(): VNode {
+    return this.generateComponent(this.networkURL);
   },
 });

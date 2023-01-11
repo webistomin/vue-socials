@@ -5,10 +5,10 @@
  * @link https://ok.ru/
  */
 
-import Vue, { VueConstructor } from 'vue';
+import { defineComponent } from 'vue';
 import HTTP from '@/utils/http';
 import getSerialisedParams from '@/utils/getSerialisedParams';
-import BaseCount, { TBaseCountMixin } from '@/mixins/BaseCount/BaseCount';
+import BaseCount from '@/mixins/BaseCount/BaseCount';
 
 /**
  * Share parameters for link
@@ -22,7 +22,7 @@ export interface ISOdnoklassnikiResult {
   count: number;
 }
 
-export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseCountMixin<ISOdnoklassnikiCountShareOptions, ISOdnoklassnikiResult>>>).extend({
+export default /* #__PURE__ */ defineComponent({
   name: 'SOdnoklassnikiCount',
 
   mixins: [BaseCount<ISOdnoklassnikiCountShareOptions, ISOdnoklassnikiResult>(

@@ -5,9 +5,9 @@
  * @link https://github.com/
  */
 
-import Vue, { VueConstructor } from 'vue';
+import { defineComponent } from 'vue';
 import JSONP from '@/utils/jsonp';
-import BaseCount, { TBaseCountMixin } from '@/mixins/BaseCount/BaseCount';
+import BaseCount from '@/mixins/BaseCount/BaseCount';
 
 const GITHUB_LINK_TYPES = {
   follow: 'follow',
@@ -80,7 +80,7 @@ export interface ISGithubCountShareOptions {
   type: TSGithubCountLinkType;
 }
 
-export default /* #__PURE__ */ (Vue as VueConstructor<Vue & InstanceType<TBaseCountMixin<ISGithubCountShareOptions, ISGithubCountResult>>>).extend({
+export default /* #__PURE__ */ defineComponent({
   name: 'SGithubCount',
 
   mixins: [BaseCount<ISGithubCountShareOptions, ISGithubCountResult>(

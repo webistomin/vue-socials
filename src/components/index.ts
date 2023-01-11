@@ -74,6 +74,7 @@ export { default as SLiveJournal } from './SLiveJournal';
  * M
  */
 export { default as SMailRu } from './SMailRu';
+export { default as SMastodon } from './SMastodon';
 export { default as SMicrosoftTeams } from './SMicrosoftTeams';
 
 /**

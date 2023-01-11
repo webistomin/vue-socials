@@ -121,6 +121,9 @@ declare const SLiveJournal: typeof SLiveJournalComponent;
 import SMailRuComponent from './components/SMailRu';
 declare const SMailRu: typeof SMailRuComponent;
 
+import SMastodonComponent from './components/SMastodon';
+declare const SMastodon: typeof SMastodonComponent;
+
 import SMicrosoftTeamsComponent from './components/SMicrosoftTeams';
 declare const SMicrosoftTeams: typeof SMicrosoftTeamsComponent;
 

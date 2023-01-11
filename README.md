@@ -204,6 +204,8 @@ Browse [online documentation here](https://vue-socials.vercel.app/)
 
 * <img src="https://raw.githubusercontent.com/webistomin/vue-socials/main/assets/icons/mailru.svg" width="16" height="16"/> [MailRu](#smailru)
 
+* <img src="https://raw.githubusercontent.com/webistomin/vue-socials/main/assets/icons/mastodon.svg" width="16" height="16"/> [Mastodon](#smastodon)
+
 * <img src="https://raw.githubusercontent.com/webistomin/vue-socials/main/assets/icons/microsoftteams.svg" width="16" height="16"/> [Microsoft Teams](#smicrosoftteams)
 
 ## O
@@ -2187,6 +2189,72 @@ This component uses `JSONP` so the content won't be available during `SSR`.
 `windowFeatures` | `object` | Pass options to `window.open()`. [Requested features of the new window.](https://developer.mozilla.org/en-US/docs/Web/API/Window/open#window_features) | `{ width: 600, height: 540, }`
 `shareOptions` | `object` | Your share link parameters: <br /> **url** – the URL you want to share <br /> **title** – your title <br /> **description** – your description <br /> **image** – your image <br /> **swfUrl** – your flash-player with video <br /> | `{}`
 `useNativeBehavior` | `boolean` | Use native link behavior instead of `window.open()` or not | `false`
+
+**Events**
+
+| Event name | Usage |
+| ------ | ------ |
+`popup-open` | `window.open()` has been opened |
+`popup-close` | `window.open()` has been closed |
+`popup-block` | `window.open()` has been blocked |
+`popup-focus` | `window.open()` has been focused |
+
+---
+
+### SMastodon
+
+**Usage**
+
+```vue
+<template>
+  <s-mastodon
+    :window-features="windowFeatures"
+    :share-options="shareOptions"
+    :use-native-behavior="useNativeBehavior"
+    @popup-close="onClose"
+    @popup-open="onOpen"
+    @popup-block="onBlock"
+    @popup-focus="onFocus"
+  ></s-mastodon>
+</template>
+
+<script>
+  import { SMastodon } from 'vue-socials'
+
+  export default {
+    name: 'SSMastodonSharing',
+    
+    components: { SMastodon },
+    
+    data() {
+      return {
+        windowFeatures: {},
+        shareOptions: {
+          domain: 'https://mas.to',
+          url: 'https://github.com',
+          text: 'Hello, world!',
+        },
+        useNativeBehavior: false,
+      }
+    },
+    
+    methods: {
+      onClose() {},
+      onOpen() {},
+      onBlock() {},
+      onFocus() {},
+    }
+  };
+</script>
+```
+
+**Props**
+
+| Prop | Type | Description                                                                                                                                            | Default value |
+| ------ | ------ |--------------------------------------------------------------------------------------------------------------------------------------------------------| ------ |
+`windowFeatures` | `object` | Pass options to `window.open()`. [Requested features of the new window.](https://developer.mozilla.org/en-US/docs/Web/API/Window/open#window_features) | `{ width: 600, height: 700, }`
+`shareOptions` | `object` | Your share link parameters:  <br />   **domain** – the mastodon domain <br /> **url** – the URL you want to share <br /> **text** – your text <br />            | `{}`
+`useNativeBehavior` | `boolean` | Use native link behavior instead of `window.open()` or not                                                                                             | `false`
 
 **Events**
 

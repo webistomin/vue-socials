@@ -14,11 +14,9 @@
     }
   ],
   "main": "dist/vue-socials.cjs.js",
-  "browser": "dist/vue-socials.esm.js",
   "module": "dist/esm/vue-socials-esm.js",
   "exports": {
     ".": {
-      "browser": "./dist/vue-socials.esm.js",
       "require": "./dist/vue-socials.cjs.js",
       "import": "./dist/esm/vue-socials-esm.js",
       "default": "./dist/esm/vue-socials-esm.js"

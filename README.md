@@ -48,34 +48,37 @@
 ## Key Features ✨
 
 * **50+** reusable components
-* **Small** `~7KB` (minified and gzipped)
+* **Small** [`~1.3KB` per component](https://bundlephobia.com/package/vue-socials) (minified and gzipped)
 * Fully **tree-shakeable**
 * **No dependencies**
 * **No SDK**
 * **Don't track** the user
+* **Completely** unstyled
 * Built with **a11y** in mind
+* Each component exposing a **single slot** that gives you complete control over what should actually be rendered.
 
 ## Installation  🚀
 
 **npm**
 ```shell
 # Vue 2
-npm install vue-socials
+npm install vue-socials@1
 
 # Vue 3
-npm install vue-socials@next
+npm install vue-socials
 ```
 
 **yarn**
 ```shell
 # Vue 2
-yarn add vue-socials
+yarn add vue-socials@1
 
 # Vue 3
-yarn add vue-socials@next
+yarn add vue-socials
 ```
 
-**Import all components**
+**Import all components (not recommended)**
+
 ```js
 /**
  * Vue 2
@@ -296,7 +299,9 @@ Browse [online documentation here](https://vue-socials.vercel.app/)
     @popup-open="onOpen"
     @popup-block="onBlock"
     @popup-focus="onFocus"
-  ></s-blogger>
+  >
+    <!-- your icon component -->
+  </s-blogger>
 </template>
 
 <script>
@@ -362,7 +367,9 @@ Browse [online documentation here](https://vue-socials.vercel.app/)
     @popup-open="onOpen"
     @popup-block="onBlock"
     @popup-focus="onFocus"
-  ></s-dev-to>
+  >
+    <!-- your icon component -->
+  </s-dev-to>
 </template>
 
 <script>
@@ -429,7 +436,9 @@ Browse [online documentation here](https://vue-socials.vercel.app/)
     @popup-open="onOpen"
     @popup-block="onBlock"
     @popup-focus="onFocus"
-  ></s-diaspora>
+  >
+    <!-- your icon component -->
+  </s-diaspora>
 </template>
 
 <script>
@@ -494,7 +503,9 @@ Browse [online documentation here](https://vue-socials.vercel.app/)
     @popup-open="onOpen"
     @popup-block="onBlock"
     @popup-focus="onFocus"
-  ></s-douban>
+  >
+    <!-- your icon component -->
+  </s-douban>
 </template>
 
 <script>
@@ -551,7 +562,9 @@ Browse [online documentation here](https://vue-socials.vercel.app/)
 
 ```vue
 <template>
-  <s-email :share-options="shareOptions"></s-email>
+  <s-email :share-options="shareOptions">
+    <!-- your icon component -->
+  </s-email>
 </template>
 
 <script>
@@ -599,7 +612,9 @@ Browse [online documentation here](https://vue-socials.vercel.app/)
     @popup-open="onOpen"
     @popup-block="onBlock"
     @popup-focus="onFocus"
-  ></s-evernote>
+  >
+    <!-- your icon component -->
+  </s-evernote>
 </template>
 
 <script>
@@ -664,7 +679,9 @@ Browse [online documentation here](https://vue-socials.vercel.app/)
     @popup-open="onOpen"
     @popup-block="onBlock"
     @popup-focus="onFocus"
-  ></s-facebook>
+  >
+    <!-- your icon component -->
+  </s-facebook>
 </template>
 
 <script>
@@ -793,7 +810,9 @@ This component uses `JSONP` so the content won't be available during `SSR`.
     @popup-open="onOpen"
     @popup-block="onBlock"
     @popup-focus="onFocus"
-  ></s-facebook-messenger>
+  >
+    <!-- your icon component -->
+  </s-facebook-messenger>
 </template>
 
 <script>
@@ -860,7 +879,9 @@ This component uses `JSONP` so the content won't be available during `SSR`.
     @popup-open="onOpen"
     @popup-block="onBlock"
     @popup-focus="onFocus"
-  ></s-facebook-workplace>
+  >
+    <!-- your icon component -->
+  </s-facebook-workplace>
 </template>
 
 <script>
@@ -924,7 +945,9 @@ This component uses `JSONP` so the content won't be available during `SSR`.
     @popup-open="onOpen"
     @popup-block="onBlock"
     @popup-focus="onFocus"
-  ></s-flip-board>
+  >
+    <!-- your icon component -->
+  </s-flip-board>
 </template>
 
 <script>
@@ -989,7 +1012,9 @@ This component uses `JSONP` so the content won't be available during `SSR`.
     @popup-open="onOpen"
     @popup-block="onBlock"
     @popup-focus="onFocus"
-  ></s-github>
+  >
+    <!-- your icon component -->
+  </s-github>
 </template>
 
 <script>
@@ -1116,7 +1141,9 @@ This component uses `JSONP` so the content won't be available during `SSR`.
     @popup-open="onOpen"
     @popup-block="onBlock"
     @popup-focus="onFocus"
-  ></s-github-gist>
+  >
+    <!-- your icon component -->
+  </s-github-gist>
 </template>
 
 <script>
@@ -1244,7 +1271,9 @@ This component uses `JSONP` so the content won't be available during `SSR`.
     @popup-open="onOpen"
     @popup-block="onBlock"
     @popup-focus="onFocus"
-  ></s-github-repo>
+  >
+    <!-- your icon component -->
+  </s-github-repo>
 </template>
 
 <script>
@@ -1373,7 +1402,9 @@ This component uses `JSONP` so the content won't be available during `SSR`.
     @popup-open="onOpen"
     @popup-block="onBlock"
     @popup-focus="onFocus"
-  ></s-gmail>
+  >
+    <!-- your icon component -->
+  </s-gmail>
 </template>
 
 <script>
@@ -1441,7 +1472,9 @@ This component uses `JSONP` so the content won't be available during `SSR`.
     @popup-open="onOpen"
     @popup-block="onBlock"
     @popup-focus="onFocus"
-  ></s-google-bookmarks>
+  >
+    <!-- your icon component -->
+  </s-google-bookmarks>
 </template>
 
 <script>
@@ -1508,7 +1541,9 @@ This component uses `JSONP` so the content won't be available during `SSR`.
     @popup-open="onOpen"
     @popup-block="onBlock"
     @popup-focus="onFocus"
-  ></s-hacker-news>
+  >
+    <!-- your icon component -->
+  </s-hacker-news>
 </template>
 
 <script>
@@ -1573,7 +1608,9 @@ This component uses `JSONP` so the content won't be available during `SSR`.
     @popup-open="onOpen"
     @popup-block="onBlock"
     @popup-focus="onFocus"
-  ></s-hatena>
+  >
+    <!-- your icon component -->
+  </s-hatena>
 </template>
 
 <script>
@@ -1699,7 +1736,9 @@ This component uses `JSONP` so the content won't be available during `SSR`.
     @popup-open="onOpen"
     @popup-block="onBlock"
     @popup-focus="onFocus"
-  ></s-houzz>
+  >
+    <!-- your icon component -->
+  </s-houzz>
 </template>
 
 <script>
@@ -1767,7 +1806,9 @@ This component uses `JSONP` so the content won't be available during `SSR`.
     @popup-open="onOpen"
     @popup-block="onBlock"
     @popup-focus="onFocus"
-  ></s-insta-paper>
+  >
+    <!-- your icon component -->
+  </s-insta-paper>
 </template>
 
 <script>
@@ -1831,7 +1872,9 @@ This component uses `JSONP` so the content won't be available during `SSR`.
     @popup-open="onOpen"
     @popup-block="onBlock"
     @popup-focus="onFocus"
-  ></s-kakao-story>
+  >
+    <!-- your icon component -->
+  </s-kakao-story>
 </template>
 
 <script>
@@ -1896,7 +1939,9 @@ This component uses `JSONP` so the content won't be available during `SSR`.
     @popup-open="onOpen"
     @popup-block="onBlock"
     @popup-focus="onFocus"
-  ></s-line>
+  >
+    <!-- your icon component -->
+  </s-line>
 </template>
 
 <script>
@@ -2018,7 +2063,9 @@ This component uses `JSONP` so the content won't be available during `SSR`.
     @popup-open="onOpen"
     @popup-block="onBlock"
     @popup-focus="onFocus"
-  ></s-linked-in>
+  >
+    <!-- your icon component -->
+  </s-linked-in>
 </template>
 
 <script>
@@ -2082,7 +2129,9 @@ This component uses `JSONP` so the content won't be available during `SSR`.
     @popup-open="onOpen"
     @popup-block="onBlock"
     @popup-focus="onFocus"
-  ></s-live-journal>
+  >
+    <!-- your icon component -->
+  </s-live-journal>
 </template>
 
 <script>
@@ -2147,7 +2196,9 @@ This component uses `JSONP` so the content won't be available during `SSR`.
     @popup-open="onOpen"
     @popup-block="onBlock"
     @popup-focus="onFocus"
-  ></s-mail-ru>
+  >
+    <!-- your icon component -->
+  </s-mail-ru>
 </template>
 
 <script>
@@ -2215,7 +2266,9 @@ This component uses `JSONP` so the content won't be available during `SSR`.
     @popup-open="onOpen"
     @popup-block="onBlock"
     @popup-focus="onFocus"
-  ></s-mastodon>
+  >
+    <!-- your icon component -->
+  </s-mastodon>
 </template>
 
 <script>
@@ -2281,7 +2334,9 @@ This component uses `JSONP` so the content won't be available during `SSR`.
     @popup-open="onOpen"
     @popup-block="onBlock"
     @popup-focus="onFocus"
-  ></s-microsoft-teams>
+  >
+    <!-- your icon component -->
+  </s-microsoft-teams>
 </template>
 
 <script>
@@ -2349,7 +2404,9 @@ This component uses `JSONP` so the content won't be available during `SSR`.
     @popup-open="onOpen"
     @popup-block="onBlock"
     @popup-focus="onFocus"
-  ></s-odnoklassniki>
+  >
+    <!-- your icon component -->
+  </s-odnoklassniki>
 </template>
 
 <script>
@@ -2475,7 +2532,9 @@ This component uses `JSONP` so the content won't be available during `SSR`.
     @popup-open="onOpen"
     @popup-block="onBlock"
     @popup-focus="onFocus"
-  ></s-pinterest>
+  >
+    <!-- your icon component -->
+  </s-pinterest>
 </template>
 
 <script>
@@ -2603,7 +2662,9 @@ This component uses `JSONP` so the content won't be available during `SSR`.
     @popup-open="onOpen"
     @popup-block="onBlock"
     @popup-focus="onFocus"
-  ></s-pocket>
+  >
+    <!-- your icon component -->
+  </s-pocket>
 </template>
 
 <script>
@@ -2667,7 +2728,9 @@ This component uses `JSONP` so the content won't be available during `SSR`.
     @popup-open="onOpen"
     @popup-block="onBlock"
     @popup-focus="onFocus"
-  ></s-q-zone>
+  >
+    <!-- your icon component -->
+  </s-q-zone>
 </template>
 
 <script>
@@ -2733,7 +2796,9 @@ This component uses `JSONP` so the content won't be available during `SSR`.
     @popup-open="onOpen"
     @popup-block="onBlock"
     @popup-focus="onFocus"
-  ></s-reddit>
+  >
+    <!-- your icon component -->
+  </s-reddit>
 </template>
 
 <script>
@@ -2862,7 +2927,9 @@ This component uses `JSONP` so the content won't be available during `SSR`.
     @popup-open="onOpen"
     @popup-block="onBlock"
     @popup-focus="onFocus"
-  ></s-ren-ren>
+  >
+    <!-- your icon component -->
+  </s-ren-ren>
 </template>
 
 <script>
@@ -2930,7 +2997,9 @@ This component uses `JSONP` so the content won't be available during `SSR`.
     @popup-open="onOpen"
     @popup-block="onBlock"
     @popup-focus="onFocus"
-  ></s-skype>
+  >
+    <!-- your icon component -->
+  </s-skype>
 </template>
 
 <script>
@@ -2995,7 +3064,9 @@ This component uses `JSONP` so the content won't be available during `SSR`.
     @popup-open="onOpen"
     @popup-block="onBlock"
     @popup-focus="onFocus"
-  ></s-sms>
+  >
+    <!-- your icon component -->
+  </s-sms>
 </template>
 
 <script>
@@ -3049,7 +3120,9 @@ This component uses `JSONP` so the content won't be available during `SSR`.
     @popup-open="onOpen"
     @popup-block="onBlock"
     @popup-focus="onFocus"
-  ></s-telegram>
+  >
+    <!-- your icon component -->
+  </s-telegram>
 </template>
 
 <script>
@@ -3114,7 +3187,9 @@ This component uses `JSONP` so the content won't be available during `SSR`.
     @popup-open="onOpen"
     @popup-block="onBlock"
     @popup-focus="onFocus"
-  ></s-threema>
+  >
+    <!-- your icon component -->
+  </s-threema>
 </template>
 
 <script>
@@ -3179,7 +3254,9 @@ This component uses `JSONP` so the content won't be available during `SSR`.
     @popup-open="onOpen"
     @popup-block="onBlock"
     @popup-focus="onFocus"
-  ></s-trello>
+  >
+    <!-- your icon component -->
+  </s-trello>
 </template>
 
 <script>
@@ -3245,7 +3322,9 @@ This component uses `JSONP` so the content won't be available during `SSR`.
     @popup-open="onOpen"
     @popup-block="onBlock"
     @popup-focus="onFocus"
-  ></s-tumblr>
+  >
+    <!-- your icon component -->
+  </s-tumblr>
 </template>
 
 <script>
@@ -3374,7 +3453,9 @@ This component uses `JSONP` so the content won't be available during `SSR`.
     @popup-open="onOpen"
     @popup-block="onBlock"
     @popup-focus="onFocus"
-  ></s-twitter>
+  >
+    <!-- your icon component -->
+  </s-twitter>
 </template>
 
 <script>
@@ -3441,7 +3522,9 @@ This component uses `JSONP` so the content won't be available during `SSR`.
     @popup-open="onOpen"
     @popup-block="onBlock"
     @popup-focus="onFocus"
-  ></s-viber>
+  >
+    <!-- your icon component -->
+  </s-viber>
 </template>
 
 <script>
@@ -3506,7 +3589,9 @@ This component uses `JSONP` so the content won't be available during `SSR`.
     @popup-open="onOpen"
     @popup-block="onBlock"
     @popup-focus="onFocus"
-  ></s-vkontakte>
+  >
+    <!-- your icon component -->
+  </s-vkontakte>
 </template>
 
 <script>
@@ -3636,7 +3721,9 @@ This component uses `JSONP` so the content won't be available during `SSR`.
     @popup-open="onOpen"
     @popup-block="onBlock"
     @popup-focus="onFocus"
-  ></s-weibo>
+  >
+    <!-- your icon component -->
+  </s-weibo>
 </template>
 
 <script>
@@ -3702,7 +3789,9 @@ This component uses `JSONP` so the content won't be available during `SSR`.
     @popup-open="onOpen"
     @popup-block="onBlock"
     @popup-focus="onFocus"
-  ></s-whats-app>
+  >
+    <!-- your icon component -->
+  </s-whats-app>
 </template>
 
 <script>
@@ -3767,7 +3856,9 @@ This component uses `JSONP` so the content won't be available during `SSR`.
     @popup-open="onOpen"
     @popup-block="onBlock"
     @popup-focus="onFocus"
-  ></s-word-press>
+  >
+    <!-- your icon component -->
+  </s-word-press>
 </template>
 
 <script>
@@ -3835,7 +3926,9 @@ This component uses `JSONP` so the content won't be available during `SSR`.
     @popup-open="onOpen"
     @popup-block="onBlock"
     @popup-focus="onFocus"
-  ></s-xing>
+  >
+    <!-- your icon component -->
+  </s-xing>
 </template>
 
 <script>
@@ -3900,7 +3993,9 @@ This component uses `JSONP` so the content won't be available during `SSR`.
     @popup-open="onOpen"
     @popup-block="onBlock"
     @popup-focus="onFocus"
-  ></s-yahoo>
+  >
+    <!-- your icon component -->
+  </s-yahoo>
 </template>
 
 <script>
@@ -3966,7 +4061,9 @@ This component uses `JSONP` so the content won't be available during `SSR`.
     @popup-open="onOpen"
     @popup-block="onBlock"
     @popup-focus="onFocus"
-  ></s-yammer>
+  >
+    <!-- your icon component -->
+  </s-yammer>
 </template>
 
 <script>

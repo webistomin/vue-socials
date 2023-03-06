@@ -48,13 +48,15 @@
 ## Key Features ✨
 
 * **50+** reusable components
-* **Small** [`~1.3KB` per component](https://bundlephobia.com/package/vue-socials) (minified and gzipped)
+* **Small** [`~1.3KB` component average size](https://bundlephobia.com/package/vue-socials) (minified and gzipped)
 * Fully **tree-shakeable**
 * **No dependencies**
 * **No SDK**
 * **Don't track** the user
 * **Completely** unstyled
 * Built with **a11y** in mind
+* **Support** Vue 2 & Vue 3
+* **Support** SSR
 * Each component exposing a **single slot** that gives you complete control over what should actually be rendered
 
 ## Installation  🚀

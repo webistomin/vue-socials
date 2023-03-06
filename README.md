@@ -55,7 +55,7 @@
 * **Don't track** the user
 * **Completely** unstyled
 * Built with **a11y** in mind
-* Each component exposing a **single slot** that gives you complete control over what should actually be rendered.
+* Each component exposing a **single slot** that gives you complete control over what should actually be rendered
 
 ## Installation  🚀
 

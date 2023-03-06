@@ -53,7 +53,7 @@ import SFacebookWorkplaceComponent from './components/SFacebookWorkplace';
 declare const SFacebookWorkplace: typeof SFacebookWorkplaceComponent;
 
 import SFlipBoardComponent from './components/SFlipBoard';
-declare const SFlipBoardWorkplace: typeof SFlipBoardComponent;
+declare const SFlipBoard: typeof SFlipBoardComponent;
 
 /**
  * G
@@ -246,7 +246,7 @@ export {
   SFacebookCount,
   SFacebookMessenger,
   SFacebookWorkplace,
-  SFlipBoardWorkplace,
+  SFlipBoard,
   SGithub,
   SGithubCount,
   SGithubGist,
@@ -264,6 +264,7 @@ export {
   SLinkedIn,
   SLiveJournal,
   SMailRu,
+  SMastodon,
   SMicrosoftTeams,
   SOdnoklassniki,
   SOdnoklassnikiCount,

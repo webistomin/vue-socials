@@ -112,9 +112,6 @@
     "vue": "^3.0.5",
     "vue-loader": "^16.2.0"
   },
-  "engines": {
-    "node": "16.x"
-  },
   "bugs": {
     "url": "https://github.com/webistomin/vue-socials/issues"
   },

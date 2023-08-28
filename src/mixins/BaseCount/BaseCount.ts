@@ -89,6 +89,8 @@ export default function BaseCount<T, R>(
        * Save response from JSONP or HTTP and emit event
        */
       handleResult(value: R) {
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-ignore check later
         this.response = value;
         this.$emit('load', value);
       },

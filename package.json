@@ -18,7 +18,10 @@
   "exports": {
     ".": {
       "require": "./dist/vue-socials.cjs.js",
-      "import": "./dist/esm/vue-socials-esm.js",
+      "import": {
+        "types": "./dist/types/vue-socials.d.ts",
+        "default": "./dist/esm/vue-socials-esm.js"
+      },
       "default": "./dist/esm/vue-socials-esm.js"
     },
     "./": "./",
